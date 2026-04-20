@@ -610,6 +610,8 @@ body.ready .site-footer {
 .adoption-region {
   stroke: rgba(22, 35, 59, 0.22);
   stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
 }
 
 .adoption-region.adoption-accent-blue {

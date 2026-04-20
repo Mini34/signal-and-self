@@ -283,9 +283,9 @@
       }
     ],
     "digitalAdoption": {
-      "intro": "This map uses official World Bank regional aggregates for internet use to show how digital adoption spread unevenly across the world. The slider spans 1900 to 2026 for historical context, but the comparable regional series begins in 2005, so earlier years are shown as pre-mass-adoption context.",
-      "minYear": 1900,
-      "maxYear": 2026,
+      "intro": "This map uses official World Bank regional aggregates for internet use to show how digital adoption spread unevenly across the world. The slider spans 2000 to 2025, and the comparable regional series begins in 2005, so the first few years show the pre-series lead-in before large-scale adoption accelerates.",
+      "minYear": 2000,
+      "maxYear": 2025,
       "seriesStartYear": 2005,
       "latestPublishedYear": 2025,
       "dotScalePercent": 2,
