@@ -1,13 +1,34 @@
 {
   "profile": {
-    "name": "Mina O.",
-    "tagline": "Tracking thoughtful online habits through projects, reflection, and measurable progress.",
-    "definition": "Digital citizenship means showing up online with the same care, accountability, and curiosity that I expect in person. It includes how I verify information, protect privacy, use technology ethically, and contribute to the communities I rely on.",
-    "mission": "My mission is to build a digital life that is useful, respectful, and reflective. This site documents the work behind that goal so the portfolio stays grounded in action instead of intention alone."
+    "name": "Mina S.",
+    "fullName": "Mina Soliman",
+    "tagline": "Incoming electrical engineering student in Canada with a growing interest in cybersecurity, digital citizenship, and responsible technology.",
+    "definition": "To me, digital citizenship means combining technical skill with responsibility. It includes checking information before sharing it, protecting privacy, using technology ethically, and contributing to online spaces in ways that make them safer and more respectful.",
+    "mission": "My mission is to grow as an engineer and digital citizen at the same time. I want the way I learn, build, and communicate online to reflect curiosity, care, and cybersecurity awareness.",
+    "aboutTitle": "Incoming first-year electrical engineering student in Canada",
+    "aboutText": [
+      "I am Mina Soliman, an incoming first-year electrical engineering student studying in Canada. I am interested in how engineering can solve practical problems while still protecting the people who rely on those systems.",
+      "Cybersecurity is one of the areas that excites me most because it connects technical design with trust, privacy, and accountability. That interest naturally connects to digital citizenship, which gives me a framework for how I want to participate online.",
+      "This website brings those interests together. It tracks how I learn, reflect, and contribute so my growth in digital citizenship stays visible, measurable, and grounded in real habits."
+    ],
+    "focusAreas": [
+      {
+        "title": "Engineering mindset",
+        "text": "I am drawn to electrical engineering because it combines systems thinking, problem-solving, and real-world impact."
+      },
+      {
+        "title": "Cybersecurity enthusiasm",
+        "text": "I want to keep learning how secure design, careful habits, and better awareness can reduce digital harm."
+      },
+      {
+        "title": "Digital citizenship lens",
+        "text": "I use digital citizenship as a practical guide for ethical participation, media literacy, privacy, and community responsibility."
+      }
+    ]
   },
   "home": {
     "heroKicker": "Digital citizenship portfolio",
-    "projectSummary": "This project turns digital citizenship into something visible and accountable. I use the site to document what I am learning, where I am improving, and how I contribute to healthier online spaces.",
+    "projectSummary": "This project turns digital citizenship into something visible and accountable. As I prepare to begin electrical engineering in Canada, I use the site to connect my interest in cybersecurity with reflection, measurable habits, and positive online participation.",
     "whyItMattersPoints": [
       {
         "title": "Trust is earned online",
@@ -184,6 +205,75 @@
   "dashboard": {
     "chartTitle": "Learning momentum",
     "chartDescription": "A quick view of how consistently I am investing time in digital citizenship learning.",
+    "globalStatsIntro": "Alongside my personal metrics, these international youth-focused statistics show why digital citizenship matters beyond one portfolio. They highlight access, online safety, and the skills young people need to participate responsibly.",
+    "globalStats": [
+      {
+        "value": "79%",
+        "title": "of people aged 15 to 24 worldwide use the Internet",
+        "description": "The ITU reported on November 10, 2024 that youth internet use is 13 percentage points higher than for the rest of the population, but the gap by income level is still large.",
+        "sourceLabel": "International Telecommunication Union",
+        "sourceTitle": "Facts and Figures 2024: Youth Internet Use",
+        "sourceDate": "November 10, 2024",
+        "url": "https://www.itu.int/itu-d/reports/statistics/2024/11/10/ff24-youth-internet-use/"
+      },
+      {
+        "value": "11%",
+        "title": "of adolescents showed signs of problematic social media use in 2022",
+        "description": "WHO reported on September 25, 2024 that this figure rose from 7% in 2018 to 11% in 2022, and another 12% of adolescents were at risk of problematic gaming.",
+        "sourceLabel": "WHO Regional Office for Europe",
+        "sourceTitle": "Teens, screens and mental health",
+        "sourceDate": "September 25, 2024",
+        "url": "https://www.who.int/europe/news/item/25-09-2024-teens--screens-and-mental-health"
+      },
+      {
+        "value": "1 in 6",
+        "title": "school-aged children experienced cyberbullying",
+        "description": "WHO reported on March 27, 2024 that cyberbullying increased between 2018 and 2022, with reports of being cyberbullied rising to 15% for boys and 16% for girls.",
+        "sourceLabel": "WHO Regional Office for Europe",
+        "sourceTitle": "One in six school-aged children experiences cyberbullying",
+        "sourceDate": "March 27, 2024",
+        "url": "https://www.who.int/europe/news/item/27-03-2024-one-in-six-school-aged-children-experiences-cyberbullying--finds-new-who-europe-study"
+      },
+      {
+        "value": "1 in 5",
+        "title": "10-year-olds in 51 countries lacked internet access at home in 2021",
+        "description": "UNICEF Innocenti reported in its June 2025 digital world report that the share increased to two in five in the low- and middle-income countries included in the study.",
+        "sourceLabel": "UNICEF Innocenti",
+        "sourceTitle": "Childhood in a Digital World",
+        "sourceDate": "June 2025",
+        "url": "https://www.unicef.org/innocenti/innocenti/media/11296/file/UNICEF-Innocenti-Childhood-in-a-Digital%20World-report-2025.pdf"
+      }
+    ],
+    "learnMore": [
+      {
+        "title": "Google Interland",
+        "description": "An interactive game from the Be Internet Awesome program that teaches safer, smarter internet habits through short challenges.",
+        "cta": "Explore Interland",
+        "url": "https://beinternetawesome.withgoogle.com/en_us/interland?_gl=1*1yoiuvx*_up*MQ..*_ga*MTMyMDkwMTEyNy4xNzc2NjUyMzQz*_ga_XRLM31BEJH*czE3NzY2NTIzNDMkbzEkZzAkdDE3NzY2NTIzNDMkajYwJGwwJGgw",
+        "tag": "Interactive"
+      },
+      {
+        "title": "UNICEF x Gallup: Online Opportunities",
+        "description": "A youth-centered resource exploring how young people across 21 countries experience internet access, opportunity, and digital divides.",
+        "cta": "Read the UNICEF resource",
+        "url": "https://changingchildhood.unicef.org/stories/online-opportunities",
+        "tag": "Global youth survey"
+      },
+      {
+        "title": "UNESCO Media and Information Literacy",
+        "description": "UNESCO's overview of media and information literacy and digital competencies, including how critical thinking supports safer online participation.",
+        "cta": "Visit UNESCO",
+        "url": "https://www.unesco.org/en/articles/media-and-information-literacy-and-digital-competencies",
+        "tag": "Media literacy"
+      },
+      {
+        "title": "WHO youth digital well-being updates",
+        "description": "WHO's coverage of adolescent screen use, cyberbullying, and digital well-being offers evidence-based context for responsible technology habits.",
+        "cta": "Read WHO coverage",
+        "url": "https://www.who.int/europe/news/item/25-09-2024-teens--screens-and-mental-health",
+        "tag": "Health and well-being"
+      }
+    ],
     "periods": {
       "monthly": {
         "label": "Monthly",
@@ -358,6 +448,13 @@
     }
   ],
   "updates": [
+    {
+      "id": "update-about-global-stats",
+      "date": "2026-04-19",
+      "category": "Site update",
+      "title": "Added a personal About Me section and international youth digital citizenship statistics",
+      "why": "I wanted the site to reflect my background as an incoming electrical engineering student in Canada while giving visitors reliable global context and learn-more resources."
+    },
     {
       "id": "update-dashboard",
       "date": "2026-04-18",

@@ -60,7 +60,9 @@ function renderHome(data) {
   setText("hero-tagline", data.profile.tagline);
   setText("hero-definition", data.profile.definition);
   setText("hero-mission", data.profile.mission);
+  setText("home-about-title", data.profile.aboutTitle);
   setText("project-summary", data.home.projectSummary);
+  setHtml("home-about-copy", paragraphStackMarkup(data.profile.aboutText.slice(0, 2)));
 
   setHtml(
     "why-it-matters",
@@ -102,10 +104,25 @@ function renderHome(data) {
 }
 
 function renderAbout(data) {
+  setText("about-me-title", data.profile.aboutTitle);
   setText("about-definition", data.profile.definition);
   setText(
     "about-purpose",
     `${data.home.projectSummary} ${data.profile.mission}`
+  );
+  setHtml("about-me-copy", paragraphStackMarkup(data.profile.aboutText));
+  setHtml(
+    "about-me-focus",
+    data.profile.focusAreas
+      .map(
+        (item) => `
+          <article class="stack-item">
+            <h3>${item.title}</h3>
+            <p>${item.text}</p>
+          </article>
+        `
+      )
+      .join("")
   );
 
   setHtml(
@@ -162,9 +179,18 @@ function renderDashboard(data) {
   );
   setText("chart-title", data.dashboard.chartTitle);
   setText("chart-description", data.dashboard.chartDescription);
+  setText("global-stats-intro", data.dashboard.globalStatsIntro);
   setHtml("stats-grid", data.stats.map((stat) => statCardMarkup(stat, false)).join(""));
+  setHtml(
+    "global-stats-grid",
+    data.dashboard.globalStats.map((item) => globalStatCardMarkup(item)).join("")
+  );
   renderPeriodToggle(data);
   renderDashboardPeriod(data);
+  setHtml(
+    "learn-more-grid",
+    data.dashboard.learnMore.map((resource) => resourceCardMarkup(resource)).join("")
+  );
 }
 
 function renderPeriodToggle(data) {
@@ -448,6 +474,38 @@ function summaryCardMarkup(item) {
   `;
 }
 
+function globalStatCardMarkup(item) {
+  return `
+    <article class="content-card global-stat-card">
+      <div class="card-meta">
+        <span class="category-chip">Youth statistic</span>
+        <span>${item.sourceDate}</span>
+      </div>
+      <strong class="stat-figure">${item.value}</strong>
+      <h3>${item.title}</h3>
+      <p>${item.description}</p>
+      <div class="inline-note">
+        <strong>${item.sourceLabel}</strong>
+        <span>${item.sourceTitle}</span>
+      </div>
+      <a class="inline-link" href="${item.url}" target="_blank" rel="noreferrer">View source</a>
+    </article>
+  `;
+}
+
+function resourceCardMarkup(resource) {
+  return `
+    <article class="content-card resource-card">
+      <div class="card-meta">
+        <span class="feature-chip">${resource.tag}</span>
+      </div>
+      <h3>${resource.title}</h3>
+      <p>${resource.description}</p>
+      <a class="inline-link" href="${resource.url}" target="_blank" rel="noreferrer">${resource.cta}</a>
+    </article>
+  `;
+}
+
 function valuePillMarkup(principle) {
   return `
     <article class="value-pill">
@@ -550,6 +608,10 @@ function emptyStateMarkup(message) {
       <p>${message}</p>
     </article>
   `;
+}
+
+function paragraphStackMarkup(paragraphs) {
+  return paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("");
 }
 
 function getFeaturedReflection(reflections) {
