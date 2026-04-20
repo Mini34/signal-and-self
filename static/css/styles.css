@@ -628,10 +628,10 @@ body.ready .site-footer {
 }
 
 .adoption-label-title {
-  font-size: 12px;
+  font-size: 10.5px;
   font-weight: 700;
   fill: #163148;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.03em;
   paint-order: stroke;
   stroke: rgba(255, 255, 255, 0.92);
   stroke-width: 4px;
@@ -639,7 +639,7 @@ body.ready .site-footer {
 }
 
 .adoption-label-value {
-  font-size: 13px;
+  font-size: 12px;
   fill: #274762;
   paint-order: stroke;
   stroke: rgba(255, 255, 255, 0.92);

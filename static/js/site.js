@@ -14,14 +14,23 @@ const DIGITAL_ADOPTION_IMAGE = {
   overlayScaleY: 4001 / 540
 };
 
+const DIGITAL_ADOPTION_MASK = {
+  width: 3000,
+  height: 1620,
+  ready: false,
+  failed: false,
+  promise: null,
+  context: null
+};
+
 const DIGITAL_ADOPTION_LAYOUT = [
   {
     code: "NAC",
     label: "North America",
-    short: "NA",
     accent: "blue",
     seed: 11,
-    labelPosition: { x: 208, y: 126 },
+    labelLines: ["North", "America"],
+    labelPosition: { x: 212, y: 120 },
     polygons: [
       [
         [48, 87], [73, 62], [111, 49], [139, 58], [153, 79], [132, 96], [96, 103], [67, 98]
@@ -39,10 +48,10 @@ const DIGITAL_ADOPTION_LAYOUT = [
   {
     code: "LCN",
     label: "Latin America & Caribbean",
-    short: "LAC",
     accent: "orange",
     seed: 27,
-    labelPosition: { x: 311, y: 314 },
+    labelLines: ["Latin America", "& Caribbean"],
+    labelPosition: { x: 307, y: 292 },
     polygons: [
       [
         [248, 214], [264, 204], [287, 205], [306, 217], [322, 234], [316, 248], [297, 254], [278, 245], [264, 230]
@@ -56,10 +65,10 @@ const DIGITAL_ADOPTION_LAYOUT = [
   {
     code: "ECS",
     label: "Europe & Central Asia",
-    short: "ECA",
     accent: "blue",
     seed: 39,
-    labelPosition: { x: 625, y: 98 },
+    labelLines: ["Europe &", "Central Asia"],
+    labelPosition: { x: 625, y: 88 },
     polygons: [
       [
         [441, 86], [470, 71], [501, 67], [533, 73], [549, 88], [548, 106], [522, 113], [494, 110], [470, 116], [447, 105]
@@ -73,10 +82,10 @@ const DIGITAL_ADOPTION_LAYOUT = [
   {
     code: "MNA",
     label: "Middle East & North Africa",
-    short: "MENA",
     accent: "orange",
     seed: 53,
-    labelPosition: { x: 582, y: 190 },
+    labelLines: ["Middle East", "& N. Africa"],
+    labelPosition: { x: 588, y: 176 },
     polygons: [
       [
         [448, 149], [480, 146], [515, 148], [549, 152], [579, 163], [585, 182], [564, 194], [529, 193], [495, 188], [467, 180], [449, 166]
@@ -92,10 +101,10 @@ const DIGITAL_ADOPTION_LAYOUT = [
   {
     code: "SSF",
     label: "Sub-Saharan Africa",
-    short: "SSA",
     accent: "blue",
     seed: 67,
-    labelPosition: { x: 530, y: 326 },
+    labelLines: ["Sub-Saharan", "Africa"],
+    labelPosition: { x: 534, y: 312 },
     polygons: [
       [
         [469, 196], [500, 198], [530, 205], [555, 219], [572, 242], [582, 273], [587, 307], [580, 343],
@@ -109,10 +118,10 @@ const DIGITAL_ADOPTION_LAYOUT = [
   {
     code: "SAS",
     label: "South Asia",
-    short: "SA",
     accent: "orange",
     seed: 79,
-    labelPosition: { x: 729, y: 223 },
+    labelLines: ["South", "Asia"],
+    labelPosition: { x: 730, y: 214 },
     polygons: [
       [
         [679, 219], [701, 203], [727, 195], [749, 196], [768, 208], [775, 228], [766, 248], [744, 259], [719, 257], [696, 247], [682, 232]
@@ -122,10 +131,10 @@ const DIGITAL_ADOPTION_LAYOUT = [
   {
     code: "EAS",
     label: "East Asia & Pacific",
-    short: "EAP",
     accent: "blue",
     seed: 97,
-    labelPosition: { x: 849, y: 159 },
+    labelLines: ["East Asia", "& Pacific"],
+    labelPosition: { x: 852, y: 146 },
     polygons: [
       [
         [744, 112], [771, 101], [804, 104], [834, 116], [851, 137], [847, 158], [823, 173], [794, 171], [769, 161], [750, 141]
@@ -361,6 +370,10 @@ function renderDigitalAdoption(adoptionData) {
     });
     slider.dataset.bound = "true";
   }
+
+  primeDigitalAdoptionMask()
+    .then(() => updateDigitalAdoption(adoptionData))
+    .catch(() => updateDigitalAdoption(adoptionData));
 
   updateDigitalAdoption(adoptionData);
 }
@@ -716,25 +729,35 @@ function digitalAdoptionMapMarkup(adoptionData, year) {
       )
       .join("");
 
-      const polygons = region.polygons
-        .map(
-          (polygon) => `
-            <polygon
-              class="adoption-region-hit"
-              points="${polygon.map((point) => point.join(",")).join(" ")}"
-            ></polygon>
-          `
+    const polygons = region.polygons
+      .map(
+        (polygon) => `
+          <polygon
+            class="adoption-region-hit"
+            points="${polygon.map((point) => point.join(",")).join(" ")}"
+          ></polygon>
+        `
       )
       .join("");
+
+    const labelLines = region.labelLines ?? [region.label];
+    const titleMarkup = labelLines
+      .map(
+        (line, index) => `
+          <tspan x="${region.labelPosition.x}" dy="${index === 0 ? 0 : 12}">${line}</tspan>
+        `
+      )
+      .join("");
+    const valueY = region.labelPosition.y + 16 + (labelLines.length - 1) * 12;
 
     return `
       <g class="adoption-region-group">
         ${polygons}
         <g class="adoption-dots-group">${dots}</g>
         <text x="${region.labelPosition.x}" y="${region.labelPosition.y}" class="adoption-label-title">
-          ${region.short}
+          ${titleMarkup}
         </text>
-        <text x="${region.labelPosition.x}" y="${region.labelPosition.y + 18}" class="adoption-label-value">
+        <text x="${region.labelPosition.x}" y="${valueY}" class="adoption-label-value">
           ${formatAdoptionValue(value)}
         </text>
       </g>
@@ -816,6 +839,10 @@ function getDigitalAdoptionDots(region) {
     return DIGITAL_ADOPTION_DOT_CACHE.get(region.code);
   }
 
+  if (!DIGITAL_ADOPTION_MASK.ready && !DIGITAL_ADOPTION_MASK.failed) {
+    return [];
+  }
+
   const totalDots = 50;
   const polygonAreas = region.polygons.map((polygon) => polygonArea(polygon));
   const totalArea = polygonAreas.reduce((sum, area) => sum + area, 0);
@@ -837,20 +864,98 @@ function getDigitalAdoptionDots(region) {
     const count = polygonDotCounts[polygonIndex];
     const bounds = polygonBounds(polygon);
     const random = mulberry32(region.seed + polygonIndex * 97);
+    const polygonDots = [];
     let attempts = 0;
+    const maxAttempts = Math.max(8000, count * 1600);
 
-    while (dots.length < polygonDotCounts.slice(0, polygonIndex + 1).reduce((sum, value) => sum + value, 0) && attempts < 5000) {
+    while (polygonDots.length < count && attempts < maxAttempts) {
       const x = bounds.minX + random() * (bounds.maxX - bounds.minX);
       const y = bounds.minY + random() * (bounds.maxY - bounds.minY);
       attempts += 1;
-      if (pointInPolygon([x, y], polygon)) {
-        dots.push([Number(x.toFixed(1)), Number(y.toFixed(1))]);
+      if (pointInPolygon([x, y], polygon) && isDigitalAdoptionLandPoint(x, y)) {
+        polygonDots.push([Number(x.toFixed(1)), Number(y.toFixed(1))]);
       }
     }
+
+    dots.push(...polygonDots);
   });
 
   DIGITAL_ADOPTION_DOT_CACHE.set(region.code, dots.slice(0, totalDots));
   return DIGITAL_ADOPTION_DOT_CACHE.get(region.code);
+}
+
+function primeDigitalAdoptionMask() {
+  if (DIGITAL_ADOPTION_MASK.ready || DIGITAL_ADOPTION_MASK.failed) {
+    return Promise.resolve();
+  }
+
+  if (DIGITAL_ADOPTION_MASK.promise) {
+    return DIGITAL_ADOPTION_MASK.promise;
+  }
+
+  DIGITAL_ADOPTION_MASK.promise = new Promise((resolve, reject) => {
+    const image = new Image();
+    image.decoding = "async";
+    image.onload = () => {
+      const canvas = document.createElement("canvas");
+      canvas.width = DIGITAL_ADOPTION_MASK.width;
+      canvas.height = DIGITAL_ADOPTION_MASK.height;
+      const context = canvas.getContext("2d", { willReadFrequently: true });
+      if (!context) {
+        DIGITAL_ADOPTION_MASK.failed = true;
+        reject(new Error("Failed to create a canvas context for the adoption map."));
+        return;
+      }
+      context.drawImage(image, 0, 0, canvas.width, canvas.height);
+      DIGITAL_ADOPTION_MASK.context = context;
+      DIGITAL_ADOPTION_MASK.ready = true;
+      DIGITAL_ADOPTION_DOT_CACHE.clear();
+      resolve();
+    };
+    image.onerror = () => {
+      DIGITAL_ADOPTION_MASK.failed = true;
+      reject(new Error("Failed to load the digital adoption map image."));
+    };
+    image.src = DIGITAL_ADOPTION_IMAGE.href;
+  });
+
+  return DIGITAL_ADOPTION_MASK.promise;
+}
+
+function isDigitalAdoptionLandPoint(x, y) {
+  if (DIGITAL_ADOPTION_MASK.failed || !DIGITAL_ADOPTION_MASK.ready || !DIGITAL_ADOPTION_MASK.context) {
+    return true;
+  }
+
+  const context = DIGITAL_ADOPTION_MASK.context;
+  const maskX = x * (DIGITAL_ADOPTION_MASK.width / 1000);
+  const maskY = y * (DIGITAL_ADOPTION_MASK.height / 540);
+  const sampleRadius = 3;
+  const sampleX = clamp(Math.round(maskX) - sampleRadius, 0, DIGITAL_ADOPTION_MASK.width - 1);
+  const sampleY = clamp(Math.round(maskY) - sampleRadius, 0, DIGITAL_ADOPTION_MASK.height - 1);
+  const sampleWidth = Math.min(sampleRadius * 2 + 1, DIGITAL_ADOPTION_MASK.width - sampleX);
+  const sampleHeight = Math.min(sampleRadius * 2 + 1, DIGITAL_ADOPTION_MASK.height - sampleY);
+  const pixels = context.getImageData(sampleX, sampleY, sampleWidth, sampleHeight).data;
+  let landHits = 0;
+  let totalSamples = 0;
+
+  for (let index = 0; index < pixels.length; index += 4) {
+    totalSamples += 1;
+    if (isDigitalAdoptionLandColor(pixels[index], pixels[index + 1], pixels[index + 2], pixels[index + 3])) {
+      landHits += 1;
+    }
+  }
+
+  return totalSamples > 0 && landHits / totalSamples >= 0.68;
+}
+
+function isDigitalAdoptionLandColor(red, green, blue, alpha) {
+  if (alpha < 16) {
+    return false;
+  }
+
+  const brightness = (red * 299 + green * 587 + blue * 114) / 1000;
+  return brightness < 236;
 }
 
 function polygonArea(polygon) {
@@ -899,6 +1004,10 @@ function mulberry32(seed) {
     t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
     return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
   };
+}
+
+function clamp(value, min, max) {
+  return Math.min(Math.max(value, min), max);
 }
 
 function formatAdoptionValue(value) {
