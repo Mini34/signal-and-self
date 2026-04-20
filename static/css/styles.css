@@ -588,7 +588,7 @@ body.ready .site-footer {
   padding: 1rem;
   border-radius: var(--radius-md);
   border: 1px solid rgba(22, 35, 59, 0.08);
-  background: linear-gradient(180deg, rgba(255, 252, 247, 0.88), rgba(243, 236, 226, 0.7));
+  background: linear-gradient(180deg, rgba(250, 249, 246, 0.95), rgba(245, 241, 234, 0.82));
 }
 
 .adoption-map {
@@ -597,29 +597,20 @@ body.ready .site-footer {
 }
 
 .adoption-map-background {
-  fill: rgba(255, 249, 241, 0.85);
+  fill: rgba(252, 251, 248, 0.98);
 }
 
-.adoption-grid-line {
-  fill: none;
-  stroke: rgba(22, 35, 59, 0.08);
-  stroke-width: 1.2;
-  stroke-dasharray: 5 8;
-}
-
-.adoption-region {
-  stroke: rgba(22, 35, 59, 0.22);
-  stroke-width: 2;
+.adoption-silhouette {
+  fill: #55718e;
+  stroke: rgba(255, 255, 255, 0.18);
+  stroke-width: 1.1;
   stroke-linejoin: round;
   stroke-linecap: round;
 }
 
-.adoption-region.adoption-accent-blue {
-  fill: rgba(123, 175, 216, 0.28);
-}
-
-.adoption-region.adoption-accent-orange {
-  fill: rgba(243, 178, 93, 0.3);
+.adoption-region-hit {
+  fill: transparent;
+  stroke: none;
 }
 
 .adoption-dot {
@@ -645,13 +636,13 @@ body.ready .site-footer {
 .adoption-label-title {
   font-size: 12px;
   font-weight: 700;
-  fill: var(--ink);
+  fill: #14324b;
   letter-spacing: 0.08em;
 }
 
 .adoption-label-value {
   font-size: 13px;
-  fill: var(--muted);
+  fill: #3a4f67;
 }
 
 .adoption-slider-block {
