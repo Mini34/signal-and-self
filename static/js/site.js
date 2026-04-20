@@ -476,7 +476,7 @@ function summaryCardMarkup(item) {
 
 function globalStatCardMarkup(item) {
   return `
-    <article class="content-card global-stat-card">
+    <article class="content-card global-stat-card ${accentClass(item.accent)}">
       <div class="card-meta">
         <span class="category-chip">Youth statistic</span>
         <span>${item.sourceDate}</span>
@@ -495,7 +495,7 @@ function globalStatCardMarkup(item) {
 
 function resourceCardMarkup(resource) {
   return `
-    <article class="content-card resource-card">
+    <article class="content-card resource-card ${accentClass(resource.accent)}">
       <div class="card-meta">
         <span class="feature-chip">${resource.tag}</span>
       </div>
@@ -612,6 +612,16 @@ function emptyStateMarkup(message) {
 
 function paragraphStackMarkup(paragraphs) {
   return paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("");
+}
+
+function accentClass(accent) {
+  if (accent === "blue") {
+    return "content-card-blue";
+  }
+  if (accent === "orange") {
+    return "content-card-orange";
+  }
+  return "";
 }
 
 function getFeaturedReflection(reflections) {

@@ -214,6 +214,7 @@
         "sourceLabel": "International Telecommunication Union",
         "sourceTitle": "Facts and Figures 2024: Youth Internet Use",
         "sourceDate": "November 10, 2024",
+        "accent": "blue",
         "url": "https://www.itu.int/itu-d/reports/statistics/2024/11/10/ff24-youth-internet-use/"
       },
       {
@@ -223,6 +224,7 @@
         "sourceLabel": "WHO Regional Office for Europe",
         "sourceTitle": "Teens, screens and mental health",
         "sourceDate": "September 25, 2024",
+        "accent": "orange",
         "url": "https://www.who.int/europe/news/item/25-09-2024-teens--screens-and-mental-health"
       },
       {
@@ -232,6 +234,7 @@
         "sourceLabel": "WHO Regional Office for Europe",
         "sourceTitle": "One in six school-aged children experiences cyberbullying",
         "sourceDate": "March 27, 2024",
+        "accent": "blue",
         "url": "https://www.who.int/europe/news/item/27-03-2024-one-in-six-school-aged-children-experiences-cyberbullying--finds-new-who-europe-study"
       },
       {
@@ -241,6 +244,7 @@
         "sourceLabel": "UNICEF Innocenti",
         "sourceTitle": "Childhood in a Digital World",
         "sourceDate": "June 2025",
+        "accent": "orange",
         "url": "https://www.unicef.org/innocenti/innocenti/media/11296/file/UNICEF-Innocenti-Childhood-in-a-Digital%20World-report-2025.pdf"
       }
     ],
@@ -250,28 +254,32 @@
         "description": "An interactive game from the Be Internet Awesome program that teaches safer, smarter internet habits through short challenges.",
         "cta": "Explore Interland",
         "url": "https://beinternetawesome.withgoogle.com/en_us/interland?_gl=1*1yoiuvx*_up*MQ..*_ga*MTMyMDkwMTEyNy4xNzc2NjUyMzQz*_ga_XRLM31BEJH*czE3NzY2NTIzNDMkbzEkZzAkdDE3NzY2NTIzNDMkajYwJGwwJGgw",
-        "tag": "Interactive"
+        "tag": "Interactive",
+        "accent": "orange"
       },
       {
         "title": "UNICEF x Gallup: Online Opportunities",
         "description": "A youth-centered resource exploring how young people across 21 countries experience internet access, opportunity, and digital divides.",
         "cta": "Read the UNICEF resource",
         "url": "https://changingchildhood.unicef.org/stories/online-opportunities",
-        "tag": "Global youth survey"
+        "tag": "Global youth survey",
+        "accent": "blue"
       },
       {
         "title": "UNESCO Media and Information Literacy",
         "description": "UNESCO's overview of media and information literacy and digital competencies, including how critical thinking supports safer online participation.",
         "cta": "Visit UNESCO",
         "url": "https://www.unesco.org/en/articles/media-and-information-literacy-and-digital-competencies",
-        "tag": "Media literacy"
+        "tag": "Media literacy",
+        "accent": "orange"
       },
       {
         "title": "WHO youth digital well-being updates",
         "description": "WHO's coverage of adolescent screen use, cyberbullying, and digital well-being offers evidence-based context for responsible technology habits.",
         "cta": "Read WHO coverage",
         "url": "https://www.who.int/europe/news/item/25-09-2024-teens--screens-and-mental-health",
-        "tag": "Health and well-being"
+        "tag": "Health and well-being",
+        "accent": "blue"
       }
     ],
     "periods": {
