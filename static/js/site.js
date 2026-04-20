@@ -6,6 +6,14 @@ const state = {
   projectFilter: "All"
 };
 
+const DIGITAL_ADOPTION_IMAGE = {
+  href: "static/images/digital-adoption-map.png",
+  width: 7001,
+  height: 4001,
+  overlayScaleX: 7.001,
+  overlayScaleY: 4001 / 540
+};
+
 const DIGITAL_ADOPTION_LAYOUT = [
   {
     code: "NAC",
@@ -136,22 +144,6 @@ const DIGITAL_ADOPTION_LAYOUT = [
       ]
     ]
   }
-];
-
-const DIGITAL_ADOPTION_SILHOUETTES = [
-  "M56 143 C69 116 92 95 121 82 C149 67 183 61 218 63 C245 65 274 74 301 89 C322 101 339 120 347 142 C352 160 347 178 334 193 C321 207 303 213 283 213 C264 213 246 216 230 226 C213 238 195 245 178 242 C161 239 146 231 133 218 C119 203 107 190 94 177 C80 165 68 154 56 143 Z",
-  "M298 214 C314 216 329 225 339 238 C346 248 345 258 338 266 C330 275 319 279 306 278 C297 268 294 255 295 243 C296 232 296 221 298 214 Z",
-  "M286 50 C309 37 338 30 363 36 C374 39 376 49 369 60 C360 74 343 83 324 85 C307 87 292 79 286 66 Z",
-  "M311 249 C327 258 341 273 350 290 C359 308 363 328 362 352 C361 378 355 401 346 422 C337 444 323 466 304 486 C292 498 278 500 269 486 C260 469 255 447 252 424 C250 401 250 379 253 357 C256 335 262 314 270 294 C279 274 292 258 311 249 Z",
-  "M436 110 C454 92 480 78 512 72 C544 66 580 67 618 72 C654 76 690 78 728 80 C765 81 801 89 832 106 C846 114 853 126 852 139 C850 152 839 161 822 167 C800 174 779 172 760 168 C741 164 721 161 700 164 C679 167 659 168 640 165 C619 162 598 158 579 153 C561 148 542 146 522 147 C503 148 484 145 466 138 C450 132 440 123 436 110 Z",
-  "M695 201 C709 195 724 194 739 199 C749 202 757 210 760 220 C759 232 751 240 740 247 C726 255 713 256 700 250 C691 243 687 232 688 220 C689 212 693 205 695 201 Z",
-  "M474 196 C492 194 511 199 529 207 C547 215 562 229 573 249 C582 268 587 292 589 318 C590 344 586 370 576 394 C566 418 551 440 533 456 C516 471 498 472 485 459 C473 447 464 430 459 409 C454 389 451 368 449 346 C447 323 448 300 451 278 C454 255 460 233 474 196 Z",
-  "M584 390 C592 401 597 414 594 430 C591 440 584 448 574 451 C570 437 572 421 576 405 Z",
-  "M742 114 C760 105 784 101 809 105 C828 108 845 117 853 132 C857 145 854 158 844 170 C831 184 812 189 790 187 C771 185 753 177 742 164 C735 152 735 128 742 114 Z",
-  "M861 136 C870 140 875 148 874 159 C872 169 865 175 856 176 C853 164 855 149 861 136 Z",
-  "M792 205 C809 208 825 216 838 228 C847 237 848 247 841 255 C828 262 813 262 798 257 C788 249 784 238 784 226 C785 217 788 210 792 205 Z",
-  "M832 318 C852 311 874 309 896 313 C914 316 929 325 935 340 C939 356 934 370 921 380 C905 392 885 396 863 394 C845 391 829 381 821 366 C818 350 821 332 832 318 Z",
-  "M926 389 C934 393 939 401 938 411 C936 420 930 426 923 427 C920 417 920 402 926 389 Z"
 ];
 
 const DIGITAL_ADOPTION_DOT_CACHE = new Map();
@@ -706,10 +698,6 @@ function resourceCardMarkup(resource) {
 }
 
 function digitalAdoptionMapMarkup(adoptionData, year) {
-  const silhouettes = DIGITAL_ADOPTION_SILHOUETTES
-    .map((path) => `<path class="adoption-silhouette" d="${path}"></path>`)
-    .join("");
-
   const regions = DIGITAL_ADOPTION_LAYOUT.map((region) => {
     const value = adoptionValueForYear(adoptionData, region.code, year);
     const dotCount = Math.max(0, Math.min(50, Math.round(value / adoptionData.dotScalePercent)));
@@ -754,17 +742,26 @@ function digitalAdoptionMapMarkup(adoptionData, year) {
   });
 
   return `
-      <svg class="adoption-map" viewBox="0 0 1000 540" role="img" aria-label="Regional internet adoption map for ${year}">
-        <defs>
-          <filter id="adoption-shadow" x="-20%" y="-20%" width="150%" height="170%">
-            <feDropShadow dx="18" dy="22" stdDeviation="12" flood-color="#9aa9ba" flood-opacity="0.22"></feDropShadow>
-          </filter>
-        </defs>
-        <rect x="0" y="0" width="1000" height="540" rx="26" class="adoption-map-background"></rect>
-        <g class="adoption-silhouette-group" filter="url(#adoption-shadow)">
-          ${silhouettes}
+      <svg
+        class="adoption-map"
+        viewBox="0 0 ${DIGITAL_ADOPTION_IMAGE.width} ${DIGITAL_ADOPTION_IMAGE.height}"
+        role="img"
+        aria-label="Regional internet adoption map for ${year}"
+      >
+        <image
+          href="${DIGITAL_ADOPTION_IMAGE.href}"
+          x="0"
+          y="0"
+          width="${DIGITAL_ADOPTION_IMAGE.width}"
+          height="${DIGITAL_ADOPTION_IMAGE.height}"
+          preserveAspectRatio="xMidYMid meet"
+        ></image>
+        <g
+          class="adoption-overlay"
+          transform="scale(${DIGITAL_ADOPTION_IMAGE.overlayScaleX} ${DIGITAL_ADOPTION_IMAGE.overlayScaleY})"
+        >
+          ${regions.join("")}
         </g>
-        ${regions.join("")}
       </svg>
     `;
 }
@@ -786,7 +783,7 @@ function digitalAdoptionNote(adoptionData, year) {
   if (year < adoptionData.seriesStartYear) {
     return context;
   }
-  return `${context} Dots become denser as a larger share of each region's population uses the Internet.`;
+  return "Dots become denser as a larger share of each region's population uses the Internet.";
 }
 
 function adoptionValueForYear(adoptionData, regionCode, year) {
