@@ -30,9 +30,55 @@ const DIGITAL_ADOPTION_LAYOUT = [
     accent: "blue",
     seed: 11,
     labelLines: ["North", "America"],
-    labelPosition: { x: 138, y: 150 },
+    labelPosition: { x: 138, y: 212 },
     labelAnchor: "end",
-    leaderTo: { x: 196, y: 170 },
+    leaderTo: { x: 196, y: 202 },
+    leaderAttach: "right-center",
+    dotZones: [
+      {
+        weight: 20,
+        polygons: [
+          [
+            [209, 109], [246, 109], [282, 121], [300, 140], [296, 164], [271, 180],
+            [236, 182], [218, 165], [221, 137]
+          ]
+        ]
+      },
+      {
+        weight: 18,
+        polygons: [
+          [
+            [121, 122], [153, 110], [193, 106], [223, 113], [232, 136], [220, 160],
+            [190, 173], [156, 169], [130, 152], [120, 136]
+          ]
+        ]
+      },
+      {
+        weight: 8,
+        polygons: [
+          [
+            [115, 94], [149, 81], [194, 79], [240, 82], [276, 91], [297, 105],
+            [286, 118], [245, 120], [197, 115], [153, 108], [120, 101]
+          ]
+        ]
+      },
+      {
+        weight: 3,
+        polygons: [
+          [
+            [48, 87], [73, 62], [111, 49], [139, 58], [153, 79], [132, 96], [96, 103], [67, 98]
+          ]
+        ]
+      },
+      {
+        weight: 1,
+        polygons: [
+          [
+            [286, 42], [324, 30], [358, 39], [371, 64], [349, 86], [314, 82], [293, 61]
+          ]
+        ]
+      }
+    ],
     polygons: [
       [
         [48, 87], [73, 62], [111, 49], [139, 58], [153, 79], [132, 96], [96, 103], [67, 98]
@@ -53,9 +99,39 @@ const DIGITAL_ADOPTION_LAYOUT = [
     accent: "orange",
     seed: 27,
     labelLines: ["Latin America", "& Caribbean"],
-    labelPosition: { x: 290, y: 334 },
+    labelPosition: { x: 290, y: 396 },
     labelAnchor: "end",
-    leaderTo: { x: 304, y: 290 },
+    leaderTo: { x: 320, y: 334 },
+    leaderAttach: "right-top",
+    dotZones: [
+      {
+        weight: 22,
+        polygons: [
+          [
+            [270, 265], [300, 255], [333, 267], [348, 293], [351, 326], [339, 358],
+            [316, 372], [286, 360], [269, 331], [263, 295]
+          ]
+        ]
+      },
+      {
+        weight: 16,
+        polygons: [
+          [
+            [248, 214], [265, 205], [289, 208], [309, 221], [319, 242], [307, 254],
+            [285, 250], [265, 239], [250, 222]
+          ]
+        ]
+      },
+      {
+        weight: 12,
+        polygons: [
+          [
+            [263, 336], [284, 325], [301, 338], [307, 366], [301, 401], [289, 438],
+            [271, 465], [257, 448], [252, 414], [255, 374]
+          ]
+        ]
+      }
+    ],
     polygons: [
       [
         [248, 214], [264, 204], [287, 205], [306, 217], [322, 234], [316, 248], [297, 254], [278, 245], [264, 230]
@@ -72,9 +148,48 @@ const DIGITAL_ADOPTION_LAYOUT = [
     accent: "blue",
     seed: 39,
     labelLines: ["Europe &", "Central Asia"],
-    labelPosition: { x: 652, y: 98 },
+    labelPosition: { x: 652, y: 160 },
     labelAnchor: "middle",
-    leaderTo: { x: 652, y: 126 },
+    leaderTo: { x: 650, y: 202 },
+    leaderAttach: "bottom-center",
+    dotZones: [
+      {
+        weight: 24,
+        polygons: [
+          [
+            [451, 88], [482, 78], [518, 77], [549, 86], [567, 102], [564, 121],
+            [540, 134], [506, 135], [473, 127], [451, 110]
+          ]
+        ]
+      },
+      {
+        weight: 16,
+        polygons: [
+          [
+            [545, 103], [579, 93], [623, 89], [657, 94], [686, 103], [699, 118],
+            [691, 135], [662, 144], [625, 140], [589, 138], [556, 129]
+          ]
+        ]
+      },
+      {
+        weight: 8,
+        polygons: [
+          [
+            [684, 91], [726, 92], [766, 100], [789, 114], [786, 129],
+            [756, 139], [719, 136], [691, 128], [679, 110]
+          ]
+        ]
+      },
+      {
+        weight: 2,
+        polygons: [
+          [
+            [688, 116], [721, 119], [752, 128], [777, 139], [774, 151],
+            [743, 154], [709, 148], [689, 138]
+          ]
+        ]
+      }
+    ],
     polygons: [
       [
         [441, 86], [470, 71], [501, 67], [533, 73], [549, 88], [548, 106], [522, 113], [494, 110], [470, 116], [447, 105]
@@ -91,9 +206,10 @@ const DIGITAL_ADOPTION_LAYOUT = [
     accent: "orange",
     seed: 53,
     labelLines: ["Middle East", "& N. Africa"],
-    labelPosition: { x: 624, y: 226 },
+    labelPosition: { x: 624, y: 288 },
     labelAnchor: "start",
-    leaderTo: { x: 611, y: 207 },
+    leaderTo: { x: 606, y: 286 },
+    leaderAttach: "left-center",
     polygons: [
       [
         [448, 149], [480, 146], [515, 148], [549, 152], [579, 163], [585, 182], [564, 194], [529, 193], [495, 188], [467, 180], [449, 166]
@@ -112,9 +228,10 @@ const DIGITAL_ADOPTION_LAYOUT = [
     accent: "blue",
     seed: 67,
     labelLines: ["Sub-Saharan", "Africa"],
-    labelPosition: { x: 490, y: 366 },
+    labelPosition: { x: 490, y: 428 },
     labelAnchor: "end",
-    leaderTo: { x: 519, y: 338 },
+    leaderTo: { x: 519, y: 370 },
+    leaderAttach: "top-center",
     polygons: [
       [
         [469, 196], [500, 198], [530, 205], [555, 219], [572, 242], [582, 273], [587, 307], [580, 343],
@@ -131,9 +248,10 @@ const DIGITAL_ADOPTION_LAYOUT = [
     accent: "orange",
     seed: 79,
     labelLines: ["South", "Asia"],
-    labelPosition: { x: 780, y: 252 },
+    labelPosition: { x: 780, y: 314 },
     labelAnchor: "start",
-    leaderTo: { x: 742, y: 239 },
+    leaderTo: { x: 760, y: 337 },
+    leaderAttach: "left-center",
     polygons: [
       [
         [679, 219], [701, 203], [727, 195], [749, 196], [768, 208], [775, 228], [766, 248], [744, 259], [719, 257], [696, 247], [682, 232]
@@ -146,9 +264,56 @@ const DIGITAL_ADOPTION_LAYOUT = [
     accent: "blue",
     seed: 97,
     labelLines: ["East Asia", "& Pacific"],
-    labelPosition: { x: 904, y: 192 },
+    labelPosition: { x: 882, y: 236 },
     labelAnchor: "start",
-    leaderTo: { x: 858, y: 186 },
+    leaderTo: { x: 792, y: 236 },
+    leaderAttach: "left-center",
+    dotZones: [
+      {
+        weight: 24,
+        polygons: [
+          [
+            [754, 163], [783, 151], [822, 154], [844, 170], [842, 195],
+            [819, 209], [785, 208], [760, 193], [750, 176]
+          ]
+        ]
+      },
+      {
+        weight: 12,
+        polygons: [
+          [
+            [810, 156], [838, 160], [857, 176], [860, 200], [849, 220],
+            [828, 219], [810, 205], [804, 179]
+          ]
+        ]
+      },
+      {
+        weight: 10,
+        polygons: [
+          [
+            [794, 202], [816, 203], [833, 213], [835, 233], [820, 244],
+            [800, 241], [791, 224]
+          ]
+        ]
+      },
+      {
+        weight: 3,
+        polygons: [
+          [
+            [833, 315], [866, 309], [898, 316], [915, 334], [913, 362],
+            [889, 381], [856, 380], [833, 362], [823, 336]
+          ]
+        ]
+      },
+      {
+        weight: 1,
+        polygons: [
+          [
+            [852, 131], [868, 136], [874, 152], [865, 168], [852, 163]
+          ]
+        ]
+      }
+    ],
     polygons: [
       [
         [744, 112], [771, 101], [804, 104], [834, 116], [851, 137], [847, 158], [823, 173], [794, 171], [769, 161], [750, 141]
@@ -725,7 +890,7 @@ function resourceCardMarkup(resource) {
 }
 
 function digitalAdoptionMapMarkup(adoptionData, year) {
-  const regions = DIGITAL_ADOPTION_LAYOUT.map((region) => {
+  const regionLayers = DIGITAL_ADOPTION_LAYOUT.map((region) => {
     const value = adoptionValueForYear(adoptionData, region.code, year);
     const dotCount = Math.max(0, Math.min(50, Math.round(value / adoptionData.dotScalePercent)));
     const dots = getDigitalAdoptionDots(region)
@@ -758,10 +923,13 @@ function digitalAdoptionMapMarkup(adoptionData, year) {
       <g class="adoption-region-group">
         ${polygons}
         <g class="adoption-dots-group">${dots}</g>
-        ${digitalAdoptionLabelMarkup(region, value)}
       </g>
     `;
   });
+
+  const labelLayers = DIGITAL_ADOPTION_LAYOUT.map((region) =>
+    digitalAdoptionLabelMarkup(region, adoptionValueForYear(adoptionData, region.code, year))
+  );
 
   return `
       <svg
@@ -782,7 +950,8 @@ function digitalAdoptionMapMarkup(adoptionData, year) {
           class="adoption-overlay"
           transform="scale(${DIGITAL_ADOPTION_IMAGE.overlayScaleX} ${DIGITAL_ADOPTION_IMAGE.overlayScaleY})"
         >
-          ${regions.join("")}
+          ${regionLayers.join("")}
+          <g class="adoption-label-layer">${labelLayers.join("")}</g>
         </g>
       </svg>
     `;
@@ -826,14 +995,15 @@ function digitalAdoptionLabelMarkup(region, value) {
     )
     .join("");
   const valueY = region.labelPosition.y + valueGap + (labelLines.length - 1) * lineHeight;
+  const leaderPoint = adoptionLeaderPoint(region, boxX, boxY, boxWidth, boxHeight);
   const leaderMarkup = region.leaderTo
     ? `
         <line
           class="adoption-label-leader"
           x1="${region.leaderTo.x}"
           y1="${region.leaderTo.y}"
-          x2="${adoptionLeaderTargetX(boxX, boxWidth, anchor)}"
-          y2="${boxY + boxHeight / 2}"
+          x2="${leaderPoint.x}"
+          y2="${leaderPoint.y}"
         ></line>
       `
     : "";
@@ -903,26 +1073,42 @@ function getDigitalAdoptionDots(region) {
   }
 
   const totalDots = 50;
-  const polygonAreas = region.polygons.map((polygon) => polygonArea(polygon));
-  const totalArea = polygonAreas.reduce((sum, area) => sum + area, 0);
-  const polygonDotCounts = polygonAreas.map((area) => Math.max(1, Math.floor((area / totalArea) * totalDots)));
+  const zoneDefinitions = region.dotZones?.length
+    ? region.dotZones
+    : [{ weight: 1, polygons: region.polygons }];
+  const zoneCounts = distributeDotCounts(
+    totalDots,
+    zoneDefinitions.map((zone) => zone.weight ?? totalPolygonArea(zone.polygons))
+  );
+  const dots = zoneDefinitions.flatMap((zone, zoneIndex) =>
+    generateDigitalAdoptionDotsForPolygons(
+      zone.polygons,
+      zoneCounts[zoneIndex],
+      region.seed + zoneIndex * 211
+    )
+  );
 
-  while (polygonDotCounts.reduce((sum, count) => sum + count, 0) > totalDots) {
-    const index = polygonDotCounts.findIndex((count) => count > 1);
-    polygonDotCounts[index] -= 1;
+  DIGITAL_ADOPTION_DOT_CACHE.set(region.code, dots.slice(0, totalDots));
+  return DIGITAL_ADOPTION_DOT_CACHE.get(region.code);
+}
+
+function generateDigitalAdoptionDotsForPolygons(polygons, totalDots, seedBase) {
+  if (!polygons?.length || totalDots <= 0) {
+    return [];
   }
 
-  while (polygonDotCounts.reduce((sum, count) => sum + count, 0) < totalDots) {
-    const index = polygonDotCounts.findIndex((_, idx) => polygonAreas[idx] === Math.max(...polygonAreas));
-    polygonDotCounts[index] += 1;
-  }
-
+  const polygonAreas = polygons.map((polygon) => polygonArea(polygon));
+  const polygonDotCounts = distributeDotCounts(totalDots, polygonAreas);
   const dots = [];
 
-  region.polygons.forEach((polygon, polygonIndex) => {
+  polygons.forEach((polygon, polygonIndex) => {
     const count = polygonDotCounts[polygonIndex];
+    if (!count) {
+      return;
+    }
+
     const bounds = polygonBounds(polygon);
-    const random = mulberry32(region.seed + polygonIndex * 97);
+    const random = mulberry32(seedBase + polygonIndex * 97);
     const polygonDots = [];
     let attempts = 0;
     const maxAttempts = Math.max(8000, count * 1600);
@@ -939,8 +1125,41 @@ function getDigitalAdoptionDots(region) {
     dots.push(...polygonDots);
   });
 
-  DIGITAL_ADOPTION_DOT_CACHE.set(region.code, dots.slice(0, totalDots));
-  return DIGITAL_ADOPTION_DOT_CACHE.get(region.code);
+  return dots;
+}
+
+function distributeDotCounts(totalDots, weights) {
+  if (!weights.length || totalDots <= 0) {
+    return [];
+  }
+
+  const safeWeights = weights.map((weight) => Math.max(0.0001, Number(weight) || 0.0001));
+  const totalWeight = safeWeights.reduce((sum, weight) => sum + weight, 0);
+  const exactCounts = safeWeights.map((weight) => (weight / totalWeight) * totalDots);
+  const counts = exactCounts.map((value) => Math.floor(value));
+  let assigned = counts.reduce((sum, count) => sum + count, 0);
+
+  while (assigned < totalDots) {
+    let bestIndex = 0;
+    let bestRemainder = -1;
+
+    exactCounts.forEach((value, index) => {
+      const remainder = value - counts[index];
+      if (remainder > bestRemainder) {
+        bestRemainder = remainder;
+        bestIndex = index;
+      }
+    });
+
+    counts[bestIndex] += 1;
+    assigned += 1;
+  }
+
+  return counts;
+}
+
+function totalPolygonArea(polygons) {
+  return polygons.reduce((sum, polygon) => sum + polygonArea(polygon), 0);
 }
 
 function primeDigitalAdoptionMask() {
@@ -1117,6 +1336,52 @@ function adoptionLeaderTargetX(boxX, width, anchor) {
     return boxX + width;
   }
   return boxX + width / 2;
+}
+
+function adoptionLeaderPoint(region, boxX, boxY, boxWidth, boxHeight) {
+  const attach = region.leaderAttach ?? defaultLeaderAttach(region.labelAnchor);
+
+  switch (attach) {
+    case "left-top":
+      return { x: boxX, y: boxY + 12 };
+    case "left-center":
+      return { x: boxX, y: boxY + boxHeight / 2 };
+    case "left-bottom":
+      return { x: boxX, y: boxY + boxHeight - 12 };
+    case "right-top":
+      return { x: boxX + boxWidth, y: boxY + 12 };
+    case "right-center":
+      return { x: boxX + boxWidth, y: boxY + boxHeight / 2 };
+    case "right-bottom":
+      return { x: boxX + boxWidth, y: boxY + boxHeight - 12 };
+    case "top-left":
+      return { x: boxX + 14, y: boxY };
+    case "top-center":
+      return { x: boxX + boxWidth / 2, y: boxY };
+    case "top-right":
+      return { x: boxX + boxWidth - 14, y: boxY };
+    case "bottom-left":
+      return { x: boxX + 14, y: boxY + boxHeight };
+    case "bottom-center":
+      return { x: boxX + boxWidth / 2, y: boxY + boxHeight };
+    case "bottom-right":
+      return { x: boxX + boxWidth - 14, y: boxY + boxHeight };
+    default:
+      return {
+        x: adoptionLeaderTargetX(boxX, boxWidth, region.labelAnchor ?? "middle"),
+        y: boxY + boxHeight / 2
+      };
+  }
+}
+
+function defaultLeaderAttach(anchor) {
+  if (anchor === "start") {
+    return "left-center";
+  }
+  if (anchor === "end") {
+    return "right-center";
+  }
+  return "bottom-center";
 }
 
 function formatAdoptionValue(value) {

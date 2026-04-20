@@ -627,6 +627,11 @@ body.ready .site-footer {
   dominant-baseline: hanging;
 }
 
+.adoption-label-layer,
+.adoption-label-group {
+  pointer-events: none;
+}
+
 .adoption-label-box {
   fill: rgba(255, 252, 248, 0.92);
   stroke: rgba(22, 49, 72, 0.14);
