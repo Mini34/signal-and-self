@@ -560,6 +560,156 @@ body.ready .site-footer {
   gap: 1rem;
 }
 
+.adoption-panel {
+  display: grid;
+  gap: 1rem;
+  overflow: hidden;
+}
+
+.adoption-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.adoption-toolbar h3 {
+  font-size: 2rem;
+}
+
+.adoption-note {
+  max-width: 44ch;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.adoption-map-shell {
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(22, 35, 59, 0.08);
+  background: linear-gradient(180deg, rgba(255, 252, 247, 0.88), rgba(243, 236, 226, 0.7));
+}
+
+.adoption-map {
+  width: 100%;
+  height: auto;
+}
+
+.adoption-map-background {
+  fill: rgba(255, 249, 241, 0.85);
+}
+
+.adoption-grid-line {
+  fill: none;
+  stroke: rgba(22, 35, 59, 0.08);
+  stroke-width: 1.2;
+  stroke-dasharray: 5 8;
+}
+
+.adoption-region {
+  stroke: rgba(22, 35, 59, 0.22);
+  stroke-width: 2;
+}
+
+.adoption-region.adoption-accent-blue {
+  fill: rgba(123, 175, 216, 0.28);
+}
+
+.adoption-region.adoption-accent-orange {
+  fill: rgba(243, 178, 93, 0.3);
+}
+
+.adoption-dot {
+  opacity: 0;
+  transform-origin: center;
+  animation: adoption-dot-in 320ms ease forwards;
+}
+
+.adoption-dot.adoption-accent-blue {
+  fill: #1b6d9f;
+}
+
+.adoption-dot.adoption-accent-orange {
+  fill: #d46d22;
+}
+
+.adoption-label-title,
+.adoption-label-value {
+  text-anchor: middle;
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+}
+
+.adoption-label-title {
+  font-size: 12px;
+  font-weight: 700;
+  fill: var(--ink);
+  letter-spacing: 0.08em;
+}
+
+.adoption-label-value {
+  font-size: 13px;
+  fill: var(--muted);
+}
+
+.adoption-slider-block {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.adoption-slider-label {
+  font-weight: 700;
+}
+
+.adoption-slider-block input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+.adoption-ticks {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.adoption-summary {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.adoption-stat {
+  min-height: 104px;
+}
+
+.adoption-stat.adoption-accent-blue {
+  background: linear-gradient(155deg, rgba(160, 205, 239, 0.72), rgba(208, 229, 245, 0.92));
+}
+
+.adoption-stat.adoption-accent-orange {
+  background: linear-gradient(155deg, rgba(247, 191, 117, 0.78), rgba(252, 225, 184, 0.94));
+}
+
+.adoption-footer {
+  display: grid;
+  gap: 0.5rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+@keyframes adoption-dot-in {
+  from {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .chart-shell {
   padding: 1rem;
   border-radius: var(--radius-md);
@@ -817,6 +967,10 @@ body.ready .site-footer {
 
   .timeline-date {
     padding-top: 0;
+  }
+
+  .adoption-toolbar {
+    align-items: start;
   }
 }
 
