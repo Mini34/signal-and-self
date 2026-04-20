@@ -30,9 +30,9 @@ const DIGITAL_ADOPTION_LAYOUT = [
     accent: "blue",
     seed: 11,
     labelLines: ["North", "America"],
-    labelPosition: { x: 142, y: 118 },
+    labelPosition: { x: 138, y: 150 },
     labelAnchor: "end",
-    leaderTo: { x: 198, y: 146 },
+    leaderTo: { x: 196, y: 170 },
     polygons: [
       [
         [48, 87], [73, 62], [111, 49], [139, 58], [153, 79], [132, 96], [96, 103], [67, 98]
@@ -53,9 +53,9 @@ const DIGITAL_ADOPTION_LAYOUT = [
     accent: "orange",
     seed: 27,
     labelLines: ["Latin America", "& Caribbean"],
-    labelPosition: { x: 294, y: 292 },
+    labelPosition: { x: 290, y: 334 },
     labelAnchor: "end",
-    leaderTo: { x: 303, y: 258 },
+    leaderTo: { x: 304, y: 290 },
     polygons: [
       [
         [248, 214], [264, 204], [287, 205], [306, 217], [322, 234], [316, 248], [297, 254], [278, 245], [264, 230]
@@ -72,9 +72,9 @@ const DIGITAL_ADOPTION_LAYOUT = [
     accent: "blue",
     seed: 39,
     labelLines: ["Europe &", "Central Asia"],
-    labelPosition: { x: 650, y: 60 },
+    labelPosition: { x: 652, y: 98 },
     labelAnchor: "middle",
-    leaderTo: { x: 650, y: 100 },
+    leaderTo: { x: 652, y: 126 },
     polygons: [
       [
         [441, 86], [470, 71], [501, 67], [533, 73], [549, 88], [548, 106], [522, 113], [494, 110], [470, 116], [447, 105]
@@ -91,9 +91,9 @@ const DIGITAL_ADOPTION_LAYOUT = [
     accent: "orange",
     seed: 53,
     labelLines: ["Middle East", "& N. Africa"],
-    labelPosition: { x: 566, y: 174 },
-    labelAnchor: "end",
-    leaderTo: { x: 610, y: 185 },
+    labelPosition: { x: 624, y: 226 },
+    labelAnchor: "start",
+    leaderTo: { x: 611, y: 207 },
     polygons: [
       [
         [448, 149], [480, 146], [515, 148], [549, 152], [579, 163], [585, 182], [564, 194], [529, 193], [495, 188], [467, 180], [449, 166]
@@ -112,9 +112,9 @@ const DIGITAL_ADOPTION_LAYOUT = [
     accent: "blue",
     seed: 67,
     labelLines: ["Sub-Saharan", "Africa"],
-    labelPosition: { x: 492, y: 312 },
+    labelPosition: { x: 490, y: 366 },
     labelAnchor: "end",
-    leaderTo: { x: 520, y: 312 },
+    leaderTo: { x: 519, y: 338 },
     polygons: [
       [
         [469, 196], [500, 198], [530, 205], [555, 219], [572, 242], [582, 273], [587, 307], [580, 343],
@@ -131,9 +131,9 @@ const DIGITAL_ADOPTION_LAYOUT = [
     accent: "orange",
     seed: 79,
     labelLines: ["South", "Asia"],
-    labelPosition: { x: 776, y: 214 },
+    labelPosition: { x: 780, y: 252 },
     labelAnchor: "start",
-    leaderTo: { x: 739, y: 226 },
+    leaderTo: { x: 742, y: 239 },
     polygons: [
       [
         [679, 219], [701, 203], [727, 195], [749, 196], [768, 208], [775, 228], [766, 248], [744, 259], [719, 257], [696, 247], [682, 232]
@@ -146,9 +146,9 @@ const DIGITAL_ADOPTION_LAYOUT = [
     accent: "blue",
     seed: 97,
     labelLines: ["East Asia", "& Pacific"],
-    labelPosition: { x: 896, y: 146 },
+    labelPosition: { x: 904, y: 192 },
     labelAnchor: "start",
-    leaderTo: { x: 855, y: 168 },
+    leaderTo: { x: 858, y: 186 },
     polygons: [
       [
         [744, 112], [771, 101], [804, 104], [834, 116], [851, 137], [847, 158], [823, 173], [794, 171], [769, 161], [750, 141]
