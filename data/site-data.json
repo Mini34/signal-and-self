@@ -1,0 +1,404 @@
+{
+  "profile": {
+    "name": "Mina O.",
+    "tagline": "Tracking thoughtful online habits through projects, reflection, and measurable progress.",
+    "definition": "Digital citizenship means showing up online with the same care, accountability, and curiosity that I expect in person. It includes how I verify information, protect privacy, use technology ethically, and contribute to the communities I rely on.",
+    "mission": "My mission is to build a digital life that is useful, respectful, and reflective. This site documents the work behind that goal so the portfolio stays grounded in action instead of intention alone."
+  },
+  "home": {
+    "heroKicker": "Digital citizenship portfolio",
+    "projectSummary": "This project turns digital citizenship into something visible and accountable. I use the site to document what I am learning, where I am improving, and how I contribute to healthier online spaces.",
+    "whyItMattersPoints": [
+      {
+        "title": "Trust is earned online",
+        "text": "Verification, attribution, and respectful participation make digital spaces safer and more credible."
+      },
+      {
+        "title": "Good habits compound",
+        "text": "Small choices around privacy, attention, and consent shape every class project, post, and conversation."
+      },
+      {
+        "title": "Reflection prevents drift",
+        "text": "Metrics and short written check-ins help me notice when convenience starts replacing care."
+      }
+    ],
+    "statsPreview": [
+      "projects_completed",
+      "resources_shared",
+      "learning_hours",
+      "improvement_streak"
+    ]
+  },
+  "categories": [
+    {
+      "id": "participation",
+      "title": "Responsible online participation",
+      "description": "How I contribute to conversations, collaborate, and respond to others with clarity and respect.",
+      "focus": "Posting with context, citing sources, and choosing constructive language."
+    },
+    {
+      "id": "privacy-security",
+      "title": "Privacy and security awareness",
+      "description": "The habits I use to protect my data and respect other people's boundaries online.",
+      "focus": "Reviewing app permissions, using strong authentication, and practicing consent."
+    },
+    {
+      "id": "media-literacy",
+      "title": "Media literacy",
+      "description": "My ability to evaluate sources, spot misinformation, and understand how digital content persuades.",
+      "focus": "Cross-checking claims, reading beyond headlines, and tracking evidence quality."
+    },
+    {
+      "id": "ethical-tech",
+      "title": "Ethical technology use",
+      "description": "How I think about fairness, harm, bias, and transparency when I use new tools.",
+      "focus": "Questioning automation, naming limitations, and avoiding careless AI use."
+    },
+    {
+      "id": "community",
+      "title": "Community contribution",
+      "description": "The ways I support classmates, peers, and online communities through helpful digital actions.",
+      "focus": "Sharing resources, answering questions, and building tools that lower friction for others."
+    },
+    {
+      "id": "reflection",
+      "title": "Reflection and self-improvement",
+      "description": "A record of how I review my own habits and adjust when they are not aligned with my values.",
+      "focus": "Writing reflections, checking progress, and refining goals month by month."
+    }
+  ],
+  "personalGoals": [
+    "Keep source verification consistent enough that I can explain why I trust what I share.",
+    "Treat privacy settings as a repeated maintenance task instead of a one-time setup step.",
+    "Use AI as a support tool only when I can still account for accuracy, authorship, and impact.",
+    "Contribute at least one useful resource, walkthrough, or peer-support action every week."
+  ],
+  "codeOfConduct": [
+    "Verify before sharing, especially when content is emotionally charged or urgent.",
+    "Protect private information and ask for consent before reposting or forwarding someone else's content.",
+    "Credit ideas, code, and creative work clearly.",
+    "Use disagreement to clarify, not to embarrass or escalate.",
+    "Pause when a tool saves time but weakens responsibility."
+  ],
+  "principles": [
+    "I will verify information before sharing it.",
+    "I will use technology in ways that help rather than harm.",
+    "I will protect my privacy and respect other people's privacy.",
+    "I will contribute positively to online communities.",
+    "I will be transparent about the role of AI and automation in my work.",
+    "I will practice consent in digital spaces, not just compliance.",
+    "I will reflect on how my digital habits affect myself and others."
+  ],
+  "stats": [
+    {
+      "id": "projects_completed",
+      "label": "Coding projects completed",
+      "value": 9,
+      "suffix": "",
+      "period": "Total",
+      "goal": 12,
+      "trend": "+2 this quarter",
+      "description": "Projects that include a clear public good, learning outcome, or safety angle."
+    },
+    {
+      "id": "commits_this_month",
+      "label": "GitHub commits this month",
+      "value": 42,
+      "suffix": "",
+      "period": "April",
+      "goal": 50,
+      "trend": "Steady across 4 weeks",
+      "description": "Commit activity on portfolio, learning, and community-oriented coding work."
+    },
+    {
+      "id": "resources_shared",
+      "label": "Educational resources shared",
+      "value": 18,
+      "suffix": "",
+      "period": "Year to date",
+      "goal": 24,
+      "trend": "3 added this week",
+      "description": "Guides, articles, and checklists shared with peers to support safer digital habits."
+    },
+    {
+      "id": "reflections_written",
+      "label": "Reflections written",
+      "value": 14,
+      "suffix": "",
+      "period": "Year to date",
+      "goal": 18,
+      "trend": "Monthly habit intact",
+      "description": "Short written reviews of online choices, lessons, and course corrections."
+    },
+    {
+      "id": "learning_hours",
+      "label": "Hours spent on digital learning",
+      "value": 73,
+      "suffix": "h",
+      "period": "Year to date",
+      "goal": 96,
+      "trend": "6h this week",
+      "description": "Time spent studying privacy, security, media literacy, ethics, and related skills."
+    },
+    {
+      "id": "community_support",
+      "label": "Community support contributions",
+      "value": 27,
+      "suffix": "",
+      "period": "Year to date",
+      "goal": 36,
+      "trend": "4 check-ins this month",
+      "description": "Peer support actions such as answering questions, reviewing drafts, and sharing fixes."
+    },
+    {
+      "id": "safety_topics",
+      "label": "Digital safety topics studied",
+      "value": 11,
+      "suffix": "",
+      "period": "Year to date",
+      "goal": 15,
+      "trend": "AI consent added",
+      "description": "Distinct topics studied deeply enough to summarize and apply in practice."
+    },
+    {
+      "id": "monthly_goals",
+      "label": "Monthly goals completed",
+      "value": 4,
+      "suffix": "/5",
+      "period": "Current month",
+      "goal": 5,
+      "trend": "One goal left",
+      "description": "Progress against the specific habits and commitments I set at the start of the month."
+    },
+    {
+      "id": "improvement_streak",
+      "label": "Current improvement streak",
+      "value": 21,
+      "suffix": " days",
+      "period": "Current run",
+      "goal": 30,
+      "trend": "Daily check-in active",
+      "description": "Consecutive days with at least one intentional learning, reflection, or contribution action."
+    }
+  ],
+  "dashboard": {
+    "chartTitle": "Learning momentum",
+    "chartDescription": "A quick view of how consistently I am investing time in digital citizenship learning.",
+    "periods": {
+      "monthly": {
+        "label": "Monthly",
+        "summary": "Learning hours logged by month",
+        "points": [
+          { "label": "Nov", "value": 8 },
+          { "label": "Dec", "value": 10 },
+          { "label": "Jan", "value": 11 },
+          { "label": "Feb", "value": 12 },
+          { "label": "Mar", "value": 14 },
+          { "label": "Apr", "value": 18 }
+        ],
+        "focus": [
+          "Added a repeatable source-check workflow for class research.",
+          "Reviewed app permission settings on devices and shared the checklist with peers.",
+          "Documented AI-use boundaries for drafting and study support."
+        ]
+      },
+      "weekly": {
+        "label": "Weekly",
+        "summary": "Learning hours logged over the last 6 weeks",
+        "points": [
+          { "label": "Week 1", "value": 3 },
+          { "label": "Week 2", "value": 4 },
+          { "label": "Week 3", "value": 5 },
+          { "label": "Week 4", "value": 4 },
+          { "label": "Week 5", "value": 6 },
+          { "label": "Week 6", "value": 7 }
+        ],
+        "focus": [
+          "Fact-checked AI summaries against original articles before using them in notes.",
+          "Updated password hygiene notes and reviewed multi-factor settings.",
+          "Posted one peer-support answer and one curated learning resource."
+        ]
+      }
+    }
+  },
+  "reflections": [
+    {
+      "id": "reflection-ai-summaries",
+      "title": "Cross-checking AI summaries before I trust them",
+      "date": "2026-04-17",
+      "category": "Media literacy",
+      "content": [
+        "AI summaries are useful for orientation, but they often compress uncertainty out of a topic. This week I started checking every summary against at least one primary source before I reuse any claim.",
+        "That extra step slowed me down slightly, but it improved my confidence and made my notes more accurate. Convenience is only ethical when it still leaves room for responsibility."
+      ],
+      "tags": ["AI", "verification", "research"],
+      "featured": true
+    },
+    {
+      "id": "reflection-screen-time",
+      "title": "Reducing passive screen time after 9 PM",
+      "date": "2026-04-10",
+      "category": "Reflection and self-improvement",
+      "content": [
+        "I noticed that tired scrolling made me less thoughtful about what I liked, shared, and clicked. I replaced late-night scrolling with a short shutdown checklist and one intentional article or video.",
+        "The change helped me separate rest from distraction and made my online time feel more chosen than automatic."
+      ],
+      "tags": ["screen time", "focus", "habits"],
+      "featured": false
+    },
+    {
+      "id": "reflection-privacy-defaults",
+      "title": "Revisiting privacy defaults on every new app",
+      "date": "2026-04-05",
+      "category": "Privacy and security awareness",
+      "content": [
+        "I used to treat privacy setup as a one-time task, but every new app quietly adds fresh decisions. I now check visibility, permissions, contact sync, and notification settings before I start using a service regularly.",
+        "That routine turns privacy from a vague value into a repeatable behavior."
+      ],
+      "tags": ["privacy", "apps", "security"],
+      "featured": false
+    },
+    {
+      "id": "reflection-group-chat",
+      "title": "Writing clearer and kinder replies in group chats",
+      "date": "2026-03-28",
+      "category": "Community contribution",
+      "content": [
+        "Short messages travel fast, and tone gets flattened easily. I started pausing before sending corrections or reminders, especially in group chats where public friction can grow quickly.",
+        "Being concise does not require being sharp. Clear and respectful replies reduce noise and help people stay engaged."
+      ],
+      "tags": ["communication", "community", "respect"],
+      "featured": false
+    },
+    {
+      "id": "reflection-productivity-tools",
+      "title": "When productivity tools become distractions",
+      "date": "2026-03-19",
+      "category": "Ethical technology use",
+      "content": [
+        "I spent too much time tuning tools that were supposed to save time. The problem was not the apps themselves, but the way I kept optimizing instead of doing the work.",
+        "I now ask whether a tool improves clarity, safety, or output quality. If it mainly adds novelty, I treat it as optional."
+      ],
+      "tags": ["productivity", "tools", "attention"],
+      "featured": false
+    },
+    {
+      "id": "reflection-shared-docs",
+      "title": "Helping classmates cite sources in a shared document",
+      "date": "2026-03-09",
+      "category": "Responsible online participation",
+      "content": [
+        "A shared study document was growing quickly, but sources were inconsistent. I added a simple citation pattern and a note explaining why link quality matters when notes get reused.",
+        "The fix was small, but it made the document more trustworthy and easier for everyone to build on."
+      ],
+      "tags": ["citations", "collaboration", "study"],
+      "featured": false
+    }
+  ],
+  "projects": [
+    {
+      "id": "project-privacy-checklist",
+      "title": "Privacy settings starter checklist",
+      "description": "A simple checklist for reviewing account visibility, permissions, contact sync, and notification defaults on new apps.",
+      "skills": ["Content design", "Privacy review", "Clear writing"],
+      "impact": "It turns privacy awareness into a repeatable first-step habit instead of a vague intention.",
+      "link": "reflections.html#reflection-privacy-defaults",
+      "linkLabel": "Related reflection",
+      "status": "Completed"
+    },
+    {
+      "id": "project-source-workflow",
+      "title": "Source verification workflow",
+      "description": "A lightweight process for checking authorship, evidence, recency, and context before reusing an online claim.",
+      "skills": ["Research", "Media literacy", "Process design"],
+      "impact": "It reduces accidental misinformation by making verification visible and easy to repeat.",
+      "link": "reflections.html#reflection-ai-summaries",
+      "linkLabel": "Read the reflection",
+      "status": "Completed"
+    },
+    {
+      "id": "project-peer-support",
+      "title": "Peer support mini library",
+      "description": "A shared collection of short guides and links for classmates working through digital safety and study-tool questions.",
+      "skills": ["Resource curation", "Peer support", "Documentation"],
+      "impact": "It lowers friction for asking questions and helps good digital habits spread through the group.",
+      "link": "timeline.html#update-peer-library",
+      "linkLabel": "See the update",
+      "status": "Ongoing"
+    },
+    {
+      "id": "project-ai-boundaries",
+      "title": "Responsible AI use guide",
+      "description": "A personal guideline for when AI can support drafting or brainstorming and when it needs stronger human review.",
+      "skills": ["AI literacy", "Ethics", "Policy writing"],
+      "impact": "It keeps efficiency from outrunning accountability, especially when work may influence others.",
+      "link": "timeline.html#update-ai-guide",
+      "linkLabel": "View changelog note",
+      "status": "Completed"
+    },
+    {
+      "id": "project-distract-audit",
+      "title": "Intentional screen-time audit",
+      "description": "A weekly review of the apps, habits, and triggers that pull my attention away from meaningful digital work.",
+      "skills": ["Habit tracking", "Reflection", "Behavior review"],
+      "impact": "It helps me separate useful digital activity from passive consumption and redesign my routines.",
+      "link": "reflections.html#reflection-screen-time",
+      "linkLabel": "Review the reflection",
+      "status": "Ongoing"
+    },
+    {
+      "id": "project-community-campaign",
+      "title": "Consent in digital spaces campaign",
+      "description": "A planned set of short visual reminders about reposting, tagging, and sharing screenshots responsibly.",
+      "skills": ["Campaign planning", "Visual communication", "Community guidelines"],
+      "impact": "It frames consent as an everyday digital habit, not just a rule people remember after harm happens.",
+      "link": "about.html#values",
+      "linkLabel": "View values section",
+      "status": "Planned"
+    }
+  ],
+  "updates": [
+    {
+      "id": "update-dashboard",
+      "date": "2026-04-18",
+      "category": "Site update",
+      "title": "Added a dashboard view for weekly and monthly learning progress",
+      "why": "I wanted the site to show progress over time instead of isolated totals."
+    },
+    {
+      "id": "update-reflection-log",
+      "date": "2026-04-17",
+      "category": "Reflection",
+      "title": "Published a reflection on fact-checking AI summaries",
+      "why": "It marked a useful shift from convenience-first research to evidence-first research."
+    },
+    {
+      "id": "update-peer-library",
+      "date": "2026-04-14",
+      "category": "Community contribution",
+      "title": "Expanded the peer support mini library with safety and citation resources",
+      "why": "Classmates needed practical links they could use quickly without sorting through long articles."
+    },
+    {
+      "id": "update-ai-guide",
+      "date": "2026-04-09",
+      "category": "Ethical technology use",
+      "title": "Drafted a personal guide for responsible AI use",
+      "why": "I wanted clearer boundaries for when AI helps and when it risks weakening accountability."
+    },
+    {
+      "id": "update-privacy-checklist",
+      "date": "2026-04-05",
+      "category": "Privacy and security awareness",
+      "title": "Created a starter checklist for privacy settings on new apps",
+      "why": "Default settings often make decisions for me unless I slow down and review them."
+    },
+    {
+      "id": "update-values",
+      "date": "2026-03-30",
+      "category": "Values",
+      "title": "Revised the site's digital citizenship commitments",
+      "why": "The values needed to sound actionable enough to guide real choices, not just describe ideals."
+    }
+  ]
+}
