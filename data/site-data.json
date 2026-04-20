@@ -144,11 +144,11 @@
     {
       "id": "reflections_written",
       "label": "Reflections written",
-      "value": 14,
+      "value": 15,
       "suffix": "",
       "period": "Year to date",
       "goal": 18,
-      "trend": "Monthly habit intact",
+      "trend": "Archive expanded",
       "description": "Short written reviews of online choices, lessons, and course corrections."
     },
     {
@@ -321,6 +321,18 @@
   },
   "reflections": [
     {
+      "id": "reflection-digital-footprint-audit",
+      "title": "Reviewing my digital footprint before the next school year",
+      "date": "2026-04-19",
+      "category": "Reflection and self-improvement",
+      "content": [
+        "As I look ahead to starting electrical engineering in Canada, I wanted to review what I am publicly attaching to my name online. That meant checking bios, old posts, shared profiles, and the tone of the spaces where I participate most.",
+        "The goal was not to erase personality, but to make sure my digital footprint reflects the kind of learner and community member I want to be: curious, responsible, and increasingly aware of cybersecurity and digital citizenship."
+      ],
+      "tags": ["digital footprint", "identity", "reflection"],
+      "featured": false
+    },
+    {
       "id": "reflection-ai-summaries",
       "title": "Cross-checking AI summaries before I trust them",
       "date": "2026-04-17",
@@ -391,6 +403,102 @@
       ],
       "tags": ["citations", "collaboration", "study"],
       "featured": false
+    },
+    {
+      "id": "reflection-fast-moving-stories",
+      "title": "Slowing down before repeating fast-moving stories",
+      "date": "2026-02-25",
+      "category": "Media literacy",
+      "content": [
+        "A story moved quickly through class chats this week, and my first instinct was to repeat it before I had checked the source. I stopped, looked for the original report, and realized the summary being shared had left out important context.",
+        "That moment reminded me that media literacy is often about slowing down when everyone else is speeding up. Accuracy is part of respect."
+      ],
+      "tags": ["misinformation", "fact-checking", "context"],
+      "featured": false
+    },
+    {
+      "id": "reflection-password-routine",
+      "title": "Treating password hygiene like regular maintenance",
+      "date": "2026-02-08",
+      "category": "Privacy and security awareness",
+      "content": [
+        "I used to think about passwords mostly when a site forced me to update one. This month I started treating password checks as maintenance: review reused passwords, confirm multi-factor authentication, and update recovery methods.",
+        "Cybersecurity feels more manageable when I break it into repeated habits instead of waiting for a problem to force a reaction."
+      ],
+      "tags": ["passwords", "security", "habits"],
+      "featured": false
+    },
+    {
+      "id": "reflection-notification-reset",
+      "title": "Resetting notification habits after winter break",
+      "date": "2026-01-15",
+      "category": "Reflection and self-improvement",
+      "content": [
+        "After winter break I noticed I was reaching for my phone more often than I wanted, mostly because notifications kept interrupting study time. I reviewed which apps actually deserve immediate attention and turned most of the rest into scheduled check-ins.",
+        "The change felt small, but it gave me more control over attention and made my online time feel intentional again."
+      ],
+      "tags": ["notifications", "focus", "screen time"],
+      "featured": false
+    },
+    {
+      "id": "reflection-shared-guide",
+      "title": "Making a shared troubleshooting guide instead of repeating the same fixes",
+      "date": "2025-12-04",
+      "category": "Community contribution",
+      "content": [
+        "A few of us kept running into the same digital tool issues, and I realized I was typing the same answers over and over. I turned those answers into a short shared guide with steps, screenshots, and a note on safe account setup.",
+        "Helping once is useful, but documenting a solution can help more people with less friction."
+      ],
+      "tags": ["documentation", "community", "support"],
+      "featured": false
+    },
+    {
+      "id": "reflection-ai-study-boundaries",
+      "title": "Using AI for study support without outsourcing my thinking",
+      "date": "2025-11-07",
+      "category": "Ethical technology use",
+      "content": [
+        "I experimented with using AI to organize study questions and explain unfamiliar terms, but I kept noticing how easy it was to let the tool become the voice of the work. That is useful for speed, but risky for learning.",
+        "I set a simple rule for myself: AI can help me start, compare, or check, but it should not replace the part where I explain the idea in my own words."
+      ],
+      "tags": ["AI", "study habits", "ethics"],
+      "featured": false
+    },
+    {
+      "id": "reflection-location-permissions",
+      "title": "Reviewing location permissions before convenience becomes the default",
+      "date": "2025-10-10",
+      "category": "Privacy and security awareness",
+      "content": [
+        "I realized several apps had access to my location even though they did not need it all the time. It happened gradually because tapping allow was easier than thinking through the tradeoff in the moment.",
+        "This reflection pushed me to switch more apps to while-using or never. Privacy is often decided in the tiny moments when convenience asks for less thought."
+      ],
+      "tags": ["privacy", "permissions", "apps"],
+      "featured": false
+    },
+    {
+      "id": "reflection-reposting-carefully",
+      "title": "Checking captions and claims before reposting",
+      "date": "2025-09-14",
+      "category": "Responsible online participation",
+      "content": [
+        "I noticed how easy it is to repost something because it sounds right or matches the mood of the moment. This week I made myself read beyond the caption before sharing anything that sounded factual or urgent.",
+        "That small pause changed how I think about participation online. Sharing is not neutral when other people may trust the signal I send."
+      ],
+      "tags": ["sharing", "verification", "responsibility"],
+      "featured": false
+    },
+    {
+      "id": "reflection-first-commitment",
+      "title": "Why I started tracking digital citizenship deliberately",
+      "date": "2025-08-21",
+      "category": "Responsible online participation",
+      "content": [
+        "I wanted a way to think more seriously about the kind of person I am online, not just the things I post. Digital citizenship felt like the right starting point because it connects behavior, safety, community, and reflection.",
+        "Beginning this log made the topic feel practical. Instead of treating good online behavior as a vague ideal, I could start recording choices, patterns, and improvements over time."
+      ],
+      "tags": ["digital citizenship", "beginnings", "goals"],
+      "featured": false
     }
   ],
   "projects": [
@@ -456,6 +564,13 @@
     }
   ],
   "updates": [
+    {
+      "id": "update-reflection-archive",
+      "date": "2026-04-19",
+      "category": "Reflection",
+      "title": "Expanded the reflection archive back to August 21, 2025",
+      "why": "I wanted the site to show a longer timeline of growth rather than only the most recent months of reflection."
+    },
     {
       "id": "update-about-global-stats",
       "date": "2026-04-19",
