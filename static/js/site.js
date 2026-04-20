@@ -30,7 +30,9 @@ const DIGITAL_ADOPTION_LAYOUT = [
     accent: "blue",
     seed: 11,
     labelLines: ["North", "America"],
-    labelPosition: { x: 212, y: 120 },
+    labelPosition: { x: 142, y: 118 },
+    labelAnchor: "end",
+    leaderTo: { x: 198, y: 146 },
     polygons: [
       [
         [48, 87], [73, 62], [111, 49], [139, 58], [153, 79], [132, 96], [96, 103], [67, 98]
@@ -51,7 +53,9 @@ const DIGITAL_ADOPTION_LAYOUT = [
     accent: "orange",
     seed: 27,
     labelLines: ["Latin America", "& Caribbean"],
-    labelPosition: { x: 307, y: 292 },
+    labelPosition: { x: 294, y: 292 },
+    labelAnchor: "end",
+    leaderTo: { x: 303, y: 258 },
     polygons: [
       [
         [248, 214], [264, 204], [287, 205], [306, 217], [322, 234], [316, 248], [297, 254], [278, 245], [264, 230]
@@ -68,7 +72,9 @@ const DIGITAL_ADOPTION_LAYOUT = [
     accent: "blue",
     seed: 39,
     labelLines: ["Europe &", "Central Asia"],
-    labelPosition: { x: 625, y: 88 },
+    labelPosition: { x: 650, y: 60 },
+    labelAnchor: "middle",
+    leaderTo: { x: 650, y: 100 },
     polygons: [
       [
         [441, 86], [470, 71], [501, 67], [533, 73], [549, 88], [548, 106], [522, 113], [494, 110], [470, 116], [447, 105]
@@ -85,7 +91,9 @@ const DIGITAL_ADOPTION_LAYOUT = [
     accent: "orange",
     seed: 53,
     labelLines: ["Middle East", "& N. Africa"],
-    labelPosition: { x: 588, y: 176 },
+    labelPosition: { x: 566, y: 174 },
+    labelAnchor: "end",
+    leaderTo: { x: 610, y: 185 },
     polygons: [
       [
         [448, 149], [480, 146], [515, 148], [549, 152], [579, 163], [585, 182], [564, 194], [529, 193], [495, 188], [467, 180], [449, 166]
@@ -104,7 +112,9 @@ const DIGITAL_ADOPTION_LAYOUT = [
     accent: "blue",
     seed: 67,
     labelLines: ["Sub-Saharan", "Africa"],
-    labelPosition: { x: 534, y: 312 },
+    labelPosition: { x: 492, y: 312 },
+    labelAnchor: "end",
+    leaderTo: { x: 520, y: 312 },
     polygons: [
       [
         [469, 196], [500, 198], [530, 205], [555, 219], [572, 242], [582, 273], [587, 307], [580, 343],
@@ -121,7 +131,9 @@ const DIGITAL_ADOPTION_LAYOUT = [
     accent: "orange",
     seed: 79,
     labelLines: ["South", "Asia"],
-    labelPosition: { x: 730, y: 214 },
+    labelPosition: { x: 776, y: 214 },
+    labelAnchor: "start",
+    leaderTo: { x: 739, y: 226 },
     polygons: [
       [
         [679, 219], [701, 203], [727, 195], [749, 196], [768, 208], [775, 228], [766, 248], [744, 259], [719, 257], [696, 247], [682, 232]
@@ -134,7 +146,9 @@ const DIGITAL_ADOPTION_LAYOUT = [
     accent: "blue",
     seed: 97,
     labelLines: ["East Asia", "& Pacific"],
-    labelPosition: { x: 852, y: 146 },
+    labelPosition: { x: 896, y: 146 },
+    labelAnchor: "start",
+    leaderTo: { x: 855, y: 168 },
     polygons: [
       [
         [744, 112], [771, 101], [804, 104], [834, 116], [851, 137], [847, 158], [823, 173], [794, 171], [769, 161], [750, 141]
@@ -740,26 +754,11 @@ function digitalAdoptionMapMarkup(adoptionData, year) {
       )
       .join("");
 
-    const labelLines = region.labelLines ?? [region.label];
-    const titleMarkup = labelLines
-      .map(
-        (line, index) => `
-          <tspan x="${region.labelPosition.x}" dy="${index === 0 ? 0 : 12}">${line}</tspan>
-        `
-      )
-      .join("");
-    const valueY = region.labelPosition.y + 16 + (labelLines.length - 1) * 12;
-
     return `
       <g class="adoption-region-group">
         ${polygons}
         <g class="adoption-dots-group">${dots}</g>
-        <text x="${region.labelPosition.x}" y="${region.labelPosition.y}" class="adoption-label-title">
-          ${titleMarkup}
-        </text>
-        <text x="${region.labelPosition.x}" y="${valueY}" class="adoption-label-value">
-          ${formatAdoptionValue(value)}
-        </text>
+        ${digitalAdoptionLabelMarkup(region, value)}
       </g>
     `;
   });
@@ -799,6 +798,66 @@ function digitalAdoptionSummaryMarkup(adoptionData, year) {
       </article>
     `;
   }).join("");
+}
+
+function digitalAdoptionLabelMarkup(region, value) {
+  const labelLines = region.labelLines ?? [region.label];
+  const anchor = region.labelAnchor ?? "middle";
+  const lineHeight = 11;
+  const topPadding = 8;
+  const bottomPadding = 7;
+  const horizontalPadding = 9;
+  const valueGap = 14;
+  const valueText = formatAdoptionValue(value);
+  const longestLineLength = Math.max(
+    ...labelLines.map((line) => line.length),
+    valueText.length
+  );
+  const boxWidth = Math.max(80, longestLineLength * 5.6 + horizontalPadding * 2);
+  const boxHeight = topPadding + bottomPadding + labelLines.length * lineHeight + valueGap + 11;
+  const boxX = adoptionLabelBoxX(region.labelPosition.x, boxWidth, anchor);
+  const boxY = region.labelPosition.y - topPadding;
+  const textX = adoptionLabelTextX(boxX, boxWidth, anchor, horizontalPadding);
+  const titleMarkup = labelLines
+    .map(
+      (line, index) => `
+        <tspan x="${textX}" dy="${index === 0 ? 0 : lineHeight}">${line}</tspan>
+      `
+    )
+    .join("");
+  const valueY = region.labelPosition.y + valueGap + (labelLines.length - 1) * lineHeight;
+  const leaderMarkup = region.leaderTo
+    ? `
+        <line
+          class="adoption-label-leader"
+          x1="${region.leaderTo.x}"
+          y1="${region.leaderTo.y}"
+          x2="${adoptionLeaderTargetX(boxX, boxWidth, anchor)}"
+          y2="${boxY + boxHeight / 2}"
+        ></line>
+      `
+    : "";
+
+  return `
+    <g class="adoption-label-group">
+      ${leaderMarkup}
+      <rect
+        class="adoption-label-box"
+        x="${boxX}"
+        y="${boxY}"
+        width="${boxWidth}"
+        height="${boxHeight}"
+        rx="9"
+        ry="9"
+      ></rect>
+      <text x="${textX}" y="${region.labelPosition.y}" text-anchor="${anchor}" class="adoption-label-title">
+        ${titleMarkup}
+      </text>
+      <text x="${textX}" y="${valueY}" text-anchor="${anchor}" class="adoption-label-value">
+        ${valueText}
+      </text>
+    </g>
+  `;
 }
 
 function digitalAdoptionNote(adoptionData, year) {
@@ -1028,6 +1087,36 @@ function mulberry32(seed) {
 
 function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max);
+}
+
+function adoptionLabelBoxX(x, width, anchor) {
+  if (anchor === "start") {
+    return x;
+  }
+  if (anchor === "end") {
+    return x - width;
+  }
+  return x - width / 2;
+}
+
+function adoptionLabelTextX(boxX, width, anchor, padding) {
+  if (anchor === "start") {
+    return boxX + padding;
+  }
+  if (anchor === "end") {
+    return boxX + width - padding;
+  }
+  return boxX + width / 2;
+}
+
+function adoptionLeaderTargetX(boxX, width, anchor) {
+  if (anchor === "start") {
+    return boxX;
+  }
+  if (anchor === "end") {
+    return boxX + width;
+  }
+  return boxX + width / 2;
 }
 
 function formatAdoptionValue(value) {
