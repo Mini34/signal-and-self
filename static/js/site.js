@@ -15,8 +15,8 @@ const DIGITAL_ADOPTION_IMAGE = {
 };
 
 const DIGITAL_ADOPTION_MASK = {
-  width: 3000,
-  height: 1620,
+  width: 7001,
+  height: 4001,
   ready: false,
   failed: false,
   promise: null,
@@ -906,6 +906,7 @@ function primeDigitalAdoptionMask() {
         reject(new Error("Failed to create a canvas context for the adoption map."));
         return;
       }
+      context.imageSmoothingEnabled = false;
       context.drawImage(image, 0, 0, canvas.width, canvas.height);
       DIGITAL_ADOPTION_MASK.context = context;
       DIGITAL_ADOPTION_MASK.ready = true;
@@ -928,11 +929,18 @@ function isDigitalAdoptionLandPoint(x, y) {
   }
 
   const context = DIGITAL_ADOPTION_MASK.context;
-  const maskX = x * (DIGITAL_ADOPTION_MASK.width / 1000);
-  const maskY = y * (DIGITAL_ADOPTION_MASK.height / 540);
+  const maskX = x * DIGITAL_ADOPTION_IMAGE.overlayScaleX;
+  const maskY = y * DIGITAL_ADOPTION_IMAGE.overlayScaleY;
+  const centerX = clamp(Math.round(maskX), 0, DIGITAL_ADOPTION_MASK.width - 1);
+  const centerY = clamp(Math.round(maskY), 0, DIGITAL_ADOPTION_MASK.height - 1);
+  const centerPixel = context.getImageData(centerX, centerY, 1, 1).data;
+  if (!isDigitalAdoptionLandColor(centerPixel[0], centerPixel[1], centerPixel[2], centerPixel[3])) {
+    return false;
+  }
+
   const sampleRadius = 3;
-  const sampleX = clamp(Math.round(maskX) - sampleRadius, 0, DIGITAL_ADOPTION_MASK.width - 1);
-  const sampleY = clamp(Math.round(maskY) - sampleRadius, 0, DIGITAL_ADOPTION_MASK.height - 1);
+  const sampleX = clamp(centerX - sampleRadius, 0, DIGITAL_ADOPTION_MASK.width - 1);
+  const sampleY = clamp(centerY - sampleRadius, 0, DIGITAL_ADOPTION_MASK.height - 1);
   const sampleWidth = Math.min(sampleRadius * 2 + 1, DIGITAL_ADOPTION_MASK.width - sampleX);
   const sampleHeight = Math.min(sampleRadius * 2 + 1, DIGITAL_ADOPTION_MASK.height - sampleY);
   const pixels = context.getImageData(sampleX, sampleY, sampleWidth, sampleHeight).data;
@@ -946,7 +954,7 @@ function isDigitalAdoptionLandPoint(x, y) {
     }
   }
 
-  return totalSamples > 0 && landHits / totalSamples >= 0.68;
+  return totalSamples > 0 && landHits / totalSamples >= 0.42;
 }
 
 function isDigitalAdoptionLandColor(red, green, blue, alpha) {
@@ -954,8 +962,20 @@ function isDigitalAdoptionLandColor(red, green, blue, alpha) {
     return false;
   }
 
+  const maxChannel = Math.max(red, green, blue);
+  const minChannel = Math.min(red, green, blue);
+  const saturation = maxChannel - minChannel;
   const brightness = (red * 299 + green * 587 + blue * 114) / 1000;
-  return brightness < 236;
+
+  // The source image uses a muted blue for land and neutral grays for shadows.
+  // Match the land hue family so ocean shadows do not accept dots.
+  return (
+    saturation >= 22 &&
+    blue > green &&
+    green > red &&
+    blue - red >= 20 &&
+    brightness <= 170
+  );
 }
 
 function polygonArea(polygon) {
