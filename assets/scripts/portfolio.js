@@ -277,6 +277,50 @@
 
     window.addEventListener("scroll", updateScrollProgress, { passive: true });
     updateScrollProgress();
+    bindPressEffects();
+  }
+
+  function bindPressEffects() {
+    const selector = [
+      ".button",
+      ".icon-button",
+      ".menu-button",
+      ".dialog-close",
+      ".chip",
+      ".filter-button",
+      ".save-button",
+      ".theme-option",
+      ".search-result",
+      ".resource-link",
+      ".path-card",
+      ".site-nav a"
+    ].join(",");
+
+    const addRipple = (control, clientX, clientY) => {
+      if (!control || control.matches(":disabled") || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      const bounds = control.getBoundingClientRect();
+      const ripple = document.createElement("span");
+      ripple.className = "press-ripple";
+      ripple.style.setProperty("--ripple-x", `${clientX ? clientX - bounds.left : bounds.width / 2}px`);
+      ripple.style.setProperty("--ripple-y", `${clientY ? clientY - bounds.top : bounds.height / 2}px`);
+      control.append(ripple);
+      window.setTimeout(() => ripple.remove(), 620);
+    };
+
+    document.addEventListener("pointerdown", (event) => {
+      const control = event.target.closest(selector);
+      if (control) addRipple(control, event.clientX, event.clientY);
+    });
+
+    document.addEventListener("click", (event) => {
+      const control = event.target.closest(selector);
+      if (!control || control.matches(":disabled")) return;
+      if (event.detail === 0) addRipple(control);
+      control.classList.remove("interaction-pop");
+      void control.offsetWidth;
+      control.classList.add("interaction-pop");
+      window.setTimeout(() => control.classList.remove("interaction-pop"), 280);
+    });
   }
 
   function updateScrollProgress() {
@@ -313,9 +357,20 @@
     showToast.timeout = setTimeout(() => toast.classList.remove("is-visible"), 2600);
   }
 
-  function applyTheme(theme = preferences.theme) {
+  function applyTheme(theme = preferences.theme, animate = true) {
     preferences.theme = theme;
-    document.documentElement.dataset.theme = theme === "signal" ? "" : theme;
+    const html = document.documentElement;
+    if (animate) {
+      html.classList.remove("is-theme-switching");
+      void html.offsetWidth;
+      html.classList.add("is-theme-switching");
+      clearTimeout(applyTheme.timeout);
+      applyTheme.timeout = window.setTimeout(() => html.classList.remove("is-theme-switching"), 440);
+    }
+    html.dataset.theme = theme;
+    const themeColor = { signal: "#f4f0e8", midnight: "#0b1020", quiet: "#efeee9" }[theme] || "#f4f0e8";
+    const themeMeta = query('meta[name="theme-color"]');
+    if (themeMeta) themeMeta.content = themeColor;
     savePreferences();
     queryAll(".theme-option").forEach((button) => {
       button.classList.toggle("is-active", button.dataset.theme === theme);
@@ -459,7 +514,6 @@
 
   function renderHome() {
     setText("[data-site-status]", `${data.site.status} · Updated ${formatDate(data.site.lastUpdated)}`);
-    setText("[data-profile-tagline]", data.profile.tagline);
     setText("[data-reflection-count]", data.reflections.length);
     setText("[data-project-count]", data.projects.length);
     setText("[data-update-count]", data.updates.length);
@@ -496,23 +550,6 @@
       ].map(([label, value]) => `<div class="now-item"><span>${label}</span><strong>${escapeHTML(value)}</strong></div>`).join("");
     }
 
-    const categoryHost = query("#category-preview");
-    if (categoryHost) {
-      categoryHost.innerHTML = data.categories.slice(0, 6).map((category, index) => `
-        <article class="card interactive-card">
-          <span class="card-index">Lens 0${index + 1}</span>
-          <h3>${escapeHTML(category.title)}</h3>
-          <p>${escapeHTML(category.focus)}</p>
-        </article>
-      `).join("");
-    }
-
-    const principleHost = query("#principle-preview");
-    if (principleHost) {
-      principleHost.innerHTML = data.principles.slice(0, 4).map((principle, index) => `
-        <article class="value-card"><span class="mono-label">0${index + 1}</span><strong>${escapeHTML(principle)}</strong></article>
-      `).join("");
-    }
   }
 
   function renderProfile() {
@@ -928,7 +965,7 @@
   async function init() {
     injectShell();
     bindShellEvents();
-    applyTheme(preferences.theme);
+    applyTheme(preferences.theme, false);
     try {
       const response = await fetch(pathFromRoot("assets/data/citizenship-records.json"));
       if (!response.ok) throw new Error(`Data request failed: ${response.status}`);
