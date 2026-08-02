@@ -1,0 +1,1067 @@
+{
+  "site": {
+    "name": "Signal & Self",
+    "descriptor": "A digital citizenship fieldbook",
+    "version": "2.0",
+    "lastUpdated": "2026-08-02",
+    "headline": "Learning to build technology that deserves trust.",
+    "status": "Growing in public"
+  },
+  "personalization": {
+    "audiences": [
+      {
+        "id": "curious",
+        "label": "Just exploring",
+        "greeting": "Welcome in",
+        "intro": "Explore the habits, projects, and field notes shaping my approach to responsible technology."
+      },
+      {
+        "id": "student",
+        "label": "Fellow student",
+        "greeting": "Hey, fellow learner",
+        "intro": "Start with the practical checklists, honest field notes, and study habits you can borrow for your own work."
+      },
+      {
+        "id": "educator",
+        "label": "Educator",
+        "greeting": "Welcome, educator",
+        "intro": "See how reflection, evidence, and small repeatable actions turn digital citizenship into an assessable practice."
+      },
+      {
+        "id": "recruiter",
+        "label": "Recruiter or collaborator",
+        "greeting": "Thanks for taking a closer look",
+        "intro": "Explore the engineering mindset, project decisions, and responsible-technology values behind my work."
+      }
+    ],
+    "themes": [
+      { "id": "signal", "label": "Signal", "description": "Cobalt, coral, and warm paper" },
+      { "id": "midnight", "label": "Midnight", "description": "Deep navy with electric accents" },
+      { "id": "quiet", "label": "Quiet", "description": "Low-contrast, focus-first neutrals" }
+    ]
+  },
+  "profile": {
+    "name": "Mina S.",
+    "fullName": "Mina Soliman",
+    "tagline": "Incoming electrical engineering student in Canada with a growing interest in cybersecurity, digital citizenship, and responsible technology.",
+    "definition": "To me, digital citizenship means combining technical skill with responsibility. It includes checking information before sharing it, protecting privacy, using technology ethically, and contributing to online spaces in ways that make them safer and more respectful.",
+    "mission": "My mission is to grow as an engineer and digital citizen at the same time. I want the way I learn, build, and communicate online to reflect curiosity, care, and cybersecurity awareness.",
+    "aboutTitle": "Incoming first-year electrical engineering student in Canada",
+    "aboutText": [
+      "I am Mina Soliman, an incoming first-year electrical engineering student studying in Canada. I am interested in how engineering can solve practical problems while still protecting the people who rely on those systems.",
+      "Cybersecurity is one of the areas that excites me most because it connects technical design with trust, privacy, and accountability. That interest naturally connects to digital citizenship, which gives me a framework for how I want to participate online.",
+      "This website brings those interests together. It tracks how I learn, reflect, and contribute so my growth in digital citizenship stays visible, measurable, and grounded in real habits."
+    ],
+    "focusAreas": [
+      {
+        "title": "Engineering mindset",
+        "text": "I am drawn to electrical engineering because it combines systems thinking, problem-solving, and real-world impact."
+      },
+      {
+        "title": "Cybersecurity enthusiasm",
+        "text": "I want to keep learning how secure design, careful habits, and better awareness can reduce digital harm."
+      },
+      {
+        "title": "Digital citizenship lens",
+        "text": "I use digital citizenship as a practical guide for ethical participation, media literacy, privacy, and community responsibility."
+      }
+    ]
+  },
+  "home": {
+    "heroKicker": "Digital citizenship portfolio",
+    "projectSummary": "This project turns digital citizenship into something visible and accountable. As I prepare to begin electrical engineering in Canada, I use the site to connect my interest in cybersecurity with reflection, measurable habits, and positive online participation.",
+    "whyItMattersPoints": [
+      {
+        "title": "Trust is earned online",
+        "text": "Verification, attribution, and respectful participation make digital spaces safer and more credible."
+      },
+      {
+        "title": "Good habits compound",
+        "text": "Small choices around privacy, attention, and consent shape every class project, post, and conversation."
+      },
+      {
+        "title": "Reflection prevents drift",
+        "text": "Metrics and short written check-ins help me notice when convenience starts replacing care."
+      }
+    ],
+    "statsPreview": [
+      "projects_completed",
+      "resources_shared",
+      "learning_hours",
+      "improvement_streak"
+    ]
+  },
+  "categories": [
+    {
+      "id": "participation",
+      "title": "Responsible online participation",
+      "description": "How I contribute to conversations, collaborate, and respond to others with clarity and respect.",
+      "focus": "Posting with context, citing sources, and choosing constructive language."
+    },
+    {
+      "id": "privacy-security",
+      "title": "Privacy and security awareness",
+      "description": "The habits I use to protect my data and respect other people's boundaries online.",
+      "focus": "Reviewing app permissions, using strong authentication, and practicing consent."
+    },
+    {
+      "id": "media-literacy",
+      "title": "Media literacy",
+      "description": "My ability to evaluate sources, spot misinformation, and understand how digital content persuades.",
+      "focus": "Cross-checking claims, reading beyond headlines, and tracking evidence quality."
+    },
+    {
+      "id": "ethical-tech",
+      "title": "Ethical technology use",
+      "description": "How I think about fairness, harm, bias, and transparency when I use new tools.",
+      "focus": "Questioning automation, naming limitations, and avoiding careless AI use."
+    },
+    {
+      "id": "community",
+      "title": "Community contribution",
+      "description": "The ways I support classmates, peers, and online communities through helpful digital actions.",
+      "focus": "Sharing resources, answering questions, and building tools that lower friction for others."
+    },
+    {
+      "id": "reflection",
+      "title": "Reflection and self-improvement",
+      "description": "A record of how I review my own habits and adjust when they are not aligned with my values.",
+      "focus": "Writing reflections, checking progress, and refining goals month by month."
+    }
+  ],
+  "personalGoals": [
+    "Keep source verification consistent enough that I can explain why I trust what I share.",
+    "Treat privacy settings as a repeated maintenance task instead of a one-time setup step.",
+    "Use AI as a support tool only when I can still account for accuracy, authorship, and impact.",
+    "Contribute at least one useful resource, walkthrough, or peer-support action every week."
+  ],
+  "codeOfConduct": [
+    "Verify before sharing, especially when content is emotionally charged or urgent.",
+    "Protect private information and ask for consent before reposting or forwarding someone else's content.",
+    "Credit ideas, code, and creative work clearly.",
+    "Use disagreement to clarify, not to embarrass or escalate.",
+    "Pause when a tool saves time but weakens responsibility."
+  ],
+  "principles": [
+    "I will verify information before sharing it.",
+    "I will use technology in ways that help rather than harm.",
+    "I will protect my privacy and respect other people's privacy.",
+    "I will contribute positively to online communities.",
+    "I will be transparent about the role of AI and automation in my work.",
+    "I will practice consent in digital spaces, not just compliance.",
+    "I will reflect on how my digital habits affect myself and others."
+  ],
+  "stats": [
+    {
+      "id": "projects_completed",
+      "label": "Coding projects completed",
+      "value": 11,
+      "suffix": "",
+      "period": "Total",
+      "goal": 12,
+      "trend": "+4 since April",
+      "description": "Projects that include a clear public good, learning outcome, or safety angle."
+    },
+    {
+      "id": "commits_this_month",
+      "label": "GitHub commits this month",
+      "value": 57,
+      "suffix": "",
+      "period": "July",
+      "goal": 60,
+      "trend": "Steady across 5 weeks",
+      "description": "Commit activity on portfolio, learning, and community-oriented coding work."
+    },
+    {
+      "id": "resources_shared",
+      "label": "Educational resources shared",
+      "value": 26,
+      "suffix": "",
+      "period": "Year to date",
+      "goal": 30,
+      "trend": "8 added since April",
+      "description": "Guides, articles, and checklists shared with peers to support safer digital habits."
+    },
+    {
+      "id": "reflections_written",
+      "label": "Reflections written",
+      "value": 20,
+      "suffix": "",
+      "period": "Year to date",
+      "goal": 24,
+      "trend": "5 new field notes",
+      "description": "Short written reviews of online choices, lessons, and course corrections."
+    },
+    {
+      "id": "learning_hours",
+      "label": "Hours spent on digital learning",
+      "value": 112,
+      "suffix": "h",
+      "period": "Year to date",
+      "goal": 140,
+      "trend": "39h since April",
+      "description": "Time spent studying privacy, security, media literacy, ethics, and related skills."
+    },
+    {
+      "id": "community_support",
+      "label": "Community support contributions",
+      "value": 34,
+      "suffix": "",
+      "period": "Year to date",
+      "goal": 42,
+      "trend": "7 new contributions",
+      "description": "Peer support actions such as answering questions, reviewing drafts, and sharing fixes."
+    },
+    {
+      "id": "safety_topics",
+      "label": "Digital safety topics studied",
+      "value": 15,
+      "suffix": "",
+      "period": "Year to date",
+      "goal": 18,
+      "trend": "Threat modeling added",
+      "description": "Distinct topics studied deeply enough to summarize and apply in practice."
+    },
+    {
+      "id": "monthly_goals",
+      "label": "Monthly goals completed",
+      "value": 5,
+      "suffix": "/5",
+      "period": "July",
+      "goal": 6,
+      "trend": "Accessibility goal completed",
+      "description": "Progress against the specific habits and commitments I set at the start of the month."
+    },
+    {
+      "id": "improvement_streak",
+      "label": "Current improvement streak",
+      "value": 28,
+      "suffix": " days",
+      "period": "Current run",
+      "goal": 35,
+      "trend": "Longest run this year",
+      "description": "Consecutive days with at least one intentional learning, reflection, or contribution action."
+    }
+  ],
+  "practiceAreas": [
+    {
+      "id": "verify",
+      "label": "Verify",
+      "score": 88,
+      "signal": "Strong",
+      "description": "Trace claims to original sources and keep uncertainty visible.",
+      "evidence": "Source workflow, AI-summary checks, citation support"
+    },
+    {
+      "id": "protect",
+      "label": "Protect",
+      "score": 82,
+      "signal": "Consistent",
+      "description": "Use privacy, consent, and security as design requirements.",
+      "evidence": "Permission audits, MFA reviews, privacy-by-design notes"
+    },
+    {
+      "id": "build",
+      "label": "Build",
+      "score": 76,
+      "signal": "Growing",
+      "description": "Create tools and documentation that lower friction for others.",
+      "evidence": "Peer library, checklists, accessible-form review"
+    },
+    {
+      "id": "reflect",
+      "label": "Reflect",
+      "score": 91,
+      "signal": "Core habit",
+      "description": "Review tradeoffs, attention, and impact instead of only output.",
+      "evidence": "20 field notes, monthly reviews, improvement streak"
+    }
+  ],
+  "habits": [
+    { "label": "Verify before sharing", "frequency": "Every time", "progress": 94, "status": "On track" },
+    { "label": "Review account permissions", "frequency": "Monthly", "progress": 82, "status": "On track" },
+    { "label": "Publish one useful resource", "frequency": "Weekly", "progress": 71, "status": "Building" },
+    { "label": "Protect focus after 9 PM", "frequency": "Daily", "progress": 68, "status": "Building" },
+    { "label": "Document AI assistance", "frequency": "Per project", "progress": 89, "status": "On track" }
+  ],
+  "now": {
+    "learning": "Introductory threat modeling and secure-by-design thinking",
+    "building": "A compact browser privacy lab for students",
+    "question": "How can engineers make the safer choice the easier default?",
+    "nextReview": "2026-08-16"
+  },
+  "dashboard": {
+    "chartTitle": "Learning momentum",
+    "chartDescription": "A quick view of how consistently I am investing time in digital citizenship learning.",
+    "globalStatsIntro": "Alongside my personal metrics, these international youth-focused statistics show why digital citizenship matters beyond one portfolio. They highlight access, online safety, and the skills young people need to participate responsibly.",
+    "globalStats": [
+      {
+        "value": "79%",
+        "title": "of people aged 15 to 24 worldwide use the Internet",
+        "description": "The ITU reported on November 10, 2024 that youth internet use is 13 percentage points higher than for the rest of the population, but the gap by income level is still large.",
+        "sourceLabel": "International Telecommunication Union",
+        "sourceTitle": "Facts and Figures 2024: Youth Internet Use",
+        "sourceDate": "November 10, 2024",
+        "accent": "blue",
+        "url": "https://www.itu.int/itu-d/reports/statistics/2024/11/10/ff24-youth-internet-use/"
+      },
+      {
+        "value": "11%",
+        "title": "of adolescents showed signs of problematic social media use in 2022",
+        "description": "WHO reported on September 25, 2024 that this figure rose from 7% in 2018 to 11% in 2022, and another 12% of adolescents were at risk of problematic gaming.",
+        "sourceLabel": "WHO Regional Office for Europe",
+        "sourceTitle": "Teens, screens and mental health",
+        "sourceDate": "September 25, 2024",
+        "accent": "orange",
+        "url": "https://www.who.int/europe/news/item/25-09-2024-teens--screens-and-mental-health"
+      },
+      {
+        "value": "1 in 6",
+        "title": "school-aged children experienced cyberbullying",
+        "description": "WHO reported on March 27, 2024 that cyberbullying increased between 2018 and 2022, with reports of being cyberbullied rising to 15% for boys and 16% for girls.",
+        "sourceLabel": "WHO Regional Office for Europe",
+        "sourceTitle": "One in six school-aged children experiences cyberbullying",
+        "sourceDate": "March 27, 2024",
+        "accent": "blue",
+        "url": "https://www.who.int/europe/news/item/27-03-2024-one-in-six-school-aged-children-experiences-cyberbullying--finds-new-who-europe-study"
+      },
+      {
+        "value": "1 in 5",
+        "title": "10-year-olds in 51 countries lacked internet access at home in 2021",
+        "description": "UNICEF Innocenti reported in its June 2025 digital world report that the share increased to two in five in the low- and middle-income countries included in the study.",
+        "sourceLabel": "UNICEF Innocenti",
+        "sourceTitle": "Childhood in a Digital World",
+        "sourceDate": "June 2025",
+        "accent": "orange",
+        "url": "https://www.unicef.org/innocenti/innocenti/media/11296/file/UNICEF-Innocenti-Childhood-in-a-Digital%20World-report-2025.pdf"
+      }
+    ],
+    "learnMore": [
+      {
+        "title": "Google Interland",
+        "description": "An interactive game from the Be Internet Awesome program that teaches safer, smarter internet habits through short challenges.",
+        "cta": "Explore Interland",
+        "url": "https://beinternetawesome.withgoogle.com/en_us/interland?_gl=1*1yoiuvx*_up*MQ..*_ga*MTMyMDkwMTEyNy4xNzc2NjUyMzQz*_ga_XRLM31BEJH*czE3NzY2NTIzNDMkbzEkZzAkdDE3NzY2NTIzNDMkajYwJGwwJGgw",
+        "tag": "Interactive",
+        "accent": "orange"
+      },
+      {
+        "title": "UNICEF x Gallup: Online Opportunities",
+        "description": "A youth-centered resource exploring how young people across 21 countries experience internet access, opportunity, and digital divides.",
+        "cta": "Read the UNICEF resource",
+        "url": "https://changingchildhood.unicef.org/stories/online-opportunities",
+        "tag": "Global youth survey",
+        "accent": "blue"
+      },
+      {
+        "title": "UNESCO Media and Information Literacy",
+        "description": "UNESCO's overview of media and information literacy and digital competencies, including how critical thinking supports safer online participation.",
+        "cta": "Visit UNESCO",
+        "url": "https://www.unesco.org/en/articles/media-and-information-literacy-and-digital-competencies",
+        "tag": "Media literacy",
+        "accent": "orange"
+      },
+      {
+        "title": "WHO youth digital well-being updates",
+        "description": "WHO's coverage of adolescent screen use, cyberbullying, and digital well-being offers evidence-based context for responsible technology habits.",
+        "cta": "Read WHO coverage",
+        "url": "https://www.who.int/europe/news/item/25-09-2024-teens--screens-and-mental-health",
+        "tag": "Health and well-being",
+        "accent": "blue"
+      }
+    ],
+    "digitalAdoption": {
+      "intro": "This map uses official World Bank regional aggregates for internet use to show how digital adoption spread unevenly across the world. The slider spans 2000 to 2025, and the comparable regional series begins in 2005, so the first few years show the pre-series lead-in before large-scale adoption accelerates.",
+      "minYear": 2000,
+      "maxYear": 2025,
+      "seriesStartYear": 2005,
+      "latestPublishedYear": 2025,
+      "dotScalePercent": 2,
+      "dotScaleLabel": "1 dot represents about 2 percentage points of regional internet adoption.",
+      "sourceNote": "World Bank World Development Indicators indicator IT.NET.USER.ZS, with the World Bank listing the ITU World Telecommunication/ICT Indicators Database as the underlying source. World Development Indicators was updated on April 8, 2026.",
+      "sourceLinks": [
+        {
+          "label": "World Bank indicator page",
+          "url": "https://data.worldbank.org/indicator/IT.NET.USER.ZS"
+        },
+        {
+          "label": "World Bank aggregate API guide",
+          "url": "https://datahelpdesk.worldbank.org/knowledgebase/articles/898614-aggregate-api-queries"
+        }
+      ],
+      "series": {
+        "EAS": {
+          "2005": 14.7,
+          "2006": 16.6,
+          "2007": 20.8,
+          "2008": 25.2,
+          "2009": 29.5,
+          "2010": 34.2,
+          "2011": 37.3,
+          "2012": 40.4,
+          "2013": 43.2,
+          "2014": 45.5,
+          "2015": 48.3,
+          "2016": 53.9,
+          "2017": 57.8,
+          "2018": 62.5,
+          "2019": 67.1,
+          "2020": 73.9,
+          "2021": 78.8,
+          "2022": 82.4,
+          "2023": 84.9,
+          "2024": 86.6,
+          "2025": 88.4
+        },
+        "ECS": {
+          "2005": 34.7,
+          "2006": 38.0,
+          "2007": 43.6,
+          "2008": 48.1,
+          "2009": 52.7,
+          "2010": 57.0,
+          "2011": 60.2,
+          "2012": 63.8,
+          "2013": 66.1,
+          "2014": 68.9,
+          "2015": 69.9,
+          "2016": 72.3,
+          "2017": 74.5,
+          "2018": 78.1,
+          "2019": 80.3,
+          "2020": 83.4,
+          "2021": 86.3,
+          "2022": 87.9,
+          "2023": 89.6,
+          "2024": 90.9,
+          "2025": 92.4
+        },
+        "LCN": {
+          "2005": 16.6,
+          "2006": 20.7,
+          "2007": 23.7,
+          "2008": 26.4,
+          "2009": 31.0,
+          "2010": 34.6,
+          "2011": 39.3,
+          "2012": 43.0,
+          "2013": 46.1,
+          "2014": 48.7,
+          "2015": 54.4,
+          "2016": 57.5,
+          "2017": 60.2,
+          "2018": 63.5,
+          "2019": 67.8,
+          "2020": 73.8,
+          "2021": 75.8,
+          "2022": 77.1,
+          "2023": 80.0,
+          "2024": 81.7,
+          "2025": 83.7
+        },
+        "MNA": {
+          "2005": 7.5,
+          "2006": 8.4,
+          "2007": 9.7,
+          "2008": 11.7,
+          "2009": 13.5,
+          "2010": 15.5,
+          "2011": 16.9,
+          "2012": 18.7,
+          "2013": 21.3,
+          "2014": 24.7,
+          "2015": 27.6,
+          "2016": 30.8,
+          "2017": 34.8,
+          "2018": 37.6,
+          "2019": 41.5,
+          "2020": 46.4,
+          "2021": 50.2,
+          "2022": 54.1,
+          "2023": 55.9,
+          "2024": 58.0,
+          "2025": 58.0
+        },
+        "NAC": {
+          "2005": 68.3,
+          "2006": 69.3,
+          "2007": 74.8,
+          "2008": 74.3,
+          "2009": 71.9,
+          "2010": 72.5,
+          "2011": 71.0,
+          "2012": 75.5,
+          "2013": 72.8,
+          "2014": 74.4,
+          "2015": 76.1,
+          "2016": 86.1,
+          "2017": 87.8,
+          "2018": 89.1,
+          "2019": 89.7,
+          "2020": 90.5,
+          "2021": 91.5,
+          "2022": 92.6,
+          "2023": 93.3,
+          "2024": 94.4,
+          "2025": 95.6
+        },
+        "SAS": {
+          "2005": 2.1,
+          "2006": 2.6,
+          "2007": 3.7,
+          "2008": 4.1,
+          "2009": 4.9,
+          "2010": 7.1,
+          "2011": 9.4,
+          "2012": 10.4,
+          "2013": 11.7,
+          "2014": 13.0,
+          "2015": 14.7,
+          "2016": 16.7,
+          "2017": 18.8,
+          "2018": 20.9,
+          "2019": 29.7,
+          "2020": 42.5,
+          "2021": 48.0,
+          "2022": 54.2,
+          "2023": 58.3,
+          "2024": 62.8,
+          "2025": 67.8
+        },
+        "SSF": {
+          "2005": 2.0,
+          "2006": 2.6,
+          "2007": 3.1,
+          "2008": 3.6,
+          "2009": 4.3,
+          "2010": 6.0,
+          "2011": 7.5,
+          "2012": 9.2,
+          "2013": 11.2,
+          "2014": 13.4,
+          "2015": 16.2,
+          "2016": 18.3,
+          "2017": 20.0,
+          "2018": 22.0,
+          "2019": 24.4,
+          "2020": 26.7,
+          "2021": 29.0,
+          "2022": 31.1,
+          "2023": 32.3,
+          "2024": 33.6,
+          "2025": 35.7
+        }
+      }
+    },
+    "periods": {
+      "monthly": {
+        "label": "Monthly",
+        "summary": "Learning hours logged by month",
+        "points": [
+          { "label": "Nov", "value": 8 },
+          { "label": "Dec", "value": 10 },
+          { "label": "Jan", "value": 11 },
+          { "label": "Feb", "value": 12 },
+          { "label": "Mar", "value": 14 },
+          { "label": "Apr", "value": 18 },
+          { "label": "May", "value": 11 },
+          { "label": "Jun", "value": 13 },
+          { "label": "Jul", "value": 15 }
+        ],
+        "focus": [
+          "Added accessibility checks to the standard project review flow.",
+          "Practiced lightweight threat modeling before feature planning.",
+          "Mapped privacy choices before collecting any prototype data."
+        ]
+      },
+      "weekly": {
+        "label": "Weekly",
+        "summary": "Learning hours logged over the last 6 weeks",
+        "points": [
+          { "label": "Jun 22", "value": 5 },
+          { "label": "Jun 29", "value": 6 },
+          { "label": "Jul 6", "value": 4 },
+          { "label": "Jul 13", "value": 7 },
+          { "label": "Jul 20", "value": 8 },
+          { "label": "Jul 27", "value": 6 }
+        ],
+        "focus": [
+          "Turned accessibility observations into a reusable review card.",
+          "Connected threat-modeling questions to the user experience.",
+          "Outlined a browser privacy lab that keeps all activity on-device."
+        ]
+      }
+    }
+  },
+  "reflections": [
+    {
+      "id": "reflection-privacy-by-design",
+      "title": "Designing privacy into a prototype before adding features",
+      "date": "2026-08-01",
+      "category": "Privacy and security awareness",
+      "content": [
+        "While sketching a small browser-based prototype, I caught myself treating privacy as a settings screen I could add near the end. I restarted the plan by listing what data the idea truly needed, what could stay on the device, and what should never be collected.",
+        "The change made the project simpler. Privacy by design is not only about preventing harm; it can also force clearer decisions about what a product is actually for."
+      ],
+      "tags": ["privacy by design", "prototyping", "data minimization"],
+      "featured": true,
+      "readTime": "3 min"
+    },
+    {
+      "id": "reflection-threat-modeling-empathy",
+      "title": "Threat modeling is a technical form of empathy",
+      "date": "2026-07-18",
+      "category": "Ethical technology use",
+      "content": [
+        "My first threat-modeling exercise felt like a list of things that could go wrong. It became more useful when I stopped thinking only about attackers and started asking who could be confused, excluded, pressured, or exposed by an ordinary design decision.",
+        "Security thinking gets stronger when it includes the experience of the person using the system. Anticipating misuse and anticipating friction are both ways of taking people seriously."
+      ],
+      "tags": ["threat modeling", "empathy", "secure design"],
+      "featured": false,
+      "readTime": "3 min"
+    },
+    {
+      "id": "reflection-repository-hygiene",
+      "title": "Cleaning a repository is part of communicating responsibly",
+      "date": "2026-07-03",
+      "category": "Responsible online participation",
+      "content": [
+        "A repository can technically work while still making the next person search through unclear names, generated files, and missing context. I treated a cleanup session as communication work: organize the structure, explain the purpose, and make the useful path obvious.",
+        "Good documentation respects other people's time. A clear project also makes it easier for me to notice what I actually understand and what I have only been carrying forward."
+      ],
+      "tags": ["documentation", "GitHub", "maintainability"],
+      "featured": false,
+      "readTime": "2 min"
+    },
+    {
+      "id": "reflection-accessibility-citizenship",
+      "title": "Accessibility belongs inside digital citizenship",
+      "date": "2026-06-11",
+      "category": "Community contribution",
+      "content": [
+        "I reviewed a form using only a keyboard and quickly found places where the visual design looked finished but the interaction did not. Labels, focus order, contrast, and motion preferences determine who can actually participate.",
+        "Accessibility is not an optional polish layer. If digital citizenship is about contributing to spaces responsibly, access has to be part of the definition from the beginning."
+      ],
+      "tags": ["accessibility", "inclusive design", "keyboard"],
+      "featured": false,
+      "readTime": "3 min"
+    },
+    {
+      "id": "reflection-persuasive-video",
+      "title": "Checking the links behind a persuasive video",
+      "date": "2026-05-22",
+      "category": "Media literacy",
+      "content": [
+        "A polished video used charts and confident narration to make its conclusion feel settled. I followed the sources in the description and found that one link did not support the number shown, while another was several years older than the narration implied.",
+        "Production quality can make a claim feel verified before any verification happens. I now treat confidence, editing, and visual polish as presentation signals—not evidence signals."
+      ],
+      "tags": ["media literacy", "source tracing", "video"],
+      "featured": false,
+      "readTime": "3 min"
+    },
+    {
+      "id": "reflection-digital-footprint-audit",
+      "title": "Reviewing my digital footprint before the next school year",
+      "date": "2026-04-19",
+      "category": "Reflection and self-improvement",
+      "content": [
+        "As I look ahead to starting electrical engineering in Canada, I wanted to review what I am publicly attaching to my name online. That meant checking bios, old posts, shared profiles, and the tone of the spaces where I participate most.",
+        "The goal was not to erase personality, but to make sure my digital footprint reflects the kind of learner and community member I want to be: curious, responsible, and increasingly aware of cybersecurity and digital citizenship."
+      ],
+      "tags": ["digital footprint", "identity", "reflection"],
+      "featured": false
+    },
+    {
+      "id": "reflection-ai-summaries",
+      "title": "Cross-checking AI summaries before I trust them",
+      "date": "2026-04-17",
+      "category": "Media literacy",
+      "content": [
+        "AI summaries are useful for orientation, but they often compress uncertainty out of a topic. This week I started checking every summary against at least one primary source before I reuse any claim.",
+        "That extra step slowed me down slightly, but it improved my confidence and made my notes more accurate. Convenience is only ethical when it still leaves room for responsibility."
+      ],
+      "tags": ["AI", "verification", "research"],
+      "featured": true
+    },
+    {
+      "id": "reflection-screen-time",
+      "title": "Reducing passive screen time after 9 PM",
+      "date": "2026-04-10",
+      "category": "Reflection and self-improvement",
+      "content": [
+        "I noticed that tired scrolling made me less thoughtful about what I liked, shared, and clicked. I replaced late-night scrolling with a short shutdown checklist and one intentional article or video.",
+        "The change helped me separate rest from distraction and made my online time feel more chosen than automatic."
+      ],
+      "tags": ["screen time", "focus", "habits"],
+      "featured": false
+    },
+    {
+      "id": "reflection-privacy-defaults",
+      "title": "Revisiting privacy defaults on every new app",
+      "date": "2026-04-05",
+      "category": "Privacy and security awareness",
+      "content": [
+        "I used to treat privacy setup as a one-time task, but every new app quietly adds fresh decisions. I now check visibility, permissions, contact sync, and notification settings before I start using a service regularly.",
+        "That routine turns privacy from a vague value into a repeatable behavior."
+      ],
+      "tags": ["privacy", "apps", "security"],
+      "featured": false
+    },
+    {
+      "id": "reflection-group-chat",
+      "title": "Writing clearer and kinder replies in group chats",
+      "date": "2026-03-28",
+      "category": "Community contribution",
+      "content": [
+        "Short messages travel fast, and tone gets flattened easily. I started pausing before sending corrections or reminders, especially in group chats where public friction can grow quickly.",
+        "Being concise does not require being sharp. Clear and respectful replies reduce noise and help people stay engaged."
+      ],
+      "tags": ["communication", "community", "respect"],
+      "featured": false
+    },
+    {
+      "id": "reflection-productivity-tools",
+      "title": "When productivity tools become distractions",
+      "date": "2026-03-19",
+      "category": "Ethical technology use",
+      "content": [
+        "I spent too much time tuning tools that were supposed to save time. The problem was not the apps themselves, but the way I kept optimizing instead of doing the work.",
+        "I now ask whether a tool improves clarity, safety, or output quality. If it mainly adds novelty, I treat it as optional."
+      ],
+      "tags": ["productivity", "tools", "attention"],
+      "featured": false
+    },
+    {
+      "id": "reflection-shared-docs",
+      "title": "Helping classmates cite sources in a shared document",
+      "date": "2026-03-09",
+      "category": "Responsible online participation",
+      "content": [
+        "A shared study document was growing quickly, but sources were inconsistent. I added a simple citation pattern and a note explaining why link quality matters when notes get reused.",
+        "The fix was small, but it made the document more trustworthy and easier for everyone to build on."
+      ],
+      "tags": ["citations", "collaboration", "study"],
+      "featured": false
+    },
+    {
+      "id": "reflection-fast-moving-stories",
+      "title": "Slowing down before repeating fast-moving stories",
+      "date": "2026-02-25",
+      "category": "Media literacy",
+      "content": [
+        "A story moved quickly through class chats this week, and my first instinct was to repeat it before I had checked the source. I stopped, looked for the original report, and realized the summary being shared had left out important context.",
+        "That moment reminded me that media literacy is often about slowing down when everyone else is speeding up. Accuracy is part of respect."
+      ],
+      "tags": ["misinformation", "fact-checking", "context"],
+      "featured": false
+    },
+    {
+      "id": "reflection-password-routine",
+      "title": "Treating password hygiene like regular maintenance",
+      "date": "2026-02-08",
+      "category": "Privacy and security awareness",
+      "content": [
+        "I used to think about passwords mostly when a site forced me to update one. This month I started treating password checks as maintenance: review reused passwords, confirm multi-factor authentication, and update recovery methods.",
+        "Cybersecurity feels more manageable when I break it into repeated habits instead of waiting for a problem to force a reaction."
+      ],
+      "tags": ["passwords", "security", "habits"],
+      "featured": false
+    },
+    {
+      "id": "reflection-notification-reset",
+      "title": "Resetting notification habits after winter break",
+      "date": "2026-01-15",
+      "category": "Reflection and self-improvement",
+      "content": [
+        "After winter break I noticed I was reaching for my phone more often than I wanted, mostly because notifications kept interrupting study time. I reviewed which apps actually deserve immediate attention and turned most of the rest into scheduled check-ins.",
+        "The change felt small, but it gave me more control over attention and made my online time feel intentional again."
+      ],
+      "tags": ["notifications", "focus", "screen time"],
+      "featured": false
+    },
+    {
+      "id": "reflection-shared-guide",
+      "title": "Making a shared troubleshooting guide instead of repeating the same fixes",
+      "date": "2025-12-04",
+      "category": "Community contribution",
+      "content": [
+        "A few of us kept running into the same digital tool issues, and I realized I was typing the same answers over and over. I turned those answers into a short shared guide with steps, screenshots, and a note on safe account setup.",
+        "Helping once is useful, but documenting a solution can help more people with less friction."
+      ],
+      "tags": ["documentation", "community", "support"],
+      "featured": false
+    },
+    {
+      "id": "reflection-ai-study-boundaries",
+      "title": "Using AI for study support without outsourcing my thinking",
+      "date": "2025-11-07",
+      "category": "Ethical technology use",
+      "content": [
+        "I experimented with using AI to organize study questions and explain unfamiliar terms, but I kept noticing how easy it was to let the tool become the voice of the work. That is useful for speed, but risky for learning.",
+        "I set a simple rule for myself: AI can help me start, compare, or check, but it should not replace the part where I explain the idea in my own words."
+      ],
+      "tags": ["AI", "study habits", "ethics"],
+      "featured": false
+    },
+    {
+      "id": "reflection-location-permissions",
+      "title": "Reviewing location permissions before convenience becomes the default",
+      "date": "2025-10-10",
+      "category": "Privacy and security awareness",
+      "content": [
+        "I realized several apps had access to my location even though they did not need it all the time. It happened gradually because tapping allow was easier than thinking through the tradeoff in the moment.",
+        "This reflection pushed me to switch more apps to while-using or never. Privacy is often decided in the tiny moments when convenience asks for less thought."
+      ],
+      "tags": ["privacy", "permissions", "apps"],
+      "featured": false
+    },
+    {
+      "id": "reflection-reposting-carefully",
+      "title": "Checking captions and claims before reposting",
+      "date": "2025-09-14",
+      "category": "Responsible online participation",
+      "content": [
+        "I noticed how easy it is to repost something because it sounds right or matches the mood of the moment. This week I made myself read beyond the caption before sharing anything that sounded factual or urgent.",
+        "That small pause changed how I think about participation online. Sharing is not neutral when other people may trust the signal I send."
+      ],
+      "tags": ["sharing", "verification", "responsibility"],
+      "featured": false
+    },
+    {
+      "id": "reflection-first-commitment",
+      "title": "Why I started tracking digital citizenship deliberately",
+      "date": "2025-08-21",
+      "category": "Responsible online participation",
+      "content": [
+        "I wanted a way to think more seriously about the kind of person I am online, not just the things I post. Digital citizenship felt like the right starting point because it connects behavior, safety, community, and reflection.",
+        "Beginning this log made the topic feel practical. Instead of treating good online behavior as a vague ideal, I could start recording choices, patterns, and improvements over time."
+      ],
+      "tags": ["digital citizenship", "beginnings", "goals"],
+      "featured": false
+    }
+  ],
+  "projects": [
+    {
+      "id": "project-browser-privacy-lab",
+      "title": "Browser privacy mini lab",
+      "description": "A guided, device-local activity that explains cookies, permission prompts, tracking protection, and what private browsing does—and does not—change.",
+      "skills": ["Web fundamentals", "Privacy education", "Interaction design"],
+      "impact": "It gives students a safe way to inspect common privacy controls without collecting personal data.",
+      "link": "pages/field-notes.html#reflection-privacy-by-design",
+      "linkLabel": "Read the design note",
+      "status": "Ongoing",
+      "progress": 64,
+      "year": 2026
+    },
+    {
+      "id": "project-accessible-forms",
+      "title": "Accessible forms review card",
+      "description": "A one-page checklist for keyboard flow, labels, errors, contrast, motion, and plain-language consent in online forms.",
+      "skills": ["Accessibility", "UX review", "Technical writing"],
+      "impact": "It turns an abstract accessibility goal into a repeatable pre-launch check.",
+      "link": "pages/field-notes.html#reflection-accessibility-citizenship",
+      "linkLabel": "Read the reflection",
+      "status": "Completed",
+      "progress": 100,
+      "year": 2026
+    },
+    {
+      "id": "project-secure-iot-map",
+      "title": "Secure IoT learning map",
+      "description": "A visual study path connecting sensors, networks, authentication, firmware updates, and the human consequences of insecure connected devices.",
+      "skills": ["Cybersecurity", "Systems thinking", "Research synthesis"],
+      "impact": "It connects my electrical engineering interests to security decisions across an entire device lifecycle.",
+      "link": "pages/profile.html#roadmap",
+      "linkLabel": "See the learning roadmap",
+      "status": "Ongoing",
+      "progress": 42,
+      "year": 2026
+    },
+    {
+      "id": "project-calm-tech-dashboard",
+      "title": "Calm technology dashboard",
+      "description": "A planned experiment that shows useful device information without competing for attention through urgency, streak pressure, or noisy alerts.",
+      "skills": ["Calm technology", "Data visualization", "Ethical design"],
+      "impact": "It explores whether a dashboard can inform people while still respecting their focus.",
+      "link": "pages/field-notes.html#reflection-screen-time",
+      "linkLabel": "Read the attention note",
+      "status": "Planned",
+      "progress": 12,
+      "year": 2026
+    },
+    {
+      "id": "project-privacy-checklist",
+      "title": "Privacy settings starter checklist",
+      "description": "A simple checklist for reviewing account visibility, permissions, contact sync, and notification defaults on new apps.",
+      "skills": ["Content design", "Privacy review", "Clear writing"],
+      "impact": "It turns privacy awareness into a repeatable first-step habit instead of a vague intention.",
+      "link": "reflections.html#reflection-privacy-defaults",
+      "linkLabel": "Related reflection",
+      "status": "Completed"
+    },
+    {
+      "id": "project-source-workflow",
+      "title": "Source verification workflow",
+      "description": "A lightweight process for checking authorship, evidence, recency, and context before reusing an online claim.",
+      "skills": ["Research", "Media literacy", "Process design"],
+      "impact": "It reduces accidental misinformation by making verification visible and easy to repeat.",
+      "link": "reflections.html#reflection-ai-summaries",
+      "linkLabel": "Read the reflection",
+      "status": "Completed"
+    },
+    {
+      "id": "project-peer-support",
+      "title": "Peer support mini library",
+      "description": "A shared collection of short guides and links for classmates working through digital safety and study-tool questions.",
+      "skills": ["Resource curation", "Peer support", "Documentation"],
+      "impact": "It lowers friction for asking questions and helps good digital habits spread through the group.",
+      "link": "timeline.html#update-peer-library",
+      "linkLabel": "See the update",
+      "status": "Ongoing"
+    },
+    {
+      "id": "project-ai-boundaries",
+      "title": "Responsible AI use guide",
+      "description": "A personal guideline for when AI can support drafting or brainstorming and when it needs stronger human review.",
+      "skills": ["AI literacy", "Ethics", "Policy writing"],
+      "impact": "It keeps efficiency from outrunning accountability, especially when work may influence others.",
+      "link": "timeline.html#update-ai-guide",
+      "linkLabel": "View changelog note",
+      "status": "Completed"
+    },
+    {
+      "id": "project-distract-audit",
+      "title": "Intentional screen-time audit",
+      "description": "A weekly review of the apps, habits, and triggers that pull my attention away from meaningful digital work.",
+      "skills": ["Habit tracking", "Reflection", "Behavior review"],
+      "impact": "It helps me separate useful digital activity from passive consumption and redesign my routines.",
+      "link": "reflections.html#reflection-screen-time",
+      "linkLabel": "Review the reflection",
+      "status": "Ongoing"
+    },
+    {
+      "id": "project-community-campaign",
+      "title": "Consent in digital spaces campaign",
+      "description": "A planned set of short visual reminders about reposting, tagging, and sharing screenshots responsibly.",
+      "skills": ["Campaign planning", "Visual communication", "Community guidelines"],
+      "impact": "It frames consent as an everyday digital habit, not just a rule people remember after harm happens.",
+      "link": "about.html#values",
+      "linkLabel": "View values section",
+      "status": "Planned"
+    }
+  ],
+  "updates": [
+    {
+      "id": "update-signal-and-self",
+      "date": "2026-08-02",
+      "category": "Site update",
+      "title": "Rebuilt the portfolio as Signal & Self",
+      "why": "The project needed a clearer identity, a calmer visual system, richer navigation, and a structure that feels like a living fieldbook rather than a set of disconnected pages."
+    },
+    {
+      "id": "update-privacy-by-design-note",
+      "date": "2026-08-01",
+      "category": "Reflection",
+      "title": "Published a field note on privacy by design",
+      "why": "I wanted to record how data minimization changed a prototype before its feature list became fixed."
+    },
+    {
+      "id": "update-accessibility-card",
+      "date": "2026-07-24",
+      "category": "Project",
+      "title": "Completed an accessible forms review card",
+      "why": "A compact checklist makes it easier to catch interaction barriers before a form is shared."
+    },
+    {
+      "id": "update-threat-modeling-note",
+      "date": "2026-07-18",
+      "category": "Reflection",
+      "title": "Connected threat modeling with user empathy",
+      "why": "Security became more practical when I considered ordinary confusion and pressure alongside deliberate attacks."
+    },
+    {
+      "id": "update-repository-hygiene-note",
+      "date": "2026-07-03",
+      "category": "Community contribution",
+      "title": "Documented repository hygiene as communication work",
+      "why": "Clear structure and useful context make technical work easier for other people to understand and continue."
+    },
+    {
+      "id": "update-accessibility-reflection",
+      "date": "2026-06-11",
+      "category": "Reflection",
+      "title": "Added accessibility to the citizenship framework",
+      "why": "Responsible participation has to include whether other people can access and operate the spaces we build."
+    },
+    {
+      "id": "update-source-tracing-video",
+      "date": "2026-05-22",
+      "category": "Media literacy",
+      "title": "Added a field note on source tracing in persuasive video",
+      "why": "Visual polish can feel like proof, so I wanted a record of checking the evidence behind confident presentation."
+    },
+    {
+      "id": "update-digital-adoption-map",
+      "date": "2026-04-19",
+      "category": "Site update",
+      "title": "Added an interactive Digital Adoption world map with a year slider",
+      "why": "I wanted the dashboard to connect personal statistics with a broader regional view of how internet adoption spread over time."
+    },
+    {
+      "id": "update-reflection-archive",
+      "date": "2026-04-19",
+      "category": "Reflection",
+      "title": "Expanded the reflection archive back to August 21, 2025",
+      "why": "I wanted the site to show a longer timeline of growth rather than only the most recent months of reflection."
+    },
+    {
+      "id": "update-about-global-stats",
+      "date": "2026-04-19",
+      "category": "Site update",
+      "title": "Added a personal About Me section and international youth digital citizenship statistics",
+      "why": "I wanted the site to reflect my background as an incoming electrical engineering student in Canada while giving visitors reliable global context and learn-more resources."
+    },
+    {
+      "id": "update-dashboard",
+      "date": "2026-04-18",
+      "category": "Site update",
+      "title": "Added a dashboard view for weekly and monthly learning progress",
+      "why": "I wanted the site to show progress over time instead of isolated totals."
+    },
+    {
+      "id": "update-reflection-log",
+      "date": "2026-04-17",
+      "category": "Reflection",
+      "title": "Published a reflection on fact-checking AI summaries",
+      "why": "It marked a useful shift from convenience-first research to evidence-first research."
+    },
+    {
+      "id": "update-peer-library",
+      "date": "2026-04-14",
+      "category": "Community contribution",
+      "title": "Expanded the peer support mini library with safety and citation resources",
+      "why": "Classmates needed practical links they could use quickly without sorting through long articles."
+    },
+    {
+      "id": "update-ai-guide",
+      "date": "2026-04-09",
+      "category": "Ethical technology use",
+      "title": "Drafted a personal guide for responsible AI use",
+      "why": "I wanted clearer boundaries for when AI helps and when it risks weakening accountability."
+    },
+    {
+      "id": "update-privacy-checklist",
+      "date": "2026-04-05",
+      "category": "Privacy and security awareness",
+      "title": "Created a starter checklist for privacy settings on new apps",
+      "why": "Default settings often make decisions for me unless I slow down and review them."
+    },
+    {
+      "id": "update-values",
+      "date": "2026-03-30",
+      "category": "Values",
+      "title": "Revised the site's digital citizenship commitments",
+      "why": "The values needed to sound actionable enough to guide real choices, not just describe ideals."
+    }
+  ]
+}
