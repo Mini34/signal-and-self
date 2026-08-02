@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 from html.parser import HTMLParser
 from pathlib import Path
@@ -95,8 +96,60 @@ def validate_records() -> list[str]:
     return errors
 
 
+def rgb(hex_color: str) -> tuple[int, int, int]:
+    value = hex_color.removeprefix("#")
+    return tuple(int(value[index:index + 2], 16) for index in (0, 2, 4))
+
+
+def contrast_ratio(foreground: str, background: str) -> float:
+    def luminance(color: str) -> float:
+        channels = []
+        for channel in rgb(color):
+            normalized = channel / 255
+            channels.append(normalized / 12.92 if normalized <= 0.04045 else ((normalized + 0.055) / 1.055) ** 2.4)
+        return 0.2126 * channels[0] + 0.7152 * channels[1] + 0.0722 * channels[2]
+
+    lighter, darker = sorted((luminance(foreground), luminance(background)), reverse=True)
+    return (lighter + 0.05) / (darker + 0.05)
+
+
+def validate_theme_contrast() -> list[str]:
+    css = (PROJECT_ROOT / "assets" / "styles" / "portfolio.css").read_text(encoding="utf-8")
+
+    def variables_for(selector: str) -> dict[str, str]:
+        match = re.search(rf"{re.escape(selector)}\s*\{{(?P<body>.*?)\}}", css, re.DOTALL)
+        if not match:
+            return {}
+        return dict(re.findall(r"(--[\w-]+):\s*(#[0-9a-fA-F]{6})", match.group("body")))
+
+    root = variables_for(":root")
+    themes = {
+        "signal": root,
+        "midnight": root | variables_for('[data-theme="midnight"]'),
+        "quiet": root | variables_for('[data-theme="quiet"]'),
+    }
+    pairs = [
+        ("--ink", "--surface-solid", "surface text"),
+        ("--ink", "--paper", "page text"),
+        ("--on-blue", "--blue", "blue accent text"),
+        ("--on-dark", "--dark-canvas", "dark section text"),
+        ("--on-accent", "--lime", "lime accent text"),
+        ("--on-coral", "--coral", "coral accent text"),
+        ("--positive", "--surface-solid", "completed status text"),
+        ("--planned", "--surface-solid", "planned status text"),
+    ]
+    errors: list[str] = []
+    for theme_name, variables in themes.items():
+        for foreground, background, label in pairs:
+            ratio = contrast_ratio(variables[foreground], variables[background])
+            if ratio < 4.5:
+                errors.append(f"{theme_name} theme {label} contrast is {ratio:.2f}:1; expected at least 4.5:1")
+    return errors
+
+
 def main() -> int:
     errors = validate_records()
+    errors.extend(validate_theme_contrast())
     for page in EXPECTED_PAGES:
         errors.extend(validate_page(page))
     if errors:
