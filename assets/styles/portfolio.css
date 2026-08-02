@@ -702,17 +702,25 @@ h3 {
 
 .section-dark {
   position: relative;
+  isolation: isolate;
   color: var(--on-dark);
+  background: var(--dark-canvas);
 }
 
 .section-dark::before {
   position: absolute;
   inset: 0 calc(50% - 50vw);
-  z-index: -1;
+  z-index: 0;
   content: "";
   background:
     radial-gradient(circle at 85% 0%, rgba(49, 85, 231, 0.5), transparent 35rem),
     var(--dark-canvas);
+  pointer-events: none;
+}
+
+.section-dark > .site-shell {
+  position: relative;
+  z-index: 1;
 }
 
 .section-dark .eyebrow,
@@ -903,12 +911,14 @@ h3 {
   gap: 1px;
   overflow: hidden;
   padding: 0;
+  color: var(--ink);
   background: var(--line);
 }
 
 .now-item {
   min-height: 150px;
   padding: 28px;
+  color: var(--ink);
   background: var(--surface-solid);
 }
 
@@ -922,6 +932,7 @@ h3 {
 .now-item strong {
   display: block;
   margin-top: 12px;
+  color: var(--ink);
   font-family: var(--font-display);
   font-size: 1.55rem;
   font-weight: 600;
