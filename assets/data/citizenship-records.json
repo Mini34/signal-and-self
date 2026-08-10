@@ -3,7 +3,7 @@
     "name": "Signal & Self",
     "descriptor": "A digital citizenship fieldbook",
     "version": "2.0",
-    "lastUpdated": "2026-08-02",
+    "lastUpdated": "2026-08-10",
     "headline": "Learning to build technology that deserves trust.",
     "status": "Growing in public"
   },
@@ -842,6 +842,18 @@
   ],
   "projects": [
     {
+      "id": "project-trailhead-support-api",
+      "title": "Trailhead Customer Support API",
+      "description": "A grounded FastAPI service that combines Claude-powered conversation with policy retrieval, deterministic business tools, and structured escalation.",
+      "skills": ["Python", "FastAPI", "LLM tool use", "Automated testing"],
+      "impact": "It demonstrates how model-driven conversation can stay bounded by tested authorization, business rules, citations, and clear production-safety limits.",
+      "link": "https://github.com/Mini34/trailhead-claude-support-api",
+      "linkLabel": "View the code",
+      "status": "Completed",
+      "progress": 100,
+      "year": 2026
+    },
+    {
       "id": "project-browser-privacy-lab",
       "title": "Browser privacy mini lab",
       "description": "A guided, device-local activity that explains cookies, permission prompts, tracking protection, and what private browsing does—and does not—change.",
@@ -951,6 +963,13 @@
     }
   ],
   "updates": [
+    {
+      "id": "update-github-projects",
+      "date": "2026-08-10",
+      "category": "Portfolio update",
+      "title": "Connected the fieldbook to my GitHub projects",
+      "why": "I wanted visitors to move easily from the ideas in this portfolio to a concrete, tested software project and the source work behind it."
+    },
     {
       "id": "update-signal-and-self",
       "date": "2026-08-02",

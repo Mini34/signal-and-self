@@ -1,16 +1,29 @@
 # Signal & Self
 
+[![Live site](https://img.shields.io/badge/Live_site-Visit-3155e8)](https://mini34.github.io/signal-and-self/)
+[![Pages deployment](https://github.com/Mini34/signal-and-self/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/Mini34/signal-and-self/actions/workflows/deploy-pages.yml)
+
 Signal & Self is Mina Soliman's living digital citizenship fieldbook. It connects responsible-technology habits with personal reflection, practical initiatives, measurable learning signals, and a transparent journey log.
+
+**Live site:** [mini34.github.io/signal-and-self](https://mini34.github.io/signal-and-self/)
 
 ## What is inside
 
 - A personal story and six-part digital citizenship framework
 - An interactive signals dashboard with habit progress and global context
 - Twenty searchable and filterable field notes
-- Ten completed, active, and planned initiatives
-- A sixteen-record timeline that can be filtered, printed, or downloaded
+- Eleven completed, active, and planned initiatives, including a tested Python API
+- A seventeen-record timeline that can be filtered, printed, or downloaded
 - Device-local personalization, themes, saved items, and a global search palette
 - Responsive layouts, keyboard navigation, reduced-motion support, and accessible controls
+
+## Engineering highlights
+
+- Semantic, dependency-free HTML, CSS, and JavaScript
+- Data-driven reflections, projects, metrics, search, and filtering
+- Responsive navigation and three visitor-selectable themes
+- Device-local preferences with no analytics or server-side data collection
+- Automated content, structure, and internal-link validation before deployment
 
 ## Project structure
 
@@ -37,12 +50,12 @@ signal-and-self/
 Python 3 is the only requirement.
 
 ```powershell
-py tools/serve_site.py
+python tools/serve_site.py
 ```
 
 Then open `http://127.0.0.1:8000`.
 
-Run `py tools/validate_site.py` for a quick content and local-link check.
+Run `python tools/validate_site.py` for a quick content and local-link check.
 
 ## Data and privacy
 
