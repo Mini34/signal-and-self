@@ -3,22 +3,14 @@ name: Deploy Signal & Self to GitHub Pages
 on:
   push:
     branches: ["master"]
+  pull_request:
   workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  validate:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -29,6 +21,24 @@ jobs:
           python-version: "3.12"
       - name: Validate website
         run: python tools/validate_site.py
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: validate
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload static website
