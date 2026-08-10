@@ -157,7 +157,10 @@ def main() -> int:
         for error in errors:
             print(f"- {error}")
         return 1
-    print("Signal & Self validation passed: 6 pages, 20 reflections, 10 initiatives, 16 journey records.")
+    print(
+        "Signal & Self validation passed: pages, structured records, theme "
+        "contrast, and local references are valid."
+    )
     return 0
 
 

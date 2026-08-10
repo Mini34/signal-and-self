@@ -135,6 +135,7 @@
           <p>This fieldbook is a living record of what I am learning, building, questioning, and improving as I move toward electrical engineering.</p>
           <div class="button-row">
             <a class="button button-accent" href="${pathFromRoot("pages/initiatives.html")}">Explore initiatives</a>
+            <a class="button button-quiet" href="https://github.com/Mini34">View GitHub</a>
             <button class="button" type="button" data-open-personalize>Personalize your view</button>
           </div>
         </div>
