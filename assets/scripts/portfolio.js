@@ -1138,7 +1138,7 @@
     bindShellEvents();
     applyTheme(preferences.theme, false);
     try {
-      const response = await fetch(pathFromRoot("assets/data/citizenship-records.json"));
+      const response = await fetch(pathFromRoot("assets/data/citizenship-records.json?v=interactive-20260812b"));
       if (!response.ok) throw new Error(`Data request failed: ${response.status}`);
       data = await response.json();
       populatePersonalizationForm();
