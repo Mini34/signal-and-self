@@ -8,11 +8,9 @@
   const savedKey = "signal-and-self-saved-items";
   const pageRoutes = {
     home: ["Overview", "index.html"],
-    profile: ["Story", "pages/profile.html"],
-    insights: ["Signals", "pages/insights.html"],
+    initiatives: ["Work", "pages/initiatives.html"],
     notes: ["Field notes", "pages/field-notes.html"],
-    initiatives: ["Initiatives", "pages/initiatives.html"],
-    journey: ["Journey", "pages/journey.html"]
+    profile: ["About", "pages/profile.html"]
   };
 
   let data = null;
@@ -295,6 +293,11 @@
       ".search-result",
       ".resource-link",
       ".path-card",
+      ".case-tab",
+      ".system-node",
+      ".explore-rail a",
+      ".signal-evidence summary",
+      ".score-method summary",
       ".site-nav a"
     ].join(",");
 
@@ -529,6 +532,7 @@
     setText("[data-reflection-count]", data.reflections.length);
     setText("[data-project-count]", data.projects.length);
     setText("[data-update-count]", data.updates.length);
+    setText("[data-score-review-date]", formatDate(data.site.lastUpdated));
 
     const signalHost = query("#practice-signals");
     if (signalHost) {
@@ -540,8 +544,12 @@
             <p>${escapeHTML(area.description)}</p>
           </div>
           <div>
-            <div class="signal-score"><strong>${area.score}</strong><span class="mono-label">/ 100</span></div>
+            <div class="signal-score"><strong>${area.score}</strong><span class="mono-label">self-check</span></div>
             <div class="signal-meter" aria-label="${escapeHTML(area.label)} progress ${area.score} percent"><span style="--progress:${area.score}%"></span></div>
+            <details class="signal-evidence">
+              <summary>See the evidence</summary>
+              <p>${escapeHTML(area.evidence)}</p>
+            </details>
           </div>
         </article>
       `).join("");
@@ -562,6 +570,116 @@
       ].map(([label, value]) => `<div class="now-item"><span>${label}</span><strong>${escapeHTML(value)}</strong></div>`).join("");
     }
 
+    renderFeaturedProject();
+    initExploreRail();
+  }
+
+  function renderFeaturedProject() {
+    const host = query("#featured-project");
+    const project = data.projects.find((item) => item.featured) || data.projects.find((item) => item.status === "Completed");
+    if (!host || !project) return;
+    const views = project.caseStudy || [];
+    const defaultView = views[0];
+    host.innerHTML = `
+      <article class="case-study-shell" data-case-study>
+        <div class="case-system" aria-label="Interactive architecture map for ${escapeHTML(project.title)}">
+          <div class="case-system-topline">
+            <span class="status-badge" data-status="${escapeHTML(project.status)}">${escapeHTML(project.status)}</span>
+            <span class="mono-label">${escapeHTML(project.artifact || "Project artifact")}</span>
+          </div>
+          <div class="system-map">
+            <button class="system-node is-active" type="button" data-case-tab="challenge"><span>01</span><strong>User need</strong></button>
+            <span class="system-arrow" aria-hidden="true">→</span>
+            <button class="system-node" type="button" data-case-tab="architecture"><span>02</span><strong>Bounded system</strong></button>
+            <span class="system-arrow" aria-hidden="true">→</span>
+            <button class="system-node" type="button" data-case-tab="evidence"><span>03</span><strong>Visible proof</strong></button>
+          </div>
+          <div class="guardrail-track" aria-hidden="true"><span>Policy</span><span>Tools</span><span>Tests</span><span>Escalation</span></div>
+          <p class="case-system-hint">Select a node to inspect the decision behind it.</p>
+        </div>
+        <div class="case-story">
+          <p class="mono-label">${escapeHTML(project.title)}</p>
+          <div class="case-tabs" role="tablist" aria-label="Project perspectives">
+            ${views.map((view, index) => `<button class="case-tab ${index === 0 ? "is-active" : ""}" id="case-tab-${escapeHTML(view.id)}" type="button" role="tab" aria-selected="${index === 0}" aria-controls="case-panel" data-case-tab="${escapeHTML(view.id)}">${escapeHTML(view.label)}</button>`).join("")}
+          </div>
+          <div class="case-panel" id="case-panel" role="tabpanel" aria-live="polite" aria-labelledby="case-tab-${escapeHTML(defaultView?.id || "challenge")}"></div>
+          <div class="tag-row">${project.skills.map((skill) => `<span class="tag">${escapeHTML(skill)}</span>`).join("")}</div>
+          <div class="button-row">
+            <a class="button button-primary" href="${project.link}" target="_blank" rel="noreferrer">View tested repository</a>
+            <a class="button button-quiet" href="${pathFromRoot("pages/initiatives.html")}">Browse all work</a>
+          </div>
+        </div>
+      </article>
+    `;
+
+    const activate = (id, moveFocus = false) => {
+      const view = views.find((item) => item.id === id) || defaultView;
+      const panel = query("#case-panel", host);
+      if (!view || !panel) return;
+      panel.setAttribute("aria-labelledby", `case-tab-${view.id}`);
+      panel.innerHTML = `
+        <p class="eyebrow">${escapeHTML(view.kicker)}</p>
+        <h3>${escapeHTML(view.title)}</h3>
+        <p>${escapeHTML(view.copy)}</p>
+        <ul>${view.points.map((point) => `<li>${escapeHTML(point)}</li>`).join("")}</ul>
+      `;
+      queryAll("[data-case-tab]", host).forEach((control) => control.classList.toggle("is-active", control.dataset.caseTab === view.id));
+      queryAll(".case-tab", host).forEach((tab) => {
+        const active = tab.dataset.caseTab === view.id;
+        tab.setAttribute("aria-selected", String(active));
+        tab.tabIndex = active ? 0 : -1;
+        if (active && moveFocus) tab.focus();
+      });
+    };
+
+    host.addEventListener("click", (event) => {
+      const control = event.target.closest("[data-case-tab]");
+      if (control) activate(control.dataset.caseTab);
+    });
+    host.addEventListener("keydown", (event) => {
+      const tab = event.target.closest(".case-tab");
+      if (!tab || !["ArrowLeft", "ArrowRight"].includes(event.key)) return;
+      event.preventDefault();
+      const current = views.findIndex((item) => item.id === tab.dataset.caseTab);
+      const direction = event.key === "ArrowRight" ? 1 : -1;
+      activate(views[(current + direction + views.length) % views.length].id, true);
+    });
+
+    const shell = query(".case-study-shell", host);
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    shell?.addEventListener("pointermove", (event) => {
+      if (reducedMotion.matches || event.pointerType === "touch") return;
+      const bounds = shell.getBoundingClientRect();
+      shell.style.setProperty("--case-x", `${((event.clientX - bounds.left) / bounds.width - 0.5) * 7}deg`);
+      shell.style.setProperty("--case-y", `${((event.clientY - bounds.top) / bounds.height - 0.5) * -5}deg`);
+    });
+    shell?.addEventListener("pointerleave", () => {
+      shell.style.setProperty("--case-x", "0deg");
+      shell.style.setProperty("--case-y", "0deg");
+    });
+    activate(defaultView?.id);
+  }
+
+  function initExploreRail() {
+    const rail = query(".explore-rail");
+    if (!rail) return;
+    const links = queryAll("[data-rail-target]", rail);
+    const sections = links.map((link) => query(`#${CSS.escape(link.dataset.railTarget)}`)).filter(Boolean);
+    const setActive = (id) => {
+      const index = links.findIndex((link) => link.dataset.railTarget === id);
+      links.forEach((link) => {
+        if (link.dataset.railTarget === id) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+      });
+      rail.style.setProperty("--rail-progress", `${Math.max(0, index) / Math.max(1, links.length - 1) * 100}%`);
+    };
+    if (!("IntersectionObserver" in window)) return setActive(links[0]?.dataset.railTarget);
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible) setActive(visible.target.id);
+    }, { rootMargin: "-30% 0px -55%", threshold: [0, 0.15, 0.4] });
+    sections.forEach((section) => observer.observe(section));
+    setActive(links[0]?.dataset.railTarget);
   }
 
   function renderProfile() {
@@ -868,6 +986,7 @@
   function projectCard(item) {
     const defaultProgress = item.status === "Completed" ? 100 : item.status === "Ongoing" ? 58 : 14;
     const progress = item.progress ?? defaultProgress;
+    const externalLink = /^https?:/i.test(item.link);
     return `
       <article class="card project-card" id="${item.id}">
         <div class="card-topline">
@@ -876,13 +995,49 @@
         </div>
         <h3>${escapeHTML(item.title)}</h3>
         <p>${escapeHTML(item.description)}</p>
+        <p class="project-impact"><span>Why it matters</span>${escapeHTML(item.impact)}</p>
         <div class="tag-row">${item.skills.map((skill) => `<span class="tag">${escapeHTML(skill)}</span>`).join("")}</div>
         <div class="card-footer-row">
           <div style="flex:1;min-width:150px"><div class="habit-topline"><span>Progress</span><span>${progress}%</span></div><div class="progress-track"><span style="--progress:${progress}%"></span></div></div>
-          <a class="button button-small button-quiet" href="${normalizeLegacyLink(item.link)}">${escapeHTML(item.linkLabel)}</a>
+          <div class="project-actions">
+            <button class="button button-small button-quiet no-arrow" type="button" data-open-project="${item.id}">Explore details</button>
+            <a class="button button-small" href="${normalizeLegacyLink(item.link)}" ${externalLink ? 'target="_blank" rel="noreferrer"' : ""}>${escapeHTML(item.linkLabel)}</a>
+          </div>
         </div>
       </article>
     `;
+  }
+
+  function openProject(item) {
+    if (!item) return;
+    const host = query("#reader-content");
+    const dialog = query("#reader-dialog");
+    if (!host || !dialog) return;
+    const defaultProgress = item.status === "Completed" ? 100 : item.status === "Ongoing" ? 58 : 14;
+    const progress = item.progress ?? defaultProgress;
+    const externalLink = /^https?:/i.test(item.link);
+    host.innerHTML = `
+      <div class="dialog-header">
+        <div><p class="eyebrow">Project case study</p><h2 id="reader-title">${escapeHTML(item.title)}</h2></div>
+        <button class="dialog-close" type="button" data-close-dialog aria-label="Close project details">×</button>
+      </div>
+      <div class="project-dialog-meta">
+        <span class="status-badge" data-status="${escapeHTML(item.status)}">${escapeHTML(item.status)}</span>
+        <span class="mono-label">${progress}% complete</span>
+        ${item.year ? `<span class="mono-label">${escapeHTML(item.year)}</span>` : ""}
+      </div>
+      <div class="story-copy">
+        <p>${escapeHTML(item.description)}</p>
+        <h3>Why it matters</h3>
+        <p>${escapeHTML(item.impact)}</p>
+        ${item.role ? `<h3>My contribution</h3><p>${escapeHTML(item.role)}</p>` : ""}
+        ${item.proof?.length ? `<h3>Evidence</h3><ul>${item.proof.map((point) => `<li>${escapeHTML(point)}</li>`).join("")}</ul>` : ""}
+      </div>
+      <div class="tag-row">${item.skills.map((skill) => `<span class="tag">${escapeHTML(skill)}</span>`).join("")}</div>
+      <div class="button-row"><a class="button button-primary" href="${normalizeLegacyLink(item.link)}" ${externalLink ? 'target="_blank" rel="noreferrer"' : ""}>${escapeHTML(item.linkLabel)}</a></div>
+    `;
+    body.classList.add("is-locked");
+    dialog.showModal();
   }
 
   function renderInitiatives() {
@@ -913,6 +1068,10 @@
     query("#project-search")?.addEventListener("input", (event) => {
       searchTerm = event.target.value.trim();
       render();
+    });
+    query("#project-grid")?.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-open-project]");
+      if (button) openProject(data.projects.find((item) => item.id === button.dataset.openProject));
     });
     render();
   }

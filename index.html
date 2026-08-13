@@ -28,14 +28,14 @@
         <h1>Building technology that deserves <span class="serif-italic">trust.</span></h1>
         <p class="hero-lede" data-personal-intro>Explore the habits, projects, and field notes shaping my approach to responsible technology.</p>
         <div class="button-row">
-          <a class="button button-primary" href="pages/insights.html">Explore my signals</a>
-          <a class="button button-quiet" href="pages/field-notes.html">Read a field note</a>
+          <a class="button button-primary" href="#featured-work">See my strongest work</a>
+          <a class="button button-quiet" href="https://github.com/Mini34" target="_blank" rel="noreferrer">View GitHub</a>
           <button class="button button-accent" type="button" data-open-personalize>Make it personal</button>
         </div>
         <div class="hero-meta" aria-label="Portfolio summary">
-          <div class="hero-meta-item"><strong><span data-reflection-count>20</span> notes</strong><span>Reflection archive</span></div>
+          <div class="hero-meta-item"><strong>1 tested API</strong><span>Featured build</span></div>
           <div class="hero-meta-item"><strong><span data-project-count>10</span> initiatives</strong><span>Built and planned</span></div>
-          <div class="hero-meta-item"><strong><span data-update-count>16</span> records</strong><span>Visible progress</span></div>
+          <div class="hero-meta-item"><strong><span data-reflection-count>20</span> notes</strong><span>Reflection archive</span></div>
         </div>
       </div>
 
@@ -50,8 +50,8 @@
         </div>
       </div>
 
-      <a class="scroll-cue" href="#signals" aria-label="Continue to the practice compass">
-        <span class="scroll-cue-label">Follow the signal</span>
+      <a class="scroll-cue" href="#featured-work" aria-label="Continue to the featured project">
+        <span class="scroll-cue-label">Follow the build</span>
         <span class="scroll-cue-track" aria-hidden="true">
           <span class="scroll-cue-pulse"></span>
         </span>
@@ -65,15 +65,35 @@
       </div>
     </div>
 
+    <nav class="explore-rail" aria-label="Homepage sections">
+      <span class="explore-rail-line" aria-hidden="true"><span></span></span>
+      <a href="#featured-work" data-rail-target="featured-work"><span>01</span><strong>Work</strong></a>
+      <a href="#signals" data-rail-target="signals"><span>02</span><strong>Signals</strong></a>
+      <a href="#now" data-rail-target="now"><span>03</span><strong>Now</strong></a>
+      <a href="#paths" data-rail-target="paths"><span>04</span><strong>Explore</strong></a>
+    </nav>
+
+    <section class="section site-shell featured-work" id="featured-work">
+      <div class="section-header" data-reveal>
+        <div><p class="eyebrow">Featured technical work</p><h2>AI assistance, bounded by tested rules.</h2></div>
+        <p class="section-intro">Explore the system, switch perspectives, and see how I translated responsible-technology principles into a working API.</p>
+      </div>
+      <div id="featured-project" data-reveal></div>
+    </section>
+
     <section class="section site-shell" id="signals">
       <div class="section-header" data-reveal>
         <div><p class="eyebrow">My practice compass</p><h2>Four signals I want to strengthen.</h2></div>
-        <p class="section-intro">A quick view of where I am consistent and where I am still growing.</p>
+        <p class="section-intro">A reflective self-check—not a certification. Open each signal to see the evidence behind it.</p>
       </div>
+      <details class="score-method" data-reveal>
+        <summary>How these scores work</summary>
+        <p>Each score combines recent habits, completed artifacts, and reflection notes. It is a directional snapshot for noticing growth, not an externally validated grade. Last reviewed <span data-score-review-date></span>.</p>
+      </details>
       <div class="card-grid four-up" id="practice-signals" data-reveal></div>
     </section>
 
-    <section class="section section-dark">
+    <section class="section section-dark" id="now">
       <div class="site-shell">
         <div class="section-header" data-reveal>
           <div><p class="eyebrow">Current fieldwork</p><h2>What has my attention right now.</h2></div>
@@ -93,27 +113,34 @@
       </div>
     </section>
 
-    <section class="section site-shell overview-paths">
+    <section class="section site-shell overview-paths" id="paths">
       <div class="section-header" data-reveal>
         <div><p class="eyebrow">Choose a path</p><h2>Go directly to what interests you.</h2></div>
         <p class="section-intro">The deeper context now lives where it belongs, leaving this overview faster to scan.</p>
       </div>
       <div class="path-grid" data-reveal>
+        <a class="path-card" href="pages/initiatives.html">
+          <span class="card-index">01 · Work</span>
+          <strong>Inspect the full project library.</strong>
+          <span class="path-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="path-card" href="pages/field-notes.html">
+          <span class="card-index">02 · Notes</span>
+          <strong>Read the thinking behind the work.</strong>
+          <span class="path-arrow" aria-hidden="true">↗</span>
+        </a>
         <a class="path-card" href="pages/profile.html">
-          <span class="card-index">01 · Story</span>
+          <span class="card-index">03 · About</span>
           <strong>Meet the person behind the signals.</strong>
           <span class="path-arrow" aria-hidden="true">↗</span>
         </a>
-        <a class="path-card" href="pages/insights.html">
-          <span class="card-index">02 · Evidence</span>
-          <strong>Explore progress, habits, and context.</strong>
-          <span class="path-arrow" aria-hidden="true">↗</span>
-        </a>
-        <a class="path-card" href="pages/initiatives.html">
-          <span class="card-index">03 · Work</span>
-          <strong>Browse what I have built and planned.</strong>
-          <span class="path-arrow" aria-hidden="true">↗</span>
-        </a>
+      </div>
+      <div class="professional-cta" data-reveal>
+        <div><p class="eyebrow">The technical view</p><h3>Code, decisions, and progress—all in one trail.</h3></div>
+        <div class="button-row">
+          <a class="button button-primary" href="https://github.com/Mini34" target="_blank" rel="noreferrer">Explore my GitHub</a>
+          <a class="button button-quiet" href="pages/journey.html">Follow the journey</a>
+        </div>
       </div>
     </section>
   </main>

@@ -847,6 +847,41 @@
       "description": "A grounded FastAPI service that combines Claude-powered conversation with policy retrieval, deterministic business tools, and structured escalation.",
       "skills": ["Python", "FastAPI", "LLM tool use", "Automated testing"],
       "impact": "It demonstrates how model-driven conversation can stay bounded by tested authorization, business rules, citations, and clear production-safety limits.",
+      "featured": true,
+      "role": "System architecture, backend implementation, policy grounding, and validation",
+      "artifact": "Tested public GitHub repository",
+      "proof": [
+        "Automated test coverage",
+        "Deterministic business tools",
+        "Grounded policy citations",
+        "Explicit human escalation"
+      ],
+      "caseStudy": [
+        {
+          "id": "challenge",
+          "label": "Challenge",
+          "kicker": "The problem",
+          "title": "Let an AI help without letting it invent authority.",
+          "copy": "A support assistant needs to sound natural while still obeying authorization, refund, citation, and escalation rules. The design challenge was separating conversational flexibility from decisions that must remain deterministic.",
+          "points": ["Keep policy claims traceable", "Prevent invented business actions", "Escalate when the system reaches its limits"]
+        },
+        {
+          "id": "architecture",
+          "label": "Architecture",
+          "kicker": "The system",
+          "title": "Conversation on top; tested tools underneath.",
+          "copy": "Claude handles the dialogue, while FastAPI routes sensitive operations through explicit tools. Policy retrieval grounds answers in known material, and structured boundaries keep the model away from direct authority.",
+          "points": ["FastAPI service layer", "Policy retrieval with citations", "Deterministic tools for business actions"]
+        },
+        {
+          "id": "evidence",
+          "label": "Evidence",
+          "kicker": "Why it is credible",
+          "title": "The safety story is visible in the repository.",
+          "copy": "The project documents production limits instead of hiding them. Automated tests exercise expected behavior, escalation is treated as a valid outcome, and the repository makes the implementation available for inspection.",
+          "points": ["Automated tests", "Clear production-safety limits", "Public source and documentation"]
+        }
+      ],
       "link": "https://github.com/Mini34/trailhead-claude-support-api",
       "linkLabel": "View the code",
       "status": "Completed",
