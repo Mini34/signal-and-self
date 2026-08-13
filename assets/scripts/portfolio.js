@@ -277,6 +277,7 @@
     });
 
     window.addEventListener("scroll", updateScrollProgress, { passive: true });
+    window.addEventListener("resize", updateScrollProgress, { passive: true });
     updateScrollProgress();
     bindPressEffects();
   }
@@ -326,10 +327,20 @@
 
   function updateScrollProgress() {
     const progress = query(".scroll-progress");
-    if (!progress) return;
     const available = document.documentElement.scrollHeight - window.innerHeight;
     const ratio = available > 0 ? window.scrollY / available : 0;
-    progress.style.transform = `scaleX(${Math.min(1, Math.max(0, ratio))})`;
+    if (progress) progress.style.transform = `scaleX(${Math.min(1, Math.max(0, ratio))})`;
+
+    const cue = query(".scroll-cue");
+    if (cue) {
+      const isFixedCue = getComputedStyle(cue).position === "fixed";
+      const fadeDistance = Math.max(260, window.innerHeight * 0.38);
+      const cueProgress = isFixedCue ? Math.min(1, Math.max(0, window.scrollY / fadeDistance)) : 0;
+      cue.style.setProperty("--cue-opacity", String(1 - cueProgress));
+      cue.style.setProperty("--cue-shift", `${cueProgress * 14}px`);
+      cue.classList.toggle("is-hidden", cueProgress >= 0.98);
+      cue.tabIndex = cueProgress >= 0.98 ? -1 : 0;
+    }
   }
 
   function initReveal() {
