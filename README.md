@@ -22,7 +22,7 @@ Signal & Self is Mina Soliman's living digital citizenship fieldbook. It connect
 - Semantic, dependency-free HTML, CSS, and JavaScript
 - Data-driven reflections, projects, metrics, search, and filtering
 - Responsive navigation and three visitor-selectable themes
-- Device-local preferences with no analytics or server-side data collection
+- Device-local preferences plus privacy-first, cookie-free traffic analytics
 - Automated content, structure, and internal-link validation before deployment
 
 ## Project structure
@@ -57,9 +57,13 @@ Then open `http://127.0.0.1:8000`.
 
 Run `python tools/validate_site.py` for a quick content and local-link check.
 
-## Data and privacy
+## Analytics, data, and privacy
 
-The public portfolio content is stored in `assets/data/citizenship-records.json`. Visitor personalization, theme choices, and saved items stay in the visitor's browser through local storage; the site does not send or collect that information.
+The site uses Cloudflare Web Analytics to measure page views, visits, referral sources, countries, devices, and page-load performance. Cloudflare states that Web Analytics does not collect or use visitors' personal data, and the site does not add analytics cookies. Analytics collection began on August 21, 2026; earlier visits cannot be reconstructed. Cloudflare currently makes the previous six months available in its dashboard.
+
+To review the private dashboard, sign in to [Cloudflare](https://dash.cloudflare.com/) and open **Analytics → Web analytics → mini34.github.io**.
+
+The public portfolio content is stored in `assets/data/citizenship-records.json`. Visitor personalization, theme choices, and saved items stay in the visitor's browser through local storage and are not included in analytics.
 
 ## Deployment
 
