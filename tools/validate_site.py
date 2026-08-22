@@ -70,11 +70,39 @@ def validate_page(page: Path) -> list[str]:
     duplicate_ids = sorted({item for item in parser.ids if parser.ids.count(item) > 1})
     if duplicate_ids:
         errors.append(f"Duplicate IDs in {page.relative_to(PROJECT_ROOT)}: {', '.join(duplicate_ids)}")
+    analytics_references = [
+        reference
+        for reference in parser.references
+        if urlsplit(reference).path.endswith("assets/scripts/analytics.js")
+    ]
+    if len(analytics_references) != 1:
+        errors.append(
+            f"Expected one analytics loader in {page.relative_to(PROJECT_ROOT)}; "
+            f"found {len(analytics_references)}"
+        )
     for reference in parser.references:
         target = local_target(page, reference)
         if target is not None and not target.exists():
             errors.append(f"Broken reference in {page.relative_to(PROJECT_ROOT)}: {reference}")
     return errors
+
+
+def validate_analytics() -> list[str]:
+    analytics_path = PROJECT_ROOT / "assets" / "scripts" / "analytics.js"
+    if not analytics_path.is_file():
+        return ["Missing analytics loader: assets/scripts/analytics.js"]
+
+    analytics = analytics_path.read_text(encoding="utf-8")
+    required_fragments = [
+        'window.location.hostname !== "mini34.github.io"',
+        'https://static.cloudflareinsights.com/beacon.min.js',
+        "dataset.cfBeacon",
+    ]
+    return [
+        f"Analytics loader is missing required configuration: {fragment}"
+        for fragment in required_fragments
+        if fragment not in analytics
+    ]
 
 
 def validate_records() -> list[str]:
@@ -149,6 +177,7 @@ def validate_theme_contrast() -> list[str]:
 
 def main() -> int:
     errors = validate_records()
+    errors.extend(validate_analytics())
     errors.extend(validate_theme_contrast())
     for page in EXPECTED_PAGES:
         errors.extend(validate_page(page))
