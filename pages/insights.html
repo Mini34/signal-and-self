@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore the personal habits, progress signals, and global context behind Mina's digital citizenship practice.">
+  <meta name="theme-color" content="#f4f0e8">
+  <meta property="og:title" content="Signals — Signal & Self">
+  <meta property="og:description" content="Personal progress and global context for responsible digital participation.">
+  <meta property="og:image" content="https://mini34.github.io/signal-and-self/assets/images/signal-and-self-og.png">
+  <title>Signals — Signal & Self</title>
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/styles/portfolio.css?v=interactive-20260812b">
+  <script src="../assets/scripts/portfolio.js?v=interactive-20260812b" defer></script>
+</head>
+<body id="top" data-page="insights" data-root="..">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <div id="site-header"></div>
+
+  <main id="main-content">
+    <section class="page-hero site-shell" data-reveal>
+      <div class="page-hero-topline">
+        <p class="eyebrow">Progress without performance</p>
+        <span class="hero-stamp">Evidence<br>over<br>vanity</span>
+      </div>
+      <h1>Measure what helps me <span class="serif-italic">notice.</span></h1>
+      <p class="page-lede">These numbers are prompts for reflection: where I am consistent, where momentum is fragile, and where a goal needs a better system behind it.</p>
+      <div class="button-row"><a class="button button-primary" href="#momentum">View momentum</a><a class="button button-quiet" href="#global-context">See global context</a></div>
+    </section>
+
+    <section class="section site-shell">
+      <div class="section-header" data-reveal>
+        <div><p class="eyebrow">Top signals</p><h2>A quick read of the practice.</h2></div>
+        <p class="section-intro">Counts are paired with written records so progress never has to stand on a number alone.</p>
+      </div>
+      <div class="stats-ribbon" id="primary-stats" data-reveal></div>
+    </section>
+
+    <section class="section site-shell" id="momentum">
+      <div class="section-header" data-reveal>
+        <div><p class="eyebrow">Learning momentum</p><h2>Consistency has a shape.</h2></div>
+        <p class="section-intro" id="chart-summary">Learning hours logged by month</p>
+      </div>
+      <div class="chart-layout" data-reveal>
+        <article class="panel">
+          <div class="segmented-control" aria-label="Chart period">
+            <button class="chip is-active" type="button" data-period="monthly">Monthly</button>
+            <button class="chip" type="button" data-period="weekly">Weekly</button>
+          </div>
+          <div class="chart-shell" id="learning-chart" aria-label="Bar chart of digital citizenship learning hours"></div>
+        </article>
+        <aside class="panel"><p class="eyebrow">Recent evidence</p><div id="chart-focus"></div></aside>
+      </div>
+    </section>
+
+    <section class="section section-dark">
+      <div class="site-shell">
+        <div class="section-header" data-reveal>
+          <div><p class="eyebrow">Habit dashboard</p><h2>Small actions, repeated on purpose.</h2></div>
+          <p class="section-intro">The goal is not a perfect streak. It is noticing whether the environment makes a responsible action easier to repeat.</p>
+        </div>
+        <div class="feature-split" data-reveal>
+          <article class="panel"><div class="habit-list" id="habit-list"></div></article>
+          <article class="feature-card">
+            <div><p class="mono-label">Your goal</p><h3 data-personal-goal>Choose a digital goal to make this fieldbook feel more relevant to you.</h3><p>Personalization stays only in this browser. It is never uploaded or added to Mina's records.</p></div>
+            <button class="button" type="button" data-open-personalize>Set a personal goal</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section site-shell">
+      <div class="section-header" data-reveal>
+        <div><p class="eyebrow">More measures</p><h2>The wider progress picture.</h2></div>
+        <p class="section-intro">Goals, trends, and definitions stay visible so each metric has context.</p>
+      </div>
+      <div class="card-grid" id="secondary-stats" data-reveal></div>
+    </section>
+
+    <section class="section site-shell" id="digital-adoption">
+      <div class="section-header" data-reveal>
+        <div><p class="eyebrow">Digital adoption</p><h2>Access did not arrive everywhere at once.</h2></div>
+        <p class="section-intro">Move through the years to compare official regional internet-use aggregates and see why access remains part of the citizenship conversation.</p>
+      </div>
+      <article class="panel" data-reveal>
+        <div class="map-toolbar"><div><span class="mono-label">Selected year</span><div class="map-year" id="adoption-year-label">2025</div></div><p class="section-intro" id="adoption-note"></p></div>
+        <div class="adoption-map" id="adoption-map"></div>
+        <label class="visually-hidden" for="adoption-year">Digital adoption year</label>
+        <input class="map-slider" id="adoption-year" type="range" min="2000" max="2025" value="2025">
+        <div class="map-summary" id="adoption-summary"></div>
+        <p class="muted" id="adoption-source" style="margin-top:22px;font-size:.72rem"></p>
+      </article>
+    </section>
+
+    <section class="section site-shell" id="global-context">
+      <div class="section-header" data-reveal>
+        <div><p class="eyebrow">Global context</p><h2>The stakes extend far beyond one portfolio.</h2></div>
+        <p class="section-intro">Youth access, well-being, and safety data help connect personal habits to the conditions shaping digital participation worldwide.</p>
+      </div>
+      <div class="card-grid two-up" id="global-context-grid" data-reveal></div>
+    </section>
+
+    <section class="section site-shell">
+      <div class="section-header" data-reveal><div><p class="eyebrow">Go deeper</p><h2>Trusted starting points.</h2></div><p class="section-intro">Selected educational and institutional resources for continuing the conversation.</p></div>
+      <div class="panel" id="resource-list" data-reveal></div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <!-- Privacy-first traffic and performance analytics; disabled for local previews. -->
+  <script src="../assets/scripts/analytics.js?v=20260821" defer></script>
+</body>
+</html>

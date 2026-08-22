@@ -1,0 +1,17 @@
+# Local environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# IDE settings
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local preview output
+*.log
+

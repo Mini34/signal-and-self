@@ -1,116 +1,152 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A digital citizenship portfolio with reflections, statistics, projects, and ongoing commitments.">
-  <title>Digital Citizenship Portfolio</title>
-  <link rel="icon" href="static/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="static/css/styles.css">
-  <script src="static/js/site.js" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Signal & Self is Mina Soliman's digital citizenship fieldbook—projects, reflections, evidence, and responsible technology habits in one living portfolio.">
+  <meta name="theme-color" content="#f4f0e8">
+  <meta property="og:title" content="Signal & Self">
+  <meta property="og:description" content="A digital citizenship fieldbook about building technology that deserves trust.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://mini34.github.io/signal-and-self/assets/images/signal-and-self-og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Signal & Self — A Digital Citizenship Fieldbook</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles/portfolio.css?v=interactive-20260812b">
+  <script src="assets/scripts/portfolio.js?v=interactive-20260812b" defer></script>
 </head>
-<body data-page="home">
-  <div class="page-shell">
-    <header class="site-header">
-      <a class="brand" href="index.html">
-        <span class="brand-mark">DC</span>
-        <span class="brand-copy">
-          <strong>Digital Citizen</strong>
-          <small>Portfolio</small>
+<body id="top" data-page="home" data-root=".">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <div id="site-header"></div>
+
+  <main id="main-content">
+    <section class="home-hero site-shell">
+      <div class="hero-copy" data-reveal>
+        <p class="eyebrow live-dot" data-site-status>Growing in public</p>
+        <p class="personal-greeting" data-personal-greeting>Welcome in.</p>
+        <h1>Building technology that deserves <span class="serif-italic">trust.</span></h1>
+        <p class="hero-lede" data-personal-intro>Explore the habits, projects, and field notes shaping my approach to responsible technology.</p>
+        <div class="button-row">
+          <a class="button button-primary" href="#featured-work">See my strongest work</a>
+          <a class="button button-quiet" href="https://github.com/Mini34" target="_blank" rel="noreferrer">View GitHub</a>
+          <button class="button button-accent" type="button" data-open-personalize>Make it personal</button>
+        </div>
+        <div class="hero-meta" aria-label="Portfolio summary">
+          <div class="hero-meta-item"><strong>1 tested API</strong><span>Featured build</span></div>
+          <div class="hero-meta-item"><strong><span data-project-count>10</span> initiatives</strong><span>Built and planned</span></div>
+          <div class="hero-meta-item"><strong><span data-reflection-count>20</span> notes</strong><span>Reflection archive</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual" data-reveal aria-label="Four-part digital citizenship compass: verify, protect, build, and reflect">
+        <div class="orbit-stage">
+          <div class="orbit-core"><strong>Skill + care = trust</strong></div>
+          <span class="orbit-label">Verify</span>
+          <span class="orbit-label">Protect</span>
+          <span class="orbit-label">Build</span>
+          <span class="orbit-label">Reflect</span>
+          <span class="orbit-note">Current question → How can the safer choice become the easier default?</span>
+        </div>
+      </div>
+
+      <a class="scroll-cue" href="#featured-work" aria-label="Continue to the featured project">
+        <span class="scroll-cue-label">Follow the build</span>
+        <span class="scroll-cue-track" aria-hidden="true">
+          <span class="scroll-cue-pulse"></span>
         </span>
       </a>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="index.html" data-nav="home">Home</a>
-        <a href="about.html" data-nav="about">About</a>
-        <a href="dashboard.html" data-nav="dashboard">Dashboard</a>
-        <a href="reflections.html" data-nav="reflections">Reflections</a>
-        <a href="projects.html" data-nav="projects">Projects</a>
-        <a href="timeline.html" data-nav="timeline">Timeline</a>
-      </nav>
-    </header>
+    </section>
 
-    <main>
-      <section class="hero hero-home" data-reveal>
-        <div class="hero-copy-block">
-          <p class="eyebrow" id="hero-kicker"></p>
-          <h1 id="hero-name"></h1>
-          <p class="hero-tagline" id="hero-tagline"></p>
-          <p class="hero-text" id="hero-definition"></p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="dashboard.html">View the dashboard</a>
-            <a class="button button-secondary" href="reflections.html">Read reflections</a>
-          </div>
+    <div class="signal-strip" aria-hidden="true">
+      <div class="signal-strip-track">
+        <span>Evidence before confidence</span><span>Privacy before convenience</span><span>Access before polish</span><span>Reflection before repetition</span><span>People before metrics</span>
+        <span>Evidence before confidence</span><span>Privacy before convenience</span><span>Access before polish</span><span>Reflection before repetition</span><span>People before metrics</span>
+      </div>
+    </div>
+
+    <nav class="explore-rail" aria-label="Homepage sections">
+      <span class="explore-rail-line" aria-hidden="true"><span></span></span>
+      <a href="#featured-work" data-rail-target="featured-work"><span>01</span><strong>Work</strong></a>
+      <a href="#signals" data-rail-target="signals"><span>02</span><strong>Signals</strong></a>
+      <a href="#now" data-rail-target="now"><span>03</span><strong>Now</strong></a>
+      <a href="#paths" data-rail-target="paths"><span>04</span><strong>Explore</strong></a>
+    </nav>
+
+    <section class="section site-shell featured-work" id="featured-work">
+      <div class="section-header" data-reveal>
+        <div><p class="eyebrow">Featured technical work</p><h2>AI assistance, bounded by tested rules.</h2></div>
+        <p class="section-intro">Explore the system, switch perspectives, and see how I translated responsible-technology principles into a working API.</p>
+      </div>
+      <div id="featured-project" data-reveal></div>
+    </section>
+
+    <section class="section site-shell" id="signals">
+      <div class="section-header" data-reveal>
+        <div><p class="eyebrow">My practice compass</p><h2>Four signals I want to strengthen.</h2></div>
+        <p class="section-intro">A reflective self-check—not a certification. Open each signal to see the evidence behind it.</p>
+      </div>
+      <details class="score-method" data-reveal>
+        <summary>How these scores work</summary>
+        <p>Each score combines recent habits, completed artifacts, and reflection notes. It is a directional snapshot for noticing growth, not an externally validated grade. Last reviewed <span data-score-review-date></span>.</p>
+      </details>
+      <div class="card-grid four-up" id="practice-signals" data-reveal></div>
+    </section>
+
+    <section class="section section-dark" id="now">
+      <div class="site-shell">
+        <div class="section-header" data-reveal>
+          <div><p class="eyebrow">Current fieldwork</p><h2>What has my attention right now.</h2></div>
+          <p class="section-intro">The portfolio is a snapshot of a moving practice: one thing being learned, one thing being built, and one question worth keeping open.</p>
         </div>
-        <div class="hero-aside">
-          <article class="hero-card">
-            <p class="eyebrow">Mission</p>
-            <p id="hero-mission"></p>
+        <div class="feature-split" data-reveal>
+          <article class="feature-card">
+            <div>
+              <p class="mono-label">Featured field note</p>
+              <h3 id="featured-note-title">Designing privacy before adding features</h3>
+              <p id="featured-note-copy"></p>
+            </div>
+            <a class="button" id="featured-note-link" href="pages/field-notes.html">Read the full note</a>
           </article>
-          <article class="hero-card hero-card-accent">
-            <p class="eyebrow">Current focus</p>
-            <p>Measure habits that make online spaces more useful, safer, and more humane.</p>
-          </article>
+          <aside class="panel now-panel" id="now-grid" aria-label="What Mina is doing now"></aside>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="section section-grid" data-reveal>
-        <article class="panel">
-          <div class="section-heading">
-            <span>About this project</span>
-            <h2>Turning values into visible practice</h2>
-          </div>
-          <p id="project-summary"></p>
-        </article>
-        <article class="panel">
-          <div class="section-heading">
-            <span>Why digital citizenship matters</span>
-            <h2>Better digital habits benefit everyone</h2>
-          </div>
-          <div class="stacked-list" id="why-it-matters"></div>
-        </article>
-      </section>
-
-      <section class="section" data-reveal>
-        <div class="section-heading">
-          <span>Quick statistics preview</span>
-          <h2>Evidence, not vanity</h2>
+    <section class="section site-shell overview-paths" id="paths">
+      <div class="section-header" data-reveal>
+        <div><p class="eyebrow">Choose a path</p><h2>Go directly to what interests you.</h2></div>
+        <p class="section-intro">The deeper context now lives where it belongs, leaving this overview faster to scan.</p>
+      </div>
+      <div class="path-grid" data-reveal>
+        <a class="path-card" href="pages/initiatives.html">
+          <span class="card-index">01 · Work</span>
+          <strong>Inspect the full project library.</strong>
+          <span class="path-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="path-card" href="pages/field-notes.html">
+          <span class="card-index">02 · Notes</span>
+          <strong>Read the thinking behind the work.</strong>
+          <span class="path-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="path-card" href="pages/profile.html">
+          <span class="card-index">03 · About</span>
+          <strong>Meet the person behind the signals.</strong>
+          <span class="path-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <div class="professional-cta" data-reveal>
+        <div><p class="eyebrow">The technical view</p><h3>Code, decisions, and progress—all in one trail.</h3></div>
+        <div class="button-row">
+          <a class="button button-primary" href="https://github.com/Mini34" target="_blank" rel="noreferrer">Explore my GitHub</a>
+          <a class="button button-quiet" href="pages/journey.html">Follow the journey</a>
         </div>
-        <div class="card-grid compact-grid" id="stats-preview"></div>
-      </section>
+      </div>
+    </section>
+  </main>
 
-      <section class="section feature-grid" data-reveal>
-        <article class="panel">
-          <div class="section-heading">
-            <span>Featured reflection</span>
-            <h2>Recent learning in practice</h2>
-          </div>
-          <div id="featured-reflection"></div>
-        </article>
-        <article class="panel">
-          <div class="section-heading">
-            <span>Recent update</span>
-            <h2>What changed most recently</h2>
-          </div>
-          <div id="recent-update"></div>
-        </article>
-      </section>
-
-      <section class="section values-preview" data-reveal>
-        <div class="section-heading">
-          <span>Values preview</span>
-          <h2>Commitments that guide my online behavior</h2>
-        </div>
-        <div class="pill-grid" id="home-values"></div>
-        <a class="button button-secondary" href="about.html#values">See the full commitments</a>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <p>Digital citizenship portfolio built as a living record of projects, reflection, and accountability.</p>
-    </footer>
-  </div>
+  <footer id="site-footer"></footer>
+  <!-- Privacy-first traffic and performance analytics; disabled for local previews. -->
+  <script src="assets/scripts/analytics.js?v=20260821" defer></script>
 </body>
 </html>
