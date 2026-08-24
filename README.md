@@ -12,8 +12,8 @@ Signal & Self is Mina Soliman's living digital citizenship fieldbook. It connect
 - A personal story and six-part digital citizenship framework
 - An interactive signals dashboard with habit progress and global context
 - Twenty searchable and filterable field notes
-- Eleven completed, active, and planned initiatives, including a tested Python API
-- A seventeen-record timeline that can be filtered, printed, or downloaded
+- Fourteen completed, active, and planned initiatives, including four tested Python repositories
+- An eighteen-record timeline that can be filtered, printed, or downloaded
 - Device-local personalization, themes, saved items, and a global search palette
 - Responsive layouts, keyboard navigation, reduced-motion support, and accessible controls
 
