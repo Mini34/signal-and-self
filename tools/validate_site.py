@@ -19,6 +19,12 @@ EXPECTED_PAGES = [
     PROJECT_ROOT / "pages" / "initiatives.html",
     PROJECT_ROOT / "pages" / "journey.html",
 ]
+FEATURED_REPOSITORIES = {
+    "https://github.com/Mini34/trailhead-claude-support-api",
+    "https://github.com/Mini34/power-quality-lab",
+    "https://github.com/Mini34/microgrid-controller-sim",
+    "https://github.com/Mini34/can-bus-anomaly-lab",
+}
 
 
 class PageParser(HTMLParser):
@@ -113,7 +119,7 @@ def validate_records() -> list[str]:
     except (OSError, json.JSONDecodeError) as error:
         return [f"Records could not be loaded: {error}"]
 
-    expected_minimums = {"reflections": 20, "projects": 10, "updates": 16}
+    expected_minimums = {"reflections": 20, "projects": 14, "updates": 18}
     for section, minimum in expected_minimums.items():
         entries = records.get(section, [])
         if len(entries) < minimum:
@@ -121,6 +127,37 @@ def validate_records() -> list[str]:
         ids = [entry.get("id") for entry in entries]
         if None in ids or len(ids) != len(set(ids)):
             errors.append(f"{section} contains a missing or duplicate ID")
+
+    projects = records.get("projects", [])
+    project_links = {project.get("link") for project in projects}
+    missing_repositories = sorted(FEATURED_REPOSITORIES - project_links)
+    if missing_repositories:
+        errors.append(
+            "projects is missing featured repositories: "
+            + ", ".join(missing_repositories)
+        )
+    for project in projects:
+        progress = project.get("progress")
+        if progress is not None and (
+            not isinstance(progress, int) or not 0 <= progress <= 100
+        ):
+            errors.append(
+                f"project {project.get('id', '<missing>')} has invalid progress"
+            )
+        if project.get("link") in FEATURED_REPOSITORIES and (
+            project.get("status") != "Completed" or progress != 100
+        ):
+            errors.append(
+                f"featured repository {project.get('link')} must be completed"
+            )
+
+    site_date = records.get("site", {}).get("lastUpdated")
+    latest_update = max(
+        (update.get("date", "") for update in records.get("updates", [])),
+        default="",
+    )
+    if not site_date or site_date != latest_update:
+        errors.append("site.lastUpdated must match the newest update date")
     return errors
 
 

@@ -3,7 +3,7 @@
     "name": "Signal & Self",
     "descriptor": "A digital citizenship fieldbook",
     "version": "2.0",
-    "lastUpdated": "2026-08-10",
+    "lastUpdated": "2026-08-24",
     "headline": "Learning to build technology that deserves trust.",
     "status": "Growing in public"
   },
@@ -43,12 +43,12 @@
   "profile": {
     "name": "Mina S.",
     "fullName": "Mina Soliman",
-    "tagline": "Incoming electrical engineering student in Canada with a growing interest in cybersecurity, digital citizenship, and responsible technology.",
+    "tagline": "Incoming University of Toronto electrical engineering student with interests in power systems, embedded computing, cybersecurity, and responsible technology.",
     "definition": "To me, digital citizenship means combining technical skill with responsibility. It includes checking information before sharing it, protecting privacy, using technology ethically, and contributing to online spaces in ways that make them safer and more respectful.",
     "mission": "My mission is to grow as an engineer and digital citizen at the same time. I want the way I learn, build, and communicate online to reflect curiosity, care, and cybersecurity awareness.",
-    "aboutTitle": "Incoming first-year electrical engineering student in Canada",
+    "aboutTitle": "Incoming University of Toronto electrical engineering student",
     "aboutText": [
-      "I am Mina Soliman, an incoming first-year electrical engineering student studying in Canada. I am interested in how engineering can solve practical problems while still protecting the people who rely on those systems.",
+      "I am Mina Soliman, an incoming University of Toronto electrical engineering student beginning in September 2026. I am interested in how engineering can solve practical problems while still protecting the people who rely on those systems.",
       "Cybersecurity is one of the areas that excites me most because it connects technical design with trust, privacy, and accountability. That interest naturally connects to digital citizenship, which gives me a framework for how I want to participate online.",
       "This website brings those interests together. It tracks how I learn, reflect, and contribute so my growth in digital citizenship stays visible, measurable, and grounded in real habits."
     ],
@@ -341,7 +341,7 @@
         "title": "Google Interland",
         "description": "An interactive game from the Be Internet Awesome program that teaches safer, smarter internet habits through short challenges.",
         "cta": "Explore Interland",
-        "url": "https://beinternetawesome.withgoogle.com/en_us/interland?_gl=1*1yoiuvx*_up*MQ..*_ga*MTMyMDkwMTEyNy4xNzc2NjUyMzQz*_ga_XRLM31BEJH*czE3NzY2NTIzNDMkbzEkZzAkdDE3NzY2NTIzNDMkajYwJGwwJGgw",
+        "url": "https://beinternetawesome.withgoogle.com/en_us/interland",
         "tag": "Interactive",
         "accent": "orange"
       },
@@ -889,6 +889,42 @@
       "year": 2026
     },
     {
+      "id": "project-power-quality-lab",
+      "title": "Power Quality Lab",
+      "description": "A standard-library AC waveform lab that calculates RMS voltage and current, active and apparent power, power factor, and frequency before classifying voltage sag, swell, and low-power-factor conditions.",
+      "skills": ["Electrical measurements", "Signal processing", "Python", "Automated testing"],
+      "impact": "It turns sampled voltage and current into reproducible engineering evidence while documenting the gap between simulation and a safe, calibrated physical instrument.",
+      "link": "https://github.com/Mini34/power-quality-lab",
+      "linkLabel": "View the tested repository",
+      "status": "Completed",
+      "progress": 100,
+      "year": 2026
+    },
+    {
+      "id": "project-microgrid-controller-sim",
+      "title": "Microgrid Controller Simulation",
+      "description": "A deterministic controller that dispatches solar, battery, grid, and load power while enforcing state-of-charge, battery-power, outage, and grid-import constraints.",
+      "skills": ["Power systems", "Controls", "Energy constraints", "Python simulation"],
+      "impact": "It makes each dispatch decision inspectable and reports unserved load instead of hiding an impossible energy balance.",
+      "link": "https://github.com/Mini34/microgrid-controller-sim",
+      "linkLabel": "View the tested repository",
+      "status": "Completed",
+      "progress": 100,
+      "year": 2026
+    },
+    {
+      "id": "project-can-bus-anomaly-lab",
+      "title": "CAN Bus Anomaly Lab",
+      "description": "A defensive CAN traffic simulator and explainable rule engine for detecting unknown identifiers, rate spikes, invalid payload ranges, rolling-counter jumps, and timestamp regression.",
+      "skills": ["Computer engineering", "CAN bus", "Defensive cybersecurity", "Automated testing"],
+      "impact": "It demonstrates transparent embedded-network monitoring without transmitting frames or connecting to a safety-critical system.",
+      "link": "https://github.com/Mini34/can-bus-anomaly-lab",
+      "linkLabel": "View the tested repository",
+      "status": "Completed",
+      "progress": 100,
+      "year": 2026
+    },
+    {
       "id": "project-browser-privacy-lab",
       "title": "Browser privacy mini lab",
       "description": "A guided, device-local activity that explains cookies, permission prompts, tracking protection, and what private browsing does—and does not—change.",
@@ -998,6 +1034,13 @@
     }
   ],
   "updates": [
+    {
+      "id": "update-engineering-labs",
+      "date": "2026-08-24",
+      "category": "Portfolio update",
+      "title": "Added three tested electrical and computer engineering labs",
+      "why": "I wanted the fieldbook to connect responsible-technology principles with concrete evidence from power-quality analysis, microgrid controls, and defensive CAN monitoring."
+    },
     {
       "id": "update-github-projects",
       "date": "2026-08-10",
