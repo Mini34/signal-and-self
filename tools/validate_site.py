@@ -18,6 +18,7 @@ EXPECTED_PAGES = [
     PROJECT_ROOT / "pages" / "field-notes.html",
     PROJECT_ROOT / "pages" / "initiatives.html",
     PROJECT_ROOT / "pages" / "journey.html",
+    PROJECT_ROOT / "pages" / "privacy.html",
 ]
 FEATURED_REPOSITORIES = {
     "https://github.com/Mini34/trailhead-claude-support-api",
@@ -86,6 +87,17 @@ def validate_page(page: Path) -> list[str]:
             f"Expected one analytics loader in {page.relative_to(PROJECT_ROOT)}; "
             f"found {len(analytics_references)}"
         )
+    for auth_script in ("auth-config.js", "auth.js"):
+        auth_references = [
+            reference
+            for reference in parser.references
+            if urlsplit(reference).path.endswith(f"assets/scripts/{auth_script}")
+        ]
+        if len(auth_references) != 1:
+            errors.append(
+                f"Expected one {auth_script} loader in {page.relative_to(PROJECT_ROOT)}; "
+                f"found {len(auth_references)}"
+            )
     for reference in parser.references:
         target = local_target(page, reference)
         if target is not None and not target.exists():
@@ -109,6 +121,42 @@ def validate_analytics() -> list[str]:
         for fragment in required_fragments
         if fragment not in analytics
     ]
+
+
+def validate_auth() -> list[str]:
+    errors: list[str] = []
+    config_path = PROJECT_ROOT / "assets" / "scripts" / "auth-config.js"
+    auth_path = PROJECT_ROOT / "assets" / "scripts" / "auth.js"
+    if not config_path.is_file():
+        errors.append("Missing auth configuration: assets/scripts/auth-config.js")
+    else:
+        config = config_path.read_text(encoding="utf-8")
+        client_id = re.search(
+            r'googleClientId:\s*"([0-9]+-[a-z0-9-]+\.apps\.googleusercontent\.com)"',
+            config,
+        )
+        if not client_id:
+            errors.append("Auth configuration is missing a valid Google web client ID")
+
+    if not auth_path.is_file():
+        return errors + ["Missing auth controller: assets/scripts/auth.js"]
+
+    auth = auth_path.read_text(encoding="utf-8")
+    required_fragments = [
+        '"https://accounts.google.com/gsi/client"',
+        "claims.aud === clientId()",
+        "sessionStorage.setItem(sessionKey",
+        "sessionStorage.removeItem(sessionKey)",
+        "use_fedcm_for_button: true",
+    ]
+    errors.extend(
+        f"Auth controller is missing required behavior: {fragment}"
+        for fragment in required_fragments
+        if fragment not in auth
+    )
+    if "localStorage.setItem(sessionKey" in auth:
+        errors.append("Google viewer identity must remain session-only")
+    return errors
 
 
 def validate_records() -> list[str]:
@@ -215,6 +263,7 @@ def validate_theme_contrast() -> list[str]:
 def main() -> int:
     errors = validate_records()
     errors.extend(validate_analytics())
+    errors.extend(validate_auth())
     errors.extend(validate_theme_contrast())
     for page in EXPECTED_PAGES:
         errors.extend(validate_page(page))

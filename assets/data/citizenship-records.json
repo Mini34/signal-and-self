@@ -1035,6 +1035,13 @@
   ],
   "updates": [
     {
+      "id": "update-optional-google-identity",
+      "date": "2026-08-24",
+      "category": "Site update",
+      "title": "Added optional Google identity with a visible privacy boundary",
+      "why": "I wanted to explore identity design without turning a public portfolio into a data-collection system, so the sign-in is optional, session-only, and paired with a plain-language privacy map."
+    },
+    {
       "id": "update-engineering-labs",
       "date": "2026-08-24",
       "category": "Portfolio update",

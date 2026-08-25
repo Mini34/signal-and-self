@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How Signal & Self handles personalization, optional Google sign-in, and privacy-first Cloudflare Web Analytics.">
+  <meta name="theme-color" content="#f4f0e8">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta property="og:title" content="Privacy & Data — Signal & Self">
+  <meta property="og:description" content="A plain-language map of what stays on your device and when optional services are contacted.">
+  <meta property="og:image" content="https://mini34.github.io/signal-and-self/assets/images/signal-and-self-og.png">
+  <title>Privacy & Data — Signal & Self</title>
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/styles/portfolio.css?v=refine-20260824a">
+  <script src="../assets/scripts/portfolio.js?v=refine-20260824a" defer></script>
+  <script src="../assets/scripts/auth-config.js?v=refine-20260824a" defer></script>
+  <script src="../assets/scripts/auth.js?v=refine-20260824a" defer></script>
+</head>
+<body id="top" data-page="privacy" data-root="..">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <div id="site-header"></div>
+
+  <main id="main-content">
+    <section class="page-hero site-shell" data-reveal>
+      <div class="page-hero-topline">
+        <p class="eyebrow">Privacy, in plain language</p>
+        <span class="hero-stamp">Small data<br>clear purpose<br>real control</span>
+      </div>
+      <h1>A fieldbook that keeps its <span class="serif-italic">footprint small.</span></h1>
+      <p class="page-lede">Most interactions stay inside your browser. Optional services are separated, named, and used for a specific purpose.</p>
+    </section>
+
+    <section class="section site-shell">
+      <div class="section-header" data-reveal>
+        <div><p class="eyebrow">The short version</p><h2>Three boundaries, made visible.</h2></div>
+        <p class="section-intro">The public portfolio works without an account. Personalization, sign-in, and aggregate analytics each have a different boundary.</p>
+      </div>
+      <div class="privacy-flow" data-reveal>
+        <article class="privacy-flow-card">
+          <span class="card-index">01 · Your browser</span>
+          <div><h3>Preferences stay local.</h3><p>Your theme, optional name and goal, and saved items use browser storage on this device.</p></div>
+          <span class="tag">No account required</span>
+        </article>
+        <article class="privacy-flow-card">
+          <span class="card-index">02 · Google</span>
+          <div><h3>Identity is optional.</h3><p>Opening the account panel can load Google's sign-in control. Google returns standard OpenID profile claims after you choose an account; this site ignores the email claim, keeps only your name and profile image for the browser session, and does not store the ID token.</p></div>
+          <span class="tag">Session only</span>
+        </article>
+        <article class="privacy-flow-card">
+          <span class="card-index">03 · Cloudflare</span>
+          <div><h3>Traffic stays aggregate.</h3><p>On the live GitHub Pages site, Cloudflare Web Analytics measures visits and performance without adding analytics cookies.</p></div>
+          <span class="tag">Production only</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-dark">
+      <div class="site-shell">
+        <div class="section-header" data-reveal>
+          <div><p class="eyebrow">Control map</p><h2>What each feature does—and does not do.</h2></div>
+          <p class="section-intro">Sign-in personalizes a public experience. It is not treated as a security boundary, a private account, or cloud synchronization.</p>
+        </div>
+        <div class="data-control-grid" data-reveal>
+          <article class="data-control-card">
+            <span class="mono-label">Device-local personalization</span>
+            <h3>Name, goal, atmosphere, and saved items</h3>
+            <p>Stored in local storage until you reset the site or clear browser data. This information is not added to Cloudflare analytics.</p>
+            <div class="tag-row"><span class="tag">localStorage</span><span class="tag">Visitor controlled</span></div>
+          </article>
+          <article class="data-control-card">
+            <span class="mono-label">Optional Google identity</span>
+            <h3>First name and profile image</h3>
+            <p>Used only to show a personal greeting and account state for the active browser session. No content is restricted or unlocked by this state.</p>
+            <div class="tag-row"><span class="tag">sessionStorage</span><span class="tag">Token not stored</span></div>
+          </article>
+          <article class="data-control-card">
+            <span class="mono-label">Cloudflare Web Analytics</span>
+            <h3>Visits, referrals, devices, countries, and performance</h3>
+            <p>The analytics loader runs only when the hostname is mini34.github.io. Local previews do not inject the analytics beacon.</p>
+            <div class="tag-row"><span class="tag">Cookie-free</span><span class="tag">Aggregate signals</span></div>
+          </article>
+          <article class="data-control-card">
+            <span class="mono-label">Public portfolio records</span>
+            <h3>Projects, notes, metrics, and journey entries</h3>
+            <p>Published as static website files so visitors can inspect the same public material without creating an account.</p>
+            <div class="tag-row"><span class="tag">Static JSON</span><span class="tag">Public by design</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section site-shell">
+      <div class="professional-cta" data-reveal>
+        <div>
+          <p class="eyebrow">Choose your level</p>
+          <h3>Browse anonymously, personalize locally, or sign in for this session.</h3>
+          <p class="section-intro">Every project, field note, and learning signal remains available either way.</p>
+        </div>
+        <div class="button-row">
+          <button class="button button-primary" type="button" data-open-account>Review sign-in</button>
+          <button class="button button-quiet" type="button" data-open-personalize>Personalize locally</button>
+          <a class="button" href="https://github.com/Mini34/signal-and-self" target="_blank" rel="noreferrer">Inspect the source</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <!-- Privacy-first traffic and performance analytics; disabled for local previews. -->
+  <script src="../assets/scripts/analytics.js?v=20260821" defer></script>
+</body>
+</html>

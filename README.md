@@ -13,8 +13,10 @@ Signal & Self is Mina Soliman's living digital citizenship fieldbook. It connect
 - An interactive signals dashboard with habit progress and global context
 - Twenty searchable and filterable field notes
 - Fourteen completed, active, and planned initiatives, including four tested Python repositories
-- An eighteen-record timeline that can be filtered, printed, or downloaded
+- A nineteen-record timeline that can be filtered, printed, or downloaded
 - Device-local personalization, themes, saved items, and a global search palette
+- Optional Google sign-in for session-only viewer personalization
+- A plain-language privacy and data-control map
 - Responsive layouts, keyboard navigation, reduced-motion support, and accessible controls
 
 ## Engineering highlights
@@ -23,6 +25,7 @@ Signal & Self is Mina Soliman's living digital citizenship fieldbook. It connect
 - Data-driven reflections, projects, metrics, search, and filtering
 - Responsive navigation and three visitor-selectable themes
 - Device-local preferences plus privacy-first, cookie-free traffic analytics
+- Consent-aware Google Identity Services loading with no stored ID token
 - Automated content, structure, and internal-link validation before deployment
 
 ## Project structure
@@ -35,7 +38,8 @@ signal-and-self/
 │   ├── insights.html           # Metrics, charts, habits, and context
 │   ├── field-notes.html        # Reflection archive
 │   ├── initiatives.html        # Project library
-│   └── journey.html            # Changelog and milestones
+│   ├── journey.html            # Changelog and milestones
+│   └── privacy.html            # Data boundaries and visitor controls
 ├── assets/
 │   ├── data/                   # Structured portfolio records
 │   ├── images/                 # Maps, favicon, and social artwork
@@ -64,6 +68,14 @@ The site uses Cloudflare Web Analytics to measure page views, visits, referral s
 To review the private dashboard, sign in to [Cloudflare](https://dash.cloudflare.com/) and open **Analytics → Web analytics → mini34.github.io**.
 
 The public portfolio content is stored in `assets/data/citizenship-records.json`. Visitor personalization, theme choices, and saved items stay in the visitor's browser through local storage and are not included in analytics.
+
+Google sign-in is optional and does not gate any content. The Google Identity Services library loads only after a visitor opens the account panel. After a successful sign-in, the site ignores the returned email claim, keeps the visitor's name and profile image in session storage, discards the ID token, and clears the viewer profile when the browser session expires. Because the site has no authentication backend, this state is used only for presentation and never for authorization or private data.
+
+### Google sign-in configuration
+
+The web OAuth client ID is public configuration and belongs in `assets/scripts/auth-config.js`; no client secret belongs in this repository. The Google web client must authorize `https://mini34.github.io` as a JavaScript origin. Add localhost origins separately when testing the real Google flow during development.
+
+The OAuth branding should use the public homepage and `pages/privacy.html` links. Sign-in requests only the default OpenID, profile, and email scopes; no additional Google API access is needed.
 
 ## Deployment
 

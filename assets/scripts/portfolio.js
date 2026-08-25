@@ -6,6 +6,8 @@
   const root = body.dataset.root || ".";
   const storageKey = "signal-and-self-preferences";
   const savedKey = "signal-and-self-saved-items";
+  const authChangeEvent = "signal-and-self-auth-change";
+  const authOpenEvent = "signal-and-self-auth-open";
   const pageRoutes = {
     home: ["Overview", "index.html"],
     initiatives: ["Work", "pages/initiatives.html"],
@@ -21,6 +23,7 @@
     theme: "signal"
   });
   let savedItems = new Set(loadJSON(savedKey, []));
+  let authViewer = null;
 
   function pathFromRoot(path) {
     if (/^(https?:|mailto:|#)/.test(path)) return path;
@@ -116,6 +119,13 @@
             <button class="icon-button" type="button" data-open-personalize aria-label="Personalize this website">
               <span class="icon-glyph">✦</span><span class="header-label">For you</span>
             </button>
+            <button class="icon-button account-button" type="button" data-open-account data-account-control aria-label="Sign in with Google">
+              <span class="account-avatar-wrap" aria-hidden="true">
+                <span class="icon-glyph" data-account-glyph>◎</span>
+                <img class="account-avatar" data-account-avatar alt="" referrerpolicy="no-referrer" hidden>
+              </span>
+              <span class="header-label" data-account-label>Sign in</span>
+            </button>
             <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
               <span class="icon-glyph">≡</span><span class="visually-hidden">Menu</span>
             </button>
@@ -139,7 +149,7 @@
         </div>
         <div class="footer-bottom">
           <span>Signal & Self · Mina Soliman · <span data-current-year></span></span>
-          <span>Built with curiosity, evidence, and care</span>
+          <a href="${pathFromRoot("pages/privacy.html")}">Privacy & data</a>
           <a href="#top">Back to top ↑</a>
         </div>
       `;
@@ -156,6 +166,11 @@
             <button class="dialog-close" type="button" data-close-dialog aria-label="Close personalization">×</button>
           </div>
           <form class="form-grid" id="personalize-form">
+            <div class="privacy-note">
+              <strong>Private by default.</strong>
+              <span>These choices stay on this device. Google sign-in is optional and does not create cloud sync.</span>
+              <a href="${pathFromRoot("pages/privacy.html")}">How data works</a>
+            </div>
             <div class="form-field">
               <label for="visitor-name">What should I call you? <span class="muted">Optional</span></label>
               <input id="visitor-name" name="name" autocomplete="given-name" maxlength="32" placeholder="Your first name">
@@ -177,6 +192,45 @@
               <button class="button button-quiet no-arrow" type="button" data-reset-personalization>Reset</button>
             </div>
           </form>
+        </div>
+      </dialog>
+      <dialog class="dialog account-dialog" id="account-dialog" aria-labelledby="account-title">
+        <div class="dialog-inner">
+          <div class="dialog-header">
+            <div>
+              <p class="eyebrow">Optional identity</p>
+              <h2 id="account-title">Your view, on your terms.</h2>
+            </div>
+            <button class="dialog-close" type="button" data-close-dialog aria-label="Close account">×</button>
+          </div>
+          <div class="account-state" data-auth-signed-out>
+            <div class="account-promise">
+              <span class="account-promise-mark" aria-hidden="true">G</span>
+              <div>
+                <strong>Continue with Google</strong>
+                <p>Use your first name for the greeting and keep your viewer identity available for this browser session.</p>
+              </div>
+            </div>
+            <div id="google-signin-host" class="google-signin-host"></div>
+            <p class="auth-status" id="auth-status" role="status" aria-live="polite">Google is not contacted until you open this account panel.</p>
+            <ul class="privacy-list">
+              <li>No private portfolio content is unlocked.</li>
+              <li>Your Google token is not saved in this site.</li>
+              <li>The returned email claim is ignored.</li>
+              <li>Your theme, goal, and saved items remain device-local.</li>
+            </ul>
+          </div>
+          <div class="account-state" data-auth-signed-in hidden>
+            <div class="signed-in-card">
+              <img class="signed-in-avatar" data-account-avatar alt="" referrerpolicy="no-referrer" hidden>
+              <div><span>Signed in for this session</span><strong data-account-name></strong></div>
+            </div>
+            <p>This public fieldbook does not use sign-in as a security boundary. It only personalizes your greeting for the current browser session.</p>
+            <div class="button-row">
+              <button class="button button-quiet no-arrow" type="button" data-sign-out>Sign out on this device</button>
+              <a class="button" href="${pathFromRoot("pages/privacy.html")}">Review privacy details</a>
+            </div>
+          </div>
         </div>
       </dialog>
       <dialog class="dialog" id="search-dialog" aria-labelledby="search-title">
@@ -225,6 +279,8 @@
 
       if (event.target.closest("[data-open-search]")) openSearch();
 
+      if (event.target.closest("[data-open-account]")) openAccount();
+
       const closeButton = event.target.closest("[data-close-dialog]");
       if (closeButton) closeButton.closest("dialog")?.close();
 
@@ -272,6 +328,11 @@
       applyPersonalization();
       populatePersonalizationForm();
       showToast("Personalization reset.");
+    });
+
+    window.addEventListener(authChangeEvent, (event) => {
+      authViewer = event.detail?.viewer || null;
+      applyPersonalization();
     });
 
     window.addEventListener("scroll", updateScrollProgress, { passive: true });
@@ -441,10 +502,19 @@
     setTimeout(() => query("#visitor-name")?.focus(), 50);
   }
 
+  function openAccount() {
+    const dialog = query("#account-dialog");
+    if (!dialog) return;
+    body.classList.add("is-locked");
+    dialog.showModal();
+    window.dispatchEvent(new CustomEvent(authOpenEvent));
+  }
+
   function applyPersonalization() {
     if (!data) return;
     const audience = data.personalization.audiences.find((item) => item.id === preferences.audience) || data.personalization.audiences[0];
-    const greeting = preferences.name ? `${audience.greeting}, ${preferences.name}.` : `${audience.greeting}.`;
+    const viewerName = preferences.name || authViewer?.givenName || "";
+    const greeting = viewerName ? `${audience.greeting}, ${viewerName}.` : `${audience.greeting}.`;
     queryAll("[data-personal-greeting]").forEach((element) => { element.textContent = greeting; });
     queryAll("[data-personal-intro]").forEach((element) => { element.textContent = audience.intro; });
     queryAll("[data-personal-goal]").forEach((element) => {
@@ -1138,7 +1208,7 @@
     bindShellEvents();
     applyTheme(preferences.theme, false);
     try {
-      const response = await fetch(pathFromRoot("assets/data/citizenship-records.json?v=interactive-20260812b"));
+      const response = await fetch(pathFromRoot("assets/data/citizenship-records.json?v=refine-20260824a"));
       if (!response.ok) throw new Error(`Data request failed: ${response.status}`);
       data = await response.json();
       populatePersonalizationForm();
