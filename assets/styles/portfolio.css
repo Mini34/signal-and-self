@@ -142,6 +142,10 @@ body.is-locked {
   overflow: hidden;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 button,
 input,
 select {
@@ -343,6 +347,27 @@ img {
   font-family: var(--font-mono);
   font-size: 1rem;
   line-height: 1;
+}
+
+.account-button.is-signed-in {
+  border-color: color-mix(in srgb, var(--positive) 54%, var(--line));
+  background: color-mix(in srgb, var(--positive) 10%, var(--surface-solid));
+}
+
+.account-avatar-wrap {
+  display: grid;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  place-items: center;
+}
+
+.account-avatar,
+.signed-in-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .menu-button {
@@ -1968,6 +1993,245 @@ h3 {
   gap: 20px;
 }
 
+.privacy-note {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 6px 12px;
+  padding: 14px 16px;
+  border: 1px solid color-mix(in srgb, var(--positive) 42%, var(--line));
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--positive) 8%, var(--surface-solid));
+  font-size: 0.72rem;
+}
+
+.privacy-note strong {
+  color: var(--positive);
+}
+
+.privacy-note span {
+  color: var(--ink-soft);
+}
+
+.privacy-note a {
+  font-weight: 800;
+  text-underline-offset: 3px;
+}
+
+.account-dialog {
+  width: min(680px, calc(100% - 28px));
+}
+
+.account-dialog .dialog-header h2 {
+  max-width: 10ch;
+  font-size: clamp(2.3rem, 6vw, 3.8rem);
+}
+
+.account-state {
+  display: grid;
+  gap: 22px;
+}
+
+.account-promise {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 16px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--paper);
+}
+
+.account-promise-mark {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  background: conic-gradient(from -45deg, #4285f4 0 25%, #34a853 0 50%, #fbbc05 0 75%, #ea4335 0);
+  color: #fff;
+  font-weight: 800;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.account-promise p,
+.account-state > p {
+  margin: 4px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+}
+
+.google-signin-host {
+  min-height: 44px;
+}
+
+.auth-status {
+  min-height: 1.5em;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.76rem;
+}
+
+.auth-status[data-tone="error"] {
+  color: var(--coral);
+}
+
+.auth-status[data-tone="success"] {
+  color: var(--positive);
+}
+
+.auth-status[data-tone="setup"] {
+  padding: 12px 14px;
+  border-left: 3px solid var(--planned);
+  background: color-mix(in srgb, var(--planned) 8%, transparent);
+  color: var(--ink);
+}
+
+.privacy-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.privacy-list li {
+  position: relative;
+  padding-left: 24px;
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+}
+
+.privacy-list li::before {
+  position: absolute;
+  left: 0;
+  color: var(--positive);
+  content: "✓";
+  font-weight: 800;
+}
+
+.signed-in-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--positive) 9%, var(--surface-solid));
+}
+
+.signed-in-avatar {
+  width: 54px;
+  height: 54px;
+  border: 1px solid var(--line-strong);
+}
+
+.signed-in-card div {
+  display: grid;
+}
+
+.signed-in-card span {
+  color: var(--ink-soft);
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  text-transform: uppercase;
+}
+
+.signed-in-card strong {
+  font-size: 1.05rem;
+}
+
+.privacy-flow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.privacy-flow-card {
+  position: relative;
+  display: grid;
+  min-height: 270px;
+  align-content: space-between;
+  gap: 24px;
+  padding: clamp(24px, 3vw, 34px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface-solid);
+  box-shadow: var(--shadow-small);
+}
+
+.privacy-flow-card:not(:last-child)::after {
+  position: absolute;
+  top: 50%;
+  right: -22px;
+  z-index: 2;
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  background: var(--lime);
+  color: var(--on-accent);
+  content: "→";
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+.privacy-flow-card:nth-child(2) {
+  background: color-mix(in srgb, var(--sky) 38%, var(--surface-solid));
+}
+
+.privacy-flow-card:nth-child(3) {
+  background: color-mix(in srgb, var(--lime) 20%, var(--surface-solid));
+}
+
+.privacy-flow-card .card-index {
+  align-self: start;
+}
+
+.privacy-flow-card h3 {
+  margin: 0;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+}
+
+.privacy-flow-card p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+}
+
+.data-control-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.data-control-card {
+  display: grid;
+  gap: 16px;
+  padding: clamp(24px, 4vw, 40px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.data-control-card h3,
+.data-control-card p {
+  margin: 0;
+}
+
+.data-control-card p {
+  color: var(--on-dark-muted);
+}
+
+.data-control-card .tag {
+  color: var(--on-dark);
+  background: rgba(255, 255, 255, 0.08);
+}
+
 .form-field {
   display: grid;
   gap: 8px;
@@ -2941,6 +3205,26 @@ body[data-page="home"] .explore-rail {
 
   .theme-options {
     grid-template-columns: 1fr;
+  }
+
+  .privacy-note {
+    grid-template-columns: 1fr;
+  }
+
+  .privacy-flow,
+  .data-control-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .privacy-flow-card {
+    min-height: auto;
+  }
+
+  .privacy-flow-card:not(:last-child)::after {
+    top: auto;
+    right: 50%;
+    bottom: -22px;
+    transform: translateX(50%) rotate(90deg);
   }
 
   .footer-card::after {
