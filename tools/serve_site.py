@@ -19,6 +19,8 @@ class SiteHandler(SimpleHTTPRequestHandler):
         super().end_headers()
 
     def do_GET(self) -> None:
+        if self.path.startswith("/signal-and-self/"):
+            self.path = self.path.removeprefix("/signal-and-self")
         if self.path in {"", "/"}:
             self.path = "/index.html"
         super().do_GET()
@@ -45,4 +47,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

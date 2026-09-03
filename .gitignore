@@ -14,4 +14,9 @@ Thumbs.db
 
 # Local preview output
 *.log
-
+.pnpm-store/
+**/node_modules/
+docs/qa/raw/
+tools/qa/evidence/
+.site-dist/
+tools/qa/font-tools/

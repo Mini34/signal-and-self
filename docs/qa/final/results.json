@@ -1,0 +1,5013 @@
+{
+  "stage": "final",
+  "capturedAt": "2026-09-03T20:18:28.370Z",
+  "browser": "152.0.7977.77",
+  "screenshots": [
+    {
+      "width": 1440,
+      "height": 900,
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "overflow": false
+    }
+  ],
+  "accessibility": [
+    {
+      "page": "home",
+      "violations": []
+    },
+    {
+      "page": "work",
+      "violations": []
+    },
+    {
+      "page": "about",
+      "violations": []
+    },
+    {
+      "page": "notes",
+      "violations": []
+    },
+    {
+      "page": "evidence",
+      "violations": []
+    },
+    {
+      "page": "journey",
+      "violations": []
+    },
+    {
+      "page": "privacy",
+      "violations": []
+    }
+  ],
+  "lighthouse": [
+    {
+      "page": "home",
+      "mode": "mobile",
+      "scores": {
+        "performance": 98,
+        "accessibility": 100,
+        "seo": 100
+      },
+      "lcp": 2257.67985,
+      "cls": 0,
+      "tbt": 67,
+      "diagnostics": {
+        "unminified-css": {
+          "title": "Minify CSS",
+          "display": "Est savings of 3 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "totalBytes": 26620,
+                "wastedBytes": 3482,
+                "wastedPercent": 13.079865187260953
+              }
+            ],
+            "overallSavingsMs": 0,
+            "overallSavingsBytes": 3482,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 0,
+                "LCP": 0
+              }
+            }
+          }
+        },
+        "unused-css-rules": {
+          "title": "Reduce unused CSS",
+          "display": "Est savings of 12 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "wastedBytes": 12660,
+                "wastedPercent": 47.94183360472602,
+                "totalBytes": 26407
+              }
+            ],
+            "overallSavingsMs": 150,
+            "overallSavingsBytes": 12660,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 0,
+                "LCP": 150
+              }
+            }
+          }
+        },
+        "bf-cache": {
+          "title": "Page prevented back/forward cache restoration",
+          "display": "4 failure reasons",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "reason",
+                "valueType": "text",
+                "subItemsHeading": {
+                  "key": "frameUrl",
+                  "valueType": "url"
+                },
+                "label": "Failure reason"
+              },
+              {
+                "key": "failureType",
+                "valueType": "text",
+                "label": "Failure type"
+              }
+            ],
+            "items": [
+              {
+                "reason": "Back/forward cache is disabled by flags. Visit chrome://flags/#back-forward-cache to enable it locally on this device.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/"
+                    }
+                  ]
+                },
+                "protocolReason": "BackForwardCacheDisabled"
+              },
+              {
+                "reason": "Pages whose main resource has cache-control:no-store cannot enter back/forward cache.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/"
+                    }
+                  ]
+                },
+                "protocolReason": "MainResourceHasCacheControlNoStore"
+              },
+              {
+                "reason": "Back/forward cache is disabled because some JavaScript network request received resource with Cache-Control: no-store header.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/"
+                    }
+                  ]
+                },
+                "protocolReason": "JsNetworkRequestReceivedCacheControlNoStoreResource"
+              },
+              {
+                "reason": "Back/forward cache is disabled by the command line.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/"
+                    }
+                  ]
+                },
+                "protocolReason": "BackForwardCacheDisabledByCommandLine"
+              }
+            ]
+          }
+        },
+        "document-latency-insight": {
+          "title": "Document request latency",
+          "display": "Est savings of 13 KiB",
+          "details": {
+            "type": "checklist",
+            "items": {
+              "noRedirects": {
+                "label": "Avoids redirects",
+                "value": true
+              },
+              "serverResponseIsFast": {
+                "label": "Server responds quickly (observed 1 ms)",
+                "value": true
+              },
+              "usesCompression": {
+                "label": "No compression applied",
+                "value": false
+              }
+            },
+            "debugData": {
+              "type": "debugdata",
+              "redirectDuration": 0,
+              "serverResponseTime": 1,
+              "uncompressedResponseBytes": 13426,
+              "wastedBytes": 13426
+            }
+          }
+        },
+        "network-dependency-tree-insight": {
+          "title": "Network dependency tree",
+          "details": {
+            "type": "list",
+            "items": [
+              {
+                "type": "list-section",
+                "value": {
+                  "type": "network-tree",
+                  "chains": {
+                    "956A01B1644AD455D2E60D493EA2A530": {
+                      "url": "http://127.0.0.1:8000/",
+                      "navStartToEndTime": 18,
+                      "transferSize": 20253,
+                      "isLongest": true,
+                      "children": {
+                        "52252.4": {
+                          "url": "http://127.0.0.1:8000/assets/styles/fonts.css",
+                          "navStartToEndTime": 29,
+                          "transferSize": 2852,
+                          "isLongest": true,
+                          "children": {
+                            "52252.24": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/manrope-800.woff2",
+                              "navStartToEndTime": 106,
+                              "transferSize": 19357,
+                              "isLongest": true,
+                              "children": {}
+                            },
+                            "52252.23": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/manrope-700.woff2",
+                              "navStartToEndTime": 106,
+                              "transferSize": 20477,
+                              "children": {}
+                            },
+                            "52252.19": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/dm-mono-500.woff2",
+                              "navStartToEndTime": 106,
+                              "transferSize": 18309,
+                              "children": {}
+                            },
+                            "52252.18": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/dm-mono-400.woff2",
+                              "navStartToEndTime": 105,
+                              "transferSize": 18125,
+                              "children": {}
+                            }
+                          }
+                        },
+                        "52252.5": {
+                          "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                          "navStartToEndTime": 28,
+                          "transferSize": 26620,
+                          "children": {}
+                        }
+                      }
+                    }
+                  },
+                  "longestChain": {
+                    "duration": 106
+                  }
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnected origins",
+                "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+                "value": {
+                  "type": "text",
+                  "value": "no origins were preconnected"
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnect candidates",
+                "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+                "value": {
+                  "type": "text",
+                  "value": "No additional origins are good candidates for preconnecting"
+                }
+              }
+            ]
+          }
+        },
+        "render-blocking-insight": {
+          "title": "Render-blocking requests",
+          "display": "Est savings of 710 ms",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedMs",
+                "valueType": "timespanMs",
+                "label": "Duration"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/fonts.css",
+                "totalBytes": 2852,
+                "wastedMs": 153
+              },
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "totalBytes": 26620,
+                "wastedMs": 903
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "page": "home",
+      "mode": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "seo": 100
+      },
+      "lcp": 527.264,
+      "cls": 0.004656105638735662,
+      "tbt": 0,
+      "diagnostics": {
+        "label-content-name-mismatch": {
+          "title": "Elements with visible text labels do not have matching accessible names.",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "node",
+                "valueType": "node",
+                "subItemsHeading": {
+                  "key": "relatedNode",
+                  "valueType": "node"
+                },
+                "label": "Failing Elements"
+              }
+            ],
+            "items": [
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "1-0-A",
+                  "path": "2,HTML,1,BODY,1,DIV,0,HEADER,0,A",
+                  "selector": "body#top > div#site-header > header.site-header > a.brand",
+                  "boundingRect": {
+                    "top": 40,
+                    "bottom": 84,
+                    "left": 52,
+                    "right": 242,
+                    "width": 190,
+                    "height": 44
+                  },
+                  "snippet": "<a class=\"brand\" href=\"index.html\" aria-label=\"S/S · Signal &amp; Self · Mina Soliman’s fieldbook · Home\">",
+                  "nodeLabel": "S/S\nSignal & Self\nMina Soliman’s fieldbook",
+                  "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+                }
+              }
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "impact": "serious",
+              "tags": [
+                "cat.semantics",
+                "wcag21a",
+                "wcag253",
+                "EN-301-549",
+                "EN-9.2.5.3",
+                "RGAAv4",
+                "RGAA-6.1.5",
+                "experimental"
+              ]
+            }
+          }
+        },
+        "unminified-css": {
+          "title": "Minify CSS",
+          "display": "Est savings of 3 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "totalBytes": 26620,
+                "wastedBytes": 3482,
+                "wastedPercent": 13.079865187260953
+              }
+            ],
+            "overallSavingsMs": 0,
+            "overallSavingsBytes": 3482,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 0,
+                "LCP": 0
+              }
+            }
+          }
+        },
+        "unused-css-rules": {
+          "title": "Reduce unused CSS",
+          "display": "Est savings of 15 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "wastedBytes": 15556,
+                "wastedPercent": 58.908622713674404,
+                "totalBytes": 26407
+              }
+            ],
+            "overallSavingsMs": 0,
+            "overallSavingsBytes": 15556,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 40,
+                "LCP": 0
+              }
+            }
+          }
+        },
+        "bf-cache": {
+          "title": "Page prevented back/forward cache restoration",
+          "display": "4 failure reasons",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "reason",
+                "valueType": "text",
+                "subItemsHeading": {
+                  "key": "frameUrl",
+                  "valueType": "url"
+                },
+                "label": "Failure reason"
+              },
+              {
+                "key": "failureType",
+                "valueType": "text",
+                "label": "Failure type"
+              }
+            ],
+            "items": [
+              {
+                "reason": "Back/forward cache is disabled by flags. Visit chrome://flags/#back-forward-cache to enable it locally on this device.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/"
+                    }
+                  ]
+                },
+                "protocolReason": "BackForwardCacheDisabled"
+              },
+              {
+                "reason": "Pages whose main resource has cache-control:no-store cannot enter back/forward cache.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/"
+                    }
+                  ]
+                },
+                "protocolReason": "MainResourceHasCacheControlNoStore"
+              },
+              {
+                "reason": "Back/forward cache is disabled because some JavaScript network request received resource with Cache-Control: no-store header.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/"
+                    }
+                  ]
+                },
+                "protocolReason": "JsNetworkRequestReceivedCacheControlNoStoreResource"
+              },
+              {
+                "reason": "Back/forward cache is disabled by the command line.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/"
+                    }
+                  ]
+                },
+                "protocolReason": "BackForwardCacheDisabledByCommandLine"
+              }
+            ]
+          }
+        },
+        "document-latency-insight": {
+          "title": "Document request latency",
+          "display": "Est savings of 13 KiB",
+          "details": {
+            "type": "checklist",
+            "items": {
+              "noRedirects": {
+                "label": "Avoids redirects",
+                "value": true
+              },
+              "serverResponseIsFast": {
+                "label": "Server responds quickly (observed 1 ms)",
+                "value": true
+              },
+              "usesCompression": {
+                "label": "No compression applied",
+                "value": false
+              }
+            },
+            "debugData": {
+              "type": "debugdata",
+              "redirectDuration": 0,
+              "serverResponseTime": 1,
+              "uncompressedResponseBytes": 13426,
+              "wastedBytes": 13426
+            }
+          }
+        },
+        "network-dependency-tree-insight": {
+          "title": "Network dependency tree",
+          "details": {
+            "type": "list",
+            "items": [
+              {
+                "type": "list-section",
+                "value": {
+                  "type": "network-tree",
+                  "chains": {
+                    "A0991DAB8E8DD2241BC21BD80BBCE9A9": {
+                      "url": "http://127.0.0.1:8000/",
+                      "navStartToEndTime": 24,
+                      "transferSize": 20253,
+                      "isLongest": true,
+                      "children": {
+                        "22180.4": {
+                          "url": "http://127.0.0.1:8000/assets/styles/fonts.css",
+                          "navStartToEndTime": 19,
+                          "transferSize": 2852,
+                          "isLongest": true,
+                          "children": {
+                            "22180.25": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/newsreader-500.woff2",
+                              "navStartToEndTime": 120,
+                              "transferSize": 36793,
+                              "isLongest": true,
+                              "children": {}
+                            },
+                            "22180.19": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/dm-mono-500.woff2",
+                              "navStartToEndTime": 120,
+                              "transferSize": 18309,
+                              "children": {}
+                            },
+                            "22180.18": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/dm-mono-400.woff2",
+                              "navStartToEndTime": 120,
+                              "transferSize": 18125,
+                              "children": {}
+                            },
+                            "22180.24": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/manrope-800.woff2",
+                              "navStartToEndTime": 120,
+                              "transferSize": 19357,
+                              "children": {}
+                            },
+                            "22180.23": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/manrope-700.woff2",
+                              "navStartToEndTime": 120,
+                              "transferSize": 20477,
+                              "children": {}
+                            }
+                          }
+                        },
+                        "22180.5": {
+                          "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                          "navStartToEndTime": 24,
+                          "transferSize": 26620,
+                          "children": {}
+                        }
+                      }
+                    }
+                  },
+                  "longestChain": {
+                    "duration": 120
+                  }
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnected origins",
+                "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+                "value": {
+                  "type": "text",
+                  "value": "no origins were preconnected"
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnect candidates",
+                "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+                "value": {
+                  "type": "text",
+                  "value": "No additional origins are good candidates for preconnecting"
+                }
+              }
+            ]
+          }
+        },
+        "render-blocking-insight": {
+          "title": "Render-blocking requests",
+          "display": "Est savings of 250 ms",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedMs",
+                "valueType": "timespanMs",
+                "label": "Duration"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "totalBytes": 26620,
+                "wastedMs": 162
+              },
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/fonts.css",
+                "totalBytes": 2852
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "page": "work",
+      "mode": "mobile",
+      "scores": {
+        "performance": 97,
+        "accessibility": 100,
+        "seo": 100
+      },
+      "lcp": 2275.4468500000003,
+      "cls": 0,
+      "tbt": 118.99999999999909,
+      "diagnostics": {
+        "max-potential-fid": {
+          "title": "Max Potential First Input Delay",
+          "display": "170 ms"
+        },
+        "unminified-css": {
+          "title": "Minify CSS",
+          "display": "Est savings of 3 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "totalBytes": 26620,
+                "wastedBytes": 3482,
+                "wastedPercent": 13.079865187260953
+              }
+            ],
+            "overallSavingsMs": 20,
+            "overallSavingsBytes": 3482,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 0,
+                "LCP": 20
+              }
+            }
+          }
+        },
+        "unused-css-rules": {
+          "title": "Reduce unused CSS",
+          "display": "Est savings of 15 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "wastedBytes": 15715,
+                "wastedPercent": 59.51073578975272,
+                "totalBytes": 26407
+              }
+            ],
+            "overallSavingsMs": 20,
+            "overallSavingsBytes": 15715,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 150,
+                "LCP": 20
+              }
+            }
+          }
+        },
+        "bf-cache": {
+          "title": "Page prevented back/forward cache restoration",
+          "display": "4 failure reasons",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "reason",
+                "valueType": "text",
+                "subItemsHeading": {
+                  "key": "frameUrl",
+                  "valueType": "url"
+                },
+                "label": "Failure reason"
+              },
+              {
+                "key": "failureType",
+                "valueType": "text",
+                "label": "Failure type"
+              }
+            ],
+            "items": [
+              {
+                "reason": "Back/forward cache is disabled by flags. Visit chrome://flags/#back-forward-cache to enable it locally on this device.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/initiatives.html"
+                    }
+                  ]
+                },
+                "protocolReason": "BackForwardCacheDisabled"
+              },
+              {
+                "reason": "Pages whose main resource has cache-control:no-store cannot enter back/forward cache.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/initiatives.html"
+                    }
+                  ]
+                },
+                "protocolReason": "MainResourceHasCacheControlNoStore"
+              },
+              {
+                "reason": "Back/forward cache is disabled because some JavaScript network request received resource with Cache-Control: no-store header.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/initiatives.html"
+                    }
+                  ]
+                },
+                "protocolReason": "JsNetworkRequestReceivedCacheControlNoStoreResource"
+              },
+              {
+                "reason": "Back/forward cache is disabled by the command line.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/initiatives.html"
+                    }
+                  ]
+                },
+                "protocolReason": "BackForwardCacheDisabledByCommandLine"
+              }
+            ]
+          }
+        },
+        "document-latency-insight": {
+          "title": "Document request latency",
+          "display": "Est savings of 20 KiB",
+          "details": {
+            "type": "checklist",
+            "items": {
+              "noRedirects": {
+                "label": "Avoids redirects",
+                "value": true
+              },
+              "serverResponseIsFast": {
+                "label": "Server responds quickly (observed 1 ms)",
+                "value": true
+              },
+              "usesCompression": {
+                "label": "No compression applied",
+                "value": false
+              }
+            },
+            "debugData": {
+              "type": "debugdata",
+              "redirectDuration": 0,
+              "serverResponseTime": 1,
+              "uncompressedResponseBytes": 20932,
+              "wastedBytes": 20932
+            }
+          }
+        },
+        "network-dependency-tree-insight": {
+          "title": "Network dependency tree",
+          "details": {
+            "type": "list",
+            "items": [
+              {
+                "type": "list-section",
+                "value": {
+                  "type": "network-tree",
+                  "chains": {
+                    "C453AE8441E052FBEC8896CB4C1BE3C4": {
+                      "url": "http://127.0.0.1:8000/pages/initiatives.html",
+                      "navStartToEndTime": 43,
+                      "transferSize": 31456,
+                      "isLongest": true,
+                      "children": {
+                        "14740.4": {
+                          "url": "http://127.0.0.1:8000/assets/styles/fonts.css",
+                          "navStartToEndTime": 48,
+                          "transferSize": 2852,
+                          "isLongest": true,
+                          "children": {
+                            "14740.21": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/dm-mono-500.woff2",
+                              "navStartToEndTime": 166,
+                              "transferSize": 18309,
+                              "isLongest": true,
+                              "children": {}
+                            },
+                            "14740.26": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/manrope-800.woff2",
+                              "navStartToEndTime": 154,
+                              "transferSize": 19357,
+                              "children": {}
+                            },
+                            "14740.20": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/dm-mono-400.woff2",
+                              "navStartToEndTime": 153,
+                              "transferSize": 18125,
+                              "children": {}
+                            },
+                            "14740.25": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/manrope-700.woff2",
+                              "navStartToEndTime": 153,
+                              "transferSize": 20477,
+                              "children": {}
+                            }
+                          }
+                        },
+                        "14740.5": {
+                          "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                          "navStartToEndTime": 49,
+                          "transferSize": 26620,
+                          "children": {}
+                        }
+                      }
+                    }
+                  },
+                  "longestChain": {
+                    "duration": 166
+                  }
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnected origins",
+                "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+                "value": {
+                  "type": "text",
+                  "value": "no origins were preconnected"
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnect candidates",
+                "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+                "value": {
+                  "type": "text",
+                  "value": "No additional origins are good candidates for preconnecting"
+                }
+              }
+            ]
+          }
+        },
+        "render-blocking-insight": {
+          "title": "Render-blocking requests",
+          "display": "Est savings of 870 ms",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedMs",
+                "valueType": "timespanMs",
+                "label": "Duration"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "totalBytes": 26620,
+                "wastedMs": 752
+              },
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/fonts.css",
+                "totalBytes": 2852,
+                "wastedMs": 152
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "page": "work",
+      "mode": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "seo": 100
+      },
+      "lcp": 485.59417616947917,
+      "cls": 0.0001226833245775326,
+      "tbt": 0,
+      "diagnostics": {
+        "label-content-name-mismatch": {
+          "title": "Elements with visible text labels do not have matching accessible names.",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "node",
+                "valueType": "node",
+                "subItemsHeading": {
+                  "key": "relatedNode",
+                  "valueType": "node"
+                },
+                "label": "Failing Elements"
+              }
+            ],
+            "items": [
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "1-0-A",
+                  "path": "2,HTML,1,BODY,1,DIV,0,HEADER,0,A",
+                  "selector": "body#top > div#site-header > header.site-header > a.brand",
+                  "boundingRect": {
+                    "top": 40,
+                    "bottom": 84,
+                    "left": 52,
+                    "right": 242,
+                    "width": 190,
+                    "height": 44
+                  },
+                  "snippet": "<a class=\"brand\" href=\"../index.html\" aria-label=\"S/S · Signal &amp; Self · Mina Soliman’s fieldbook · Home\">",
+                  "nodeLabel": "S/S\nSignal & Self\nMina Soliman’s fieldbook",
+                  "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+                }
+              }
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "impact": "serious",
+              "tags": [
+                "cat.semantics",
+                "wcag21a",
+                "wcag253",
+                "EN-301-549",
+                "EN-9.2.5.3",
+                "RGAAv4",
+                "RGAA-6.1.5",
+                "experimental"
+              ]
+            }
+          }
+        },
+        "unminified-css": {
+          "title": "Minify CSS",
+          "display": "Est savings of 3 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "totalBytes": 26620,
+                "wastedBytes": 3482,
+                "wastedPercent": 13.079865187260953
+              }
+            ],
+            "overallSavingsMs": 0,
+            "overallSavingsBytes": 3482,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 0,
+                "LCP": 0
+              }
+            }
+          }
+        },
+        "unused-css-rules": {
+          "title": "Reduce unused CSS",
+          "display": "Est savings of 17 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "wastedBytes": 17263,
+                "wastedPercent": 65.37281781345855,
+                "totalBytes": 26407
+              }
+            ],
+            "overallSavingsMs": 0,
+            "overallSavingsBytes": 17263,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 0,
+                "LCP": 0
+              }
+            }
+          }
+        },
+        "bf-cache": {
+          "title": "Page prevented back/forward cache restoration",
+          "display": "4 failure reasons",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "reason",
+                "valueType": "text",
+                "subItemsHeading": {
+                  "key": "frameUrl",
+                  "valueType": "url"
+                },
+                "label": "Failure reason"
+              },
+              {
+                "key": "failureType",
+                "valueType": "text",
+                "label": "Failure type"
+              }
+            ],
+            "items": [
+              {
+                "reason": "Back/forward cache is disabled by flags. Visit chrome://flags/#back-forward-cache to enable it locally on this device.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/initiatives.html"
+                    }
+                  ]
+                },
+                "protocolReason": "BackForwardCacheDisabled"
+              },
+              {
+                "reason": "Pages whose main resource has cache-control:no-store cannot enter back/forward cache.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/initiatives.html"
+                    }
+                  ]
+                },
+                "protocolReason": "MainResourceHasCacheControlNoStore"
+              },
+              {
+                "reason": "Back/forward cache is disabled because some JavaScript network request received resource with Cache-Control: no-store header.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/initiatives.html"
+                    }
+                  ]
+                },
+                "protocolReason": "JsNetworkRequestReceivedCacheControlNoStoreResource"
+              },
+              {
+                "reason": "Back/forward cache is disabled by the command line.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/initiatives.html"
+                    }
+                  ]
+                },
+                "protocolReason": "BackForwardCacheDisabledByCommandLine"
+              }
+            ]
+          }
+        },
+        "document-latency-insight": {
+          "title": "Document request latency",
+          "display": "Est savings of 20 KiB",
+          "details": {
+            "type": "checklist",
+            "items": {
+              "noRedirects": {
+                "label": "Avoids redirects",
+                "value": true
+              },
+              "serverResponseIsFast": {
+                "label": "Server responds quickly (observed 1 ms)",
+                "value": true
+              },
+              "usesCompression": {
+                "label": "No compression applied",
+                "value": false
+              }
+            },
+            "debugData": {
+              "type": "debugdata",
+              "redirectDuration": 0,
+              "serverResponseTime": 1,
+              "uncompressedResponseBytes": 20932,
+              "wastedBytes": 20932
+            }
+          }
+        },
+        "network-dependency-tree-insight": {
+          "title": "Network dependency tree",
+          "details": {
+            "type": "list",
+            "items": [
+              {
+                "type": "list-section",
+                "value": {
+                  "type": "network-tree",
+                  "chains": {
+                    "8DFA285485EA4AF387649BED2A86EF65": {
+                      "url": "http://127.0.0.1:8000/pages/initiatives.html",
+                      "navStartToEndTime": 46,
+                      "transferSize": 31456,
+                      "isLongest": true,
+                      "children": {
+                        "66740.4": {
+                          "url": "http://127.0.0.1:8000/assets/styles/fonts.css",
+                          "navStartToEndTime": 48,
+                          "transferSize": 2852,
+                          "isLongest": true,
+                          "children": {
+                            "66740.20": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/dm-mono-400.woff2",
+                              "navStartToEndTime": 132,
+                              "transferSize": 18125,
+                              "isLongest": true,
+                              "children": {}
+                            },
+                            "66740.25": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/manrope-700.woff2",
+                              "navStartToEndTime": 131,
+                              "transferSize": 20477,
+                              "children": {}
+                            },
+                            "66740.26": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/manrope-800.woff2",
+                              "navStartToEndTime": 130,
+                              "transferSize": 19357,
+                              "children": {}
+                            },
+                            "66740.21": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/dm-mono-500.woff2",
+                              "navStartToEndTime": 129,
+                              "transferSize": 18309,
+                              "children": {}
+                            }
+                          }
+                        },
+                        "66740.5": {
+                          "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                          "navStartToEndTime": 49,
+                          "transferSize": 26620,
+                          "children": {}
+                        }
+                      }
+                    }
+                  },
+                  "longestChain": {
+                    "duration": 132
+                  }
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnected origins",
+                "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+                "value": {
+                  "type": "text",
+                  "value": "no origins were preconnected"
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnect candidates",
+                "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+                "value": {
+                  "type": "text",
+                  "value": "No additional origins are good candidates for preconnecting"
+                }
+              }
+            ]
+          }
+        },
+        "render-blocking-insight": {
+          "title": "Render-blocking requests",
+          "display": "Est savings of 130 ms",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedMs",
+                "valueType": "timespanMs",
+                "label": "Duration"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "totalBytes": 26620,
+                "wastedMs": 162
+              },
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/fonts.css",
+                "totalBytes": 2852
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "page": "about",
+      "mode": "mobile",
+      "scores": {
+        "performance": 95,
+        "accessibility": 100,
+        "seo": 100
+      },
+      "lcp": 2555.588,
+      "cls": 0,
+      "tbt": 81,
+      "diagnostics": {
+        "first-contentful-paint": {
+          "title": "First Contentful Paint",
+          "display": "2.1 s"
+        },
+        "largest-contentful-paint": {
+          "title": "Largest Contentful Paint",
+          "display": "2.6 s"
+        },
+        "max-potential-fid": {
+          "title": "Max Potential First Input Delay",
+          "display": "130 ms"
+        },
+        "unminified-css": {
+          "title": "Minify CSS",
+          "display": "Est savings of 3 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "totalBytes": 26620,
+                "wastedBytes": 3482,
+                "wastedPercent": 13.079865187260953
+              }
+            ],
+            "overallSavingsMs": 150,
+            "overallSavingsBytes": 3482,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 150,
+                "LCP": 150
+              }
+            }
+          }
+        },
+        "unused-css-rules": {
+          "title": "Reduce unused CSS",
+          "display": "Est savings of 16 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "wastedBytes": 16330,
+                "wastedPercent": 61.83966372552733,
+                "totalBytes": 26407
+              }
+            ],
+            "overallSavingsMs": 0,
+            "overallSavingsBytes": 16330,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 150,
+                "LCP": 0
+              }
+            }
+          }
+        },
+        "bf-cache": {
+          "title": "Page prevented back/forward cache restoration",
+          "display": "4 failure reasons",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "reason",
+                "valueType": "text",
+                "subItemsHeading": {
+                  "key": "frameUrl",
+                  "valueType": "url"
+                },
+                "label": "Failure reason"
+              },
+              {
+                "key": "failureType",
+                "valueType": "text",
+                "label": "Failure type"
+              }
+            ],
+            "items": [
+              {
+                "reason": "Back/forward cache is disabled by flags. Visit chrome://flags/#back-forward-cache to enable it locally on this device.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/profile.html"
+                    }
+                  ]
+                },
+                "protocolReason": "BackForwardCacheDisabled"
+              },
+              {
+                "reason": "Pages whose main resource has cache-control:no-store cannot enter back/forward cache.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/profile.html"
+                    }
+                  ]
+                },
+                "protocolReason": "MainResourceHasCacheControlNoStore"
+              },
+              {
+                "reason": "Back/forward cache is disabled because some JavaScript network request received resource with Cache-Control: no-store header.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/profile.html"
+                    }
+                  ]
+                },
+                "protocolReason": "JsNetworkRequestReceivedCacheControlNoStoreResource"
+              },
+              {
+                "reason": "Back/forward cache is disabled by the command line.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/profile.html"
+                    }
+                  ]
+                },
+                "protocolReason": "BackForwardCacheDisabledByCommandLine"
+              }
+            ]
+          }
+        },
+        "document-latency-insight": {
+          "title": "Document request latency",
+          "display": "Est savings of 11 KiB",
+          "details": {
+            "type": "checklist",
+            "items": {
+              "noRedirects": {
+                "label": "Avoids redirects",
+                "value": true
+              },
+              "serverResponseIsFast": {
+                "label": "Server responds quickly (observed 1 ms)",
+                "value": true
+              },
+              "usesCompression": {
+                "label": "No compression applied",
+                "value": false
+              }
+            },
+            "debugData": {
+              "type": "debugdata",
+              "redirectDuration": 0,
+              "serverResponseTime": 1,
+              "uncompressedResponseBytes": 11592,
+              "wastedBytes": 11592
+            }
+          }
+        },
+        "network-dependency-tree-insight": {
+          "title": "Network dependency tree",
+          "details": {
+            "type": "list",
+            "items": [
+              {
+                "type": "list-section",
+                "value": {
+                  "type": "network-tree",
+                  "chains": {
+                    "796C36847C7493BB57EF0B7C7ECDCF72": {
+                      "url": "http://127.0.0.1:8000/pages/profile.html",
+                      "navStartToEndTime": 60,
+                      "transferSize": 17515,
+                      "isLongest": true,
+                      "children": {
+                        "62740.4": {
+                          "url": "http://127.0.0.1:8000/assets/styles/fonts.css",
+                          "navStartToEndTime": 67,
+                          "transferSize": 2852,
+                          "isLongest": true,
+                          "children": {
+                            "62740.25": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/newsreader-500.woff2",
+                              "navStartToEndTime": 153,
+                              "transferSize": 36793,
+                              "isLongest": true,
+                              "children": {}
+                            },
+                            "62740.19": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/dm-mono-500.woff2",
+                              "navStartToEndTime": 152,
+                              "transferSize": 18309,
+                              "children": {}
+                            },
+                            "62740.23": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/manrope-700.woff2",
+                              "navStartToEndTime": 152,
+                              "transferSize": 20477,
+                              "children": {}
+                            },
+                            "62740.18": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/dm-mono-400.woff2",
+                              "navStartToEndTime": 151,
+                              "transferSize": 18125,
+                              "children": {}
+                            },
+                            "62740.24": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/manrope-800.woff2",
+                              "navStartToEndTime": 150,
+                              "transferSize": 19357,
+                              "children": {}
+                            }
+                          }
+                        },
+                        "62740.5": {
+                          "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                          "navStartToEndTime": 68,
+                          "transferSize": 26620,
+                          "children": {}
+                        }
+                      }
+                    }
+                  },
+                  "longestChain": {
+                    "duration": 153
+                  }
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnected origins",
+                "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+                "value": {
+                  "type": "text",
+                  "value": "no origins were preconnected"
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnect candidates",
+                "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+                "value": {
+                  "type": "text",
+                  "value": "No additional origins are good candidates for preconnecting"
+                }
+              }
+            ]
+          }
+        },
+        "render-blocking-insight": {
+          "title": "Render-blocking requests",
+          "display": "Est savings of 1,340 ms",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedMs",
+                "valueType": "timespanMs",
+                "label": "Duration"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "totalBytes": 26620,
+                "wastedMs": 751
+              },
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/fonts.css",
+                "totalBytes": 2852,
+                "wastedMs": 151
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "page": "about",
+      "mode": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "seo": 100
+      },
+      "lcp": 526.829,
+      "cls": 0.0001226833245775326,
+      "tbt": 0,
+      "diagnostics": {
+        "label-content-name-mismatch": {
+          "title": "Elements with visible text labels do not have matching accessible names.",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "node",
+                "valueType": "node",
+                "subItemsHeading": {
+                  "key": "relatedNode",
+                  "valueType": "node"
+                },
+                "label": "Failing Elements"
+              }
+            ],
+            "items": [
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "1-0-A",
+                  "path": "2,HTML,1,BODY,1,DIV,0,HEADER,0,A",
+                  "selector": "body#top > div#site-header > header.site-header > a.brand",
+                  "boundingRect": {
+                    "top": 40,
+                    "bottom": 84,
+                    "left": 52,
+                    "right": 242,
+                    "width": 190,
+                    "height": 44
+                  },
+                  "snippet": "<a class=\"brand\" href=\"../index.html\" aria-label=\"S/S · Signal &amp; Self · Mina Soliman’s fieldbook · Home\">",
+                  "nodeLabel": "S/S\nSignal & Self\nMina Soliman’s fieldbook",
+                  "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+                }
+              }
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "impact": "serious",
+              "tags": [
+                "cat.semantics",
+                "wcag21a",
+                "wcag253",
+                "EN-301-549",
+                "EN-9.2.5.3",
+                "RGAAv4",
+                "RGAA-6.1.5",
+                "experimental"
+              ]
+            }
+          }
+        },
+        "unminified-css": {
+          "title": "Minify CSS",
+          "display": "Est savings of 3 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "totalBytes": 26620,
+                "wastedBytes": 3482,
+                "wastedPercent": 13.079865187260953
+              }
+            ],
+            "overallSavingsMs": 0,
+            "overallSavingsBytes": 3482,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 0,
+                "LCP": 0
+              }
+            }
+          }
+        },
+        "unused-css-rules": {
+          "title": "Reduce unused CSS",
+          "display": "Est savings of 18 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "wastedBytes": 18027,
+                "wastedPercent": 68.2659900783883,
+                "totalBytes": 26407
+              }
+            ],
+            "overallSavingsMs": 0,
+            "overallSavingsBytes": 18027,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 40,
+                "LCP": 0
+              }
+            }
+          }
+        },
+        "bf-cache": {
+          "title": "Page prevented back/forward cache restoration",
+          "display": "4 failure reasons",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "reason",
+                "valueType": "text",
+                "subItemsHeading": {
+                  "key": "frameUrl",
+                  "valueType": "url"
+                },
+                "label": "Failure reason"
+              },
+              {
+                "key": "failureType",
+                "valueType": "text",
+                "label": "Failure type"
+              }
+            ],
+            "items": [
+              {
+                "reason": "Back/forward cache is disabled by flags. Visit chrome://flags/#back-forward-cache to enable it locally on this device.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/profile.html"
+                    }
+                  ]
+                },
+                "protocolReason": "BackForwardCacheDisabled"
+              },
+              {
+                "reason": "Pages whose main resource has cache-control:no-store cannot enter back/forward cache.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/profile.html"
+                    }
+                  ]
+                },
+                "protocolReason": "MainResourceHasCacheControlNoStore"
+              },
+              {
+                "reason": "Back/forward cache is disabled because some JavaScript network request received resource with Cache-Control: no-store header.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/profile.html"
+                    }
+                  ]
+                },
+                "protocolReason": "JsNetworkRequestReceivedCacheControlNoStoreResource"
+              },
+              {
+                "reason": "Back/forward cache is disabled by the command line.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/profile.html"
+                    }
+                  ]
+                },
+                "protocolReason": "BackForwardCacheDisabledByCommandLine"
+              }
+            ]
+          }
+        },
+        "document-latency-insight": {
+          "title": "Document request latency",
+          "display": "Est savings of 11 KiB",
+          "details": {
+            "type": "checklist",
+            "items": {
+              "noRedirects": {
+                "label": "Avoids redirects",
+                "value": true
+              },
+              "serverResponseIsFast": {
+                "label": "Server responds quickly (observed 1 ms)",
+                "value": true
+              },
+              "usesCompression": {
+                "label": "No compression applied",
+                "value": false
+              }
+            },
+            "debugData": {
+              "type": "debugdata",
+              "redirectDuration": 0,
+              "serverResponseTime": 1,
+              "uncompressedResponseBytes": 11592,
+              "wastedBytes": 11592
+            }
+          }
+        },
+        "network-dependency-tree-insight": {
+          "title": "Network dependency tree",
+          "details": {
+            "type": "list",
+            "items": [
+              {
+                "type": "list-section",
+                "value": {
+                  "type": "network-tree",
+                  "chains": {
+                    "DFFCE1207D35E7A72FFDF6F636AFB598": {
+                      "url": "http://127.0.0.1:8000/pages/profile.html",
+                      "navStartToEndTime": 22,
+                      "transferSize": 17515,
+                      "isLongest": true,
+                      "children": {
+                        "57384.4": {
+                          "url": "http://127.0.0.1:8000/assets/styles/fonts.css",
+                          "navStartToEndTime": 25,
+                          "transferSize": 2852,
+                          "isLongest": true,
+                          "children": {
+                            "57384.25": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/newsreader-500.woff2",
+                              "navStartToEndTime": 117,
+                              "transferSize": 36793,
+                              "isLongest": true,
+                              "children": {}
+                            },
+                            "57384.19": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/dm-mono-500.woff2",
+                              "navStartToEndTime": 115,
+                              "transferSize": 18309,
+                              "children": {}
+                            },
+                            "57384.24": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/manrope-800.woff2",
+                              "navStartToEndTime": 114,
+                              "transferSize": 19357,
+                              "children": {}
+                            },
+                            "57384.23": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/manrope-700.woff2",
+                              "navStartToEndTime": 113,
+                              "transferSize": 20477,
+                              "children": {}
+                            },
+                            "57384.18": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/dm-mono-400.woff2",
+                              "navStartToEndTime": 113,
+                              "transferSize": 18125,
+                              "children": {}
+                            }
+                          }
+                        },
+                        "57384.5": {
+                          "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                          "navStartToEndTime": 26,
+                          "transferSize": 26620,
+                          "children": {}
+                        }
+                      }
+                    }
+                  },
+                  "longestChain": {
+                    "duration": 117
+                  }
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnected origins",
+                "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+                "value": {
+                  "type": "text",
+                  "value": "no origins were preconnected"
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnect candidates",
+                "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+                "value": {
+                  "type": "text",
+                  "value": "No additional origins are good candidates for preconnecting"
+                }
+              }
+            ]
+          }
+        },
+        "render-blocking-insight": {
+          "title": "Render-blocking requests",
+          "display": "Est savings of 210 ms",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedMs",
+                "valueType": "timespanMs",
+                "label": "Duration"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "totalBytes": 26620,
+                "wastedMs": 162
+              },
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/fonts.css",
+                "totalBytes": 2852
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "page": "notes",
+      "mode": "mobile",
+      "scores": {
+        "performance": 98,
+        "accessibility": 100,
+        "seo": 100
+      },
+      "lcp": 2253.4546999999993,
+      "cls": 0,
+      "tbt": 69.99999999999977,
+      "diagnostics": {
+        "unminified-css": {
+          "title": "Minify CSS",
+          "display": "Est savings of 3 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "totalBytes": 26620,
+                "wastedBytes": 3482,
+                "wastedPercent": 13.079865187260953
+              }
+            ],
+            "overallSavingsMs": 0,
+            "overallSavingsBytes": 3482,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 0,
+                "LCP": 0
+              }
+            }
+          }
+        },
+        "unused-css-rules": {
+          "title": "Reduce unused CSS",
+          "display": "Est savings of 16 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "wastedBytes": 16390,
+                "wastedPercent": 62.066876207066315,
+                "totalBytes": 26407
+              }
+            ],
+            "overallSavingsMs": 150,
+            "overallSavingsBytes": 16390,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 0,
+                "LCP": 150
+              }
+            }
+          }
+        },
+        "bf-cache": {
+          "title": "Page prevented back/forward cache restoration",
+          "display": "4 failure reasons",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "reason",
+                "valueType": "text",
+                "subItemsHeading": {
+                  "key": "frameUrl",
+                  "valueType": "url"
+                },
+                "label": "Failure reason"
+              },
+              {
+                "key": "failureType",
+                "valueType": "text",
+                "label": "Failure type"
+              }
+            ],
+            "items": [
+              {
+                "reason": "Back/forward cache is disabled by flags. Visit chrome://flags/#back-forward-cache to enable it locally on this device.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/field-notes.html"
+                    }
+                  ]
+                },
+                "protocolReason": "BackForwardCacheDisabled"
+              },
+              {
+                "reason": "Pages whose main resource has cache-control:no-store cannot enter back/forward cache.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/field-notes.html"
+                    }
+                  ]
+                },
+                "protocolReason": "MainResourceHasCacheControlNoStore"
+              },
+              {
+                "reason": "Back/forward cache is disabled because some JavaScript network request received resource with Cache-Control: no-store header.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/field-notes.html"
+                    }
+                  ]
+                },
+                "protocolReason": "JsNetworkRequestReceivedCacheControlNoStoreResource"
+              },
+              {
+                "reason": "Back/forward cache is disabled by the command line.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/field-notes.html"
+                    }
+                  ]
+                },
+                "protocolReason": "BackForwardCacheDisabledByCommandLine"
+              }
+            ]
+          }
+        },
+        "document-latency-insight": {
+          "title": "Document request latency",
+          "display": "Est savings of 28 KiB",
+          "details": {
+            "type": "checklist",
+            "items": {
+              "noRedirects": {
+                "label": "Avoids redirects",
+                "value": true
+              },
+              "serverResponseIsFast": {
+                "label": "Server responds quickly (observed 1 ms)",
+                "value": true
+              },
+              "usesCompression": {
+                "label": "No compression applied",
+                "value": false
+              }
+            },
+            "debugData": {
+              "type": "debugdata",
+              "redirectDuration": 0,
+              "serverResponseTime": 1,
+              "uncompressedResponseBytes": 28571,
+              "wastedBytes": 28571
+            }
+          }
+        },
+        "network-dependency-tree-insight": {
+          "title": "Network dependency tree",
+          "details": {
+            "type": "list",
+            "items": [
+              {
+                "type": "list-section",
+                "value": {
+                  "type": "network-tree",
+                  "chains": {
+                    "4DAC483F0AAC3ECF3D9E2AFA41A0A170": {
+                      "url": "http://127.0.0.1:8000/pages/field-notes.html",
+                      "navStartToEndTime": 69,
+                      "transferSize": 42858,
+                      "isLongest": true,
+                      "children": {
+                        "24436.4": {
+                          "url": "http://127.0.0.1:8000/assets/styles/fonts.css",
+                          "navStartToEndTime": 75,
+                          "transferSize": 2852,
+                          "isLongest": true,
+                          "children": {
+                            "24436.26": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/manrope-800.woff2",
+                              "navStartToEndTime": 153,
+                              "transferSize": 19357,
+                              "isLongest": true,
+                              "children": {}
+                            },
+                            "24436.20": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/dm-mono-400.woff2",
+                              "navStartToEndTime": 153,
+                              "transferSize": 18125,
+                              "children": {}
+                            },
+                            "24436.25": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/manrope-700.woff2",
+                              "navStartToEndTime": 153,
+                              "transferSize": 20477,
+                              "children": {}
+                            }
+                          }
+                        },
+                        "24436.5": {
+                          "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                          "navStartToEndTime": 75,
+                          "transferSize": 26620,
+                          "children": {}
+                        }
+                      }
+                    }
+                  },
+                  "longestChain": {
+                    "duration": 153
+                  }
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnected origins",
+                "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+                "value": {
+                  "type": "text",
+                  "value": "no origins were preconnected"
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnect candidates",
+                "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+                "value": {
+                  "type": "text",
+                  "value": "No additional origins are good candidates for preconnecting"
+                }
+              }
+            ]
+          }
+        },
+        "render-blocking-insight": {
+          "title": "Render-blocking requests",
+          "display": "Est savings of 720 ms",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedMs",
+                "valueType": "timespanMs",
+                "label": "Duration"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/fonts.css",
+                "totalBytes": 2852,
+                "wastedMs": 152
+              },
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "totalBytes": 26620,
+                "wastedMs": 752
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "page": "notes",
+      "mode": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "seo": 100
+      },
+      "lcp": 483.4542,
+      "cls": 0.0001226833245775326,
+      "tbt": 0,
+      "diagnostics": {
+        "label-content-name-mismatch": {
+          "title": "Elements with visible text labels do not have matching accessible names.",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "node",
+                "valueType": "node",
+                "subItemsHeading": {
+                  "key": "relatedNode",
+                  "valueType": "node"
+                },
+                "label": "Failing Elements"
+              }
+            ],
+            "items": [
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "1-0-A",
+                  "path": "2,HTML,1,BODY,1,DIV,0,HEADER,0,A",
+                  "selector": "body#top > div#site-header > header.site-header > a.brand",
+                  "boundingRect": {
+                    "top": 40,
+                    "bottom": 84,
+                    "left": 52,
+                    "right": 242,
+                    "width": 190,
+                    "height": 44
+                  },
+                  "snippet": "<a class=\"brand\" href=\"../index.html\" aria-label=\"S/S · Signal &amp; Self · Mina Soliman’s fieldbook · Home\">",
+                  "nodeLabel": "S/S\nSignal & Self\nMina Soliman’s fieldbook",
+                  "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+                }
+              }
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "impact": "serious",
+              "tags": [
+                "cat.semantics",
+                "wcag21a",
+                "wcag253",
+                "EN-301-549",
+                "EN-9.2.5.3",
+                "RGAAv4",
+                "RGAA-6.1.5",
+                "experimental"
+              ]
+            }
+          }
+        },
+        "unminified-css": {
+          "title": "Minify CSS",
+          "display": "Est savings of 3 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "totalBytes": 26620,
+                "wastedBytes": 3482,
+                "wastedPercent": 13.079865187260953
+              }
+            ],
+            "overallSavingsMs": 0,
+            "overallSavingsBytes": 3482,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 0,
+                "LCP": 0
+              }
+            }
+          }
+        },
+        "unused-css-rules": {
+          "title": "Reduce unused CSS",
+          "display": "Est savings of 17 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "wastedBytes": 17894,
+                "wastedPercent": 67.76233574431022,
+                "totalBytes": 26407
+              }
+            ],
+            "overallSavingsMs": 0,
+            "overallSavingsBytes": 17894,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 0,
+                "LCP": 0
+              }
+            }
+          }
+        },
+        "bf-cache": {
+          "title": "Page prevented back/forward cache restoration",
+          "display": "4 failure reasons",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "reason",
+                "valueType": "text",
+                "subItemsHeading": {
+                  "key": "frameUrl",
+                  "valueType": "url"
+                },
+                "label": "Failure reason"
+              },
+              {
+                "key": "failureType",
+                "valueType": "text",
+                "label": "Failure type"
+              }
+            ],
+            "items": [
+              {
+                "reason": "Back/forward cache is disabled by flags. Visit chrome://flags/#back-forward-cache to enable it locally on this device.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/field-notes.html"
+                    }
+                  ]
+                },
+                "protocolReason": "BackForwardCacheDisabled"
+              },
+              {
+                "reason": "Pages whose main resource has cache-control:no-store cannot enter back/forward cache.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/field-notes.html"
+                    }
+                  ]
+                },
+                "protocolReason": "MainResourceHasCacheControlNoStore"
+              },
+              {
+                "reason": "Back/forward cache is disabled because some JavaScript network request received resource with Cache-Control: no-store header.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/field-notes.html"
+                    }
+                  ]
+                },
+                "protocolReason": "JsNetworkRequestReceivedCacheControlNoStoreResource"
+              },
+              {
+                "reason": "Back/forward cache is disabled by the command line.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/field-notes.html"
+                    }
+                  ]
+                },
+                "protocolReason": "BackForwardCacheDisabledByCommandLine"
+              }
+            ]
+          }
+        },
+        "document-latency-insight": {
+          "title": "Document request latency",
+          "display": "Est savings of 28 KiB",
+          "details": {
+            "type": "checklist",
+            "items": {
+              "noRedirects": {
+                "label": "Avoids redirects",
+                "value": true
+              },
+              "serverResponseIsFast": {
+                "label": "Server responds quickly (observed 1 ms)",
+                "value": true
+              },
+              "usesCompression": {
+                "label": "No compression applied",
+                "value": false
+              }
+            },
+            "debugData": {
+              "type": "debugdata",
+              "redirectDuration": 0,
+              "serverResponseTime": 1,
+              "uncompressedResponseBytes": 28571,
+              "wastedBytes": 28571
+            }
+          }
+        },
+        "network-dependency-tree-insight": {
+          "title": "Network dependency tree",
+          "details": {
+            "type": "list",
+            "items": [
+              {
+                "type": "list-section",
+                "value": {
+                  "type": "network-tree",
+                  "chains": {
+                    "E31768670021672FE0AA154B24A1A0C9": {
+                      "url": "http://127.0.0.1:8000/pages/field-notes.html",
+                      "navStartToEndTime": 26,
+                      "transferSize": 42858,
+                      "isLongest": true,
+                      "children": {
+                        "63184.4": {
+                          "url": "http://127.0.0.1:8000/assets/styles/fonts.css",
+                          "navStartToEndTime": 28,
+                          "transferSize": 2852,
+                          "isLongest": true,
+                          "children": {
+                            "63184.26": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/manrope-800.woff2",
+                              "navStartToEndTime": 108,
+                              "transferSize": 19357,
+                              "isLongest": true,
+                              "children": {}
+                            },
+                            "63184.20": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/dm-mono-400.woff2",
+                              "navStartToEndTime": 108,
+                              "transferSize": 18125,
+                              "children": {}
+                            },
+                            "63184.25": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/manrope-700.woff2",
+                              "navStartToEndTime": 108,
+                              "transferSize": 20477,
+                              "children": {}
+                            }
+                          }
+                        },
+                        "63184.5": {
+                          "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                          "navStartToEndTime": 28,
+                          "transferSize": 26620,
+                          "children": {}
+                        }
+                      }
+                    }
+                  },
+                  "longestChain": {
+                    "duration": 108
+                  }
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnected origins",
+                "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+                "value": {
+                  "type": "text",
+                  "value": "no origins were preconnected"
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnect candidates",
+                "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+                "value": {
+                  "type": "text",
+                  "value": "No additional origins are good candidates for preconnecting"
+                }
+              }
+            ]
+          }
+        },
+        "render-blocking-insight": {
+          "title": "Render-blocking requests",
+          "display": "Est savings of 90 ms",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedMs",
+                "valueType": "timespanMs",
+                "label": "Duration"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "totalBytes": 26620,
+                "wastedMs": 162
+              },
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/fonts.css",
+                "totalBytes": 2852
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "page": "evidence",
+      "mode": "mobile",
+      "scores": {
+        "performance": 96,
+        "accessibility": 100,
+        "seo": 100
+      },
+      "lcp": 2294.0233000000003,
+      "cls": 0,
+      "tbt": 140,
+      "diagnostics": {
+        "max-potential-fid": {
+          "title": "Max Potential First Input Delay",
+          "display": "190 ms"
+        },
+        "unminified-css": {
+          "title": "Minify CSS",
+          "display": "Est savings of 3 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "totalBytes": 26620,
+                "wastedBytes": 3482,
+                "wastedPercent": 13.079865187260953
+              }
+            ],
+            "overallSavingsMs": 40,
+            "overallSavingsBytes": 3482,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 0,
+                "LCP": 40
+              }
+            }
+          }
+        },
+        "unused-css-rules": {
+          "title": "Reduce unused CSS",
+          "display": "Est savings of 14 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "wastedBytes": 14835,
+                "wastedPercent": 56.17828606051426,
+                "totalBytes": 26407
+              }
+            ],
+            "overallSavingsMs": 40,
+            "overallSavingsBytes": 14835,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 0,
+                "LCP": 40
+              }
+            }
+          }
+        },
+        "bf-cache": {
+          "title": "Page prevented back/forward cache restoration",
+          "display": "4 failure reasons",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "reason",
+                "valueType": "text",
+                "subItemsHeading": {
+                  "key": "frameUrl",
+                  "valueType": "url"
+                },
+                "label": "Failure reason"
+              },
+              {
+                "key": "failureType",
+                "valueType": "text",
+                "label": "Failure type"
+              }
+            ],
+            "items": [
+              {
+                "reason": "Back/forward cache is disabled by flags. Visit chrome://flags/#back-forward-cache to enable it locally on this device.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/insights.html"
+                    }
+                  ]
+                },
+                "protocolReason": "BackForwardCacheDisabled"
+              },
+              {
+                "reason": "Pages whose main resource has cache-control:no-store cannot enter back/forward cache.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/insights.html"
+                    }
+                  ]
+                },
+                "protocolReason": "MainResourceHasCacheControlNoStore"
+              },
+              {
+                "reason": "Back/forward cache is disabled because some JavaScript network request received resource with Cache-Control: no-store header.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/insights.html"
+                    }
+                  ]
+                },
+                "protocolReason": "JsNetworkRequestReceivedCacheControlNoStoreResource"
+              },
+              {
+                "reason": "Back/forward cache is disabled by the command line.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/insights.html"
+                    }
+                  ]
+                },
+                "protocolReason": "BackForwardCacheDisabledByCommandLine"
+              }
+            ]
+          }
+        },
+        "document-latency-insight": {
+          "title": "Document request latency",
+          "display": "Est savings of 17 KiB",
+          "details": {
+            "type": "checklist",
+            "items": {
+              "noRedirects": {
+                "label": "Avoids redirects",
+                "value": true
+              },
+              "serverResponseIsFast": {
+                "label": "Server responds quickly (observed 1 ms)",
+                "value": true
+              },
+              "usesCompression": {
+                "label": "No compression applied",
+                "value": false
+              }
+            },
+            "debugData": {
+              "type": "debugdata",
+              "redirectDuration": 0,
+              "serverResponseTime": 1,
+              "uncompressedResponseBytes": 17580,
+              "wastedBytes": 17580
+            }
+          }
+        },
+        "network-dependency-tree-insight": {
+          "title": "Network dependency tree",
+          "details": {
+            "type": "list",
+            "items": [
+              {
+                "type": "list-section",
+                "value": {
+                  "type": "network-tree",
+                  "chains": {
+                    "6C8C924CED1B4EF040AD4133B57CA24E": {
+                      "url": "http://127.0.0.1:8000/pages/insights.html",
+                      "navStartToEndTime": 21,
+                      "transferSize": 26453,
+                      "isLongest": true,
+                      "children": {
+                        "44412.4": {
+                          "url": "http://127.0.0.1:8000/assets/styles/fonts.css",
+                          "navStartToEndTime": 27,
+                          "transferSize": 2852,
+                          "isLongest": true,
+                          "children": {
+                            "44412.23": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/dm-mono-500.woff2",
+                              "navStartToEndTime": 145,
+                              "transferSize": 18309,
+                              "isLongest": true,
+                              "children": {}
+                            },
+                            "44412.28": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/manrope-800.woff2",
+                              "navStartToEndTime": 145,
+                              "transferSize": 19357,
+                              "children": {}
+                            },
+                            "44412.22": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/dm-mono-400.woff2",
+                              "navStartToEndTime": 144,
+                              "transferSize": 18125,
+                              "children": {}
+                            },
+                            "44412.27": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/manrope-700.woff2",
+                              "navStartToEndTime": 143,
+                              "transferSize": 20477,
+                              "children": {}
+                            }
+                          }
+                        },
+                        "44412.5": {
+                          "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                          "navStartToEndTime": 29,
+                          "transferSize": 26620,
+                          "children": {}
+                        }
+                      }
+                    }
+                  },
+                  "longestChain": {
+                    "duration": 145
+                  }
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnected origins",
+                "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+                "value": {
+                  "type": "text",
+                  "value": "no origins were preconnected"
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnect candidates",
+                "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+                "value": {
+                  "type": "text",
+                  "value": "No additional origins are good candidates for preconnecting"
+                }
+              }
+            ]
+          }
+        },
+        "render-blocking-insight": {
+          "title": "Render-blocking requests",
+          "display": "Est savings of 710 ms",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedMs",
+                "valueType": "timespanMs",
+                "label": "Duration"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "totalBytes": 26620,
+                "wastedMs": 901
+              },
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/fonts.css",
+                "totalBytes": 2852,
+                "wastedMs": 151
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "page": "evidence",
+      "mode": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "seo": 100
+      },
+      "lcp": 485.3134,
+      "cls": 0.001399747832939322,
+      "tbt": 0,
+      "diagnostics": {
+        "label-content-name-mismatch": {
+          "title": "Elements with visible text labels do not have matching accessible names.",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "node",
+                "valueType": "node",
+                "subItemsHeading": {
+                  "key": "relatedNode",
+                  "valueType": "node"
+                },
+                "label": "Failing Elements"
+              }
+            ],
+            "items": [
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "1-0-A",
+                  "path": "2,HTML,1,BODY,1,DIV,0,HEADER,0,A",
+                  "selector": "body#top > div#site-header > header.site-header > a.brand",
+                  "boundingRect": {
+                    "top": 40,
+                    "bottom": 84,
+                    "left": 52,
+                    "right": 242,
+                    "width": 190,
+                    "height": 44
+                  },
+                  "snippet": "<a class=\"brand\" href=\"../index.html\" aria-label=\"S/S · Signal &amp; Self · Mina Soliman’s fieldbook · Home\">",
+                  "nodeLabel": "S/S\nSignal & Self\nMina Soliman’s fieldbook",
+                  "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+                }
+              }
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "impact": "serious",
+              "tags": [
+                "cat.semantics",
+                "wcag21a",
+                "wcag253",
+                "EN-301-549",
+                "EN-9.2.5.3",
+                "RGAAv4",
+                "RGAA-6.1.5",
+                "experimental"
+              ]
+            }
+          }
+        },
+        "unminified-css": {
+          "title": "Minify CSS",
+          "display": "Est savings of 3 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "totalBytes": 26620,
+                "wastedBytes": 3482,
+                "wastedPercent": 13.079865187260953
+              }
+            ],
+            "overallSavingsMs": 0,
+            "overallSavingsBytes": 3482,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 40,
+                "LCP": 0
+              }
+            }
+          }
+        },
+        "unused-css-rules": {
+          "title": "Reduce unused CSS",
+          "display": "Est savings of 16 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "wastedBytes": 16829,
+                "wastedPercent": 63.72931419699322,
+                "totalBytes": 26407
+              }
+            ],
+            "overallSavingsMs": 0,
+            "overallSavingsBytes": 16829,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 40,
+                "LCP": 0
+              }
+            }
+          }
+        },
+        "bf-cache": {
+          "title": "Page prevented back/forward cache restoration",
+          "display": "4 failure reasons",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "reason",
+                "valueType": "text",
+                "subItemsHeading": {
+                  "key": "frameUrl",
+                  "valueType": "url"
+                },
+                "label": "Failure reason"
+              },
+              {
+                "key": "failureType",
+                "valueType": "text",
+                "label": "Failure type"
+              }
+            ],
+            "items": [
+              {
+                "reason": "Back/forward cache is disabled by flags. Visit chrome://flags/#back-forward-cache to enable it locally on this device.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/insights.html"
+                    }
+                  ]
+                },
+                "protocolReason": "BackForwardCacheDisabled"
+              },
+              {
+                "reason": "Pages whose main resource has cache-control:no-store cannot enter back/forward cache.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/insights.html"
+                    }
+                  ]
+                },
+                "protocolReason": "MainResourceHasCacheControlNoStore"
+              },
+              {
+                "reason": "Back/forward cache is disabled because some JavaScript network request received resource with Cache-Control: no-store header.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/insights.html"
+                    }
+                  ]
+                },
+                "protocolReason": "JsNetworkRequestReceivedCacheControlNoStoreResource"
+              },
+              {
+                "reason": "Back/forward cache is disabled by the command line.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/insights.html"
+                    }
+                  ]
+                },
+                "protocolReason": "BackForwardCacheDisabledByCommandLine"
+              }
+            ]
+          }
+        },
+        "document-latency-insight": {
+          "title": "Document request latency",
+          "display": "Est savings of 17 KiB",
+          "details": {
+            "type": "checklist",
+            "items": {
+              "noRedirects": {
+                "label": "Avoids redirects",
+                "value": true
+              },
+              "serverResponseIsFast": {
+                "label": "Server responds quickly (observed 1 ms)",
+                "value": true
+              },
+              "usesCompression": {
+                "label": "No compression applied",
+                "value": false
+              }
+            },
+            "debugData": {
+              "type": "debugdata",
+              "redirectDuration": 0,
+              "serverResponseTime": 1,
+              "uncompressedResponseBytes": 17580,
+              "wastedBytes": 17580
+            }
+          }
+        },
+        "network-dependency-tree-insight": {
+          "title": "Network dependency tree",
+          "details": {
+            "type": "list",
+            "items": [
+              {
+                "type": "list-section",
+                "value": {
+                  "type": "network-tree",
+                  "chains": {
+                    "84FFEDE9E321CCB786244FEA6AC09260": {
+                      "url": "http://127.0.0.1:8000/pages/insights.html",
+                      "navStartToEndTime": 14,
+                      "transferSize": 26453,
+                      "isLongest": true,
+                      "children": {
+                        "67036.4": {
+                          "url": "http://127.0.0.1:8000/assets/styles/fonts.css",
+                          "navStartToEndTime": 22,
+                          "transferSize": 2852,
+                          "isLongest": true,
+                          "children": {
+                            "67036.22": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/dm-mono-500.woff2",
+                              "navStartToEndTime": 110,
+                              "transferSize": 18309,
+                              "isLongest": true,
+                              "children": {}
+                            },
+                            "67036.26": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/manrope-700.woff2",
+                              "navStartToEndTime": 110,
+                              "transferSize": 20477,
+                              "children": {}
+                            },
+                            "67036.27": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/manrope-800.woff2",
+                              "navStartToEndTime": 110,
+                              "transferSize": 19357,
+                              "children": {}
+                            },
+                            "67036.21": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/dm-mono-400.woff2",
+                              "navStartToEndTime": 110,
+                              "transferSize": 18125,
+                              "children": {}
+                            }
+                          }
+                        },
+                        "67036.5": {
+                          "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                          "navStartToEndTime": 23,
+                          "transferSize": 26620,
+                          "children": {}
+                        }
+                      }
+                    }
+                  },
+                  "longestChain": {
+                    "duration": 110
+                  }
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnected origins",
+                "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+                "value": {
+                  "type": "text",
+                  "value": "no origins were preconnected"
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnect candidates",
+                "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+                "value": {
+                  "type": "text",
+                  "value": "No additional origins are good candidates for preconnecting"
+                }
+              }
+            ]
+          }
+        },
+        "render-blocking-insight": {
+          "title": "Render-blocking requests",
+          "display": "Est savings of 170 ms",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedMs",
+                "valueType": "timespanMs",
+                "label": "Duration"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "totalBytes": 26620,
+                "wastedMs": 161
+              },
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/fonts.css",
+                "totalBytes": 2852
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "page": "journey",
+      "mode": "mobile",
+      "scores": {
+        "performance": 98,
+        "accessibility": 100,
+        "seo": 100
+      },
+      "lcp": 2254.1980000000003,
+      "cls": 0,
+      "tbt": 48,
+      "diagnostics": {
+        "unminified-css": {
+          "title": "Minify CSS",
+          "display": "Est savings of 3 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "totalBytes": 26620,
+                "wastedBytes": 3482,
+                "wastedPercent": 13.079865187260953
+              }
+            ],
+            "overallSavingsMs": 0,
+            "overallSavingsBytes": 3482,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 0,
+                "LCP": 0
+              }
+            }
+          }
+        },
+        "unused-css-rules": {
+          "title": "Reduce unused CSS",
+          "display": "Est savings of 17 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "wastedBytes": 17757,
+                "wastedPercent": 67.24353391146288,
+                "totalBytes": 26407
+              }
+            ],
+            "overallSavingsMs": 150,
+            "overallSavingsBytes": 17757,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 0,
+                "LCP": 150
+              }
+            }
+          }
+        },
+        "bf-cache": {
+          "title": "Page prevented back/forward cache restoration",
+          "display": "4 failure reasons",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "reason",
+                "valueType": "text",
+                "subItemsHeading": {
+                  "key": "frameUrl",
+                  "valueType": "url"
+                },
+                "label": "Failure reason"
+              },
+              {
+                "key": "failureType",
+                "valueType": "text",
+                "label": "Failure type"
+              }
+            ],
+            "items": [
+              {
+                "reason": "Back/forward cache is disabled by flags. Visit chrome://flags/#back-forward-cache to enable it locally on this device.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/journey.html"
+                    }
+                  ]
+                },
+                "protocolReason": "BackForwardCacheDisabled"
+              },
+              {
+                "reason": "Pages whose main resource has cache-control:no-store cannot enter back/forward cache.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/journey.html"
+                    }
+                  ]
+                },
+                "protocolReason": "MainResourceHasCacheControlNoStore"
+              },
+              {
+                "reason": "Back/forward cache is disabled because some JavaScript network request received resource with Cache-Control: no-store header.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/journey.html"
+                    }
+                  ]
+                },
+                "protocolReason": "JsNetworkRequestReceivedCacheControlNoStoreResource"
+              },
+              {
+                "reason": "Back/forward cache is disabled by the command line.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/journey.html"
+                    }
+                  ]
+                },
+                "protocolReason": "BackForwardCacheDisabledByCommandLine"
+              }
+            ]
+          }
+        },
+        "document-latency-insight": {
+          "title": "Document request latency",
+          "display": "Est savings of 13 KiB",
+          "details": {
+            "type": "checklist",
+            "items": {
+              "noRedirects": {
+                "label": "Avoids redirects",
+                "value": true
+              },
+              "serverResponseIsFast": {
+                "label": "Server responds quickly (observed 1 ms)",
+                "value": true
+              },
+              "usesCompression": {
+                "label": "No compression applied",
+                "value": false
+              }
+            },
+            "debugData": {
+              "type": "debugdata",
+              "redirectDuration": 0,
+              "serverResponseTime": 1,
+              "uncompressedResponseBytes": 13564,
+              "wastedBytes": 13564
+            }
+          }
+        },
+        "network-dependency-tree-insight": {
+          "title": "Network dependency tree",
+          "details": {
+            "type": "list",
+            "items": [
+              {
+                "type": "list-section",
+                "value": {
+                  "type": "network-tree",
+                  "chains": {
+                    "B7D903B9EB8D5DF3489BF9DCB87CAFBD": {
+                      "url": "http://127.0.0.1:8000/pages/journey.html",
+                      "navStartToEndTime": 49,
+                      "transferSize": 20459,
+                      "isLongest": true,
+                      "children": {
+                        "26956.4": {
+                          "url": "http://127.0.0.1:8000/assets/styles/fonts.css",
+                          "navStartToEndTime": 57,
+                          "transferSize": 2852,
+                          "isLongest": true,
+                          "children": {
+                            "26956.26": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/manrope-800.woff2",
+                              "navStartToEndTime": 128,
+                              "transferSize": 19357,
+                              "isLongest": true,
+                              "children": {}
+                            },
+                            "26956.20": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/dm-mono-400.woff2",
+                              "navStartToEndTime": 119,
+                              "transferSize": 18125,
+                              "children": {}
+                            },
+                            "26956.25": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/manrope-700.woff2",
+                              "navStartToEndTime": 119,
+                              "transferSize": 20477,
+                              "children": {}
+                            }
+                          }
+                        },
+                        "26956.5": {
+                          "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                          "navStartToEndTime": 56,
+                          "transferSize": 26620,
+                          "children": {}
+                        }
+                      }
+                    }
+                  },
+                  "longestChain": {
+                    "duration": 128
+                  }
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnected origins",
+                "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+                "value": {
+                  "type": "text",
+                  "value": "no origins were preconnected"
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnect candidates",
+                "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+                "value": {
+                  "type": "text",
+                  "value": "No additional origins are good candidates for preconnecting"
+                }
+              }
+            ]
+          }
+        },
+        "render-blocking-insight": {
+          "title": "Render-blocking requests",
+          "display": "Est savings of 740 ms",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedMs",
+                "valueType": "timespanMs",
+                "label": "Duration"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/fonts.css",
+                "totalBytes": 2852,
+                "wastedMs": 152
+              },
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "totalBytes": 26620,
+                "wastedMs": 752
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "page": "journey",
+      "mode": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "seo": 100
+      },
+      "lcp": 483.4175,
+      "cls": 0.0001226833245775326,
+      "tbt": 0,
+      "diagnostics": {
+        "label-content-name-mismatch": {
+          "title": "Elements with visible text labels do not have matching accessible names.",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "node",
+                "valueType": "node",
+                "subItemsHeading": {
+                  "key": "relatedNode",
+                  "valueType": "node"
+                },
+                "label": "Failing Elements"
+              }
+            ],
+            "items": [
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "1-0-A",
+                  "path": "2,HTML,1,BODY,1,DIV,0,HEADER,0,A",
+                  "selector": "body#top > div#site-header > header.site-header > a.brand",
+                  "boundingRect": {
+                    "top": 40,
+                    "bottom": 84,
+                    "left": 52,
+                    "right": 242,
+                    "width": 190,
+                    "height": 44
+                  },
+                  "snippet": "<a class=\"brand\" href=\"../index.html\" aria-label=\"S/S · Signal &amp; Self · Mina Soliman’s fieldbook · Home\">",
+                  "nodeLabel": "S/S\nSignal & Self\nMina Soliman’s fieldbook",
+                  "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+                }
+              }
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "impact": "serious",
+              "tags": [
+                "cat.semantics",
+                "wcag21a",
+                "wcag253",
+                "EN-301-549",
+                "EN-9.2.5.3",
+                "RGAAv4",
+                "RGAA-6.1.5",
+                "experimental"
+              ]
+            }
+          }
+        },
+        "unminified-css": {
+          "title": "Minify CSS",
+          "display": "Est savings of 3 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "totalBytes": 26620,
+                "wastedBytes": 3482,
+                "wastedPercent": 13.079865187260953
+              }
+            ],
+            "overallSavingsMs": 0,
+            "overallSavingsBytes": 3482,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 0,
+                "LCP": 0
+              }
+            }
+          }
+        },
+        "unused-css-rules": {
+          "title": "Reduce unused CSS",
+          "display": "Est savings of 19 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "wastedBytes": 19423,
+                "wastedPercent": 73.55246714886205,
+                "totalBytes": 26407
+              }
+            ],
+            "overallSavingsMs": 0,
+            "overallSavingsBytes": 19423,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 0,
+                "LCP": 0
+              }
+            }
+          }
+        },
+        "bf-cache": {
+          "title": "Page prevented back/forward cache restoration",
+          "display": "4 failure reasons",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "reason",
+                "valueType": "text",
+                "subItemsHeading": {
+                  "key": "frameUrl",
+                  "valueType": "url"
+                },
+                "label": "Failure reason"
+              },
+              {
+                "key": "failureType",
+                "valueType": "text",
+                "label": "Failure type"
+              }
+            ],
+            "items": [
+              {
+                "reason": "Back/forward cache is disabled by flags. Visit chrome://flags/#back-forward-cache to enable it locally on this device.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/journey.html"
+                    }
+                  ]
+                },
+                "protocolReason": "BackForwardCacheDisabled"
+              },
+              {
+                "reason": "Pages whose main resource has cache-control:no-store cannot enter back/forward cache.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/journey.html"
+                    }
+                  ]
+                },
+                "protocolReason": "MainResourceHasCacheControlNoStore"
+              },
+              {
+                "reason": "Back/forward cache is disabled because some JavaScript network request received resource with Cache-Control: no-store header.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/journey.html"
+                    }
+                  ]
+                },
+                "protocolReason": "JsNetworkRequestReceivedCacheControlNoStoreResource"
+              },
+              {
+                "reason": "Back/forward cache is disabled by the command line.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/journey.html"
+                    }
+                  ]
+                },
+                "protocolReason": "BackForwardCacheDisabledByCommandLine"
+              }
+            ]
+          }
+        },
+        "document-latency-insight": {
+          "title": "Document request latency",
+          "display": "Est savings of 13 KiB",
+          "details": {
+            "type": "checklist",
+            "items": {
+              "noRedirects": {
+                "label": "Avoids redirects",
+                "value": true
+              },
+              "serverResponseIsFast": {
+                "label": "Server responds quickly (observed 1 ms)",
+                "value": true
+              },
+              "usesCompression": {
+                "label": "No compression applied",
+                "value": false
+              }
+            },
+            "debugData": {
+              "type": "debugdata",
+              "redirectDuration": 0,
+              "serverResponseTime": 1,
+              "uncompressedResponseBytes": 13564,
+              "wastedBytes": 13564
+            }
+          }
+        },
+        "network-dependency-tree-insight": {
+          "title": "Network dependency tree",
+          "details": {
+            "type": "list",
+            "items": [
+              {
+                "type": "list-section",
+                "value": {
+                  "type": "network-tree",
+                  "chains": {
+                    "B5E4BF956EBB6DBD92D613891C44886C": {
+                      "url": "http://127.0.0.1:8000/pages/journey.html",
+                      "navStartToEndTime": 50,
+                      "transferSize": 20459,
+                      "isLongest": true,
+                      "children": {
+                        "67648.4": {
+                          "url": "http://127.0.0.1:8000/assets/styles/fonts.css",
+                          "navStartToEndTime": 55,
+                          "transferSize": 2852,
+                          "isLongest": true,
+                          "children": {
+                            "67648.26": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/manrope-800.woff2",
+                              "navStartToEndTime": 120,
+                              "transferSize": 19357,
+                              "isLongest": true,
+                              "children": {}
+                            },
+                            "67648.20": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/dm-mono-400.woff2",
+                              "navStartToEndTime": 120,
+                              "transferSize": 18125,
+                              "children": {}
+                            },
+                            "67648.25": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/manrope-700.woff2",
+                              "navStartToEndTime": 114,
+                              "transferSize": 20477,
+                              "children": {}
+                            }
+                          }
+                        },
+                        "67648.5": {
+                          "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                          "navStartToEndTime": 55,
+                          "transferSize": 26620,
+                          "children": {}
+                        }
+                      }
+                    }
+                  },
+                  "longestChain": {
+                    "duration": 120
+                  }
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnected origins",
+                "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+                "value": {
+                  "type": "text",
+                  "value": "no origins were preconnected"
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnect candidates",
+                "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+                "value": {
+                  "type": "text",
+                  "value": "No additional origins are good candidates for preconnecting"
+                }
+              }
+            ]
+          }
+        },
+        "render-blocking-insight": {
+          "title": "Render-blocking requests",
+          "display": "Est savings of 100 ms",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedMs",
+                "valueType": "timespanMs",
+                "label": "Duration"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/fonts.css",
+                "totalBytes": 2852
+              },
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "totalBytes": 26620,
+                "wastedMs": 162
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "page": "privacy",
+      "mode": "mobile",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "seo": 100
+      },
+      "lcp": 2106.6884999999997,
+      "cls": 0,
+      "tbt": 45,
+      "diagnostics": {
+        "unminified-css": {
+          "title": "Minify CSS",
+          "display": "Est savings of 3 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "totalBytes": 26620,
+                "wastedBytes": 3482,
+                "wastedPercent": 13.079865187260953
+              }
+            ],
+            "overallSavingsMs": 0,
+            "overallSavingsBytes": 3482,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 0,
+                "LCP": 0
+              }
+            }
+          }
+        },
+        "unused-css-rules": {
+          "title": "Reduce unused CSS",
+          "display": "Est savings of 17 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "wastedBytes": 17795,
+                "wastedPercent": 67.3874351497709,
+                "totalBytes": 26407
+              }
+            ],
+            "overallSavingsMs": 150,
+            "overallSavingsBytes": 17795,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 150,
+                "LCP": 150
+              }
+            }
+          }
+        },
+        "bf-cache": {
+          "title": "Page prevented back/forward cache restoration",
+          "display": "4 failure reasons",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "reason",
+                "valueType": "text",
+                "subItemsHeading": {
+                  "key": "frameUrl",
+                  "valueType": "url"
+                },
+                "label": "Failure reason"
+              },
+              {
+                "key": "failureType",
+                "valueType": "text",
+                "label": "Failure type"
+              }
+            ],
+            "items": [
+              {
+                "reason": "Back/forward cache is disabled by flags. Visit chrome://flags/#back-forward-cache to enable it locally on this device.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/privacy.html"
+                    }
+                  ]
+                },
+                "protocolReason": "BackForwardCacheDisabled"
+              },
+              {
+                "reason": "Pages whose main resource has cache-control:no-store cannot enter back/forward cache.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/privacy.html"
+                    }
+                  ]
+                },
+                "protocolReason": "MainResourceHasCacheControlNoStore"
+              },
+              {
+                "reason": "Back/forward cache is disabled because some JavaScript network request received resource with Cache-Control: no-store header.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/privacy.html"
+                    }
+                  ]
+                },
+                "protocolReason": "JsNetworkRequestReceivedCacheControlNoStoreResource"
+              },
+              {
+                "reason": "Back/forward cache is disabled by the command line.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/privacy.html"
+                    }
+                  ]
+                },
+                "protocolReason": "BackForwardCacheDisabledByCommandLine"
+              }
+            ]
+          }
+        },
+        "document-latency-insight": {
+          "title": "Document request latency",
+          "display": "Est savings of 9 KiB",
+          "details": {
+            "type": "checklist",
+            "items": {
+              "noRedirects": {
+                "label": "Avoids redirects",
+                "value": true
+              },
+              "serverResponseIsFast": {
+                "label": "Server responds quickly (observed 1 ms)",
+                "value": true
+              },
+              "usesCompression": {
+                "label": "No compression applied",
+                "value": false
+              }
+            },
+            "debugData": {
+              "type": "debugdata",
+              "redirectDuration": 0,
+              "serverResponseTime": 1,
+              "uncompressedResponseBytes": 9359,
+              "wastedBytes": 9359
+            }
+          }
+        },
+        "network-dependency-tree-insight": {
+          "title": "Network dependency tree",
+          "details": {
+            "type": "list",
+            "items": [
+              {
+                "type": "list-section",
+                "value": {
+                  "type": "network-tree",
+                  "chains": {
+                    "896602F473707006F4F2FF5CA669A5A2": {
+                      "url": "http://127.0.0.1:8000/pages/privacy.html",
+                      "navStartToEndTime": 18,
+                      "transferSize": 14182,
+                      "isLongest": true,
+                      "children": {
+                        "53844.4": {
+                          "url": "http://127.0.0.1:8000/assets/styles/fonts.css",
+                          "navStartToEndTime": 22,
+                          "transferSize": 2852,
+                          "isLongest": true,
+                          "children": {
+                            "53844.19": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/dm-mono-500.woff2",
+                              "navStartToEndTime": 95,
+                              "transferSize": 18309,
+                              "isLongest": true,
+                              "children": {}
+                            },
+                            "53844.24": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/manrope-800.woff2",
+                              "navStartToEndTime": 95,
+                              "transferSize": 19357,
+                              "children": {}
+                            },
+                            "53844.18": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/dm-mono-400.woff2",
+                              "navStartToEndTime": 89,
+                              "transferSize": 18125,
+                              "children": {}
+                            },
+                            "53844.23": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/manrope-700.woff2",
+                              "navStartToEndTime": 88,
+                              "transferSize": 20477,
+                              "children": {}
+                            }
+                          }
+                        },
+                        "53844.5": {
+                          "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                          "navStartToEndTime": 23,
+                          "transferSize": 26620,
+                          "children": {}
+                        }
+                      }
+                    }
+                  },
+                  "longestChain": {
+                    "duration": 95
+                  }
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnected origins",
+                "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+                "value": {
+                  "type": "text",
+                  "value": "no origins were preconnected"
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnect candidates",
+                "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+                "value": {
+                  "type": "text",
+                  "value": "No additional origins are good candidates for preconnecting"
+                }
+              }
+            ]
+          }
+        },
+        "render-blocking-insight": {
+          "title": "Render-blocking requests",
+          "display": "Est savings of 740 ms",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedMs",
+                "valueType": "timespanMs",
+                "label": "Duration"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "totalBytes": 26620,
+                "wastedMs": 902
+              },
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/fonts.css",
+                "totalBytes": 2852,
+                "wastedMs": 152
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "page": "privacy",
+      "mode": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "seo": 100
+      },
+      "lcp": 444.66859999999997,
+      "cls": 0.0001226833245775326,
+      "tbt": 0,
+      "diagnostics": {
+        "label-content-name-mismatch": {
+          "title": "Elements with visible text labels do not have matching accessible names.",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "node",
+                "valueType": "node",
+                "subItemsHeading": {
+                  "key": "relatedNode",
+                  "valueType": "node"
+                },
+                "label": "Failing Elements"
+              }
+            ],
+            "items": [
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "1-0-A",
+                  "path": "2,HTML,1,BODY,1,DIV,0,HEADER,0,A",
+                  "selector": "body#top > div#site-header > header.site-header > a.brand",
+                  "boundingRect": {
+                    "top": 40,
+                    "bottom": 84,
+                    "left": 52,
+                    "right": 242,
+                    "width": 190,
+                    "height": 44
+                  },
+                  "snippet": "<a class=\"brand\" href=\"../index.html\" aria-label=\"S/S · Signal &amp; Self · Mina Soliman’s fieldbook · Home\">",
+                  "nodeLabel": "S/S\nSignal & Self\nMina Soliman’s fieldbook",
+                  "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+                }
+              }
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "impact": "serious",
+              "tags": [
+                "cat.semantics",
+                "wcag21a",
+                "wcag253",
+                "EN-301-549",
+                "EN-9.2.5.3",
+                "RGAAv4",
+                "RGAA-6.1.5",
+                "experimental"
+              ]
+            }
+          }
+        },
+        "unminified-css": {
+          "title": "Minify CSS",
+          "display": "Est savings of 3 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "totalBytes": 26620,
+                "wastedBytes": 3482,
+                "wastedPercent": 13.079865187260953
+              }
+            ],
+            "overallSavingsMs": 0,
+            "overallSavingsBytes": 3482,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 0,
+                "LCP": 0
+              }
+            }
+          }
+        },
+        "unused-css-rules": {
+          "title": "Reduce unused CSS",
+          "display": "Est savings of 19 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "wastedBytes": 19570,
+                "wastedPercent": 74.10913772863256,
+                "totalBytes": 26407
+              }
+            ],
+            "overallSavingsMs": 0,
+            "overallSavingsBytes": 19570,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 0,
+                "LCP": 0
+              }
+            }
+          }
+        },
+        "bf-cache": {
+          "title": "Page prevented back/forward cache restoration",
+          "display": "4 failure reasons",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "reason",
+                "valueType": "text",
+                "subItemsHeading": {
+                  "key": "frameUrl",
+                  "valueType": "url"
+                },
+                "label": "Failure reason"
+              },
+              {
+                "key": "failureType",
+                "valueType": "text",
+                "label": "Failure type"
+              }
+            ],
+            "items": [
+              {
+                "reason": "Back/forward cache is disabled by flags. Visit chrome://flags/#back-forward-cache to enable it locally on this device.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/privacy.html"
+                    }
+                  ]
+                },
+                "protocolReason": "BackForwardCacheDisabled"
+              },
+              {
+                "reason": "Pages whose main resource has cache-control:no-store cannot enter back/forward cache.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/privacy.html"
+                    }
+                  ]
+                },
+                "protocolReason": "MainResourceHasCacheControlNoStore"
+              },
+              {
+                "reason": "Back/forward cache is disabled because some JavaScript network request received resource with Cache-Control: no-store header.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/privacy.html"
+                    }
+                  ]
+                },
+                "protocolReason": "JsNetworkRequestReceivedCacheControlNoStoreResource"
+              },
+              {
+                "reason": "Back/forward cache is disabled by the command line.",
+                "failureType": "Not actionable",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "frameUrl": "http://127.0.0.1:8000/pages/privacy.html"
+                    }
+                  ]
+                },
+                "protocolReason": "BackForwardCacheDisabledByCommandLine"
+              }
+            ]
+          }
+        },
+        "document-latency-insight": {
+          "title": "Document request latency",
+          "display": "Est savings of 9 KiB",
+          "details": {
+            "type": "checklist",
+            "items": {
+              "noRedirects": {
+                "label": "Avoids redirects",
+                "value": true
+              },
+              "serverResponseIsFast": {
+                "label": "Server responds quickly (observed 1 ms)",
+                "value": true
+              },
+              "usesCompression": {
+                "label": "No compression applied",
+                "value": false
+              }
+            },
+            "debugData": {
+              "type": "debugdata",
+              "redirectDuration": 0,
+              "serverResponseTime": 1,
+              "uncompressedResponseBytes": 9359,
+              "wastedBytes": 9359
+            }
+          }
+        },
+        "network-dependency-tree-insight": {
+          "title": "Network dependency tree",
+          "details": {
+            "type": "list",
+            "items": [
+              {
+                "type": "list-section",
+                "value": {
+                  "type": "network-tree",
+                  "chains": {
+                    "BFF676776021F0FC884F11D819ED74EB": {
+                      "url": "http://127.0.0.1:8000/pages/privacy.html",
+                      "navStartToEndTime": 41,
+                      "transferSize": 14182,
+                      "isLongest": true,
+                      "children": {
+                        "65600.4": {
+                          "url": "http://127.0.0.1:8000/assets/styles/fonts.css",
+                          "navStartToEndTime": 47,
+                          "transferSize": 2852,
+                          "isLongest": true,
+                          "children": {
+                            "65600.19": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/dm-mono-500.woff2",
+                              "navStartToEndTime": 122,
+                              "transferSize": 18309,
+                              "isLongest": true,
+                              "children": {}
+                            },
+                            "65600.24": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/manrope-800.woff2",
+                              "navStartToEndTime": 121,
+                              "transferSize": 19357,
+                              "children": {}
+                            },
+                            "65600.23": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/manrope-700.woff2",
+                              "navStartToEndTime": 121,
+                              "transferSize": 20477,
+                              "children": {}
+                            },
+                            "65600.18": {
+                              "url": "http://127.0.0.1:8000/assets/fonts/dm-mono-400.woff2",
+                              "navStartToEndTime": 118,
+                              "transferSize": 18125,
+                              "children": {}
+                            }
+                          }
+                        },
+                        "65600.5": {
+                          "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                          "navStartToEndTime": 48,
+                          "transferSize": 26620,
+                          "children": {}
+                        }
+                      }
+                    }
+                  },
+                  "longestChain": {
+                    "duration": 122
+                  }
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnected origins",
+                "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+                "value": {
+                  "type": "text",
+                  "value": "no origins were preconnected"
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnect candidates",
+                "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+                "value": {
+                  "type": "text",
+                  "value": "No additional origins are good candidates for preconnecting"
+                }
+              }
+            ]
+          }
+        },
+        "render-blocking-insight": {
+          "title": "Render-blocking requests",
+          "display": "Est savings of 130 ms",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedMs",
+                "valueType": "timespanMs",
+                "label": "Duration"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/portfolio.css?v=ux-20260903",
+                "totalBytes": 26620,
+                "wastedMs": 162
+              },
+              {
+                "url": "http://127.0.0.1:8000/assets/styles/fonts.css",
+                "totalBytes": 2852
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
