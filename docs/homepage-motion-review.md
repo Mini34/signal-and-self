@@ -1,5 +1,7 @@
 # Homepage animation revision
 
+The animation is retained in the [later Pico feature and section-boundary revision](pico-feature-review.md), which contains the current content and screenshots.
+
 September 3, 2026. After reviewing the initial audit implementation, Mina preferred the original animated homepage. This revision follows that preference and supersedes the initial audit's more static homepage presentation.
 
 The original rotating Verify / Protect / Build / Reflect compass is restored beside the hero, along with its angled question card, “Building technology that deserves trust” headline, pulsing dot, scrolling principles strip, and animated reading cue. Sections move gently into place without ever hiding their content. The four engineering projects, current introduction, navigation, and privacy boundaries are retained. The rest of the site is unchanged.

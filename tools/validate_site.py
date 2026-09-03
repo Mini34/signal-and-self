@@ -260,11 +260,16 @@ def validate_records() -> list[str]:
         if project.get('link', '').split('#')[0] in {'about.html','reflections.html','timeline.html','projects.html','dashboard.html'}:
             errors.append(f'Legacy project link: {project.get("id")}')
         if project.get('type') == 'engineering-build':
-            for field in ('featuredOrder','problem','built','evidence','limitations','nextStep','repository','caseStudyPath','sourceBlob'):
+            for field in ('problem','built','evidence','limitations','nextStep','repository','caseStudyPath','sourceBlob'):
                 if not project.get(field):
                     errors.append(f'Engineering evidence missing {field}: {project.get("id")}')
-    if len({p.get('featuredOrder') for p in projects if p.get('type')=='engineering-build'}) != 4:
+    featured=[p for p in projects if p.get('type')=='engineering-build' and p.get('featured')]
+    if len(featured)!=4 or len({p.get('featuredOrder') for p in featured}) != 4:
         errors.append('Featured engineering order must be unique')
+    if featured and sorted(featured,key=lambda p:p.get('featuredOrder',99))[0]['id']!='project-pico-2w-ee-lab-tool':
+        errors.append('Pico 2 W must lead featured work')
+    if any(p['id']=='project-trailhead-support-api' for p in featured):
+        errors.append('Trailhead belongs in the full library, not featured work')
     if 'incoming' in json.dumps(records['profile']).lower() or 'beginning in September 2026' in json.dumps(records['profile']):
         errors.append('Current profile contains stale incoming language')
     for stat in records['stats']:
@@ -290,7 +295,7 @@ def validate_generated() -> list[str]:
         if not actual.is_file() or actual.read_text(encoding='utf-8') != expected:
             errors.append(f'Generated content/counts are stale: {path}; run tools/build_site.py')
     readme = (PROJECT_ROOT / 'README.md').read_text(encoding='utf-8')
-    for count, label in [(len(build_site.PROJECTS),'initiatives'),(len(build_site.NOTES),'field notes'),(len(build_site.UPDATES),'journey records'),(len(build_site.FEATURED),'tested repositories')]:
+    for count, label in [(len(build_site.PROJECTS),'initiatives'),(len(build_site.NOTES),'field notes'),(len(build_site.UPDATES),'journey records'),(len(build_site.FEATURED),'featured projects'),(len(build_site.ENGINEERING),'engineering projects')]:
         if f'{count} {label}' not in readme:
             errors.append(f'README count does not match authoring records: {label}')
     titles=[]

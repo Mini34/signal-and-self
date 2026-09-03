@@ -2,6 +2,8 @@
 
 September 3, 2026 · `codex/ux-audit-priority-refresh` · compare with [the captured baseline](ux-audit-baseline.md).
 
+**Latest revision:** [Pico now leads featured work, the moving bar has new copy, and sections have clearer boundaries](pico-feature-review.md). The current collection has 15 initiatives and 5 engineering projects, with 4 featured. Historical counts, screenshots, and measurements below describe the initial audit proposal.
+
 **Homepage revision after owner review:** Mina preferred the original animation. The compass, scrolling strip, pulse, and section motion are restored in the hero. See [the current homepage and its new measurements](homepage-motion-review.md). The homepage screenshots and measurements below record the initial, more static proposal; all other route results remain applicable.
 
 ## Result and content decisions

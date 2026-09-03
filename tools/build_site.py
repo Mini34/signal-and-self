@@ -12,10 +12,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 BASE = 'https://mini34.github.io/signal-and-self/'
-VERSION = 'ux-20260903'
+VERSION = 'ux-20260903-pico'
 D = json.loads((ROOT / 'assets/data/citizenship-records.json').read_text(encoding='utf-8'))
 PROJECTS = sorted(D['projects'], key=lambda p: p.get('featuredOrder', 99))
-FEATURED = [p for p in PROJECTS if p.get('type') == 'engineering-build']
+ENGINEERING = [p for p in PROJECTS if p.get('type') == 'engineering-build']
+FEATURED = [p for p in ENGINEERING if p.get('featured')]
 NOTES = sorted(D['reflections'], key=lambda n: n['date'], reverse=True)
 UPDATES = sorted(D['updates'], key=lambda u: u['date'], reverse=True)
 TYPES = {'engineering-build': 'Engineering and systems builds', 'responsible-tech-tool': 'Responsible-technology tools', 'exploration': 'Explorations and planned work'}
@@ -106,7 +107,7 @@ def page(path, key, title, description, content, module=None, schema=None):
 <link rel="preload" href="{root}assets/fonts/newsreader-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{root}assets/fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{root}assets/styles/fonts.css">
-<link rel="stylesheet" href="{root}assets/styles/portfolio.css?v={VERSION}">{chr(10)+f'<link rel="stylesheet" href="{root}assets/styles/home.css?v=motion-20260903">' if key=='home' else ''}
+<link rel="stylesheet" href="{root}assets/styles/portfolio.css?v={VERSION}">{chr(10)+f'<link rel="stylesheet" href="{root}assets/styles/home.css?v=pico-20260903">' if key=='home' else ''}
 <script src="{root}assets/scripts/portfolio.js?v={VERSION}" defer></script>
 <script src="{root}assets/scripts/auth-config.js?v={VERSION}" defer></script><script src="{root}assets/scripts/auth.js?v={VERSION}" defer></script>
 {f'<script src="{root}assets/scripts/{module}.js?v={VERSION}" defer></script>' if module else ''}
@@ -123,7 +124,7 @@ def save_button(item):
 
 def project_card(p,root='',compact=False):
     tested=p['type']=='engineering-build'
-    badge='Completed · Tested' if tested else p['status']
+    badge=p.get('statusLabel','Completed · Tested' if tested else p['status'])
     body=f'<p class="project-problem">{e(p.get("problem",p["description"]))}</p>'
     if tested:
         body+=f'<dl class="project-evidence"><dt>Built</dt><dd>{e(p["built"])}</dd><dt>Evidence</dt><dd>{e(p["evidence"])}</dd><dt>Boundary</dt><dd>{e(p["limitations"])}</dd></dl>'
@@ -133,10 +134,13 @@ def project_card(p,root='',compact=False):
         role=f'<p><strong>My role:</strong> {e(p["role"])}</p>' if p.get('role') else ''
         details=f'<details><summary>Project context</summary>{role}<p>{e(p["impact"])}</p></details>'
     action=link('Read case study',p['caseStudyPath'],root,'button button-quiet') if tested else ''
-    return f'''<article class="card project-card" id="{e(p['id'])}" data-project-type="{e(p['type'])}" data-status="{e(p['status'])}">
+    image=''
+    if compact and p.get('image'):
+        image=f'<figure class="project-photo"><a href="{url(p["image"],root)}" aria-label="View full annotated Pico 2 W prototype image"><img src="{url(p["image"],root)}" width="{p["imageWidth"]}" height="{p["imageHeight"]}" alt="{e(p["imageAlt"])}" loading="lazy"></a><figcaption>From circuit theory to the workbench · {link("View the annotated prototype",p["image"],root)}</figcaption></figure>'
+    return f'''<article class="card project-card{' lead-project' if image else ''}" id="{e(p['id'])}" data-project-type="{e(p['type'])}" data-featured="{str(bool(p.get('featured'))).lower()}" data-status="{e(p['status'])}">{image}<div class="project-content">
     <div class="card-topline"><span class="status-badge" data-status="{e(p['status'])}">{e(badge)}</span>{save_button(p) if not compact else ''}</div>
     <p class="mono-label project-domain">{e(p.get('domain',TYPES[p['type']]))}{' · '+str(p['year']) if p.get('year') else ''}</p><h3>{e(p['title'])}</h3>{body}{details}{tags(p['skills'])}
-    <div class="button-row">{action}{link('Repository' if tested else p['linkLabel'],p['link'],root,'button button-small')}</div></article>'''
+    <div class="button-row">{action}{link('Repository' if tested else p['linkLabel'],p['link'],root,'button button-small')}</div></div></article>'''
 
 def note_links(ids,root):
     return '<ul class="evidence-links">'+''.join(f'<li>{link(next(n["title"] for n in NOTES if n["id"]==id),"pages/field-notes.html#"+id,root)}</li>' for id in ids)+'</ul>'
@@ -153,32 +157,32 @@ def curated(root, count=3):
 
 def home():
     compass='''<div class="hero-visual" role="img" aria-label="Digital citizenship compass: verify, protect, build, and reflect. Skill plus care creates trust."><div class="orbit-stage" aria-hidden="true"><div class="orbit-core"><strong>Skill + care = trust</strong></div><span class="orbit-label">Verify</span><span class="orbit-label">Protect</span><span class="orbit-label">Build</span><span class="orbit-label">Reflect</span><span class="orbit-note">Current question → How can the safer choice become the easier default?</span></div></div>'''
-    intro=f'''<div class="reading-progress" aria-hidden="true"></div><section class="home-hero site-shell"><div class="hero-copy"><p class="eyebrow live-dot">Electrical engineering · responsible technology</p><h1>Building technology that deserves <span class="serif-italic">trust.</span></h1><p class="hero-lede">{e(D['profile']['hero'])}</p><div class="button-row"><a class="button button-primary" href="#featured-work">View engineering projects</a><a class="button button-quiet" href="#fieldbook">Explore the fieldbook</a></div><div class="professional-links">{link('GitHub',D['profile']['github'])} {link('About Mina','pages/profile.html')}<span>Updated {date.fromisoformat(D['site']['lastUpdated']).strftime('%B %Y')}</span></div><nav class="hero-meta" aria-label="Portfolio summary">{link(str(len(FEATURED))+" tested repositories","pages/initiatives.html")}{link(str(len(PROJECTS))+" initiatives","pages/initiatives.html#all-work")}{link(str(len(NOTES))+" field notes","pages/field-notes.html")}</nav></div>{compass}<div class="hero-motion-tools"><a class="scroll-cue" href="#featured-work"><span>Follow the build</span><span class="scroll-cue-track" aria-hidden="true"><span class="scroll-cue-pulse"></span></span></a><button class="motion-toggle js-only" type="button" data-toggle-motion hidden>Pause animation</button></div></section>'''
-    phrases=['Evidence before confidence','Privacy before convenience','Access before polish','Reflection before repetition','People before metrics']
-    strip=''.join(f'<span>{text}</span>' for text in phrases)
-    intro+=f'<div class="signal-strip" tabindex="0" role="region" aria-label="Fieldbook principles; focus to pause"><div class="signal-strip-track"><div class="signal-strip-group">{strip}</div><div class="signal-strip-group" aria-hidden="true">{strip}</div></div></div>'
-    intro+=section('Featured engineering work','Built to be inspected.','<div class="project-grid">'+''.join(project_card(p,compact=True) for p in FEATURED)+'</div>','Four public repositories with tests, documented decisions, and explicit limits. Evidence checked September 3, 2026.','featured-work')
-    framework='''<div class="fieldbook-intro"><div><p class="eyebrow">Why Signal &amp; Self exists</p><h2>Skill matters.<br><span class="serif-italic">So does judgment.</span></h2></div><div><p>Engineering work raises human questions: what can I verify, who should I protect, what can I build, and what should change after reflection?</p><p>This fieldbook keeps those questions beside the code.</p><a class="button button-quiet" href="pages/profile.html#framework">Explore the framework</a></div></div>'''
+    intro=f'''<div class="reading-progress" aria-hidden="true"></div><section class="home-hero site-shell"><div class="hero-copy"><p class="eyebrow live-dot">Electrical engineering · responsible technology</p><h1>Building technology that deserves <span class="serif-italic">trust.</span></h1><p class="hero-lede">{e(D['profile']['hero'])}</p><div class="button-row"><a class="button button-primary" href="#featured-work">View engineering projects</a><a class="button button-quiet" href="#fieldbook">Explore the fieldbook</a></div><div class="professional-links">{link('GitHub',D['profile']['github'])} {link('About Mina','pages/profile.html')}<span>Updated {date.fromisoformat(D['site']['lastUpdated']).strftime('%B %Y')}</span></div><nav class="hero-meta" aria-label="Portfolio summary">{link(str(len(FEATURED))+" featured projects","pages/initiatives.html")}{link(str(len(PROJECTS))+" initiatives","pages/initiatives.html#all-work")}{link(str(len(NOTES))+" field notes","pages/field-notes.html")}</nav></div>{compass}<div class="hero-motion-tools"><a class="scroll-cue" href="#featured-work"><span>Follow the build</span><span class="scroll-cue-track" aria-hidden="true"><span class="scroll-cue-pulse"></span></span></a><button class="motion-toggle js-only" type="button" data-toggle-motion hidden>Pause animation</button></div></section>'''
+    phrases=D['site']['movingBar']
+    strip=''.join(f'<span>{e(text)}</span>' for text in phrases)
+    intro+=f'<div class="signal-strip" tabindex="0" role="region" aria-label="Engineering interests; focus to pause"><div class="signal-strip-track"><div class="signal-strip-group">{strip}</div><div class="signal-strip-group" aria-hidden="true">{strip}</div></div></div>'
+    intro+=section('01 / Featured engineering work','From the workbench to the code.','<div class="project-grid">'+''.join(project_card(p,compact=True) for p in FEATURED)+'</div>','A hands-on Pico 2 W lab tool leads three engineering simulations. Explore the hardware, measurements, code, and documented limits.','featured-work')
+    framework='''<div class="fieldbook-intro"><div><p class="eyebrow">02 / Why Signal &amp; Self exists</p><h2>Skill matters.<br><span class="serif-italic">So does judgment.</span></h2></div><div><p>Engineering work raises human questions: what can I verify, who should I protect, what can I build, and what should change after reflection?</p><p>This fieldbook keeps those questions beside the code.</p><a class="button button-quiet" href="pages/profile.html#framework">Explore the framework</a></div></div>'''
     intro+=f'<section class="section site-shell" id="fieldbook">{framework}</section>'
-    intro+=f'<nav class="proof-strip site-shell" aria-label="Evidence collections">{link(str(len(FEATURED))+" tested repositories","pages/initiatives.html")}{link(str(len(PROJECTS))+" initiatives","pages/initiatives.html#all-work")}{link(str(len(NOTES))+" field notes","pages/field-notes.html")}<span>Updated {date.fromisoformat(D["site"]["lastUpdated"]).strftime("%B %Y")}</span></nav>'
+    intro+=f'<nav class="proof-strip site-shell" aria-label="Evidence collections">{link(str(len(FEATURED))+" featured projects","pages/initiatives.html")}{link(str(len(PROJECTS))+" initiatives","pages/initiatives.html#all-work")}{link(str(len(NOTES))+" field notes","pages/field-notes.html")}<span>Updated {date.fromisoformat(D["site"]["lastUpdated"]).strftime("%B %Y")}</span></nav>'
     now='<div class="card-grid">'+''.join(f'<article class="card"><p class="mono-label">{label}</p><h3>{e(D["now"][key])}</h3></article>' for label,key in [('Learning','learning'),('Building','building'),('Open question','question')])+'</div>'
-    intro+=section('Current focus','A few questions worth following.',now,f'Last reported {dt(D["now"]["asOf"])}. The website refresh does not imply new project progress.','now')
-    intro+=section('Selected field notes','The thinking behind the work.',curated(''),'A starting point for privacy, accessibility, and responsible AI.','selected-notes')
-    intro+=section('Continue the conversation','Follow the work in public.',f'<div class="button-row">{link("Explore GitHub",D["profile"]["github"],cls="button button-primary")}{link("Meet Mina","pages/profile.html",cls="button button-quiet")}</div>','Source code, documentation, and the decisions behind each build.')
-    page('index.html','home','Mina Soliman — Electrical Engineering & Responsible Technology Portfolio',f'Signal & Self: Mina Soliman’s University of Toronto Electrical Engineering portfolio, with {len(FEATURED)} tested repositories and a responsible-technology fieldbook.',intro,'home')
+    intro+=section('03 / Current focus','A few questions worth following.',now,f'Last reported {dt(D["now"]["asOf"])}.','now')
+    intro+=section('04 / Selected field notes','The thinking behind the work.',curated(''),'A starting point for privacy, accessibility, and responsible AI.','selected-notes')
+    intro+=section('05 / Continue the conversation','Follow the work in public.',f'<div class="button-row">{link("Explore GitHub",D["profile"]["github"],cls="button button-primary")}{link("Meet Mina","pages/profile.html",cls="button button-quiet")}</div>','Source code, documentation, and the decisions behind each build.')
+    page('index.html','home','Mina Soliman — Electrical Engineering & Responsible Technology Portfolio',f'Signal & Self: Mina Soliman’s University of Toronto Electrical Engineering portfolio, with {len(FEATURED)} featured projects and a responsible-technology fieldbook.',intro,'home')
 
 def work():
-    content=hero('Work · public evidence','Engineering, with the decisions left in.',f'{len(FEATURED)} tested engineering builds lead a collection of {len(PROJECTS)} initiatives. Smaller tools and explorations have their own place.')
-    controls='''<div class="filter-toolbar js-only" hidden><label class="form-field" for="project-search">Search projects or skills<input type="search" id="project-search"></label><label class="form-field" for="project-type">Project type<select id="project-type"><option value="engineering-build">Engineering builds</option><option value="all">All types</option><option value="responsible-tech-tool">Responsible-tech tools</option><option value="exploration">Explorations & plans</option></select></label><label class="form-field" for="project-status">Status<select id="project-status"><option value="all">All statuses</option><option>Completed</option><option>Ongoing</option><option>Planned</option></select></label><label class="saved-filter"><input id="project-saved" type="checkbox"> Saved only</label></div>'''
+    content=hero('Work · public evidence','Engineering, with the decisions left in.',f'{len(FEATURED)} featured engineering builds lead a collection of {len(PROJECTS)} initiatives. Smaller tools and explorations have their own place.')
+    controls='''<div class="filter-toolbar js-only" hidden><label class="form-field" for="project-search">Search projects or skills<input type="search" id="project-search"></label><label class="form-field" for="project-type">Project type<select id="project-type"><option value="featured">Featured projects</option><option value="engineering-build">All engineering builds</option><option value="all">All types</option><option value="responsible-tech-tool">Responsible-tech tools</option><option value="exploration">Explorations & plans</option></select></label><label class="form-field" for="project-status">Status<select id="project-status"><option value="all">All statuses</option><option>Completed</option><option>Ongoing</option><option>Planned</option></select></label><label class="saved-filter"><input id="project-saved" type="checkbox"> Saved only</label></div>'''
     content+=f'<section class="section site-shell" id="all-work">{controls}<p id="project-result-count" role="status">{len(PROJECTS)} initiatives</p>'
     for type,label in TYPES.items():
         content+=f'<section class="project-group" data-group="{type}"><h2>{label}</h2><div class="project-grid">'+''.join(project_card(p,'../') for p in PROJECTS if p['type']==type)+'</div></section>'
     content+='<p id="project-empty" class="empty-state" hidden>No projects match. Try all types or a broader search.</p></section>'
-    page('pages/initiatives.html','initiatives','Work — Signal & Self',f'{len(PROJECTS)} initiatives: {len(FEATURED)} tested engineering repositories, responsible-technology tools, and clearly labelled explorations.',content,'collections')
+    page('pages/initiatives.html','initiatives','Work — Signal & Self',f'{len(PROJECTS)} initiatives: {len(FEATURED)} featured engineering builds, responsible-technology tools, and clearly labelled explorations.',content,'collections')
 
 def about():
     content=hero('About Mina','Curiosity with an ethical circuit.',D['profile']['aboutText'][0])
-    summary=f'<aside class="professional-summary"><p class="mono-label">At a glance</p><dl><dt>Program</dt><dd>Electrical Engineering, University of Toronto</dd><dt>Current year</dt><dd>{e(D["profile"]["year"])}</dd><dt>Interests</dt><dd>Power systems, embedded systems, cybersecurity, responsible AI</dd><dt>Evidence</dt><dd>{link(str(len(FEATURED))+" tested public repositories","pages/initiatives.html","../")}</dd></dl>{link("GitHub",D["profile"]["github"],cls="button button-quiet")}</aside>'
+    summary=f'<aside class="professional-summary"><p class="mono-label">At a glance</p><dl><dt>Program</dt><dd>Electrical Engineering, University of Toronto</dd><dt>Current year</dt><dd>{e(D["profile"]["year"])}</dd><dt>Interests</dt><dd>Power systems, embedded systems, cybersecurity, responsible AI</dd><dt>Evidence</dt><dd>{link(str(len(FEATURED))+" featured engineering projects","pages/initiatives.html","../")}</dd></dl>{link("GitHub",D["profile"]["github"],cls="button button-quiet")}</aside>'
     content+=f'<section class="section site-shell story-grid"><div><div class="portrait-monogram" aria-hidden="true"><strong>MS</strong></div>{summary}</div><div class="story-copy">'+''.join(f'<p>{e(p)}</p>' for p in D['profile']['aboutText'][1:])+f'<p>{e(D["profile"]["definition"])}</p><p>{e(D["profile"]["mission"])}</p></div></section>'
     content+=section('Three threads','What keeps pulling me forward.','<div class="card-grid">'+''.join(f'<article class="card"><h3>{e(a["title"])}</h3><p>{e(a["text"])}</p></article>' for a in D['profile']['focusAreas'])+'</div>')
     content+=section('Working framework','Six lenses for better decisions.','<div class="card-grid">'+''.join(f'<article class="card"><h3>{e(a["title"])}</h3><p>{e(a["description"])}</p><p>{e(a["focus"])}</p></article>' for a in D['categories'])+'</div>',id='framework')
@@ -240,13 +244,16 @@ def privacy():
     page('pages/privacy.html','privacy','Privacy & Data — Signal & Self','How Signal & Self separates anonymous aggregate analytics, device-local preferences, and optional session-only Google identity. No persistent named visitor tracking.',content)
 
 def case_studies():
-    for p in FEATURED:
-        content=hero(p['domain'],p['title'],p['problem'],f'<p class="status-badge" data-status="Completed">Completed · Tested · {p["year"]}</p>')
+    for p in ENGINEERING:
+        badge=p.get('statusLabel','Completed · Tested')
+        content=hero(p['domain'],p['title'],p['problem'],f'<p class="status-badge" data-status="{p["status"]}">{badge} · {p["year"]}</p>')
+        if p.get('image'):
+            content+=f'<figure class="case-photo site-shell"><img src="../{p["image"]}" width="{p["imageWidth"]}" height="{p["imageHeight"]}" alt="{e(p["imageAlt"])}" loading="lazy"><figcaption>Annotated prototype from {link("the project documentation",p["imageSource"])}.</figcaption></figure>'
         headings=[('Context','impact'),('Design problem','problem'),('Approach','approach'),('Validation','evidence'),('Result','result'),('Limitations','limitations'),('What I would improve next','nextStep')]
         content+='<div class="case-article site-shell">'+''.join(f'<section><h2>{label}</h2><p>{e(p[key])}</p></section>' for label,key in headings)
         if p.get('role'): content+=f'<section><h2>My role</h2><p>{e(p["role"])}</p></section>'
         content+=f'<section><h2>Repository & documentation</h2><p>Documentation checked {dt(p["evidenceCheckedAt"])}. The summaries describe the repository’s validation approach; they do not claim new hardware or deployment results.</p><div class="button-row">{link("Repository",p["repository"],cls="button button-primary")}{link("README",p["documentation"],cls="button button-quiet")}</div></section><section><h2>Related field notes</h2>{note_links(p["relatedNotes"],"../")}</section>{link("All engineering work","pages/initiatives.html","../","button button-quiet")}</div>'
-        schema={'@type':'SoftwareSourceCode','name':p['title'],'description':p['built'],'codeRepository':p['repository'],'programmingLanguage':'Python','author':{'@id':BASE+'#mina'},'url':BASE+p['caseStudyPath']}
+        schema={'@type':'SoftwareSourceCode','name':p['title'],'description':p['built'],'codeRepository':p['repository'],'programmingLanguage':p.get('programmingLanguage','Python'),'author':{'@id':BASE+'#mina'},'url':BASE+p['caseStudyPath']}
         page(p['caseStudyPath'],'case-study',p['title']+' — Signal & Self',p['built'],content,schema=schema)
 
 def generate():
@@ -269,7 +276,7 @@ def generate():
     paths=[path for path in OUTPUT if path.endswith('.html') and path!='404.html']
     OUTPUT['sitemap.xml']='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join(f'<url><loc>{BASE+(path if path!="index.html" else "")}</loc><lastmod>{D["site"]["lastUpdated"]}</lastmod></url>' for path in paths)+'</urlset>\n'
     OUTPUT['robots.txt']=f'User-agent: *\nAllow: /\nSitemap: {BASE}sitemap.xml\n'
-    OUTPUT['assets/data/collection-counts.json']=json.dumps({'projects':len(PROJECTS),'testedRepositories':len(FEATURED),'notes':len(NOTES),'updates':len(UPDATES)},indent=2)+'\n'
+    OUTPUT['assets/data/collection-counts.json']=json.dumps({'projects':len(PROJECTS),'featuredProjects':len(FEATURED),'engineeringProjects':len(ENGINEERING),'notes':len(NOTES),'updates':len(UPDATES)},indent=2)+'\n'
     return OUTPUT
 
 def main():

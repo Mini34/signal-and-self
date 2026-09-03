@@ -154,6 +154,7 @@ a.button[download]::after { content: "↓"; }
 .card p { color: var(--ink-soft); }
 .card h3 a { text-decoration-thickness: 1px; }
 .project-card { display: flex; flex-direction: column; border-top: 3px solid var(--blue); padding: clamp(22px,3vw,36px); }
+.project-content { display: flex; flex-direction: column; flex: 1; }
 .project-card:nth-child(4n+2) { border-top-color: var(--coral); }
 .project-card:nth-child(4n+3) { border-top-color: var(--positive); }
 .project-card:nth-child(4n+4) { border-top-color: var(--ink); }
@@ -261,6 +262,9 @@ th { font-weight: 700; }
 .case-article { max-width: 840px; padding-block: 40px 70px; }
 .case-article section { padding-block: 24px; }
 .case-article h2 { font-size: 2.2rem; }
+.case-photo { margin-block: 36px; }
+.case-photo img { width: min(100%,960px); border: 1px solid var(--line); border-radius: 18px; }
+.case-photo figcaption { padding-block: 14px; color: var(--ink-soft); font-size: .875rem; }
 .site-footer { padding-block: 40px; border-top: 1px solid var(--line); }
 .footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; color: var(--ink-soft); font-size: .875rem; }
 .footer-bottom nav { display: flex; flex-wrap: wrap; gap: 18px; }

@@ -12,7 +12,7 @@ Signal & Self is Mina Soliman's engineering portfolio and digital citizenship fi
 - A personal story and six-part digital citizenship framework
 - An interactive signals dashboard with habit progress and global context
 - 20 field notes, with a curated starting point, search, filters, and saved items
-- 14 initiatives, including 4 tested repositories with dedicated case studies
+- 15 initiatives, including 5 engineering projects with dedicated case studies and 4 featured projects
 - 20 journey records that can be filtered, printed, or downloaded
 - Device-local personalization, themes, saved items, and a global search palette
 - Optional Google sign-in for session-only viewer personalization

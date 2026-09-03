@@ -8,7 +8,8 @@
     function filter() {
       const term = $('#project-search').value.trim().toLowerCase(); let count = 0;
       cards.forEach(card => {
-        const visible = ($('#project-type').value === 'all' || card.dataset.projectType === $('#project-type').value)
+        const type = $('#project-type').value;
+        const visible = (type === 'all' || card.dataset.projectType === type || (type === 'featured' && card.dataset.featured === 'true'))
           && ($('#project-status').value === 'all' || card.dataset.status === $('#project-status').value)
           && (!$('#project-saved').checked || saved.has(card.id)) && card.textContent.toLowerCase().includes(term);
         card.hidden = !visible; if (visible) count++;

@@ -4,8 +4,15 @@
     "descriptor": "Engineering portfolio & digital citizenship fieldbook",
     "version": "2.0",
     "lastUpdated": "2026-09-03",
-    "headline": "Building systems that deserve trust.",
-    "status": "Growing in public"
+    "headline": "Building technology that deserves trust.",
+    "status": "Growing in public",
+    "movingBar": [
+      "Embedded systems",
+      "Power & energy",
+      "Test. Measure. Refine.",
+      "Thoughtful engineering",
+      "Build with purpose"
+    ]
   },
   "personalization": {
     "audiences": [
@@ -1129,7 +1136,7 @@
         "Automated testing"
       ],
       "impact": "It demonstrates how model-driven conversation can stay bounded by tested authorization, business rules, citations, and clear production-safety limits.",
-      "featured": true,
+      "featured": false,
       "role": "System architecture, backend implementation, policy grounding, and validation",
       "artifact": "Tested public GitHub repository",
       "proof": [
@@ -1182,7 +1189,6 @@
       "progress": 100,
       "year": 2026,
       "type": "engineering-build",
-      "featuredOrder": 4,
       "domain": "Responsible AI & backend systems",
       "problem": "How can a support assistant help without inventing policy or business authority?",
       "built": "A FastAPI service combining Claude conversation, policy retrieval, deterministic tools, and structured escalation.",
@@ -1469,6 +1475,50 @@
       "linkLabel": "View values section",
       "status": "Planned",
       "type": "exploration"
+    },
+    {
+      "id": "project-pico-2w-ee-lab-tool",
+      "title": "Pico 2 W EE Lab Tool",
+      "description": "A Raspberry Pi Pico 2 W instrument for calibrated power and energy measurement, RC transients, diode characterization, and guided source tests, with an OLED and Wi-Fi dashboard.",
+      "skills": [
+        "MicroPython",
+        "Embedded systems",
+        "Circuit measurements",
+        "Hardware validation"
+      ],
+      "impact": "A hands-on electrical engineering tool that connects circuit theory, sensor calibration, firmware, and measurement integrity.",
+      "featured": true,
+      "featuredOrder": 0,
+      "status": "Ongoing",
+      "statusLabel": "Hardware prototype",
+      "year": 2026,
+      "type": "engineering-build",
+      "domain": "Embedded instrumentation & electrical measurements",
+      "problem": "How can a compact bench tool measure real circuits and make the limits of each reading visible?",
+      "built": "Five operating modes on a Pico 2 W, with an INA219, OLED display, Wi-Fi dashboard, and experiment logging.",
+      "evidence": "The integrated prototype was verified on hardware. Documented RC time constants are 1.076–1.079 s, with calibrated voltage and independently checked shunt current.",
+      "limitations": "The latest Source Test guard and replacement OLED driver still need device rechecks. Fault monitoring reports conditions; it does not disconnect power.",
+      "nextStep": "Recheck the Source Test guard and replacement display driver on the hardware, then investigate automated electronic-load stepping.",
+      "approach": "Use MicroPython to coordinate shared I2C sensing, ADC capture, transistor-controlled RC experiments, settled diode measurements, and shared instrument state for the OLED and Wi-Fi interface.",
+      "result": "The documented prototype combines Power/Energy, RC Analyzer, Diode Analyzer, internal MCU Temperature, and Guided Source Test modes. Recorded examples include a 1.404 W load and RC capacitance estimates of 1076–1079 µF. These are documented example measurements, not new tests performed for this website.",
+      "relatedNotes": [
+        "reflection-repository-hygiene",
+        "reflection-privacy-by-design"
+      ],
+      "sourceBlob": "609c316bcee0eb5bb70ba7c90bfea9e8017c4fd6",
+      "repository": "https://github.com/Mini34/pico-2w-power-transient-analyzer",
+      "documentation": "https://github.com/Mini34/pico-2w-power-transient-analyzer#readme",
+      "link": "https://github.com/Mini34/pico-2w-power-transient-analyzer",
+      "linkLabel": "Explore the project",
+      "caseStudyPath": "pages/project-pico-2w-ee-lab-tool.html",
+      "evidenceCheckedAt": "2026-09-03",
+      "image": "assets/images/pico-2w-prototype.webp",
+      "imageWidth": 1536,
+      "imageHeight": 1152,
+      "imageAlt": "Annotated Pico 2 W prototype showing the controller, INA219, OLED, RC and diode breadboard, manual switches, and load resistor.",
+      "imageSource": "https://github.com/Mini34/pico-2w-power-transient-analyzer/blob/main/images/designs/01_annotated_prototype_overview.png",
+      "imageSourceBlob": "0e5260d9afe9f289aa71e48309e14e6916ac7315",
+      "programmingLanguage": "MicroPython"
     }
   ],
   "updates": [

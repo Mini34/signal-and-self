@@ -3,7 +3,8 @@ import AxeBuilder from '@axe-core/playwright';
 import lighthouse from 'lighthouse';
 import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
-const out=new URL('../../docs/qa/homepage-motion/',import.meta.url);
+const stage=process.argv[2] || 'homepage-motion';
+const out=new URL(`../../docs/qa/${stage}/`,import.meta.url);
 await fs.mkdir(out,{recursive:true});
 const browser=await chromium.launch({channel:'chrome',args:['--remote-debugging-port=9224']});
 const context=await browser.newContext({viewport:{width:1440,height:1000}});
@@ -31,6 +32,11 @@ try {
   await page.screenshot({path:new URL(`home-${width}.png`,out).pathname.replace(/^\/(\w:)/,'$1')});
  }
  await page.setViewportSize({width:1440,height:1000});
+ await page.locator('#featured-work').scrollIntoViewIfNeeded();
+ await page.waitForTimeout(800);
+ await page.locator('#featured-work').screenshot({path:new URL('featured-work-1440.png',out).pathname.replace(/^\/(\w:)/,'$1'),style:'.site-header-wrap,.skip-link,.reading-progress { visibility: hidden !important; }'});
+ await page.locator('#fieldbook').scrollIntoViewIfNeeded();
+ await page.screenshot({path:new URL('section-boundaries-1440.png',out).pathname.replace(/^\/(\w:)/,'$1')});
  for(const theme of ['signal','midnight','quiet']) {
   await page.evaluate(theme=>document.documentElement.dataset.theme=theme,theme);
   const scan=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze();
