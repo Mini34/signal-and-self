@@ -1,117 +1,52 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Explore the personal habits, progress signals, and global context behind Mina's digital citizenship practice.">
-  <meta name="theme-color" content="#f4f0e8">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta property="og:title" content="Signals — Signal & Self">
-  <meta property="og:description" content="Personal progress and global context for responsible digital participation.">
-  <meta property="og:image" content="https://mini34.github.io/signal-and-self/assets/images/signal-and-self-og.png">
-  <title>Signals — Signal & Self</title>
-  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../assets/styles/portfolio.css?v=refine-20260824a">
-  <script src="../assets/scripts/portfolio.js?v=refine-20260824a" defer></script>
-  <script src="../assets/scripts/auth-config.js?v=refine-20260824a" defer></script>
-  <script src="../assets/scripts/auth.js?v=refine-20260824a" defer></script>
-</head>
-<body id="top" data-page="insights" data-root="..">
-  <a class="skip-link" href="#main-content">Skip to content</a>
-  <div class="scroll-progress" aria-hidden="true"></div>
-  <div id="site-header"></div>
-
-  <main id="main-content">
-    <section class="page-hero site-shell" data-reveal>
-      <div class="page-hero-topline">
-        <p class="eyebrow">Progress without performance</p>
-        <span class="hero-stamp">Evidence<br>over<br>vanity</span>
-      </div>
-      <h1>Measure what helps me <span class="serif-italic">notice.</span></h1>
-      <p class="page-lede">These numbers are prompts for reflection: where I am consistent, where momentum is fragile, and where a goal needs a better system behind it.</p>
-      <div class="button-row"><a class="button button-primary" href="#momentum">View momentum</a><a class="button button-quiet" href="#global-context">See global context</a></div>
-    </section>
-
-    <section class="section site-shell">
-      <div class="section-header" data-reveal>
-        <div><p class="eyebrow">Top signals</p><h2>A quick read of the practice.</h2></div>
-        <p class="section-intro">Counts are paired with written records so progress never has to stand on a number alone.</p>
-      </div>
-      <div class="stats-ribbon" id="primary-stats" data-reveal></div>
-    </section>
-
-    <section class="section site-shell" id="momentum">
-      <div class="section-header" data-reveal>
-        <div><p class="eyebrow">Learning momentum</p><h2>Consistency has a shape.</h2></div>
-        <p class="section-intro" id="chart-summary">Learning hours logged by month</p>
-      </div>
-      <div class="chart-layout" data-reveal>
-        <article class="panel">
-          <div class="segmented-control" aria-label="Chart period">
-            <button class="chip is-active" type="button" data-period="monthly">Monthly</button>
-            <button class="chip" type="button" data-period="weekly">Weekly</button>
-          </div>
-          <div class="chart-shell" id="learning-chart" aria-label="Bar chart of digital citizenship learning hours"></div>
-        </article>
-        <aside class="panel"><p class="eyebrow">Recent evidence</p><div id="chart-focus"></div></aside>
-      </div>
-    </section>
-
-    <section class="section section-dark">
-      <div class="site-shell">
-        <div class="section-header" data-reveal>
-          <div><p class="eyebrow">Habit dashboard</p><h2>Small actions, repeated on purpose.</h2></div>
-          <p class="section-intro">The goal is not a perfect streak. It is noticing whether the environment makes a responsible action easier to repeat.</p>
-        </div>
-        <div class="feature-split" data-reveal>
-          <article class="panel"><div class="habit-list" id="habit-list"></div></article>
-          <article class="feature-card">
-            <div><p class="mono-label">Your goal</p><h3 data-personal-goal>Choose a digital goal to make this fieldbook feel more relevant to you.</h3><p>Personalization stays only in this browser. It is never uploaded or added to Mina's records.</p></div>
-            <button class="button" type="button" data-open-personalize>Set a personal goal</button>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section site-shell">
-      <div class="section-header" data-reveal>
-        <div><p class="eyebrow">More measures</p><h2>The wider progress picture.</h2></div>
-        <p class="section-intro">Goals, trends, and definitions stay visible so each metric has context.</p>
-      </div>
-      <div class="card-grid" id="secondary-stats" data-reveal></div>
-    </section>
-
-    <section class="section site-shell" id="digital-adoption">
-      <div class="section-header" data-reveal>
-        <div><p class="eyebrow">Digital adoption</p><h2>Access did not arrive everywhere at once.</h2></div>
-        <p class="section-intro">Move through the years to compare official regional internet-use aggregates and see why access remains part of the citizenship conversation.</p>
-      </div>
-      <article class="panel" data-reveal>
-        <div class="map-toolbar"><div><span class="mono-label">Selected year</span><div class="map-year" id="adoption-year-label">2025</div></div><p class="section-intro" id="adoption-note"></p></div>
-        <div class="adoption-map" id="adoption-map"></div>
-        <label class="visually-hidden" for="adoption-year">Digital adoption year</label>
-        <input class="map-slider" id="adoption-year" type="range" min="2000" max="2025" value="2025">
-        <div class="map-summary" id="adoption-summary"></div>
-        <p class="muted" id="adoption-source" style="margin-top:22px;font-size:.72rem"></p>
-      </article>
-    </section>
-
-    <section class="section site-shell" id="global-context">
-      <div class="section-header" data-reveal>
-        <div><p class="eyebrow">Global context</p><h2>The stakes extend far beyond one portfolio.</h2></div>
-        <p class="section-intro">Youth access, well-being, and safety data help connect personal habits to the conditions shaping digital participation worldwide.</p>
-      </div>
-      <div class="card-grid two-up" id="global-context-grid" data-reveal></div>
-    </section>
-
-    <section class="section site-shell">
-      <div class="section-header" data-reveal><div><p class="eyebrow">Go deeper</p><h2>Trusted starting points.</h2></div><p class="section-intro">Selected educational and institutional resources for continuing the conversation.</p></div>
-      <div class="panel" id="resource-list" data-reveal></div>
-    </section>
-  </main>
-
-  <footer id="site-footer"></footer>
-  <!-- Privacy-first traffic and performance analytics; disabled for local previews. -->
-  <script src="../assets/scripts/analytics.js?v=20260821" defer></script>
-</body>
-</html>
+<!-- Generated by tools/build_site.py; edit the records or generator, then regenerate. -->
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Evidence &amp; Progress — Signal &amp; Self</title><meta name="description" content="Dated evidence for Verify, Protect, Build, and Reflect, plus the July 2026 learning snapshot and sourced global context."><meta name="theme-color" content="#f4f0e8"><meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="canonical" href="https://mini34.github.io/signal-and-self/pages/insights.html"><meta property="og:title" content="Evidence &amp; Progress — Signal &amp; Self"><meta property="og:description" content="Dated evidence for Verify, Protect, Build, and Reflect, plus the July 2026 learning snapshot and sourced global context."><meta property="og:type" content="website"><meta property="og:url" content="https://mini34.github.io/signal-and-self/pages/insights.html"><meta property="og:image" content="https://mini34.github.io/signal-and-self/assets/images/signal-and-self-og.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Evidence &amp; Progress — Signal &amp; Self"><meta name="twitter:description" content="Dated evidence for Verify, Protect, Build, and Reflect, plus the July 2026 learning snapshot and sourced global context.">
+<link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.gstatic.com/s/newsreader/v26/cY9AfjOCX1hbuyalUrK4397yjIJFJpc.woff2" as="font" type="font/woff2" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles/portfolio.css?v=ux-20260903">
+<script src="../assets/scripts/portfolio.js?v=ux-20260903" defer></script>
+<script src="../assets/scripts/auth-config.js?v=ux-20260903" defer></script><script src="../assets/scripts/auth.js?v=ux-20260903" defer></script>
+<script src="../assets/scripts/evidence.js?v=ux-20260903" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://mini34.github.io/signal-and-self/#mina", "name": "Mina Soliman", "url": "https://mini34.github.io/signal-and-self/", "sameAs": ["https://github.com/Mini34"], "description": "First-year Electrical Engineering student at the University of Toronto, exploring power systems, embedded computing, cybersecurity, and responsible AI."}, {"@type": "WebSite", "name": "Signal & Self", "url": "https://mini34.github.io/signal-and-self/", "author": {"@id": "https://mini34.github.io/signal-and-self/#mina"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mini34.github.io/signal-and-self/"}, {"@type": "ListItem", "position": 2, "name": "Evidence & Progress", "item": "https://mini34.github.io/signal-and-self/pages/insights.html"}]}]}</script>
+</head><body id="top" data-page="insights" data-root="../"><a class="skip-link" href="#main-content">Skip to content</a>
+<div class="site-header-wrap site-shell" id="site-header"><header class="site-header">
+      <a class="brand" href="../index.html" aria-label="S/S · Signal &amp; Self · Mina Soliman’s fieldbook · Home"><span class="brand-mark" aria-hidden="true">S/S</span><span class="brand-copy"><strong>Signal &amp; Self</strong><small>Mina Soliman’s fieldbook</small></span></a>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation"><a href="../pages/initiatives.html">Work</a><a href="../pages/profile.html">About</a><a href="../pages/field-notes.html">Field Notes</a><a href="../pages/insights.html" aria-current="page">Evidence</a></nav>
+      <div class="header-actions">
+        <button class="icon-button search-control js-only" data-open-search type="button" aria-label="Search the fieldbook" hidden><span aria-hidden="true">⌕</span><span class="header-label">Search</span></button>
+        <button class="icon-button settings-control js-only" data-open-personalize type="button" hidden><span class="desktop-label">Settings</span><span class="mobile-label">Account / Settings</span></button>
+        <button class="icon-button account-button js-only" data-open-account data-account-control type="button" hidden><span data-account-label>Sign in</span></button>
+        <details class="mobile-navigation" id="mobile-navigation"><summary class="menu-button">Menu</summary><nav class="mobile-nav" aria-label="Mobile navigation"><a href="../pages/initiatives.html">Work</a><a href="../pages/profile.html">About</a><a href="../pages/field-notes.html">Field Notes</a><a href="../pages/insights.html" aria-current="page">Evidence</a></nav></details>
+      </div></header></div><main id="main-content" tabindex="-1"><section class="page-hero site-shell"><p class="eyebrow">Evidence &amp; Progress</p><h1>Evidence &amp; Progress</h1><p class="page-lede">A dated record of practice, with sources and limits attached. Personal self-assessments are prompts for reflection, not certifications.</p></section><section class="section site-shell " id="practice"><div class="section-header"><div><p class="eyebrow">Practice compass</p><h2>Four habits, with evidence.</h2></div><p class="section-intro">Qualitative bands first. Earlier numeric scores remain inside each methodology disclosure.</p></div><div class="card-grid four-up"><article class="card signal-card"><p class="mono-label">Verify</p><h3>Strong</h3><p>Trace claims to original sources and keep uncertainty visible.</p><p class="card-date">Last reviewed Aug 24, 2026</p><ul class="evidence-links"><li><a href="../pages/field-notes.html#reflection-ai-summaries">Cross-checking AI summaries before I trust them</a></li><li><a href="../pages/field-notes.html#reflection-persuasive-video">Checking the links behind a persuasive video</a></li></ul><p><strong>Next:</strong> Keep tracing claims to primary sources before reusing them.</p><details class="signal-evidence"><summary>Methodology & historical score</summary><p>Qualitative self-assessment, not an external grade. Historical score: 88/100, recorded before this refresh. No new numerical assessment has been made.</p><p>Source workflow, AI-summary checks, citation support</p></details></article><article class="card signal-card"><p class="mono-label">Protect</p><h3>Consistent</h3><p>Use privacy, consent, and security as design requirements.</p><p class="card-date">Last reviewed Aug 24, 2026</p><ul class="evidence-links"><li><a href="../pages/field-notes.html#reflection-privacy-by-design">Designing privacy into a prototype before adding features</a></li><li><a href="../pages/field-notes.html#reflection-password-routine">Treating password hygiene like regular maintenance</a></li></ul><p><strong>Next:</strong> Carry data minimization into the next prototype.</p><details class="signal-evidence"><summary>Methodology & historical score</summary><p>Qualitative self-assessment, not an external grade. Historical score: 82/100, recorded before this refresh. No new numerical assessment has been made.</p><p>Permission audits, MFA reviews, privacy-by-design notes</p></details></article><article class="card signal-card"><p class="mono-label">Build</p><h3>Growing</h3><p>Create tools and documentation that lower friction for others.</p><p class="card-date">Last reviewed Aug 24, 2026</p><ul class="evidence-links"><li><a href="../pages/field-notes.html#reflection-repository-hygiene">Cleaning a repository is part of communicating responsibly</a></li><li><a href="../pages/field-notes.html#reflection-accessibility-citizenship">Accessibility belongs inside digital citizenship</a></li></ul><p><strong>Next:</strong> Connect engineering fundamentals with small, documented builds.</p><details class="signal-evidence"><summary>Methodology & historical score</summary><p>Qualitative self-assessment, not an external grade. Historical score: 76/100, recorded before this refresh. No new numerical assessment has been made.</p><p>Peer library, checklists, accessible-form review</p></details></article><article class="card signal-card"><p class="mono-label">Reflect</p><h3>Core habit</h3><p>Review tradeoffs, attention, and impact instead of only output.</p><p class="card-date">Last reviewed Aug 24, 2026</p><ul class="evidence-links"><li><a href="../pages/field-notes.html#reflection-screen-time">Reducing passive screen time after 9 PM</a></li><li><a href="../pages/field-notes.html#reflection-digital-footprint-audit">Reviewing my digital footprint before the next school year</a></li></ul><p><strong>Next:</strong> Record what changed after a design decision.</p><details class="signal-evidence"><summary>Methodology & historical score</summary><p>Qualitative self-assessment, not an external grade. Historical score: 91/100, recorded before this refresh. No new numerical assessment has been made.</p><p>20 field notes, monthly reviews, improvement streak</p></details></article></div></section><section class="section site-shell " id="snapshot"><div class="section-header"><div><p class="eyebrow">Historical record</p><h2>July 2026 snapshot.</h2></div><p class="section-intro">Values are retained from the original self-reported record. These are not live counters, independently audited totals, or counts of the current project library.</p></div><div class="card-grid"><article class="card"><p class="mono-label">July 2026 snapshot</p><h3>11 · Coding projects completed</h3><p>Projects that include a clear public good, learning outcome, or safety angle.</p><p>Historical goal: 12. +4 since April</p></article><article class="card"><p class="mono-label">July 2026 snapshot</p><h3>57 · GitHub commits in July 2026</h3><p>Commit activity on portfolio, learning, and community-oriented coding work.</p><p>Historical goal: 60. Steady across 5 weeks</p></article><article class="card"><p class="mono-label">Year to date through July 2026</p><h3>26 · Educational resources shared</h3><p>Guides, articles, and checklists shared with peers to support safer digital habits.</p><p>Historical goal: 30. 8 added since April</p></article><article class="card"><p class="mono-label">Year to date through July 2026</p><h3>20 · Reflections written</h3><p>Short written reviews of online choices, lessons, and course corrections.</p><p>Historical goal: 24. 5 new field notes</p></article><article class="card"><p class="mono-label">Year to date through July 2026</p><h3>112h · Hours spent on digital learning</h3><p>Time spent studying privacy, security, media literacy, ethics, and related skills.</p><p>Historical goal: 140. 39h since April</p></article><article class="card"><p class="mono-label">Year to date through July 2026</p><h3>34 · Community support contributions</h3><p>Peer support actions such as answering questions, reviewing drafts, and sharing fixes.</p><p>Historical goal: 42. 7 new contributions</p></article><article class="card"><p class="mono-label">Year to date through July 2026</p><h3>15 · Digital safety topics studied</h3><p>Distinct topics studied deeply enough to summarize and apply in practice.</p><p>Historical goal: 18. Threat modeling added</p></article><article class="card"><p class="mono-label">July 2026 snapshot</p><h3>5/5 · Monthly goals completed</h3><p>Progress against the specific habits and commitments I set at the start of the month.</p><p>Historical goal: 6. Accessibility goal completed</p></article><article class="card"><p class="mono-label">July 2026 snapshot</p><h3>28 days · Improvement streak in July 2026</h3><p>Consecutive days with at least one intentional learning, reflection, or contribution action.</p><p>Historical goal: 35. Longest run this year</p></article></div></section><section class="section site-shell " id="momentum"><div class="section-header"><div><p class="eyebrow">Historical learning log</p><h2>Consistency has a shape.</h2></div><p class="section-intro">The monthly and weekly logs have different aggregation windows; do not add them together.</p></div><div class="panel"><div class="segmented-control js-only" hidden><button class="chip" aria-pressed="true" data-period="monthly" type="button">Monthly</button><button class="chip" aria-pressed="false" data-period="weekly" type="button">Weekly</button></div><p id="chart-summary" role="status">Historical learning log · November 2025–July 2026</p><div id="learning-chart" class="chart-shell" aria-hidden="true"></div><div id="chart-data"><table><caption>Historical learning log · November 2025–July 2026</caption><thead><tr><th scope="col">Period</th><th scope="col">Hours</th></tr></thead><tbody><tr><th scope="row">Nov</th><td>8</td></tr><tr><th scope="row">Dec</th><td>10</td></tr><tr><th scope="row">Jan</th><td>11</td></tr><tr><th scope="row">Feb</th><td>12</td></tr><tr><th scope="row">Mar</th><td>14</td></tr><tr><th scope="row">Apr</th><td>18</td></tr><tr><th scope="row">May</th><td>11</td></tr><tr><th scope="row">Jun</th><td>13</td></tr><tr><th scope="row">Jul</th><td>15</td></tr></tbody></table></div><details class="no-js-period"><summary>Weekly data</summary><table><caption>Historical learning log · June 22–July 27, 2026</caption><thead><tr><th scope="col">Period</th><th scope="col">Hours</th></tr></thead><tbody><tr><th scope="row">Jun 22</th><td>5</td></tr><tr><th scope="row">Jun 29</th><td>6</td></tr><tr><th scope="row">Jul 6</th><td>4</td></tr><tr><th scope="row">Jul 13</th><td>7</td></tr><tr><th scope="row">Jul 20</th><td>8</td></tr><tr><th scope="row">Jul 27</th><td>6</td></tr></tbody></table></details></div></section><section class="section site-shell "><div class="section-header"><div><p class="eyebrow">July 2026 snapshot</p><h2>Small actions, repeated on purpose.</h2></div><p class="section-intro">Historical self-reported habit assessments; not current streaks.</p></div><div class="panel habit-list"><div class="habit-item"><strong>Verify before sharing</strong><p>Every time · 94% · On track</p></div><div class="habit-item"><strong>Review account permissions</strong><p>Monthly · 82% · On track</p></div><div class="habit-item"><strong>Publish one useful resource</strong><p>Weekly · 71% · Building</p></div><div class="habit-item"><strong>Protect focus after 9 PM</strong><p>Daily · 68% · Building</p></div><div class="habit-item"><strong>Document AI assistance</strong><p>Per project · 89% · On track</p></div></div></section><section class="section site-shell " id="digital-adoption"><div class="section-header"><div><p class="eyebrow">Context &amp; Sources</p><h2>Access did not arrive everywhere at once.</h2></div><p class="section-intro">A historical regional dataset retained from the fieldbook. Missing years are explicitly marked.</p></div><div class="panel"><p>This map uses official World Bank regional aggregates for internet use to show how digital adoption spread unevenly across the world. The slider spans 2000 to 2025, and the comparable regional series begins in 2005, so the first few years show the pre-series lead-in before large-scale adoption accelerates.</p><div class="adoption-map" aria-hidden="true"><img src="../assets/images/digital-adoption-map.webp" width="1536" height="1024" loading="lazy" alt=""><div id="map-markers"></div></div><div class="js-only" hidden><label for="adoption-year">Compare a year: <output id="adoption-year-label">2025</output></label><input class="map-slider" id="adoption-year" type="range" min="2000" max="2025" value="2025" aria-describedby="adoption-announcement"></div><p id="adoption-announcement" role="status">Selected year 2025. Regional values follow in the table.</p><table><caption>Regional internet use · <span id="adoption-table-year">2025</span></caption><thead><tr><th scope="col">Region</th><th scope="col">Population using the internet</th></tr></thead><tbody><tr><th scope="row">North America</th><td data-adoption-value="NAC">95.6%</td></tr><tr><th scope="row">Latin America &amp; Caribbean</th><td data-adoption-value="LCN">83.7%</td></tr><tr><th scope="row">Europe &amp; Central Asia</th><td data-adoption-value="ECS">92.4%</td></tr><tr><th scope="row">Middle East &amp; North Africa</th><td data-adoption-value="MNA">58%</td></tr><tr><th scope="row">Sub-Saharan Africa</th><td data-adoption-value="SSF">35.7%</td></tr><tr><th scope="row">South Asia</th><td data-adoption-value="SAS">67.8%</td></tr><tr><th scope="row">East Asia &amp; Pacific</th><td data-adoption-value="EAS">88.4%</td></tr></tbody></table><p>Markers show regional internet-use percentages. Larger markers indicate greater adoption; exact stored values are listed below.</p><p>World Bank World Development Indicators indicator IT.NET.USER.ZS, with the World Bank listing the ITU World Telecommunication/ICT Indicators Database as the underlying source. World Development Indicators was updated on April 8, 2026.</p><a class="source-link" href="https://data.worldbank.org/indicator/IT.NET.USER.ZS">World Bank indicator page</a><a class="source-link" href="https://datahelpdesk.worldbank.org/knowledgebase/articles/898614-aggregate-api-queries">World Bank aggregate API guide</a></div></section><section class="section site-shell " id="global-context"><div class="section-header"><div><p class="eyebrow">Global context</p><h2>The stakes extend beyond one portfolio.</h2></div><p class="section-intro"></p></div><div class="card-grid two-up"><article class="card"><p class="mono-label">International Telecommunication Union · November 10, 2024</p><h3>79% of people aged 15 to 24 worldwide use the Internet</h3><p>The ITU reported on November 10, 2024 that youth internet use is 13 percentage points higher than for the rest of the population, but the gap by income level is still large.</p><a class="button button-quiet" href="https://www.itu.int/itu-d/reports/statistics/2024/11/10/ff24-youth-internet-use/">Read the source</a></article><article class="card"><p class="mono-label">WHO Regional Office for Europe · September 25, 2024</p><h3>11% of adolescents showed signs of problematic social media use in 2022</h3><p>WHO reported on September 25, 2024 that this figure rose from 7% in 2018 to 11% in 2022, and another 12% of adolescents were at risk of problematic gaming.</p><a class="button button-quiet" href="https://www.who.int/europe/news/item/25-09-2024-teens--screens-and-mental-health">Read the source</a></article><article class="card"><p class="mono-label">WHO Regional Office for Europe · March 27, 2024</p><h3>1 in 6 school-aged children experienced cyberbullying</h3><p>WHO reported on March 27, 2024 that cyberbullying increased between 2018 and 2022, with reports of being cyberbullied rising to 15% for boys and 16% for girls.</p><a class="button button-quiet" href="https://www.who.int/europe/news/item/27-03-2024-one-in-six-school-aged-children-experiences-cyberbullying--finds-new-who-europe-study">Read the source</a></article><article class="card"><p class="mono-label">UNICEF Innocenti · June 2025</p><h3>1 in 5 10-year-olds in 51 countries lacked internet access at home in 2021</h3><p>UNICEF Innocenti reported in its June 2025 digital world report that the share increased to two in five in the low- and middle-income countries included in the study.</p><a class="button button-quiet" href="https://www.unicef.org/innocenti/innocenti/media/11296/file/UNICEF-Innocenti-Childhood-in-a-Digital%20World-report-2025.pdf">Read the source</a></article></div></section><section class="section site-shell "><div class="section-header"><div><p class="eyebrow">Go deeper</p><h2>Trusted starting points.</h2></div><p class="section-intro"></p></div><div class="panel"><a class="resource-link" href="https://beinternetawesome.withgoogle.com/en_us/interland"><span><strong>Google Interland</strong>An interactive game from the Be Internet Awesome program that teaches safer, smarter internet habits through short challenges.</span></a><a class="resource-link" href="https://changingchildhood.unicef.org/stories/online-opportunities"><span><strong>UNICEF x Gallup: Online Opportunities</strong>A youth-centered resource exploring how young people across 21 countries experience internet access, opportunity, and digital divides.</span></a><a class="resource-link" href="https://www.unesco.org/en/articles/media-and-information-literacy-and-digital-competencies"><span><strong>UNESCO Media and Information Literacy</strong>UNESCO&#x27;s overview of media and information literacy and digital competencies, including how critical thinking supports safer online participation.</span></a><a class="resource-link" href="https://www.who.int/europe/news/item/25-09-2024-teens--screens-and-mental-health"><span><strong>WHO youth digital well-being updates</strong>WHO&#x27;s coverage of adolescent screen use, cyberbullying, and digital well-being offers evidence-based context for responsible technology habits.</span></a></div></section></main><footer class="site-footer site-shell" id="site-footer"><div class="footer-bottom"><span>Signal &amp; Self · Mina Soliman</span><nav aria-label="Footer navigation">
+      <a href="../pages/journey.html">Journey</a> <a href="../pages/privacy.html">Privacy &amp; Data</a> <a href="https://github.com/Mini34">GitHub</a> <a href="#top">Back to top ↑</a>
+      </nav><span>Updated September 2026</span></div></footer>
+<dialog class="dialog" id="personalize-dialog" aria-labelledby="personalize-title"><div class="dialog-inner">
+ <div class="dialog-header"><div><p class="eyebrow">On this device</p><h2 id="personalize-title">Settings</h2></div><button type="button" class="dialog-close" data-close-dialog aria-label="Close settings">×</button></div>
+ <p class="personal-greeting" data-personal-greeting>Welcome in.</p><p data-personal-intro></p>
+ <p>Your theme, audience, name, goal, and saved items stay on this device.</p>
+ <button class="button button-quiet" type="button" data-open-account>Sign in with Google · optional</button>
+ <form id="personalize-form" class="form-grid"><div class="form-field"><label for="visitor-name">First name (optional)</label><input id="visitor-name" name="name" maxlength="32" autocomplete="given-name"></div>
+ <div class="form-field"><label for="visitor-audience">What brings you here?</label><select id="visitor-audience" name="audience"><option value="curious">Just exploring</option><option value="student">Fellow student</option><option value="educator">Educator</option><option value="recruiter">Recruiter or collaborator</option></select></div>
+ <div class="form-field"><label for="visitor-goal">Your digital goal (optional)</label><input id="visitor-goal" name="goal" maxlength="80"></div>
+ <fieldset><legend>Theme</legend><div class="theme-options"><button class="theme-option" data-theme="signal" aria-pressed="false" type="button"><strong>Signal</strong><small>Cobalt, coral, and warm paper</small></button><button class="theme-option" data-theme="midnight" aria-pressed="false" type="button"><strong>Midnight</strong><small>Deep navy with electric accents</small></button><button class="theme-option" data-theme="quiet" aria-pressed="false" type="button"><strong>Quiet</strong><small>Low-contrast, focus-first neutrals</small></button></div></fieldset>
+ <div class="button-row"><button class="button button-primary" type="submit">Save settings</button><button class="button button-quiet" data-reset-personalization type="button">Reset preferences</button><button class="button button-quiet" data-clear-saved type="button">Clear saved items</button></div></form>
+ <a href="../pages/privacy.html">Privacy &amp; Data</a></div></dialog>
+<dialog class="dialog account-dialog" id="account-dialog" aria-labelledby="account-title"><div class="dialog-inner">
+ <div class="dialog-header"><div><p class="eyebrow">Optional session identity</p><h2 id="account-title">Sign in</h2></div><button class="dialog-close" data-close-dialog type="button" aria-label="Close account">×</button></div>
+ <p>Sign in with Google to personalize your greeting during this browser session. Sign-in does not unlock private content or create a permanent account. Anonymous traffic and performance metrics are measured separately through Cloudflare Web Analytics.</p>
+ <div data-auth-signed-out><div id="google-signin-host" class="google-signin-host"></div></div>
+ <p id="auth-status" class="auth-status" role="status">Google is contacted only after you open this account panel.</p>
+ <ul class="privacy-list"><li>The email claim is ignored and the ID token is not stored.</li><li>Only display name, profile image, and session expiry are retained for this browser session.</li><li>Google identity and local preferences are never attached to Cloudflare analytics.</li></ul>
+ <div data-auth-signed-in hidden><div class="signed-in-card"><img class="signed-in-avatar" data-account-avatar width="54" height="54" alt="" referrerpolicy="no-referrer" hidden><strong data-account-name></strong></div><button class="button button-quiet" data-sign-out type="button">Sign out</button></div>
+ <a href="../pages/privacy.html">Review privacy details</a></div></dialog>
+<dialog class="dialog" id="search-dialog" aria-labelledby="search-title"><div class="dialog-inner"><div class="dialog-header"><h2 id="search-title">Search the fieldbook</h2><button class="dialog-close" data-close-dialog type="button" aria-label="Close search">×</button></div>
+ <label class="form-field" for="global-search">Search projects, notes, and practice areas<input id="global-search" type="search" autocomplete="off"></label><div id="global-search-results" class="search-results" role="status"></div></div></dialog>
+<dialog class="dialog" id="reader-dialog" aria-labelledby="reader-title"><div class="dialog-inner"><div class="dialog-header"><h2 id="reader-title">Field note</h2><button class="dialog-close" data-close-dialog type="button" aria-label="Close field note">×</button></div><div id="reader-content"></div></div></dialog>
+<div class="toast" id="toast" role="status"></div>
+<!-- Aggregate analytics load independently of optional identity, on production only. -->
+<script src="../assets/scripts/analytics.js?v=20260821" defer></script></body></html>
