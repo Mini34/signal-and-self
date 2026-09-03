@@ -2,6 +2,8 @@
 
 September 3, 2026 · `codex/ux-audit-priority-refresh` · compare with [the captured baseline](ux-audit-baseline.md).
 
+**Homepage revision after owner review:** Mina preferred the original animation. The compass, scrolling strip, pulse, and section motion are restored in the hero. See [the current homepage and its new measurements](homepage-motion-review.md). The homepage screenshots and measurements below record the initial, more static proposal; all other route results remain applicable.
+
 ## Result and content decisions
 
 The homepage now identifies Mina Soliman, first-year Electrical Engineering at the University of Toronto, technical interests, and the primary project action before the fieldbook framework. Four engineering repositories lead the work library, with consistent dedicated case studies and visible validation/limitations. Work, About, Field Notes, and Evidence are primary navigation; Journey and Privacy remain in the footer. Existing page URLs remain valid.
