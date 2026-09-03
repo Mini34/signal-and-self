@@ -30,9 +30,14 @@
         sessionStorage.removeItem(sessionKey);
         return null;
       }
-      return saved;
+      return {
+        givenName: String(saved.givenName || "Visitor").slice(0, 80),
+        fullName: String(saved.fullName || "Google visitor").slice(0, 160),
+        picture: /^https:\/\//.test(saved.picture || "") ? saved.picture : "",
+        expiresAt: saved.expiresAt
+      };
     } catch {
-      sessionStorage.removeItem(sessionKey);
+      try { sessionStorage.removeItem(sessionKey); } catch { /* Storage can be blocked. */ }
       return null;
     }
   }
@@ -113,10 +118,11 @@
       picture: /^https:\/\//.test(claims.picture || "") ? claims.picture : "",
       expiresAt: Number(claims.exp) * 1000
     };
-    sessionStorage.setItem(sessionKey, JSON.stringify(viewer));
+    let stored = true;
+    try { sessionStorage.setItem(sessionKey, JSON.stringify(viewer)); } catch { stored = false; }
     syncUI();
     emitViewer();
-    setStatus("Signed in for this browser session. Your Google token was not stored.", "success");
+    setStatus(stored ? "Signed in for this browser session. Your Google token was not stored." : "Signed in on this page only because browser storage is blocked. Your Google token was not stored.", "success");
   }
 
   function loadGoogleLibrary() {
@@ -136,7 +142,11 @@
       script.src = "https://accounts.google.com/gsi/client";
       script.async = true;
       script.onload = resolve;
-      script.onerror = reject;
+      script.onerror = () => {
+        script.remove();
+        googleLoader = null;
+        reject(new Error("Google sign-in library unavailable"));
+      };
       document.head.append(script);
     });
     return googleLoader;
@@ -185,7 +195,7 @@
   function signOut() {
     window.google?.accounts?.id?.disableAutoSelect();
     viewer = null;
-    sessionStorage.removeItem(sessionKey);
+    try { sessionStorage.removeItem(sessionKey); } catch { /* No storage to clear. */ }
     syncUI();
     emitViewer();
     setStatus("Signed out on this device.", "success");
