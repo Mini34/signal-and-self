@@ -1,11 +1,18 @@
 {
   "site": {
     "name": "Signal & Self",
-    "descriptor": "A digital citizenship fieldbook",
+    "descriptor": "Engineering portfolio & digital citizenship fieldbook",
     "version": "2.0",
-    "lastUpdated": "2026-08-24",
-    "headline": "Learning to build technology that deserves trust.",
-    "status": "Growing in public"
+    "lastUpdated": "2026-09-03",
+    "headline": "Building technology that deserves trust.",
+    "status": "Growing in public",
+    "movingBar": [
+      "Embedded systems",
+      "Power & energy",
+      "Test. Measure. Refine.",
+      "Thoughtful engineering",
+      "Build with purpose"
+    ]
   },
   "personalization": {
     "audiences": [
@@ -35,20 +42,32 @@
       }
     ],
     "themes": [
-      { "id": "signal", "label": "Signal", "description": "Cobalt, coral, and warm paper" },
-      { "id": "midnight", "label": "Midnight", "description": "Deep navy with electric accents" },
-      { "id": "quiet", "label": "Quiet", "description": "Low-contrast, focus-first neutrals" }
+      {
+        "id": "signal",
+        "label": "Signal",
+        "description": "Cobalt, coral, and warm paper"
+      },
+      {
+        "id": "midnight",
+        "label": "Midnight",
+        "description": "Deep navy with electric accents"
+      },
+      {
+        "id": "quiet",
+        "label": "Quiet",
+        "description": "Low-contrast, focus-first neutrals"
+      }
     ]
   },
   "profile": {
     "name": "Mina S.",
     "fullName": "Mina Soliman",
-    "tagline": "Incoming University of Toronto electrical engineering student with interests in power systems, embedded computing, cybersecurity, and responsible technology.",
+    "tagline": "First-year Electrical Engineering student at the University of Toronto, exploring power systems, embedded computing, cybersecurity, and responsible AI.",
     "definition": "To me, digital citizenship means combining technical skill with responsibility. It includes checking information before sharing it, protecting privacy, using technology ethically, and contributing to online spaces in ways that make them safer and more respectful.",
     "mission": "My mission is to grow as an engineer and digital citizen at the same time. I want the way I learn, build, and communicate online to reflect curiosity, care, and cybersecurity awareness.",
-    "aboutTitle": "Incoming University of Toronto electrical engineering student",
+    "aboutTitle": "First-year Electrical Engineering student at the University of Toronto",
     "aboutText": [
-      "I am Mina Soliman, an incoming University of Toronto electrical engineering student beginning in September 2026. I am interested in how engineering can solve practical problems while still protecting the people who rely on those systems.",
+      "I am Mina Soliman, a first-year Electrical Engineering student at the University of Toronto. I am interested in power systems, embedded computing, cybersecurity, and the design of technology people can understand and trust.",
       "Cybersecurity is one of the areas that excites me most because it connects technical design with trust, privacy, and accountability. That interest naturally connects to digital citizenship, which gives me a framework for how I want to participate online.",
       "This website brings those interests together. It tracks how I learn, reflect, and contribute so my growth in digital citizenship stays visible, measurable, and grounded in real habits."
     ],
@@ -65,10 +84,13 @@
         "title": "Digital citizenship lens",
         "text": "I use digital citizenship as a practical guide for ethical participation, media literacy, privacy, and community responsibility."
       }
-    ]
+    ],
+    "hero": "I’m Mina Soliman, a first-year Electrical Engineering student at the University of Toronto exploring power systems, embedded computing, cybersecurity, and responsible AI through tested projects and reflective fieldwork.",
+    "year": "First year, 2026–27",
+    "github": "https://github.com/Mini34"
   },
   "home": {
-    "heroKicker": "Digital citizenship portfolio",
+    "heroKicker": "Electrical engineering · responsible technology",
     "projectSummary": "This project turns digital citizenship into something visible and accountable. As I prepare to begin electrical engineering in Canada, I use the site to connect my interest in cybersecurity with reflection, measurable habits, and positive online participation.",
     "whyItMattersPoints": [
       {
@@ -157,17 +179,17 @@
       "label": "Coding projects completed",
       "value": 11,
       "suffix": "",
-      "period": "Total",
+      "period": "July 2026 snapshot",
       "goal": 12,
       "trend": "+4 since April",
       "description": "Projects that include a clear public good, learning outcome, or safety angle."
     },
     {
       "id": "commits_this_month",
-      "label": "GitHub commits this month",
+      "label": "GitHub commits in July 2026",
       "value": 57,
       "suffix": "",
-      "period": "July",
+      "period": "July 2026 snapshot",
       "goal": 60,
       "trend": "Steady across 5 weeks",
       "description": "Commit activity on portfolio, learning, and community-oriented coding work."
@@ -177,7 +199,7 @@
       "label": "Educational resources shared",
       "value": 26,
       "suffix": "",
-      "period": "Year to date",
+      "period": "Year to date through July 2026",
       "goal": 30,
       "trend": "8 added since April",
       "description": "Guides, articles, and checklists shared with peers to support safer digital habits."
@@ -187,7 +209,7 @@
       "label": "Reflections written",
       "value": 20,
       "suffix": "",
-      "period": "Year to date",
+      "period": "Year to date through July 2026",
       "goal": 24,
       "trend": "5 new field notes",
       "description": "Short written reviews of online choices, lessons, and course corrections."
@@ -197,7 +219,7 @@
       "label": "Hours spent on digital learning",
       "value": 112,
       "suffix": "h",
-      "period": "Year to date",
+      "period": "Year to date through July 2026",
       "goal": 140,
       "trend": "39h since April",
       "description": "Time spent studying privacy, security, media literacy, ethics, and related skills."
@@ -207,7 +229,7 @@
       "label": "Community support contributions",
       "value": 34,
       "suffix": "",
-      "period": "Year to date",
+      "period": "Year to date through July 2026",
       "goal": 42,
       "trend": "7 new contributions",
       "description": "Peer support actions such as answering questions, reviewing drafts, and sharing fixes."
@@ -217,7 +239,7 @@
       "label": "Digital safety topics studied",
       "value": 15,
       "suffix": "",
-      "period": "Year to date",
+      "period": "Year to date through July 2026",
       "goal": 18,
       "trend": "Threat modeling added",
       "description": "Distinct topics studied deeply enough to summarize and apply in practice."
@@ -227,17 +249,17 @@
       "label": "Monthly goals completed",
       "value": 5,
       "suffix": "/5",
-      "period": "July",
+      "period": "July 2026 snapshot",
       "goal": 6,
       "trend": "Accessibility goal completed",
       "description": "Progress against the specific habits and commitments I set at the start of the month."
     },
     {
       "id": "improvement_streak",
-      "label": "Current improvement streak",
+      "label": "Improvement streak in July 2026",
       "value": 28,
       "suffix": " days",
-      "period": "Current run",
+      "period": "July 2026 snapshot",
       "goal": 35,
       "trend": "Longest run this year",
       "description": "Consecutive days with at least one intentional learning, reflection, or contribution action."
@@ -250,7 +272,13 @@
       "score": 88,
       "signal": "Strong",
       "description": "Trace claims to original sources and keep uncertainty visible.",
-      "evidence": "Source workflow, AI-summary checks, citation support"
+      "evidence": "Source workflow, AI-summary checks, citation support",
+      "reviewedAt": "2026-08-24",
+      "evidenceLinks": [
+        "reflection-ai-summaries",
+        "reflection-persuasive-video"
+      ],
+      "nextStep": "Keep tracing claims to primary sources before reusing them."
     },
     {
       "id": "protect",
@@ -258,7 +286,13 @@
       "score": 82,
       "signal": "Consistent",
       "description": "Use privacy, consent, and security as design requirements.",
-      "evidence": "Permission audits, MFA reviews, privacy-by-design notes"
+      "evidence": "Permission audits, MFA reviews, privacy-by-design notes",
+      "reviewedAt": "2026-08-24",
+      "evidenceLinks": [
+        "reflection-privacy-by-design",
+        "reflection-password-routine"
+      ],
+      "nextStep": "Carry data minimization into the next prototype."
     },
     {
       "id": "build",
@@ -266,7 +300,13 @@
       "score": 76,
       "signal": "Growing",
       "description": "Create tools and documentation that lower friction for others.",
-      "evidence": "Peer library, checklists, accessible-form review"
+      "evidence": "Peer library, checklists, accessible-form review",
+      "reviewedAt": "2026-08-24",
+      "evidenceLinks": [
+        "reflection-repository-hygiene",
+        "reflection-accessibility-citizenship"
+      ],
+      "nextStep": "Connect engineering fundamentals with small, documented builds."
     },
     {
       "id": "reflect",
@@ -274,21 +314,52 @@
       "score": 91,
       "signal": "Core habit",
       "description": "Review tradeoffs, attention, and impact instead of only output.",
-      "evidence": "20 field notes, monthly reviews, improvement streak"
+      "evidence": "20 field notes, monthly reviews, improvement streak",
+      "reviewedAt": "2026-08-24",
+      "evidenceLinks": [
+        "reflection-screen-time",
+        "reflection-digital-footprint-audit"
+      ],
+      "nextStep": "Record what changed after a design decision."
     }
   ],
   "habits": [
-    { "label": "Verify before sharing", "frequency": "Every time", "progress": 94, "status": "On track" },
-    { "label": "Review account permissions", "frequency": "Monthly", "progress": 82, "status": "On track" },
-    { "label": "Publish one useful resource", "frequency": "Weekly", "progress": 71, "status": "Building" },
-    { "label": "Protect focus after 9 PM", "frequency": "Daily", "progress": 68, "status": "Building" },
-    { "label": "Document AI assistance", "frequency": "Per project", "progress": 89, "status": "On track" }
+    {
+      "label": "Verify before sharing",
+      "frequency": "Every time",
+      "progress": 94,
+      "status": "On track"
+    },
+    {
+      "label": "Review account permissions",
+      "frequency": "Monthly",
+      "progress": 82,
+      "status": "On track"
+    },
+    {
+      "label": "Publish one useful resource",
+      "frequency": "Weekly",
+      "progress": 71,
+      "status": "Building"
+    },
+    {
+      "label": "Protect focus after 9 PM",
+      "frequency": "Daily",
+      "progress": 68,
+      "status": "Building"
+    },
+    {
+      "label": "Document AI assistance",
+      "frequency": "Per project",
+      "progress": 89,
+      "status": "On track"
+    }
   ],
   "now": {
     "learning": "Introductory threat modeling and secure-by-design thinking",
     "building": "A compact browser privacy lab for students",
     "question": "How can engineers make the safer choice the easier default?",
-    "nextReview": "2026-08-16"
+    "asOf": "2026-08-24"
   },
   "dashboard": {
     "chartTitle": "Learning momentum",
@@ -377,7 +448,7 @@
       "seriesStartYear": 2005,
       "latestPublishedYear": 2025,
       "dotScalePercent": 2,
-      "dotScaleLabel": "1 dot represents about 2 percentage points of regional internet adoption.",
+      "dotScaleLabel": "Markers show regional internet-use percentages. Larger markers indicate greater adoption; exact stored values are listed below.",
       "sourceNote": "World Bank World Development Indicators indicator IT.NET.USER.ZS, with the World Bank listing the ITU World Telecommunication/ICT Indicators Database as the underlying source. World Development Indicators was updated on April 8, 2026.",
       "sourceLinks": [
         {
@@ -415,11 +486,11 @@
         },
         "ECS": {
           "2005": 34.7,
-          "2006": 38.0,
+          "2006": 38,
           "2007": 43.6,
           "2008": 48.1,
           "2009": 52.7,
-          "2010": 57.0,
+          "2010": 57,
           "2011": 60.2,
           "2012": 63.8,
           "2013": 66.1,
@@ -441,10 +512,10 @@
           "2006": 20.7,
           "2007": 23.7,
           "2008": 26.4,
-          "2009": 31.0,
+          "2009": 31,
           "2010": 34.6,
           "2011": 39.3,
-          "2012": 43.0,
+          "2012": 43,
           "2013": 46.1,
           "2014": 48.7,
           "2015": 54.4,
@@ -455,7 +526,7 @@
           "2020": 73.8,
           "2021": 75.8,
           "2022": 77.1,
-          "2023": 80.0,
+          "2023": 80,
           "2024": 81.7,
           "2025": 83.7
         },
@@ -479,8 +550,8 @@
           "2021": 50.2,
           "2022": 54.1,
           "2023": 55.9,
-          "2024": 58.0,
-          "2025": 58.0
+          "2024": 58,
+          "2025": 58
         },
         "NAC": {
           "2005": 68.3,
@@ -489,7 +560,7 @@
           "2008": 74.3,
           "2009": 71.9,
           "2010": 72.5,
-          "2011": 71.0,
+          "2011": 71,
           "2012": 75.5,
           "2013": 72.8,
           "2014": 74.4,
@@ -515,37 +586,37 @@
           "2011": 9.4,
           "2012": 10.4,
           "2013": 11.7,
-          "2014": 13.0,
+          "2014": 13,
           "2015": 14.7,
           "2016": 16.7,
           "2017": 18.8,
           "2018": 20.9,
           "2019": 29.7,
           "2020": 42.5,
-          "2021": 48.0,
+          "2021": 48,
           "2022": 54.2,
           "2023": 58.3,
           "2024": 62.8,
           "2025": 67.8
         },
         "SSF": {
-          "2005": 2.0,
+          "2005": 2,
           "2006": 2.6,
           "2007": 3.1,
           "2008": 3.6,
           "2009": 4.3,
-          "2010": 6.0,
+          "2010": 6,
           "2011": 7.5,
           "2012": 9.2,
           "2013": 11.2,
           "2014": 13.4,
           "2015": 16.2,
           "2016": 18.3,
-          "2017": 20.0,
-          "2018": 22.0,
+          "2017": 20,
+          "2018": 22,
           "2019": 24.4,
           "2020": 26.7,
-          "2021": 29.0,
+          "2021": 29,
           "2022": 31.1,
           "2023": 32.3,
           "2024": 33.6,
@@ -556,17 +627,44 @@
     "periods": {
       "monthly": {
         "label": "Monthly",
-        "summary": "Learning hours logged by month",
+        "summary": "Historical learning log · November 2025–July 2026",
         "points": [
-          { "label": "Nov", "value": 8 },
-          { "label": "Dec", "value": 10 },
-          { "label": "Jan", "value": 11 },
-          { "label": "Feb", "value": 12 },
-          { "label": "Mar", "value": 14 },
-          { "label": "Apr", "value": 18 },
-          { "label": "May", "value": 11 },
-          { "label": "Jun", "value": 13 },
-          { "label": "Jul", "value": 15 }
+          {
+            "label": "Nov",
+            "value": 8
+          },
+          {
+            "label": "Dec",
+            "value": 10
+          },
+          {
+            "label": "Jan",
+            "value": 11
+          },
+          {
+            "label": "Feb",
+            "value": 12
+          },
+          {
+            "label": "Mar",
+            "value": 14
+          },
+          {
+            "label": "Apr",
+            "value": 18
+          },
+          {
+            "label": "May",
+            "value": 11
+          },
+          {
+            "label": "Jun",
+            "value": 13
+          },
+          {
+            "label": "Jul",
+            "value": 15
+          }
         ],
         "focus": [
           "Added accessibility checks to the standard project review flow.",
@@ -576,14 +674,32 @@
       },
       "weekly": {
         "label": "Weekly",
-        "summary": "Learning hours logged over the last 6 weeks",
+        "summary": "Historical learning log · June 22–July 27, 2026",
         "points": [
-          { "label": "Jun 22", "value": 5 },
-          { "label": "Jun 29", "value": 6 },
-          { "label": "Jul 6", "value": 4 },
-          { "label": "Jul 13", "value": 7 },
-          { "label": "Jul 20", "value": 8 },
-          { "label": "Jul 27", "value": 6 }
+          {
+            "label": "Jun 22",
+            "value": 5
+          },
+          {
+            "label": "Jun 29",
+            "value": 6
+          },
+          {
+            "label": "Jul 6",
+            "value": 4
+          },
+          {
+            "label": "Jul 13",
+            "value": 7
+          },
+          {
+            "label": "Jul 20",
+            "value": 8
+          },
+          {
+            "label": "Jul 27",
+            "value": 6
+          }
         ],
         "focus": [
           "Turned accessibility observations into a reusable review card.",
@@ -603,9 +719,18 @@
         "While sketching a small browser-based prototype, I caught myself treating privacy as a settings screen I could add near the end. I restarted the plan by listing what data the idea truly needed, what could stay on the device, and what should never be collected.",
         "The change made the project simpler. Privacy by design is not only about preventing harm; it can also force clearer decisions about what a product is actually for."
       ],
-      "tags": ["privacy by design", "prototyping", "data minimization"],
+      "tags": [
+        "privacy by design",
+        "prototyping",
+        "data minimization"
+      ],
       "featured": true,
-      "readTime": "3 min"
+      "readTime": "1 min read",
+      "startHere": true,
+      "takeaway": "The change made the project simpler.",
+      "relatedProjects": [
+        "project-can-bus-anomaly-lab"
+      ]
     },
     {
       "id": "reflection-threat-modeling-empathy",
@@ -616,9 +741,19 @@
         "My first threat-modeling exercise felt like a list of things that could go wrong. It became more useful when I stopped thinking only about attackers and started asking who could be confused, excluded, pressured, or exposed by an ordinary design decision.",
         "Security thinking gets stronger when it includes the experience of the person using the system. Anticipating misuse and anticipating friction are both ways of taking people seriously."
       ],
-      "tags": ["threat modeling", "empathy", "secure design"],
+      "tags": [
+        "threat modeling",
+        "empathy",
+        "secure design"
+      ],
       "featured": false,
-      "readTime": "3 min"
+      "readTime": "1 min read",
+      "startHere": false,
+      "takeaway": "Security thinking gets stronger when it includes the experience of the person using the system.",
+      "relatedProjects": [
+        "project-microgrid-controller-sim",
+        "project-can-bus-anomaly-lab"
+      ]
     },
     {
       "id": "reflection-repository-hygiene",
@@ -629,9 +764,19 @@
         "A repository can technically work while still making the next person search through unclear names, generated files, and missing context. I treated a cleanup session as communication work: organize the structure, explain the purpose, and make the useful path obvious.",
         "Good documentation respects other people's time. A clear project also makes it easier for me to notice what I actually understand and what I have only been carrying forward."
       ],
-      "tags": ["documentation", "GitHub", "maintainability"],
+      "tags": [
+        "documentation",
+        "GitHub",
+        "maintainability"
+      ],
       "featured": false,
-      "readTime": "2 min"
+      "readTime": "1 min read",
+      "startHere": true,
+      "takeaway": "Good documentation respects other people's time.",
+      "relatedProjects": [
+        "project-power-quality-lab",
+        "project-microgrid-controller-sim"
+      ]
     },
     {
       "id": "reflection-accessibility-citizenship",
@@ -642,9 +787,16 @@
         "I reviewed a form using only a keyboard and quickly found places where the visual design looked finished but the interaction did not. Labels, focus order, contrast, and motion preferences determine who can actually participate.",
         "Accessibility is not an optional polish layer. If digital citizenship is about contributing to spaces responsibly, access has to be part of the definition from the beginning."
       ],
-      "tags": ["accessibility", "inclusive design", "keyboard"],
+      "tags": [
+        "accessibility",
+        "inclusive design",
+        "keyboard"
+      ],
       "featured": false,
-      "readTime": "3 min"
+      "readTime": "1 min read",
+      "startHere": true,
+      "takeaway": "Accessibility is not an optional polish layer.",
+      "relatedProjects": []
     },
     {
       "id": "reflection-persuasive-video",
@@ -655,9 +807,16 @@
         "A polished video used charts and confident narration to make its conclusion feel settled. I followed the sources in the description and found that one link did not support the number shown, while another was several years older than the narration implied.",
         "Production quality can make a claim feel verified before any verification happens. I now treat confidence, editing, and visual polish as presentation signals—not evidence signals."
       ],
-      "tags": ["media literacy", "source tracing", "video"],
+      "tags": [
+        "media literacy",
+        "source tracing",
+        "video"
+      ],
       "featured": false,
-      "readTime": "3 min"
+      "readTime": "1 min read",
+      "startHere": false,
+      "takeaway": "Production quality can make a claim feel verified before any verification happens.",
+      "relatedProjects": []
     },
     {
       "id": "reflection-digital-footprint-audit",
@@ -668,8 +827,16 @@
         "As I look ahead to starting electrical engineering in Canada, I wanted to review what I am publicly attaching to my name online. That meant checking bios, old posts, shared profiles, and the tone of the spaces where I participate most.",
         "The goal was not to erase personality, but to make sure my digital footprint reflects the kind of learner and community member I want to be: curious, responsible, and increasingly aware of cybersecurity and digital citizenship."
       ],
-      "tags": ["digital footprint", "identity", "reflection"],
-      "featured": false
+      "tags": [
+        "digital footprint",
+        "identity",
+        "reflection"
+      ],
+      "featured": false,
+      "startHere": false,
+      "takeaway": "The goal was not to erase personality, but to make sure my digital footprint reflects the kind of learner and community member I want to be: curious, responsible, and increasingly aware of cybersecurity and digital citizenship.",
+      "readTime": "1 min read",
+      "relatedProjects": []
     },
     {
       "id": "reflection-ai-summaries",
@@ -680,8 +847,19 @@
         "AI summaries are useful for orientation, but they often compress uncertainty out of a topic. This week I started checking every summary against at least one primary source before I reuse any claim.",
         "That extra step slowed me down slightly, but it improved my confidence and made my notes more accurate. Convenience is only ethical when it still leaves room for responsibility."
       ],
-      "tags": ["AI", "verification", "research"],
-      "featured": true
+      "tags": [
+        "AI",
+        "verification",
+        "research"
+      ],
+      "featured": true,
+      "startHere": true,
+      "takeaway": "That extra step slowed me down slightly, but it improved my confidence and made my notes more accurate.",
+      "readTime": "1 min read",
+      "relatedProjects": [
+        "project-trailhead-support-api",
+        "project-power-quality-lab"
+      ]
     },
     {
       "id": "reflection-screen-time",
@@ -692,8 +870,16 @@
         "I noticed that tired scrolling made me less thoughtful about what I liked, shared, and clicked. I replaced late-night scrolling with a short shutdown checklist and one intentional article or video.",
         "The change helped me separate rest from distraction and made my online time feel more chosen than automatic."
       ],
-      "tags": ["screen time", "focus", "habits"],
-      "featured": false
+      "tags": [
+        "screen time",
+        "focus",
+        "habits"
+      ],
+      "featured": false,
+      "startHere": false,
+      "takeaway": "The change helped me separate rest from distraction and made my online time feel more chosen than automatic.",
+      "readTime": "1 min read",
+      "relatedProjects": []
     },
     {
       "id": "reflection-privacy-defaults",
@@ -704,8 +890,16 @@
         "I used to treat privacy setup as a one-time task, but every new app quietly adds fresh decisions. I now check visibility, permissions, contact sync, and notification settings before I start using a service regularly.",
         "That routine turns privacy from a vague value into a repeatable behavior."
       ],
-      "tags": ["privacy", "apps", "security"],
-      "featured": false
+      "tags": [
+        "privacy",
+        "apps",
+        "security"
+      ],
+      "featured": false,
+      "startHere": false,
+      "takeaway": "That routine turns privacy from a vague value into a repeatable behavior.",
+      "readTime": "1 min read",
+      "relatedProjects": []
     },
     {
       "id": "reflection-group-chat",
@@ -716,8 +910,16 @@
         "Short messages travel fast, and tone gets flattened easily. I started pausing before sending corrections or reminders, especially in group chats where public friction can grow quickly.",
         "Being concise does not require being sharp. Clear and respectful replies reduce noise and help people stay engaged."
       ],
-      "tags": ["communication", "community", "respect"],
-      "featured": false
+      "tags": [
+        "communication",
+        "community",
+        "respect"
+      ],
+      "featured": false,
+      "startHere": false,
+      "takeaway": "Being concise does not require being sharp.",
+      "readTime": "1 min read",
+      "relatedProjects": []
     },
     {
       "id": "reflection-productivity-tools",
@@ -728,8 +930,16 @@
         "I spent too much time tuning tools that were supposed to save time. The problem was not the apps themselves, but the way I kept optimizing instead of doing the work.",
         "I now ask whether a tool improves clarity, safety, or output quality. If it mainly adds novelty, I treat it as optional."
       ],
-      "tags": ["productivity", "tools", "attention"],
-      "featured": false
+      "tags": [
+        "productivity",
+        "tools",
+        "attention"
+      ],
+      "featured": false,
+      "startHere": false,
+      "takeaway": "I now ask whether a tool improves clarity, safety, or output quality.",
+      "readTime": "1 min read",
+      "relatedProjects": []
     },
     {
       "id": "reflection-shared-docs",
@@ -740,8 +950,16 @@
         "A shared study document was growing quickly, but sources were inconsistent. I added a simple citation pattern and a note explaining why link quality matters when notes get reused.",
         "The fix was small, but it made the document more trustworthy and easier for everyone to build on."
       ],
-      "tags": ["citations", "collaboration", "study"],
-      "featured": false
+      "tags": [
+        "citations",
+        "collaboration",
+        "study"
+      ],
+      "featured": false,
+      "startHere": false,
+      "takeaway": "The fix was small, but it made the document more trustworthy and easier for everyone to build on.",
+      "readTime": "1 min read",
+      "relatedProjects": []
     },
     {
       "id": "reflection-fast-moving-stories",
@@ -752,8 +970,16 @@
         "A story moved quickly through class chats this week, and my first instinct was to repeat it before I had checked the source. I stopped, looked for the original report, and realized the summary being shared had left out important context.",
         "That moment reminded me that media literacy is often about slowing down when everyone else is speeding up. Accuracy is part of respect."
       ],
-      "tags": ["misinformation", "fact-checking", "context"],
-      "featured": false
+      "tags": [
+        "misinformation",
+        "fact-checking",
+        "context"
+      ],
+      "featured": false,
+      "startHere": false,
+      "takeaway": "That moment reminded me that media literacy is often about slowing down when everyone else is speeding up.",
+      "readTime": "1 min read",
+      "relatedProjects": []
     },
     {
       "id": "reflection-password-routine",
@@ -764,8 +990,16 @@
         "I used to think about passwords mostly when a site forced me to update one. This month I started treating password checks as maintenance: review reused passwords, confirm multi-factor authentication, and update recovery methods.",
         "Cybersecurity feels more manageable when I break it into repeated habits instead of waiting for a problem to force a reaction."
       ],
-      "tags": ["passwords", "security", "habits"],
-      "featured": false
+      "tags": [
+        "passwords",
+        "security",
+        "habits"
+      ],
+      "featured": false,
+      "startHere": false,
+      "takeaway": "Cybersecurity feels more manageable when I break it into repeated habits instead of waiting for a problem to force a reaction.",
+      "readTime": "1 min read",
+      "relatedProjects": []
     },
     {
       "id": "reflection-notification-reset",
@@ -776,8 +1010,16 @@
         "After winter break I noticed I was reaching for my phone more often than I wanted, mostly because notifications kept interrupting study time. I reviewed which apps actually deserve immediate attention and turned most of the rest into scheduled check-ins.",
         "The change felt small, but it gave me more control over attention and made my online time feel intentional again."
       ],
-      "tags": ["notifications", "focus", "screen time"],
-      "featured": false
+      "tags": [
+        "notifications",
+        "focus",
+        "screen time"
+      ],
+      "featured": false,
+      "startHere": false,
+      "takeaway": "The change felt small, but it gave me more control over attention and made my online time feel intentional again.",
+      "readTime": "1 min read",
+      "relatedProjects": []
     },
     {
       "id": "reflection-shared-guide",
@@ -788,8 +1030,16 @@
         "A few of us kept running into the same digital tool issues, and I realized I was typing the same answers over and over. I turned those answers into a short shared guide with steps, screenshots, and a note on safe account setup.",
         "Helping once is useful, but documenting a solution can help more people with less friction."
       ],
-      "tags": ["documentation", "community", "support"],
-      "featured": false
+      "tags": [
+        "documentation",
+        "community",
+        "support"
+      ],
+      "featured": false,
+      "startHere": false,
+      "takeaway": "Helping once is useful, but documenting a solution can help more people with less friction.",
+      "readTime": "1 min read",
+      "relatedProjects": []
     },
     {
       "id": "reflection-ai-study-boundaries",
@@ -800,8 +1050,18 @@
         "I experimented with using AI to organize study questions and explain unfamiliar terms, but I kept noticing how easy it was to let the tool become the voice of the work. That is useful for speed, but risky for learning.",
         "I set a simple rule for myself: AI can help me start, compare, or check, but it should not replace the part where I explain the idea in my own words."
       ],
-      "tags": ["AI", "study habits", "ethics"],
-      "featured": false
+      "tags": [
+        "AI",
+        "study habits",
+        "ethics"
+      ],
+      "featured": false,
+      "startHere": true,
+      "takeaway": "I set a simple rule for myself: AI can help me start, compare, or check, but it should not replace the part where I explain the idea in my own words.",
+      "readTime": "1 min read",
+      "relatedProjects": [
+        "project-trailhead-support-api"
+      ]
     },
     {
       "id": "reflection-location-permissions",
@@ -812,8 +1072,16 @@
         "I realized several apps had access to my location even though they did not need it all the time. It happened gradually because tapping allow was easier than thinking through the tradeoff in the moment.",
         "This reflection pushed me to switch more apps to while-using or never. Privacy is often decided in the tiny moments when convenience asks for less thought."
       ],
-      "tags": ["privacy", "permissions", "apps"],
-      "featured": false
+      "tags": [
+        "privacy",
+        "permissions",
+        "apps"
+      ],
+      "featured": false,
+      "startHere": false,
+      "takeaway": "This reflection pushed me to switch more apps to while-using or never.",
+      "readTime": "1 min read",
+      "relatedProjects": []
     },
     {
       "id": "reflection-reposting-carefully",
@@ -824,8 +1092,16 @@
         "I noticed how easy it is to repost something because it sounds right or matches the mood of the moment. This week I made myself read beyond the caption before sharing anything that sounded factual or urgent.",
         "That small pause changed how I think about participation online. Sharing is not neutral when other people may trust the signal I send."
       ],
-      "tags": ["sharing", "verification", "responsibility"],
-      "featured": false
+      "tags": [
+        "sharing",
+        "verification",
+        "responsibility"
+      ],
+      "featured": false,
+      "startHere": false,
+      "takeaway": "That small pause changed how I think about participation online.",
+      "readTime": "1 min read",
+      "relatedProjects": []
     },
     {
       "id": "reflection-first-commitment",
@@ -836,8 +1112,16 @@
         "I wanted a way to think more seriously about the kind of person I am online, not just the things I post. Digital citizenship felt like the right starting point because it connects behavior, safety, community, and reflection.",
         "Beginning this log made the topic feel practical. Instead of treating good online behavior as a vague ideal, I could start recording choices, patterns, and improvements over time."
       ],
-      "tags": ["digital citizenship", "beginnings", "goals"],
-      "featured": false
+      "tags": [
+        "digital citizenship",
+        "beginnings",
+        "goals"
+      ],
+      "featured": false,
+      "startHere": false,
+      "takeaway": "Beginning this log made the topic feel practical.",
+      "readTime": "1 min read",
+      "relatedProjects": []
     }
   ],
   "projects": [
@@ -845,9 +1129,14 @@
       "id": "project-trailhead-support-api",
       "title": "Trailhead Customer Support API",
       "description": "A grounded FastAPI service that combines Claude-powered conversation with policy retrieval, deterministic business tools, and structured escalation.",
-      "skills": ["Python", "FastAPI", "LLM tool use", "Automated testing"],
+      "skills": [
+        "Python",
+        "FastAPI",
+        "LLM tool use",
+        "Automated testing"
+      ],
       "impact": "It demonstrates how model-driven conversation can stay bounded by tested authorization, business rules, citations, and clear production-safety limits.",
-      "featured": true,
+      "featured": false,
       "role": "System architecture, backend implementation, policy grounding, and validation",
       "artifact": "Tested public GitHub repository",
       "proof": [
@@ -863,7 +1152,11 @@
           "kicker": "The problem",
           "title": "Let an AI help without letting it invent authority.",
           "copy": "A support assistant needs to sound natural while still obeying authorization, refund, citation, and escalation rules. The design challenge was separating conversational flexibility from decisions that must remain deterministic.",
-          "points": ["Keep policy claims traceable", "Prevent invented business actions", "Escalate when the system reaches its limits"]
+          "points": [
+            "Keep policy claims traceable",
+            "Prevent invented business actions",
+            "Escalate when the system reaches its limits"
+          ]
         },
         {
           "id": "architecture",
@@ -871,7 +1164,11 @@
           "kicker": "The system",
           "title": "Conversation on top; tested tools underneath.",
           "copy": "Claude handles the dialogue, while FastAPI routes sensitive operations through explicit tools. Policy retrieval grounds answers in known material, and structured boundaries keep the model away from direct authority.",
-          "points": ["FastAPI service layer", "Policy retrieval with citations", "Deterministic tools for business actions"]
+          "points": [
+            "FastAPI service layer",
+            "Policy retrieval with citations",
+            "Deterministic tools for business actions"
+          ]
         },
         {
           "id": "evidence",
@@ -879,161 +1176,359 @@
           "kicker": "Why it is credible",
           "title": "The safety story is visible in the repository.",
           "copy": "The project documents production limits instead of hiding them. Automated tests exercise expected behavior, escalation is treated as a valid outcome, and the repository makes the implementation available for inspection.",
-          "points": ["Automated tests", "Clear production-safety limits", "Public source and documentation"]
+          "points": [
+            "Automated tests",
+            "Clear production-safety limits",
+            "Public source and documentation"
+          ]
         }
       ],
       "link": "https://github.com/Mini34/trailhead-claude-support-api",
       "linkLabel": "View the code",
       "status": "Completed",
       "progress": 100,
-      "year": 2026
+      "year": 2026,
+      "type": "engineering-build",
+      "domain": "Responsible AI & backend systems",
+      "problem": "How can a support assistant help without inventing policy or business authority?",
+      "built": "A FastAPI service combining Claude conversation, policy retrieval, deterministic tools, and structured escalation.",
+      "evidence": "Tests mock Claude; CI runs the test suite and Ruff. Responses expose citations, tool use, and escalation decisions.",
+      "limitations": "Read-only fictional business demo. Customer email is a demo authentication stand-in; no refund or cancellation is actually performed.",
+      "nextStep": "Production use would require signed identity, permission checks, idempotency, audit logs, and explicit action-success responses.",
+      "approach": "Keep conversation and tool selection in the model while Python owns authorization, calculations, policy retrieval, and escalation rules.",
+      "result": "Structured support responses distinguish a requested action from a completed action and expose supporting sources.",
+      "relatedNotes": [
+        "reflection-ai-study-boundaries",
+        "reflection-ai-summaries"
+      ],
+      "sourceBlob": "3bea478d81efc791ec898f1f2ed6b0f00302b764",
+      "repository": "https://github.com/Mini34/trailhead-claude-support-api",
+      "documentation": "https://github.com/Mini34/trailhead-claude-support-api#readme",
+      "caseStudyPath": "pages/project-trailhead-support-api.html",
+      "evidenceCheckedAt": "2026-09-03"
     },
     {
       "id": "project-power-quality-lab",
       "title": "Power Quality Lab",
       "description": "A standard-library AC waveform lab that calculates RMS voltage and current, active and apparent power, power factor, and frequency before classifying voltage sag, swell, and low-power-factor conditions.",
-      "skills": ["Electrical measurements", "Signal processing", "Python", "Automated testing"],
+      "skills": [
+        "Electrical measurements",
+        "Signal processing",
+        "Python",
+        "Automated testing"
+      ],
       "impact": "It turns sampled voltage and current into reproducible engineering evidence while documenting the gap between simulation and a safe, calibrated physical instrument.",
       "link": "https://github.com/Mini34/power-quality-lab",
       "linkLabel": "View the tested repository",
       "status": "Completed",
       "progress": 100,
-      "year": 2026
+      "year": 2026,
+      "type": "engineering-build",
+      "featuredOrder": 1,
+      "domain": "Electrical measurements",
+      "problem": "How can sampled AC waveforms reveal power-quality problems?",
+      "built": "A Python waveform lab for RMS, power factor, frequency, sag, swell, and no-load classification.",
+      "evidence": "Deterministic synthetic waveforms, explicit classification thresholds, and a public unittest suite.",
+      "limitations": "Simulation only. ADC quantization, isolation, harmonics, calibration drift, and electrical safety are not modeled.",
+      "nextStep": "A hardware extension would need isolated sensing and calibration in a safe low-voltage test setup.",
+      "approach": "Preserve simultaneous voltage and current samples; interpolate positive-going zero crossings for frequency; classify against explicit thresholds.",
+      "result": "A reproducible report of electrical measurements and the classified condition for each synthetic scenario.",
+      "relatedNotes": [
+        "reflection-repository-hygiene",
+        "reflection-ai-summaries"
+      ],
+      "sourceBlob": "0fd61bb22c08998bc9e9260f734aede7ceca21bd",
+      "featured": true,
+      "repository": "https://github.com/Mini34/power-quality-lab",
+      "documentation": "https://github.com/Mini34/power-quality-lab#readme",
+      "caseStudyPath": "pages/project-power-quality-lab.html",
+      "evidenceCheckedAt": "2026-09-03"
     },
     {
       "id": "project-microgrid-controller-sim",
       "title": "Microgrid Controller Simulation",
       "description": "A deterministic controller that dispatches solar, battery, grid, and load power while enforcing state-of-charge, battery-power, outage, and grid-import constraints.",
-      "skills": ["Power systems", "Controls", "Energy constraints", "Python simulation"],
+      "skills": [
+        "Power systems",
+        "Controls",
+        "Energy constraints",
+        "Python simulation"
+      ],
       "impact": "It makes each dispatch decision inspectable and reports unserved load instead of hiding an impossible energy balance.",
       "link": "https://github.com/Mini34/microgrid-controller-sim",
       "linkLabel": "View the tested repository",
       "status": "Completed",
       "progress": 100,
-      "year": 2026
+      "year": 2026,
+      "type": "engineering-build",
+      "featuredOrder": 2,
+      "domain": "Power systems & controls",
+      "problem": "How should a microgrid serve demand when solar, battery, and grid power have limits?",
+      "built": "A deterministic dispatch controller with state-of-charge, battery-power, outage, and grid-import constraints.",
+      "evidence": "A unittest suite and inspectable dispatch decisions with explicit energy-balance error and unserved load.",
+      "limitations": "Supervisory simulation only. Voltage dynamics, reactive power, protection, thermal behavior, and communications delay are omitted.",
+      "nextStep": "A future model could examine the voltage, frequency, and protection dynamics omitted by the supervisory simulation.",
+      "approach": "Serve load from solar, charge from surplus, discharge within battery limits, and cap imports before reporting unmet demand.",
+      "result": "Dispatch reports expose each decision and account for unserved load instead of masking an impossible power balance.",
+      "relatedNotes": [
+        "reflection-threat-modeling-empathy",
+        "reflection-repository-hygiene"
+      ],
+      "sourceBlob": "e434ce83da9ae1b0b1e460deb4961e6676bdb2f1",
+      "featured": true,
+      "repository": "https://github.com/Mini34/microgrid-controller-sim",
+      "documentation": "https://github.com/Mini34/microgrid-controller-sim#readme",
+      "caseStudyPath": "pages/project-microgrid-controller-sim.html",
+      "evidenceCheckedAt": "2026-09-03"
     },
     {
       "id": "project-can-bus-anomaly-lab",
       "title": "CAN Bus Anomaly Lab",
       "description": "A defensive CAN traffic simulator and explainable rule engine for detecting unknown identifiers, rate spikes, invalid payload ranges, rolling-counter jumps, and timestamp regression.",
-      "skills": ["Computer engineering", "CAN bus", "Defensive cybersecurity", "Automated testing"],
+      "skills": [
+        "Computer engineering",
+        "CAN bus",
+        "Defensive cybersecurity",
+        "Automated testing"
+      ],
       "impact": "It demonstrates transparent embedded-network monitoring without transmitting frames or connecting to a safety-critical system.",
       "link": "https://github.com/Mini34/can-bus-anomaly-lab",
       "linkLabel": "View the tested repository",
       "status": "Completed",
       "progress": 100,
-      "year": 2026
+      "year": 2026,
+      "type": "engineering-build",
+      "featuredOrder": 3,
+      "domain": "Embedded networks & security",
+      "problem": "How can unusual CAN traffic be explained through inspectable rules?",
+      "built": "A defensive traffic simulator and rule engine for identifiers, timing, payload ranges, and rolling counters.",
+      "evidence": "Synthetic benign and anomalous traffic, explainable rule findings, and a public unittest suite.",
+      "limitations": "No physical CAN connection. Static rules can miss slow or context-dependent attacks and need system-specific calibration.",
+      "nextStep": "A hardware extension would use an isolated development bus and recorded benign traffic within strict safety boundaries.",
+      "approach": "Validate frames before applying allowlist, rate, payload, and counter rules; report the violated rule and observed value.",
+      "result": "The documented demo distinguishes a benign baseline from synthetic anomalies without transmitting or modifying frames.",
+      "relatedNotes": [
+        "reflection-threat-modeling-empathy",
+        "reflection-privacy-by-design"
+      ],
+      "sourceBlob": "cac6a386570f312c48edb89c70c740ba40d2572a",
+      "featured": true,
+      "repository": "https://github.com/Mini34/can-bus-anomaly-lab",
+      "documentation": "https://github.com/Mini34/can-bus-anomaly-lab#readme",
+      "caseStudyPath": "pages/project-can-bus-anomaly-lab.html",
+      "evidenceCheckedAt": "2026-09-03"
     },
     {
       "id": "project-browser-privacy-lab",
       "title": "Browser privacy mini lab",
       "description": "A guided, device-local activity that explains cookies, permission prompts, tracking protection, and what private browsing does—and does not—change.",
-      "skills": ["Web fundamentals", "Privacy education", "Interaction design"],
+      "skills": [
+        "Web fundamentals",
+        "Privacy education",
+        "Interaction design"
+      ],
       "impact": "It gives students a safe way to inspect common privacy controls without collecting personal data.",
       "link": "pages/field-notes.html#reflection-privacy-by-design",
       "linkLabel": "Read the design note",
       "status": "Ongoing",
       "progress": 64,
-      "year": 2026
+      "year": 2026,
+      "type": "responsible-tech-tool"
     },
     {
       "id": "project-accessible-forms",
       "title": "Accessible forms review card",
       "description": "A one-page checklist for keyboard flow, labels, errors, contrast, motion, and plain-language consent in online forms.",
-      "skills": ["Accessibility", "UX review", "Technical writing"],
+      "skills": [
+        "Accessibility",
+        "UX review",
+        "Technical writing"
+      ],
       "impact": "It turns an abstract accessibility goal into a repeatable pre-launch check.",
       "link": "pages/field-notes.html#reflection-accessibility-citizenship",
       "linkLabel": "Read the reflection",
       "status": "Completed",
       "progress": 100,
-      "year": 2026
+      "year": 2026,
+      "type": "responsible-tech-tool"
     },
     {
       "id": "project-secure-iot-map",
       "title": "Secure IoT learning map",
       "description": "A visual study path connecting sensors, networks, authentication, firmware updates, and the human consequences of insecure connected devices.",
-      "skills": ["Cybersecurity", "Systems thinking", "Research synthesis"],
+      "skills": [
+        "Cybersecurity",
+        "Systems thinking",
+        "Research synthesis"
+      ],
       "impact": "It connects my electrical engineering interests to security decisions across an entire device lifecycle.",
       "link": "pages/profile.html#roadmap",
       "linkLabel": "See the learning roadmap",
       "status": "Ongoing",
       "progress": 42,
-      "year": 2026
+      "year": 2026,
+      "type": "exploration"
     },
     {
       "id": "project-calm-tech-dashboard",
       "title": "Calm technology dashboard",
       "description": "A planned experiment that shows useful device information without competing for attention through urgency, streak pressure, or noisy alerts.",
-      "skills": ["Calm technology", "Data visualization", "Ethical design"],
+      "skills": [
+        "Calm technology",
+        "Data visualization",
+        "Ethical design"
+      ],
       "impact": "It explores whether a dashboard can inform people while still respecting their focus.",
       "link": "pages/field-notes.html#reflection-screen-time",
       "linkLabel": "Read the attention note",
       "status": "Planned",
       "progress": 12,
-      "year": 2026
+      "year": 2026,
+      "type": "exploration"
     },
     {
       "id": "project-privacy-checklist",
       "title": "Privacy settings starter checklist",
       "description": "A simple checklist for reviewing account visibility, permissions, contact sync, and notification defaults on new apps.",
-      "skills": ["Content design", "Privacy review", "Clear writing"],
+      "skills": [
+        "Content design",
+        "Privacy review",
+        "Clear writing"
+      ],
       "impact": "It turns privacy awareness into a repeatable first-step habit instead of a vague intention.",
-      "link": "reflections.html#reflection-privacy-defaults",
+      "link": "pages/field-notes.html#reflection-privacy-defaults",
       "linkLabel": "Related reflection",
-      "status": "Completed"
+      "status": "Completed",
+      "type": "responsible-tech-tool"
     },
     {
       "id": "project-source-workflow",
       "title": "Source verification workflow",
       "description": "A lightweight process for checking authorship, evidence, recency, and context before reusing an online claim.",
-      "skills": ["Research", "Media literacy", "Process design"],
+      "skills": [
+        "Research",
+        "Media literacy",
+        "Process design"
+      ],
       "impact": "It reduces accidental misinformation by making verification visible and easy to repeat.",
-      "link": "reflections.html#reflection-ai-summaries",
+      "link": "pages/field-notes.html#reflection-ai-summaries",
       "linkLabel": "Read the reflection",
-      "status": "Completed"
+      "status": "Completed",
+      "type": "responsible-tech-tool"
     },
     {
       "id": "project-peer-support",
       "title": "Peer support mini library",
       "description": "A shared collection of short guides and links for classmates working through digital safety and study-tool questions.",
-      "skills": ["Resource curation", "Peer support", "Documentation"],
+      "skills": [
+        "Resource curation",
+        "Peer support",
+        "Documentation"
+      ],
       "impact": "It lowers friction for asking questions and helps good digital habits spread through the group.",
-      "link": "timeline.html#update-peer-library",
+      "link": "pages/journey.html#update-peer-library",
       "linkLabel": "See the update",
-      "status": "Ongoing"
+      "status": "Ongoing",
+      "type": "responsible-tech-tool"
     },
     {
       "id": "project-ai-boundaries",
       "title": "Responsible AI use guide",
       "description": "A personal guideline for when AI can support drafting or brainstorming and when it needs stronger human review.",
-      "skills": ["AI literacy", "Ethics", "Policy writing"],
+      "skills": [
+        "AI literacy",
+        "Ethics",
+        "Policy writing"
+      ],
       "impact": "It keeps efficiency from outrunning accountability, especially when work may influence others.",
-      "link": "timeline.html#update-ai-guide",
+      "link": "pages/journey.html#update-ai-guide",
       "linkLabel": "View changelog note",
-      "status": "Completed"
+      "status": "Completed",
+      "type": "responsible-tech-tool"
     },
     {
       "id": "project-distract-audit",
       "title": "Intentional screen-time audit",
       "description": "A weekly review of the apps, habits, and triggers that pull my attention away from meaningful digital work.",
-      "skills": ["Habit tracking", "Reflection", "Behavior review"],
+      "skills": [
+        "Habit tracking",
+        "Reflection",
+        "Behavior review"
+      ],
       "impact": "It helps me separate useful digital activity from passive consumption and redesign my routines.",
-      "link": "reflections.html#reflection-screen-time",
+      "link": "pages/field-notes.html#reflection-screen-time",
       "linkLabel": "Review the reflection",
-      "status": "Ongoing"
+      "status": "Ongoing",
+      "type": "exploration"
     },
     {
       "id": "project-community-campaign",
       "title": "Consent in digital spaces campaign",
       "description": "A planned set of short visual reminders about reposting, tagging, and sharing screenshots responsibly.",
-      "skills": ["Campaign planning", "Visual communication", "Community guidelines"],
+      "skills": [
+        "Campaign planning",
+        "Visual communication",
+        "Community guidelines"
+      ],
       "impact": "It frames consent as an everyday digital habit, not just a rule people remember after harm happens.",
-      "link": "about.html#values",
+      "link": "pages/profile.html#values",
       "linkLabel": "View values section",
-      "status": "Planned"
+      "status": "Planned",
+      "type": "exploration"
+    },
+    {
+      "id": "project-pico-2w-ee-lab-tool",
+      "title": "Pico 2 W EE Lab Tool",
+      "description": "A Raspberry Pi Pico 2 W instrument for calibrated power and energy measurement, RC transients, diode characterization, and guided source tests, with an OLED and Wi-Fi dashboard.",
+      "skills": [
+        "MicroPython",
+        "Embedded systems",
+        "Circuit measurements",
+        "Hardware validation"
+      ],
+      "impact": "A hands-on electrical engineering tool that connects circuit theory, sensor calibration, firmware, and measurement integrity.",
+      "featured": true,
+      "featuredOrder": 0,
+      "status": "Ongoing",
+      "statusLabel": "Hardware prototype",
+      "year": 2026,
+      "type": "engineering-build",
+      "domain": "Embedded instrumentation & electrical measurements",
+      "problem": "How can a compact bench tool measure real circuits and make the limits of each reading visible?",
+      "built": "Five operating modes on a Pico 2 W, with an INA219, OLED display, Wi-Fi dashboard, and experiment logging.",
+      "evidence": "The integrated prototype was verified on hardware. Documented RC time constants are 1.076–1.079 s, with calibrated voltage and independently checked shunt current.",
+      "limitations": "The latest Source Test guard and replacement OLED driver still need device rechecks. Fault monitoring reports conditions; it does not disconnect power.",
+      "nextStep": "Recheck the Source Test guard and replacement display driver on the hardware, then investigate automated electronic-load stepping.",
+      "approach": "Use MicroPython to coordinate shared I2C sensing, ADC capture, transistor-controlled RC experiments, settled diode measurements, and shared instrument state for the OLED and Wi-Fi interface.",
+      "result": "The documented prototype combines Power/Energy, RC Analyzer, Diode Analyzer, internal MCU Temperature, and Guided Source Test modes. Recorded examples include a 1.404 W load and RC capacitance estimates of 1076–1079 µF. These are documented example measurements, not new tests performed for this website.",
+      "relatedNotes": [
+        "reflection-repository-hygiene",
+        "reflection-privacy-by-design"
+      ],
+      "sourceBlob": "609c316bcee0eb5bb70ba7c90bfea9e8017c4fd6",
+      "repository": "https://github.com/Mini34/pico-2w-power-transient-analyzer",
+      "documentation": "https://github.com/Mini34/pico-2w-power-transient-analyzer#readme",
+      "link": "https://github.com/Mini34/pico-2w-power-transient-analyzer",
+      "linkLabel": "Explore the project",
+      "caseStudyPath": "pages/project-pico-2w-ee-lab-tool.html",
+      "evidenceCheckedAt": "2026-09-03",
+      "image": "assets/images/pico-2w-prototype.webp",
+      "imageWidth": 1536,
+      "imageHeight": 1152,
+      "imageAlt": "Annotated Pico 2 W prototype showing the controller, INA219, OLED, RC and diode breadboard, manual switches, and load resistor.",
+      "imageSource": "https://github.com/Mini34/pico-2w-power-transient-analyzer/blob/main/images/designs/01_annotated_prototype_overview.png",
+      "imageSourceBlob": "0e5260d9afe9f289aa71e48309e14e6916ac7315",
+      "programmingLanguage": "MicroPython"
     }
   ],
   "updates": [
+    {
+      "id": "update-ux-priority-refresh",
+      "date": "2026-09-03",
+      "category": "Site update",
+      "title": "Put engineering evidence first and clarified privacy boundaries",
+      "why": "Updated first-year positioning, led with four tested repositories, made the fieldbook easier to navigate, and separated optional session identity from aggregate analytics. Historical learning metrics retain their original values."
+    },
     {
       "id": "update-optional-google-identity",
       "date": "2026-08-24",

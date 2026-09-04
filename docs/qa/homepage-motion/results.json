@@ -1,0 +1,114 @@
+{
+  "capturedAt": "2026-09-03T20:51:01.944Z",
+  "checks": [
+    {
+      "name": "Compass is restored inside the hero",
+      "passed": true
+    },
+    {
+      "name": "Compass animation advances",
+      "passed": true
+    },
+    {
+      "name": "Pause control stops the compass",
+      "passed": true
+    },
+    {
+      "name": "Pause control stops the text strip",
+      "passed": true
+    },
+    {
+      "name": "Keyboard can resume animation",
+      "passed": true
+    },
+    {
+      "name": "Text strip pauses on keyboard focus",
+      "passed": true
+    },
+    {
+      "name": "No overflow at 1440",
+      "passed": true
+    },
+    {
+      "name": "No overflow at 1024",
+      "passed": true
+    },
+    {
+      "name": "No overflow at 768",
+      "passed": true
+    },
+    {
+      "name": "No overflow at 390",
+      "passed": true
+    },
+    {
+      "name": "No overflow at 320",
+      "passed": true
+    },
+    {
+      "name": "No axe violations in signal",
+      "passed": true
+    },
+    {
+      "name": "No axe violations in midnight",
+      "passed": true
+    },
+    {
+      "name": "No axe violations in quiet",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion stops the compass",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion stops the text strip",
+      "passed": true
+    },
+    {
+      "name": "Reduced-motion strip exposes all five phrases",
+      "passed": true
+    },
+    {
+      "name": "No console errors",
+      "passed": true
+    }
+  ],
+  "accessibility": [
+    {
+      "theme": "signal",
+      "violations": []
+    },
+    {
+      "theme": "midnight",
+      "violations": []
+    },
+    {
+      "theme": "quiet",
+      "violations": []
+    }
+  ],
+  "lighthouse": [
+    {
+      "mode": "mobile",
+      "scores": {
+        "performance": 94,
+        "accessibility": 100,
+        "seo": 100
+      },
+      "lcp": 2304.5530000000003,
+      "cls": 0.0006552152177212012
+    },
+    {
+      "mode": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "seo": 100
+      },
+      "lcp": 496.2558,
+      "cls": 0.004425015432098765
+    }
+  ],
+  "errors": []
+}

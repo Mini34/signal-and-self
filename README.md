@@ -3,7 +3,7 @@
 [![Live site](https://img.shields.io/badge/Live_site-Visit-3155e8)](https://mini34.github.io/signal-and-self/)
 [![Pages deployment](https://github.com/Mini34/signal-and-self/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/Mini34/signal-and-self/actions/workflows/deploy-pages.yml)
 
-Signal & Self is Mina Soliman's living digital citizenship fieldbook. It connects responsible-technology habits with personal reflection, practical initiatives, measurable learning signals, and a transparent journey log.
+Signal & Self is Mina Soliman's engineering portfolio and digital citizenship fieldbook. Tested engineering work leads into responsible-technology habits, reflection, and a dated journey log.
 
 **Live site:** [mini34.github.io/signal-and-self](https://mini34.github.io/signal-and-self/)
 
@@ -11,9 +11,9 @@ Signal & Self is Mina Soliman's living digital citizenship fieldbook. It connect
 
 - A personal story and six-part digital citizenship framework
 - An interactive signals dashboard with habit progress and global context
-- Twenty searchable and filterable field notes
-- Fourteen completed, active, and planned initiatives, including four tested Python repositories
-- A nineteen-record timeline that can be filtered, printed, or downloaded
+- 20 field notes, with a curated starting point, search, filters, and saved items
+- 15 initiatives, including 5 engineering projects with dedicated case studies and 4 featured projects
+- 20 journey records that can be filtered, printed, or downloaded
 - Device-local personalization, themes, saved items, and a global search palette
 - Optional Google sign-in for session-only viewer personalization
 - A plain-language privacy and data-control map
@@ -59,7 +59,27 @@ python tools/serve_site.py
 
 Then open `http://127.0.0.1:8000`.
 
-Run `python tools/validate_site.py` for a quick content and local-link check.
+After editing `assets/data/citizenship-records.json` or page templates in `tools/build_site.py`, run:
+
+```powershell
+python tools/build_site.py
+python tools/validate_site.py
+```
+
+The small, dependency-free Python generator produces checked-in HTML, metadata, counts, sitemap, and page-specific optional payloads. All principal content and native mobile navigation work without JavaScript. CI rejects generated files that diverge from the authoring source. The existing page URLs remain valid.
+
+The shared controller loads no records on an ordinary visit. Settings fetch their small payload only when opened; global search loads its index on demand. Work, notes, and journey filtering use the static page content. Only Evidence loads chart/map behavior and its own dataset. No runtime npm dependency is shipped.
+
+Development-only browser QA uses pinned Playwright, axe, and Lighthouse dependencies:
+
+```powershell
+pnpm --dir tools/qa install --frozen-lockfile
+node --test tools/qa/privacy.test.mjs
+node tools/qa/interactions.mjs
+node tools/qa/audit.mjs final
+```
+
+Start the local server first. The audit scripts use installed Google Chrome by default; set `QA_BROWSER=chromium` after `pnpm --dir tools/qa exec playwright install chromium` for CI. Run performance audits separately from other browser tests to avoid CPU contention. Screenshots and measured results live in `docs/qa/`; methodology and limitations are in `docs/ux-audit-baseline.md` and `docs/ux-audit-results.md`.
 
 ## Analytics, data, and privacy
 
@@ -69,7 +89,7 @@ To review the private dashboard, sign in to [Cloudflare](https://dash.cloudflare
 
 The public portfolio content is stored in `assets/data/citizenship-records.json`. Visitor personalization, theme choices, and saved items stay in the visitor's browser through local storage and are not included in analytics.
 
-Google sign-in is optional and does not gate any content. The Google Identity Services library loads only after a visitor opens the account panel. After a successful sign-in, the site ignores the returned email claim, keeps the visitor's name and profile image in session storage, discards the ID token, and clears the viewer profile when the browser session expires. Because the site has no authentication backend, this state is used only for presentation and never for authorization or private data.
+Google sign-in is optional and does not gate any content. The Google Identity Services library loads only after a visitor deliberately opens Sign in, including from mobile Account / Settings. It does not load merely from opening Settings. The site ignores the returned email claim, keeps the visitor's display name, profile image, and expiry in session storage, and discards the ID token. Sign-out clears that viewer state. Because there is no authentication backend, this state is used only for presentation and never for authorization or private data. No permanent account, named viewer log, or cloud sync is created. Aggregate Cloudflare analytics run independently for signed-out visitors; neither Google identity nor local preferences are sent to that beacon.
 
 ### Google sign-in configuration
 

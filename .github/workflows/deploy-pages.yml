@@ -21,10 +21,43 @@ jobs:
           python-version: "3.12"
       - name: Validate website
         run: python tools/validate_site.py
+      - name: Set up Node for development-only checks
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Check JavaScript syntax and privacy boundaries
+        run: |
+          for file in assets/scripts/*.js; do node --check "$file"; done
+          node --test tools/qa/privacy.test.mjs
+
+  browser-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Install pinned development-only browser tooling
+        run: |
+          npm install --global pnpm@11.19.0
+          pnpm --dir tools/qa install --frozen-lockfile
+          pnpm --dir tools/qa exec playwright install --with-deps chromium
+      - name: Check keyboard flows, mobile layouts, and accessibility
+        env:
+          QA_BROWSER: chromium
+        run: |
+          python tools/serve_site.py > /tmp/signal-and-self-preview.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid"' EXIT
+          for attempt in 1 2 3 4 5; do curl --fail --silent http://127.0.0.1:8000/ > /dev/null && break || sleep 1; done
+          node tools/qa/interactions.mjs
 
   deploy:
     if: github.event_name != 'pull_request'
-    needs: validate
+    needs: [validate, browser-checks]
     permissions:
       contents: read
       pages: write
@@ -41,10 +74,12 @@ jobs:
         uses: actions/checkout@v7
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
+      - name: Package public website only
+        run: python tools/package_site.py
       - name: Upload static website
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: .site-dist
       - name: Deploy website
         id: deployment
         uses: actions/deploy-pages@v5
