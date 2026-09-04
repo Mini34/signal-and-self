@@ -3,7 +3,7 @@
     "name": "Signal & Self",
     "descriptor": "Engineering portfolio & digital citizenship fieldbook",
     "version": "2.0",
-    "lastUpdated": "2026-09-03",
+    "lastUpdated": "2026-09-04",
     "headline": "Building technology that deserves trust.",
     "status": "Growing in public",
     "movingBar": [
@@ -85,7 +85,9 @@
         "text": "I use digital citizenship as a practical guide for ethical participation, media literacy, privacy, and community responsibility."
       }
     ],
-    "hero": "I’m Mina Soliman, a first-year Electrical Engineering student at the University of Toronto exploring power systems, embedded computing, cybersecurity, and responsible AI through tested projects and reflective fieldwork.",
+    "hero": "I’m a first-year Electrical Engineering student at the University of Toronto. I build embedded measurement tools and Python simulations for power systems and CAN networks, with test evidence and documented limits.",
+    "linkedin": "https://www.linkedin.com/in/contact-mina-soliman/",
+    "opportunity": "Seeking Summer 2027 engineering internships",
     "year": "First year, 2026–27",
     "github": "https://github.com/Mini34"
   },
@@ -1522,6 +1524,13 @@
     }
   ],
   "updates": [
+    {
+      "id": "update-career-focus",
+      "date": "2026-09-04",
+      "category": "Site update",
+      "title": "Made engineering skills and internship goals easier to find",
+      "why": "The homepage now connects demonstrated skills to project evidence and gives employers a clear contact route for Summer 2027 opportunities."
+    },
     {
       "id": "update-ux-priority-refresh",
       "date": "2026-09-03",

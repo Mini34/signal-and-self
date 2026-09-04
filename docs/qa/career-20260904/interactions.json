@@ -1,0 +1,847 @@
+{
+  "checks": [
+    {
+      "name": "Four featured projects",
+      "passed": true
+    },
+    {
+      "name": "Pico 2 W leads featured work",
+      "passed": true
+    },
+    {
+      "name": "Trailhead is absent from featured work",
+      "passed": true
+    },
+    {
+      "name": "Google library does not load before interaction",
+      "passed": true
+    },
+    {
+      "name": "No Cloudflare beacon on local preview",
+      "passed": true
+    },
+    {
+      "name": "No monolithic records or search payload on initial load",
+      "passed": true
+    },
+    {
+      "name": "Settings opens by keyboard",
+      "passed": true
+    },
+    {
+      "name": "Settings alone does not contact Google",
+      "passed": true
+    },
+    {
+      "name": "Settings contains backward Tab focus",
+      "passed": true
+    },
+    {
+      "name": "Settings contains forward Tab focus",
+      "passed": true
+    },
+    {
+      "name": "Focus returns to settings opener",
+      "passed": true
+    },
+    {
+      "name": "Theme persists locally",
+      "passed": true
+    },
+    {
+      "name": "Owner identity survives personalization",
+      "passed": true
+    },
+    {
+      "name": "Local name persists",
+      "passed": true
+    },
+    {
+      "name": "Search loads on demand",
+      "passed": true
+    },
+    {
+      "name": "Search restores focus",
+      "passed": true
+    },
+    {
+      "name": "Work defaults to four engineering builds",
+      "passed": true
+    },
+    {
+      "name": "Full engineering collection retains Trailhead",
+      "passed": true
+    },
+    {
+      "name": "Planned filter returns only planned items",
+      "passed": true
+    },
+    {
+      "name": "Non-default project deep link is visible",
+      "passed": true
+    },
+    {
+      "name": "Saved-only project filter",
+      "passed": true
+    },
+    {
+      "name": "Full note archive retained",
+      "passed": true
+    },
+    {
+      "name": "Reading dialog opens by keyboard",
+      "passed": true
+    },
+    {
+      "name": "Reader restores exact opener",
+      "passed": true
+    },
+    {
+      "name": "Note search filters",
+      "passed": true
+    },
+    {
+      "name": "Note deep link opens full content",
+      "passed": true
+    },
+    {
+      "name": "Weekly chart table updates",
+      "passed": true
+    },
+    {
+      "name": "Missing adoption years announced",
+      "passed": true
+    },
+    {
+      "name": "Selected adoption year announced",
+      "passed": true
+    },
+    {
+      "name": "Journey text download works",
+      "passed": true
+    },
+    {
+      "name": "/ no overflow at 320",
+      "passed": true
+    },
+    {
+      "name": "/ no overflow at 375",
+      "passed": true
+    },
+    {
+      "name": "/ no overflow at 390",
+      "passed": true
+    },
+    {
+      "name": "/ no overflow at 430",
+      "passed": true
+    },
+    {
+      "name": "/ no overflow at 768",
+      "passed": true
+    },
+    {
+      "name": "/ no overflow at 1024",
+      "passed": true
+    },
+    {
+      "name": "/ no overflow at 1440",
+      "passed": true
+    },
+    {
+      "name": "/pages/initiatives.html no overflow at 320",
+      "passed": true
+    },
+    {
+      "name": "/pages/initiatives.html no overflow at 375",
+      "passed": true
+    },
+    {
+      "name": "/pages/initiatives.html no overflow at 390",
+      "passed": true
+    },
+    {
+      "name": "/pages/initiatives.html no overflow at 430",
+      "passed": true
+    },
+    {
+      "name": "/pages/initiatives.html no overflow at 768",
+      "passed": true
+    },
+    {
+      "name": "/pages/initiatives.html no overflow at 1024",
+      "passed": true
+    },
+    {
+      "name": "/pages/initiatives.html no overflow at 1440",
+      "passed": true
+    },
+    {
+      "name": "/pages/profile.html no overflow at 320",
+      "passed": true
+    },
+    {
+      "name": "/pages/profile.html no overflow at 375",
+      "passed": true
+    },
+    {
+      "name": "/pages/profile.html no overflow at 390",
+      "passed": true
+    },
+    {
+      "name": "/pages/profile.html no overflow at 430",
+      "passed": true
+    },
+    {
+      "name": "/pages/profile.html no overflow at 768",
+      "passed": true
+    },
+    {
+      "name": "/pages/profile.html no overflow at 1024",
+      "passed": true
+    },
+    {
+      "name": "/pages/profile.html no overflow at 1440",
+      "passed": true
+    },
+    {
+      "name": "/pages/field-notes.html no overflow at 320",
+      "passed": true
+    },
+    {
+      "name": "/pages/field-notes.html no overflow at 375",
+      "passed": true
+    },
+    {
+      "name": "/pages/field-notes.html no overflow at 390",
+      "passed": true
+    },
+    {
+      "name": "/pages/field-notes.html no overflow at 430",
+      "passed": true
+    },
+    {
+      "name": "/pages/field-notes.html no overflow at 768",
+      "passed": true
+    },
+    {
+      "name": "/pages/field-notes.html no overflow at 1024",
+      "passed": true
+    },
+    {
+      "name": "/pages/field-notes.html no overflow at 1440",
+      "passed": true
+    },
+    {
+      "name": "/pages/insights.html no overflow at 320",
+      "passed": true
+    },
+    {
+      "name": "/pages/insights.html no overflow at 375",
+      "passed": true
+    },
+    {
+      "name": "/pages/insights.html no overflow at 390",
+      "passed": true
+    },
+    {
+      "name": "/pages/insights.html no overflow at 430",
+      "passed": true
+    },
+    {
+      "name": "/pages/insights.html no overflow at 768",
+      "passed": true
+    },
+    {
+      "name": "/pages/insights.html no overflow at 1024",
+      "passed": true
+    },
+    {
+      "name": "/pages/insights.html no overflow at 1440",
+      "passed": true
+    },
+    {
+      "name": "/pages/journey.html no overflow at 320",
+      "passed": true
+    },
+    {
+      "name": "/pages/journey.html no overflow at 375",
+      "passed": true
+    },
+    {
+      "name": "/pages/journey.html no overflow at 390",
+      "passed": true
+    },
+    {
+      "name": "/pages/journey.html no overflow at 430",
+      "passed": true
+    },
+    {
+      "name": "/pages/journey.html no overflow at 768",
+      "passed": true
+    },
+    {
+      "name": "/pages/journey.html no overflow at 1024",
+      "passed": true
+    },
+    {
+      "name": "/pages/journey.html no overflow at 1440",
+      "passed": true
+    },
+    {
+      "name": "/pages/privacy.html no overflow at 320",
+      "passed": true
+    },
+    {
+      "name": "/pages/privacy.html no overflow at 375",
+      "passed": true
+    },
+    {
+      "name": "/pages/privacy.html no overflow at 390",
+      "passed": true
+    },
+    {
+      "name": "/pages/privacy.html no overflow at 430",
+      "passed": true
+    },
+    {
+      "name": "/pages/privacy.html no overflow at 768",
+      "passed": true
+    },
+    {
+      "name": "/pages/privacy.html no overflow at 1024",
+      "passed": true
+    },
+    {
+      "name": "/pages/privacy.html no overflow at 1440",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-pico-2w-ee-lab-tool.html no overflow at 320",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-pico-2w-ee-lab-tool.html no overflow at 375",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-pico-2w-ee-lab-tool.html no overflow at 390",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-pico-2w-ee-lab-tool.html no overflow at 430",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-pico-2w-ee-lab-tool.html no overflow at 768",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-pico-2w-ee-lab-tool.html no overflow at 1024",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-pico-2w-ee-lab-tool.html no overflow at 1440",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-power-quality-lab.html no overflow at 320",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-power-quality-lab.html no overflow at 375",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-power-quality-lab.html no overflow at 390",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-power-quality-lab.html no overflow at 430",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-power-quality-lab.html no overflow at 768",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-power-quality-lab.html no overflow at 1024",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-power-quality-lab.html no overflow at 1440",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-microgrid-controller-sim.html no overflow at 320",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-microgrid-controller-sim.html no overflow at 375",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-microgrid-controller-sim.html no overflow at 390",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-microgrid-controller-sim.html no overflow at 430",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-microgrid-controller-sim.html no overflow at 768",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-microgrid-controller-sim.html no overflow at 1024",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-microgrid-controller-sim.html no overflow at 1440",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-can-bus-anomaly-lab.html no overflow at 320",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-can-bus-anomaly-lab.html no overflow at 375",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-can-bus-anomaly-lab.html no overflow at 390",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-can-bus-anomaly-lab.html no overflow at 430",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-can-bus-anomaly-lab.html no overflow at 768",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-can-bus-anomaly-lab.html no overflow at 1024",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-can-bus-anomaly-lab.html no overflow at 1440",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-trailhead-support-api.html no overflow at 320",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-trailhead-support-api.html no overflow at 375",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-trailhead-support-api.html no overflow at 390",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-trailhead-support-api.html no overflow at 430",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-trailhead-support-api.html no overflow at 768",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-trailhead-support-api.html no overflow at 1024",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-trailhead-support-api.html no overflow at 1440",
+      "passed": true
+    },
+    {
+      "name": "/404.html no overflow at 320",
+      "passed": true
+    },
+    {
+      "name": "/404.html no overflow at 375",
+      "passed": true
+    },
+    {
+      "name": "/404.html no overflow at 390",
+      "passed": true
+    },
+    {
+      "name": "/404.html no overflow at 430",
+      "passed": true
+    },
+    {
+      "name": "/404.html no overflow at 768",
+      "passed": true
+    },
+    {
+      "name": "/404.html no overflow at 1024",
+      "passed": true
+    },
+    {
+      "name": "/404.html no overflow at 1440",
+      "passed": true
+    },
+    {
+      "name": "Reflow equivalent to 200% at 1280",
+      "passed": true
+    },
+    {
+      "name": "Reflow equivalent to 400% at 1280",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion disables compass animation",
+      "passed": true
+    },
+    {
+      "name": "Mobile navigation opens by keyboard",
+      "passed": true
+    },
+    {
+      "name": "Escape closes mobile navigation",
+      "passed": true
+    },
+    {
+      "name": "At most three mobile header utilities",
+      "passed": true
+    },
+    {
+      "name": "Mobile utility targets at least 44 pixels",
+      "passed": true
+    },
+    {
+      "name": "/ no-JS identity and navigation",
+      "passed": true
+    },
+    {
+      "name": "/pages/initiatives.html no-JS identity and navigation",
+      "passed": true
+    },
+    {
+      "name": "/pages/profile.html no-JS identity and navigation",
+      "passed": true
+    },
+    {
+      "name": "/pages/field-notes.html no-JS identity and navigation",
+      "passed": true
+    },
+    {
+      "name": "/pages/insights.html no-JS identity and navigation",
+      "passed": true
+    },
+    {
+      "name": "/pages/journey.html no-JS identity and navigation",
+      "passed": true
+    },
+    {
+      "name": "/pages/privacy.html no-JS identity and navigation",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-pico-2w-ee-lab-tool.html no-JS identity and navigation",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-power-quality-lab.html no-JS identity and navigation",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-microgrid-controller-sim.html no-JS identity and navigation",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-can-bus-anomaly-lab.html no-JS identity and navigation",
+      "passed": true
+    },
+    {
+      "name": "/pages/project-trailhead-support-api.html no-JS identity and navigation",
+      "passed": true
+    },
+    {
+      "name": "/404.html no-JS identity and navigation",
+      "passed": true
+    },
+    {
+      "name": "No-JS featured repositories readable",
+      "passed": true
+    },
+    {
+      "name": "Data failure keeps principal projects readable",
+      "passed": true
+    },
+    {
+      "name": "No page JavaScript errors",
+      "passed": true
+    },
+    {
+      "name": "No axe violations in desktop themes or mobile scan",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "accessibility": [
+    {
+      "route": "/",
+      "theme": "signal",
+      "violations": []
+    },
+    {
+      "route": "/",
+      "theme": "midnight",
+      "violations": []
+    },
+    {
+      "route": "/",
+      "theme": "quiet",
+      "violations": []
+    },
+    {
+      "route": "/",
+      "theme": "quiet-mobile",
+      "violations": []
+    },
+    {
+      "route": "/pages/initiatives.html",
+      "theme": "signal",
+      "violations": []
+    },
+    {
+      "route": "/pages/initiatives.html",
+      "theme": "midnight",
+      "violations": []
+    },
+    {
+      "route": "/pages/initiatives.html",
+      "theme": "quiet",
+      "violations": []
+    },
+    {
+      "route": "/pages/initiatives.html",
+      "theme": "quiet-mobile",
+      "violations": []
+    },
+    {
+      "route": "/pages/profile.html",
+      "theme": "signal",
+      "violations": []
+    },
+    {
+      "route": "/pages/profile.html",
+      "theme": "midnight",
+      "violations": []
+    },
+    {
+      "route": "/pages/profile.html",
+      "theme": "quiet",
+      "violations": []
+    },
+    {
+      "route": "/pages/profile.html",
+      "theme": "quiet-mobile",
+      "violations": []
+    },
+    {
+      "route": "/pages/field-notes.html",
+      "theme": "signal",
+      "violations": []
+    },
+    {
+      "route": "/pages/field-notes.html",
+      "theme": "midnight",
+      "violations": []
+    },
+    {
+      "route": "/pages/field-notes.html",
+      "theme": "quiet",
+      "violations": []
+    },
+    {
+      "route": "/pages/field-notes.html",
+      "theme": "quiet-mobile",
+      "violations": []
+    },
+    {
+      "route": "/pages/insights.html",
+      "theme": "signal",
+      "violations": []
+    },
+    {
+      "route": "/pages/insights.html",
+      "theme": "midnight",
+      "violations": []
+    },
+    {
+      "route": "/pages/insights.html",
+      "theme": "quiet",
+      "violations": []
+    },
+    {
+      "route": "/pages/insights.html",
+      "theme": "quiet-mobile",
+      "violations": []
+    },
+    {
+      "route": "/pages/journey.html",
+      "theme": "signal",
+      "violations": []
+    },
+    {
+      "route": "/pages/journey.html",
+      "theme": "midnight",
+      "violations": []
+    },
+    {
+      "route": "/pages/journey.html",
+      "theme": "quiet",
+      "violations": []
+    },
+    {
+      "route": "/pages/journey.html",
+      "theme": "quiet-mobile",
+      "violations": []
+    },
+    {
+      "route": "/pages/privacy.html",
+      "theme": "signal",
+      "violations": []
+    },
+    {
+      "route": "/pages/privacy.html",
+      "theme": "midnight",
+      "violations": []
+    },
+    {
+      "route": "/pages/privacy.html",
+      "theme": "quiet",
+      "violations": []
+    },
+    {
+      "route": "/pages/privacy.html",
+      "theme": "quiet-mobile",
+      "violations": []
+    },
+    {
+      "route": "/pages/project-pico-2w-ee-lab-tool.html",
+      "theme": "signal",
+      "violations": []
+    },
+    {
+      "route": "/pages/project-pico-2w-ee-lab-tool.html",
+      "theme": "midnight",
+      "violations": []
+    },
+    {
+      "route": "/pages/project-pico-2w-ee-lab-tool.html",
+      "theme": "quiet",
+      "violations": []
+    },
+    {
+      "route": "/pages/project-pico-2w-ee-lab-tool.html",
+      "theme": "quiet-mobile",
+      "violations": []
+    },
+    {
+      "route": "/pages/project-power-quality-lab.html",
+      "theme": "signal",
+      "violations": []
+    },
+    {
+      "route": "/pages/project-power-quality-lab.html",
+      "theme": "midnight",
+      "violations": []
+    },
+    {
+      "route": "/pages/project-power-quality-lab.html",
+      "theme": "quiet",
+      "violations": []
+    },
+    {
+      "route": "/pages/project-power-quality-lab.html",
+      "theme": "quiet-mobile",
+      "violations": []
+    },
+    {
+      "route": "/pages/project-microgrid-controller-sim.html",
+      "theme": "signal",
+      "violations": []
+    },
+    {
+      "route": "/pages/project-microgrid-controller-sim.html",
+      "theme": "midnight",
+      "violations": []
+    },
+    {
+      "route": "/pages/project-microgrid-controller-sim.html",
+      "theme": "quiet",
+      "violations": []
+    },
+    {
+      "route": "/pages/project-microgrid-controller-sim.html",
+      "theme": "quiet-mobile",
+      "violations": []
+    },
+    {
+      "route": "/pages/project-can-bus-anomaly-lab.html",
+      "theme": "signal",
+      "violations": []
+    },
+    {
+      "route": "/pages/project-can-bus-anomaly-lab.html",
+      "theme": "midnight",
+      "violations": []
+    },
+    {
+      "route": "/pages/project-can-bus-anomaly-lab.html",
+      "theme": "quiet",
+      "violations": []
+    },
+    {
+      "route": "/pages/project-can-bus-anomaly-lab.html",
+      "theme": "quiet-mobile",
+      "violations": []
+    },
+    {
+      "route": "/pages/project-trailhead-support-api.html",
+      "theme": "signal",
+      "violations": []
+    },
+    {
+      "route": "/pages/project-trailhead-support-api.html",
+      "theme": "midnight",
+      "violations": []
+    },
+    {
+      "route": "/pages/project-trailhead-support-api.html",
+      "theme": "quiet",
+      "violations": []
+    },
+    {
+      "route": "/pages/project-trailhead-support-api.html",
+      "theme": "quiet-mobile",
+      "violations": []
+    },
+    {
+      "route": "/404.html",
+      "theme": "signal",
+      "violations": []
+    },
+    {
+      "route": "/404.html",
+      "theme": "midnight",
+      "violations": []
+    },
+    {
+      "route": "/404.html",
+      "theme": "quiet",
+      "violations": []
+    },
+    {
+      "route": "/404.html",
+      "theme": "quiet-mobile",
+      "violations": []
+    }
+  ]
+}

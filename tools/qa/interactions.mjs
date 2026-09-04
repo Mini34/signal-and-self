@@ -40,7 +40,7 @@ try {
  check('Focus returns to settings opener',await page.locator('[data-open-personalize]').first().evaluate(n=>n===document.activeElement));
  await page.reload({waitUntil:'networkidle'});
  check('Theme persists locally',await page.locator('html').getAttribute('data-theme')==='midnight');
- check('Owner identity survives personalization',await page.locator('.hero-lede').innerText().then(t=>t.includes('Mina Soliman')));
+ check('Owner identity survives personalization',await page.locator('h1').innerText().then(t=>t.includes('Mina Soliman')));
  await page.locator('[data-open-personalize]').first().click();
  check('Local name persists',await page.locator('#visitor-name').inputValue()==='Local tester');
  await page.getByRole('button',{name:'Reset preferences',exact:true}).click(); await page.keyboard.press('Escape');

@@ -12,7 +12,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 BASE = 'https://mini34.github.io/signal-and-self/'
-VERSION = 'ux-20260903-pico'
+VERSION = 'career-20260904'
 D = json.loads((ROOT / 'assets/data/citizenship-records.json').read_text(encoding='utf-8'))
 PROJECTS = sorted(D['projects'], key=lambda p: p.get('featuredOrder', 99))
 ENGINEERING = [p for p in PROJECTS if p.get('type') == 'engineering-build']
@@ -45,10 +45,10 @@ def hero(kicker, title, description, extra=''):
     return f'<section class="page-hero site-shell"><p class="eyebrow">{e(kicker)}</p><h1>{e(title)}</h1><p class="page-lede">{e(description)}</p>{extra}</section>'
 
 def header(page, root):
-    routes = [('initiatives','Work','pages/initiatives.html'),('profile','About','pages/profile.html'),('notes','Field Notes','pages/field-notes.html'),('insights','Evidence','pages/insights.html')]
+    routes = [('initiatives','Work','pages/initiatives.html'),('profile','About','pages/profile.html'),('notes','Field Notes','pages/field-notes.html'),('insights','Evidence','pages/insights.html'),('contact','Contact','index.html#contact')]
     nav = ''.join(f'<a href="{url(path,root)}"'+(' aria-current="page"' if key==page else '')+f'>{label}</a>' for key,label,path in routes)
     return f'''<div class="site-header-wrap site-shell" id="site-header"><header class="site-header">
-      <a class="brand" href="{root}index.html" aria-label="S/S · Signal &amp; Self · Mina Soliman’s fieldbook · Home"><span class="brand-mark" aria-hidden="true">S/S</span><span class="brand-copy"><strong>Signal &amp; Self</strong><small>Mina Soliman’s fieldbook</small></span></a>
+      <a class="brand" href="{root}index.html" aria-label="S/S · Signal &amp; Self · Mina Soliman’s fieldbook · Home"><span class="brand-mark" aria-hidden="true">S/S</span><span class="brand-copy"><strong>Mina Soliman</strong><small>Signal &amp; Self · Engineering portfolio</small></span></a>
       <nav class="site-nav" id="site-nav" aria-label="Primary navigation">{nav}</nav>
       <div class="header-actions">
         <button class="icon-button search-control js-only" data-open-search type="button" aria-label="Search the fieldbook" hidden><span aria-hidden="true">⌕</span><span class="header-label">Search</span></button>
@@ -93,7 +93,7 @@ def dialogs(root):
 def page(path, key, title, description, content, module=None, schema=None):
     root='../' if '/' in path else ''
     canonical=BASE+(path if path!='index.html' else '')
-    person={'@type':'Person','@id':BASE+'#mina','name':'Mina Soliman','url':BASE,'sameAs':[D['profile']['github']],'description':D['profile']['tagline']}
+    person={'@type':'Person','@id':BASE+'#mina','name':'Mina Soliman','url':BASE,'sameAs':[D['profile']['github'],D['profile']['linkedin']],'description':D['profile']['tagline']}
     structured={'@context':'https://schema.org','@graph':[person,{'@type':'WebSite','name':'Signal & Self','url':BASE,'author':{'@id':BASE+'#mina'}}]}
     if key!='home': structured['@graph'].append({'@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':'Home','item':BASE},{'@type':'ListItem','position':2,'name':title.split(' — ')[0],'item':canonical}]})
     if schema: structured['@graph'].append(schema)
@@ -107,7 +107,7 @@ def page(path, key, title, description, content, module=None, schema=None):
 <link rel="preload" href="{root}assets/fonts/newsreader-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{root}assets/fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{root}assets/styles/fonts.css">
-<link rel="stylesheet" href="{root}assets/styles/portfolio.css?v={VERSION}">{chr(10)+f'<link rel="stylesheet" href="{root}assets/styles/home.css?v=balanced-20260903">' if key=='home' else ''}
+<link rel="stylesheet" href="{root}assets/styles/portfolio.css?v={VERSION}">{chr(10)+f'<link rel="stylesheet" href="{root}assets/styles/home.css?v=career-20260904">' if key=='home' else ''}
 <script src="{root}assets/scripts/portfolio.js?v={VERSION}" defer></script>
 <script src="{root}assets/scripts/auth-config.js?v={VERSION}" defer></script><script src="{root}assets/scripts/auth.js?v={VERSION}" defer></script>
 {f'<script src="{root}assets/scripts/{module}.js?v={VERSION}" defer></script>' if module else ''}
@@ -157,19 +157,27 @@ def curated(root, count=3):
 
 def home():
     compass='''<div class="hero-visual" role="img" aria-label="Digital citizenship compass: verify, protect, build, and reflect. Skill plus care creates trust."><div class="orbit-stage" aria-hidden="true"><div class="orbit-core"><strong>Skill + care = trust</strong></div><span class="orbit-label">Verify</span><span class="orbit-label">Protect</span><span class="orbit-label">Build</span><span class="orbit-label">Reflect</span><span class="orbit-note">Current question → How can the safer choice become the easier default?</span></div></div>'''
-    intro=f'''<div class="reading-progress" aria-hidden="true"></div><section class="home-hero site-shell"><div class="hero-copy"><p class="eyebrow live-dot">Electrical engineering · responsible technology</p><h1>Building technology that deserves <span class="serif-italic">trust.</span></h1><p class="hero-lede">{e(D['profile']['hero'])}</p><div class="button-row"><a class="button button-primary" href="#featured-work">View engineering projects</a><a class="button button-quiet" href="#fieldbook">Explore the fieldbook</a></div><div class="professional-links">{link('GitHub',D['profile']['github'])} {link('About Mina','pages/profile.html')}<span>Updated {date.fromisoformat(D['site']['lastUpdated']).strftime('%B %Y')}</span></div><nav class="hero-meta" aria-label="Portfolio summary">{link(str(len(FEATURED))+" featured projects","pages/initiatives.html")}{link(str(len(PROJECTS))+" initiatives","pages/initiatives.html#all-work")}{link(str(len(NOTES))+" field notes","pages/field-notes.html")}</nav></div>{compass}<div class="hero-motion-tools"><a class="scroll-cue" href="#featured-work"><span>Follow the build</span><span class="scroll-cue-track" aria-hidden="true"><span class="scroll-cue-pulse"></span></span></a><button class="motion-toggle js-only" type="button" data-toggle-motion hidden>Pause animation</button></div></section>'''
+    intro=f'''<div class="reading-progress" aria-hidden="true"></div><section class="home-hero site-shell"><div class="hero-copy"><p class="eyebrow live-dot">{e(D["profile"]["opportunity"])}</p><h1>Mina Soliman.<br><span class="serif-italic">Engineering, tested.</span></h1><p class="hero-lede">{e(D['profile']['hero'])}</p><div class="button-row"><a class="button button-primary" href="#featured-work">View engineering projects</a><a class="button button-quiet" href="#contact">Let’s connect</a></div><div class="professional-links">{link('GitHub',D['profile']['github'])} {link('LinkedIn',D['profile']['linkedin'])} {link('About Mina','pages/profile.html')}<span>Updated {date.fromisoformat(D['site']['lastUpdated']).strftime('%B %Y')}</span></div><nav class="hero-meta" aria-label="Portfolio summary">{link(str(len(FEATURED))+" featured projects","pages/initiatives.html")}{link("Skills in practice","#skills")}{link("Responsible technology","#fieldbook")}</nav></div>{compass}<div class="hero-motion-tools"><a class="scroll-cue" href="#featured-work"><span>Follow the build</span><span class="scroll-cue-track" aria-hidden="true"><span class="scroll-cue-pulse"></span></span></a><button class="motion-toggle js-only" type="button" data-toggle-motion hidden>Pause animation</button></div></section>'''
     phrases=D['site']['movingBar']
     strip=''.join(f'<span>{e(text)}</span>' for text in phrases)
     intro+=f'<div class="signal-strip" tabindex="0" role="region" aria-label="Engineering interests; focus to pause"><div class="signal-strip-track"><div class="signal-strip-group">{strip}</div><div class="signal-strip-group" aria-hidden="true">{strip}</div></div></div>'
     intro+=section('01 / Featured engineering work','From the workbench to the code.','<div class="project-grid">'+''.join(project_card(p,compact=True) for p in FEATURED)+'</div>','A hands-on Pico 2 W lab tool leads three engineering simulations. Explore the hardware, measurements, code, and documented limits.','featured-work')
-    framework='''<div class="fieldbook-intro"><div><p class="eyebrow">02 / Why Signal &amp; Self exists</p><h2>Skill matters.<br><span class="serif-italic">So does judgment.</span></h2></div><div><p>Engineering work raises human questions: what can I verify, who should I protect, what can I build, and what should change after reflection?</p><p>This fieldbook keeps those questions beside the code.</p><a class="button button-quiet" href="pages/profile.html#framework">Explore the framework</a></div></div>'''
+    skills=[
+        ('Embedded systems & instrumentation','MicroPython · Pico 2 W · I²C · INA219','Five operating modes connect circuit measurements, an OLED display, a Wi-Fi dashboard, and experiment logs.','Pico 2 W case study','pages/project-pico-2w-ee-lab-tool.html'),
+        ('Power systems & analysis','Python · waveform analysis · dispatch logic','RMS and power-factor analysis, plus constrained solar, battery, and grid dispatch with explicit unserved load.','Power quality case study','pages/project-power-quality-lab.html'),
+        ('Testing & fault investigation','Automated tests · synthetic data · explainable rules','Inspectable CAN anomaly findings and deterministic simulation inputs make behavior and failure cases easier to review.','CAN bus case study','pages/project-can-bus-anomaly-lab.html'),
+    ]
+    skill_cards='<div class="card-grid">'+''.join(f'<article class="card"><p class="mono-label">{e(stack)}</p><h3>{e(title)}</h3><p>{e(proof)}</p>{link(label,path,cls="button button-quiet")}</article>' for title,stack,proof,label,path in skills)+'</div>'
+    intro+=section('02 / Skills in practice','What I can bring to an engineering team.',skill_cards,'Skills demonstrated in the projects above, with code and case studies to inspect.','skills')
+    intro+=section('03 / Let’s connect','Have a Summer 2027 opportunity?',f'<p class="contact-copy">I’m looking for an engineering internship where I can contribute to embedded systems, electrical testing, power and energy, or technical software. Reach me on LinkedIn to discuss a role and request a tailored résumé.</p><div class="button-row">{link("Connect on LinkedIn",D["profile"]["linkedin"],cls="button button-primary")}{link("Review my GitHub",D["profile"]["github"],cls="button button-quiet")}{link("More about me","pages/profile.html",cls="button button-quiet")}</div>','University of Toronto · Electrical Engineering · First year, 2026–27','contact')
+    framework='''<div class="fieldbook-intro"><div><p class="eyebrow">04 / Why Signal &amp; Self exists</p><h2>Skill matters.<br><span class="serif-italic">So does judgment.</span></h2></div><div><p>Engineering work raises human questions: what can I verify, who should I protect, what can I build, and what should change after reflection?</p><p>This fieldbook keeps those questions beside the code.</p><a class="button button-quiet" href="pages/profile.html#framework">Explore the framework</a></div></div>'''
     intro+=f'<section class="section site-shell" id="fieldbook">{framework}</section>'
     intro+=f'<nav class="proof-strip site-shell" aria-label="Evidence collections">{link(str(len(FEATURED))+" featured projects","pages/initiatives.html")}{link(str(len(PROJECTS))+" initiatives","pages/initiatives.html#all-work")}{link(str(len(NOTES))+" field notes","pages/field-notes.html")}<span>Updated {date.fromisoformat(D["site"]["lastUpdated"]).strftime("%B %Y")}</span></nav>'
     now='<div class="card-grid">'+''.join(f'<article class="card"><p class="mono-label">{label}</p><h3>{e(D["now"][key])}</h3></article>' for label,key in [('Learning','learning'),('Building','building'),('Open question','question')])+'</div>'
-    intro+=section('03 / Current focus','A few questions worth following.',now,f'Last reported {dt(D["now"]["asOf"])}.','now')
-    intro+=section('04 / Selected field notes','The thinking behind the work.',curated(''),'A starting point for privacy, accessibility, and responsible AI.','selected-notes')
-    intro+=section('05 / Continue the conversation','Follow the work in public.',f'<div class="button-row">{link("Explore GitHub",D["profile"]["github"],cls="button button-primary")}{link("Meet Mina","pages/profile.html",cls="button button-quiet")}</div>','Source code, documentation, and the decisions behind each build.')
-    page('index.html','home','Mina Soliman — Electrical Engineering & Responsible Technology Portfolio',f'Signal & Self: Mina Soliman’s University of Toronto Electrical Engineering portfolio, with {len(FEATURED)} featured projects and a responsible-technology fieldbook.',intro,'home')
+    intro+=section('05 / Current focus','A few questions worth following.',now,f'Last reported {dt(D["now"]["asOf"])}.','now')
+    intro+=section('06 / Selected field notes','The thinking behind the work.',curated(''),'A starting point for privacy, accessibility, and responsible AI.','selected-notes')
+
+    page('index.html','home','Mina Soliman — Electrical Engineering | Summer 2027 Internships','University of Toronto Electrical Engineering student seeking Summer 2027 internships. Explore embedded hardware, power-system simulations, Python testing, and project evidence.',intro,'home')
 
 def work():
     content=hero('Work · public evidence','Engineering, with the decisions left in.',f'{len(FEATURED)} featured engineering builds lead a collection of {len(PROJECTS)} initiatives. Smaller tools and explorations have their own place.')
@@ -181,8 +189,8 @@ def work():
     page('pages/initiatives.html','initiatives','Work — Signal & Self',f'{len(PROJECTS)} initiatives: {len(FEATURED)} featured engineering builds, responsible-technology tools, and clearly labelled explorations.',content,'collections')
 
 def about():
-    content=hero('About Mina','Curiosity with an ethical circuit.',D['profile']['aboutText'][0])
-    summary=f'<aside class="professional-summary"><p class="mono-label">At a glance</p><dl><dt>Program</dt><dd>Electrical Engineering, University of Toronto</dd><dt>Current year</dt><dd>{e(D["profile"]["year"])}</dd><dt>Interests</dt><dd>Power systems, embedded systems, cybersecurity, responsible AI</dd><dt>Evidence</dt><dd>{link(str(len(FEATURED))+" featured engineering projects","pages/initiatives.html","../")}</dd></dl>{link("GitHub",D["profile"]["github"],cls="button button-quiet")}</aside>'
+    content=hero('About Mina','Electrical engineering. Practical curiosity.',D['profile']['aboutText'][0])
+    summary=f'<aside class="professional-summary"><p class="mono-label">At a glance</p><dl><dt>Program</dt><dd>Electrical Engineering, University of Toronto</dd><dt>Current year</dt><dd>{e(D["profile"]["year"])}</dd><dt>Seeking</dt><dd>{e(D["profile"]["opportunity"])}</dd><dt>Interests</dt><dd>Power systems, embedded systems, cybersecurity, responsible AI</dd><dt>Evidence</dt><dd>{link(str(len(FEATURED))+" featured engineering projects","pages/initiatives.html","../")}</dd></dl><div class="button-row">{link("Connect on LinkedIn",D["profile"]["linkedin"],cls="button button-primary")}{link("GitHub",D["profile"]["github"],cls="button button-quiet")}</div></aside>'
     content+=f'<section class="section site-shell story-grid"><div><div class="portrait-monogram" aria-hidden="true"><strong>MS</strong></div>{summary}</div><div class="story-copy">'+''.join(f'<p>{e(p)}</p>' for p in D['profile']['aboutText'][1:])+f'<p>{e(D["profile"]["definition"])}</p><p>{e(D["profile"]["mission"])}</p></div></section>'
     content+=section('Three threads','What keeps pulling me forward.','<div class="card-grid">'+''.join(f'<article class="card"><h3>{e(a["title"])}</h3><p>{e(a["text"])}</p></article>' for a in D['profile']['focusAreas'])+'</div>')
     content+=section('Working framework','Six lenses for better decisions.','<div class="card-grid">'+''.join(f'<article class="card"><h3>{e(a["title"])}</h3><p>{e(a["description"])}</p><p>{e(a["focus"])}</p></article>' for a in D['categories'])+'</div>',id='framework')
