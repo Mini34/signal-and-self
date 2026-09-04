@@ -107,7 +107,7 @@ def page(path, key, title, description, content, module=None, schema=None):
 <link rel="preload" href="{root}assets/fonts/newsreader-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{root}assets/fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{root}assets/styles/fonts.css">
-<link rel="stylesheet" href="{root}assets/styles/portfolio.css?v={VERSION}">{chr(10)+f'<link rel="stylesheet" href="{root}assets/styles/home.css?v=pico-20260903">' if key=='home' else ''}
+<link rel="stylesheet" href="{root}assets/styles/portfolio.css?v={VERSION}">{chr(10)+f'<link rel="stylesheet" href="{root}assets/styles/home.css?v=balanced-20260903">' if key=='home' else ''}
 <script src="{root}assets/scripts/portfolio.js?v={VERSION}" defer></script>
 <script src="{root}assets/scripts/auth-config.js?v={VERSION}" defer></script><script src="{root}assets/scripts/auth.js?v={VERSION}" defer></script>
 {f'<script src="{root}assets/scripts/{module}.js?v={VERSION}" defer></script>' if module else ''}
