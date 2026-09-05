@@ -256,7 +256,7 @@ def case_studies():
         badge=p.get('statusLabel','Completed · Tested')
         content=hero(p['domain'],p['title'],p['problem'],f'<p class="status-badge" data-status="{p["status"]}">{badge} · {p["year"]}</p>')
         if p.get('image'):
-            content+=f'<figure class="case-photo site-shell"><img src="../{p["image"]}" width="{p["imageWidth"]}" height="{p["imageHeight"]}" alt="{e(p["imageAlt"])}" loading="lazy"><figcaption>Annotated prototype from {link("the project documentation",p["imageSource"])}.</figcaption></figure>'
+            content+=f'<figure class="case-photo site-shell"><img src="../{p["image"]}" width="{p["imageWidth"]}" height="{p["imageHeight"]}" alt="{e(p["imageAlt"])}" loading="lazy"><figcaption>Component callouts identify visible parts, not electrical terminals. {link("Original photograph",p["imageOriginalSource"])} · {link("Annotation review",p["imageReviewSource"])}.</figcaption></figure>'
         headings=[('Context','impact'),('Design problem','problem'),('Approach','approach'),('Validation','evidence'),('Result','result'),('Limitations','limitations'),('What I would improve next','nextStep')]
         content+='<div class="case-article site-shell">'+''.join(f'<section><h2>{label}</h2><p>{e(p[key])}</p></section>' for label,key in headings)
         if p.get('role'): content+=f'<section><h2>My role</h2><p>{e(p["role"])}</p></section>'

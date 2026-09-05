@@ -1514,13 +1514,15 @@
       "linkLabel": "Explore the project",
       "caseStudyPath": "pages/project-pico-2w-ee-lab-tool.html",
       "evidenceCheckedAt": "2026-09-03",
-      "image": "assets/images/pico-2w-prototype.webp",
+      "image": "assets/images/pico-2w-prototype-corrected.webp",
       "imageWidth": 1536,
       "imageHeight": 1152,
-      "imageAlt": "Annotated Pico 2 W prototype showing the controller, INA219, OLED, RC and diode breadboard, manual switches, and load resistor.",
+      "imageAlt": "Original Pico 2 W prototype photo with precise callouts for the controller, INA219 sensor board, OLED display, RC and diode test area, and manual ON/OFF switch.",
       "imageSource": "https://github.com/Mini34/pico-2w-power-transient-analyzer/blob/main/images/designs/01_annotated_prototype_overview.png",
-      "imageSourceBlob": "0e5260d9afe9f289aa71e48309e14e6916ac7315",
-      "programmingLanguage": "MicroPython"
+      "imageSourceBlob": "6eafebd52acbb50ad2c5ca70b5d94bcddef80e90",
+      "programmingLanguage": "MicroPython",
+      "imageOriginalSource": "https://github.com/Mini34/pico-2w-power-transient-analyzer/blob/main/images/sanitized/01_image-1787893448668_sanitized.jpg",
+      "imageReviewSource": "https://github.com/Mini34/pico-2w-power-transient-analyzer/blob/main/docs/IMAGE_REVIEW.md"
     }
   ],
   "updates": [
