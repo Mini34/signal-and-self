@@ -1,0 +1,9 @@
+# Annotation prompts
+
+## Initial candidate — rejected
+
+Use case: precise-object-edit. Asset: engineering portfolio annotated hardware photograph. Input 1 is the ORIGINAL photograph and sole edit target. Inputs 2 and 3 are component-identification references only; do not insert them. Preserve the original photograph exactly: same framing, wires, hardware, blur, lighting, component geometry, surface, and screen content. Add only five neat navy/white callout labels and thin yellow leader lines ending with tiny outlined circles on actual components. No invented equipment, no redrawn wiring, no retouching. At original 1536x1152 coordinates, exact target endpoints are: '1  Pico 2 W controller' ends (335,195) on green controller upper left; '2  INA219 sensor' ends (943,563) on exposed sensor PCB at breadboard upper-right edge; '3  OLED display' ends (894,816) inside actual dark display screen bottom-right; '4  RC / diode test area' ends (287,597) on component-populated left breadboard area near resistors/capacitor; '5  Manual ON/OFF switch' ends (1100,365) on physical black slide switch on green module at mid-right. All endpoints refer to input 1 and must scale with output. Position labels in free blue mat or tabletop space near corresponding targets, route leaders from label edges without crossing any text. Controller label near upper left margin; sensor label in open mat above sensor; display label on table below display; test area label below left breadboard; switch label in blue mat immediately above switch. Do not label the partly off-frame load resistor or ambiguous power wiring. Add no banner, title, footer, extra text, or numbers other than the five labels. Keep photograph full size and do not crop. Accuracy of these leader endpoints and preservation of the real photograph are more important than decorative polish.
+
+## Targeted correction
+
+undefined
