@@ -136,7 +136,7 @@ def project_card(p,root='',compact=False):
     action=link('Read case study',p['caseStudyPath'],root,'button button-quiet') if tested else ''
     image=''
     if compact and p.get('image'):
-        image=f'<figure class="project-photo"><a href="{url(p["image"],root)}" aria-label="View full annotated Pico 2 W prototype image"><img src="{url(p["image"],root)}" width="{p["imageWidth"]}" height="{p["imageHeight"]}" alt="{e(p["imageAlt"])}" loading="lazy"></a><figcaption>From circuit theory to the workbench · {link("View the annotated prototype",p["image"],root)}</figcaption></figure>'
+        image=f'<figure class="project-photo"><a href="{url(p["image"],root)}" aria-label="View full annotated Pico 2 W prototype photograph"><img src="{url(p["image"],root)}" width="{p["imageWidth"]}" height="{p["imageHeight"]}" alt="{e(p["imageAlt"])}" loading="lazy"></a><figcaption>From circuit theory to the workbench · {link("View the annotated prototype",p["image"],root)}</figcaption></figure>'
     return f'''<article class="card project-card{' lead-project' if image else ''}" id="{e(p['id'])}" data-project-type="{e(p['type'])}" data-featured="{str(bool(p.get('featured'))).lower()}" data-status="{e(p['status'])}">{image}<div class="project-content">
     <div class="card-topline"><span class="status-badge" data-status="{e(p['status'])}">{e(badge)}</span>{save_button(p) if not compact else ''}</div>
     <p class="mono-label project-domain">{e(p.get('domain',TYPES[p['type']]))}{' · '+str(p['year']) if p.get('year') else ''}</p><h3>{e(p['title'])}</h3>{body}{details}{tags(p['skills'])}
@@ -256,7 +256,7 @@ def case_studies():
         badge=p.get('statusLabel','Completed · Tested')
         content=hero(p['domain'],p['title'],p['problem'],f'<p class="status-badge" data-status="{p["status"]}">{badge} · {p["year"]}</p>')
         if p.get('image'):
-            content+=f'<figure class="case-photo site-shell"><img src="../{p["image"]}" width="{p["imageWidth"]}" height="{p["imageHeight"]}" alt="{e(p["imageAlt"])}" loading="lazy"><figcaption>Component callouts identify visible parts, not electrical terminals. {link("Original photograph",p["imageOriginalSource"])} · {link("Annotation review",p["imageReviewSource"])}.</figcaption></figure>'
+            content+=f'<figure class="case-photo site-shell"><img src="../{p["image"]}" width="{p["imageWidth"]}" height="{p["imageHeight"]}" alt="{e(p["imageAlt"])}" loading="lazy"><figcaption>Real prototype photograph with component callouts and two original close-up insets; leaders do not indicate electrical connections. {link("Original overview",p["imageOriginalSource"])} · {link("Capacitor close-up",p["imageCapacitorSource"])} · {link("Load-resistor close-up",p["imageResistorSource"])} · {link("Image accuracy review",p["imageReviewSource"])}.</figcaption></figure>'
         headings=[('Context','impact'),('Design problem','problem'),('Approach','approach'),('Validation','evidence'),('Result','result'),('Limitations','limitations'),('What I would improve next','nextStep')]
         content+='<div class="case-article site-shell">'+''.join(f'<section><h2>{label}</h2><p>{e(p[key])}</p></section>' for label,key in headings)
         if p.get('role'): content+=f'<section><h2>My role</h2><p>{e(p["role"])}</p></section>'
