@@ -6,6 +6,8 @@ Use --check in CI to reject generated content or counts that have drifted.
 from __future__ import annotations
 import argparse
 import json
+import re
+from reflection_page import reflection_content
 from datetime import date
 from html import escape
 from pathlib import Path
@@ -14,6 +16,7 @@ ROOT = Path(__file__).resolve().parent.parent
 BASE = 'https://mini34.github.io/signal-and-self/'
 VERSION = 'career-20260904'
 D = json.loads((ROOT / 'assets/data/citizenship-records.json').read_text(encoding='utf-8'))
+REFLECTION = json.loads((ROOT / 'assets/data/reflection.json').read_text(encoding='utf-8'))
 PROJECTS = sorted(D['projects'], key=lambda p: p.get('featuredOrder', 99))
 ENGINEERING = [p for p in PROJECTS if p.get('type') == 'engineering-build']
 FEATURED = [p for p in ENGINEERING if p.get('featured')]
@@ -92,6 +95,13 @@ def dialogs(root):
 
 def page(path, key, title, description, content, module=None, schema=None):
     root='../' if '/' in path else ''
+    auth_scripts = '' if key == 'reflection' else f'<script src="{root}assets/scripts/auth-config.js?v={VERSION}" defer></script><script src="{root}assets/scripts/auth.js?v={VERSION}" defer></script>'
+    page_header, page_dialogs = header(key, root), dialogs(root)
+    if key == 'reflection':
+        page_header = re.sub(r'<button[^>]*data-open-account[^>]*>.*?</button>', '', page_header, flags=re.S)
+        page_header = page_header.replace('Account / Settings', 'Settings')
+        page_dialogs = re.sub(r'<button[^>]*data-open-account[^>]*>.*?</button>', '', page_dialogs, flags=re.S)
+        page_dialogs = re.sub(r'<dialog class="dialog account-dialog".*?</dialog>', '', page_dialogs, flags=re.S)
     canonical=BASE+(path if path!='index.html' else '')
     person={'@type':'Person','@id':BASE+'#mina','name':'Mina Soliman','url':BASE,'sameAs':[D['profile']['github'],D['profile']['linkedin']],'description':D['profile']['tagline']}
     structured={'@context':'https://schema.org','@graph':[person,{'@type':'WebSite','name':'Signal & Self','url':BASE,'author':{'@id':BASE+'#mina'}}]}
@@ -109,13 +119,13 @@ def page(path, key, title, description, content, module=None, schema=None):
 <link rel="stylesheet" href="{root}assets/styles/fonts.css">
 <link rel="stylesheet" href="{root}assets/styles/portfolio.css?v={VERSION}">{chr(10)+f'<link rel="stylesheet" href="{root}assets/styles/home.css?v=career-20260904">' if key=='home' else ''}
 <script src="{root}assets/scripts/portfolio.js?v={VERSION}" defer></script>
-<script src="{root}assets/scripts/auth-config.js?v={VERSION}" defer></script><script src="{root}assets/scripts/auth.js?v={VERSION}" defer></script>
+{auth_scripts}
 {f'<script src="{root}assets/scripts/{module}.js?v={VERSION}" defer></script>' if module else ''}
 <script type="application/ld+json">{json.dumps(structured,ensure_ascii=False).replace('<','\\u003c')}</script>
 </head><body id="top" data-page="{key}" data-root="{root or '.'}"><a class="skip-link" href="#main-content">Skip to content</a>
-{header(key,root)}<main id="main-content" tabindex="-1">{content}</main>{footer(root)}{dialogs(root)}
+{page_header}<main id="main-content" tabindex="-1">{content}</main>{footer(root)}{page_dialogs}
 <!-- Aggregate analytics load independently of optional identity, on production only. -->
-<script src="{root}assets/scripts/analytics.js?v=20260821" defer></script></body></html>
+<script src="{root}assets/scripts/analytics.js?v=reflection-20261004" defer></script></body></html>
 '''
     OUTPUT[path]=output
 
@@ -171,7 +181,7 @@ def home():
     intro+=section('02 / Skills in practice','What I can bring to an engineering team.',skill_cards,'Skills demonstrated in the projects above, with code and case studies to inspect.','skills')
     intro+=section('03 / Let’s connect','Have a Summer 2027 opportunity?',f'<p class="contact-copy">I’m looking for an engineering internship where I can contribute to embedded systems, electrical testing, power and energy, or technical software. Reach me on LinkedIn to discuss a role and request a tailored résumé.</p><div class="button-row">{link("Connect on LinkedIn",D["profile"]["linkedin"],cls="button button-primary")}{link("Review my GitHub",D["profile"]["github"],cls="button button-quiet")}{link("More about me","pages/profile.html",cls="button button-quiet")}</div>','University of Toronto · Electrical Engineering · First year, 2026–27','contact')
     framework='''<div class="fieldbook-intro"><div><p class="eyebrow">04 / Why Signal &amp; Self exists</p><h2>Skill matters.<br><span class="serif-italic">So does judgment.</span></h2></div><div><p>Engineering work raises human questions: what can I verify, who should I protect, what can I build, and what should change after reflection?</p><p>This fieldbook keeps those questions beside the code.</p><a class="button button-quiet" href="pages/profile.html#framework">Explore the framework</a></div></div>'''
-    intro+=f'<section class="section site-shell" id="fieldbook">{framework}</section>'
+    intro+=f'<section class="section site-shell" id="fieldbook">{framework}<p>Try the Digital Citizen Reflection activity: examine one habit, read the evidence, and choose a change.</p>{link("Start your reflection", "pages/digital-citizen-reflection.html", cls="button button-primary")}</section>'
     intro+=f'<nav class="proof-strip site-shell" aria-label="Evidence collections">{link(str(len(FEATURED))+" featured projects","pages/initiatives.html")}{link(str(len(PROJECTS))+" initiatives","pages/initiatives.html#all-work")}{link(str(len(NOTES))+" field notes","pages/field-notes.html")}<span>Updated {date.fromisoformat(D["site"]["lastUpdated"]).strftime("%B %Y")}</span></nav>'
     now='<div class="card-grid">'+''.join(f'<article class="card"><p class="mono-label">{label}</p><h3>{e(D["now"][key])}</h3></article>' for label,key in [('Learning','learning'),('Building','building'),('Open question','question')])+'</div>'
     intro+=section('05 / Current focus','A few questions worth following.',now,f'Last reported {dt(D["now"]["asOf"])}.','now')
@@ -220,6 +230,7 @@ def chart_table(period):
 
 def evidence():
     content=hero('Evidence & Progress','Evidence & Progress','A dated record of practice, with sources and limits attached. Personal self-assessments are prompts for reflection, not certifications.')
+    content+=section('Try the framework','Make an action plan for one habit.','<p>Explore attention, privacy, information, or AI with a guided activity. Your answers stay in your browser.</p>'+link('Start Digital Citizen Reflection','pages/digital-citizen-reflection.html','../','button button-primary'))
     content+=section('Practice compass','Four habits, with evidence.',practice('../'),'Qualitative bands first. Earlier numeric scores remain inside each methodology disclosure.','practice')
     stats='<div class="card-grid">'+''.join(f'<article class="card"><p class="mono-label">{e(s["period"])}</p><h3>{s["value"]}{e(s["suffix"])} · {e(s["label"])}</h3><p>{e(s["description"])}</p><p>Historical goal: {s["goal"]}. {e(s["trend"])}</p></article>' for s in D['stats'])+'</div>'
     content+=section('Historical record','July 2026 snapshot.',stats,'Values are retained from the original self-reported record. These are not live counters, independently audited totals, or counts of the current project library.','snapshot')
@@ -249,6 +260,7 @@ def privacy():
     content+=section('Four distinct boundaries','What happens to each kind of data.','<div class="card-grid two-up">'+''.join(f'<article class="card"><p class="mono-label">{e(c)}</p><h3>{e(a)}</h3><p>{e(b)}</p></article>' for a,b,c in boundaries)+'</div>')
     content+=section('External requests','Know when another service is contacted.','<div class="panel"><p>GitHub Pages serves these public files. Typefaces are served with the site; opening a page does not contact Google Fonts. Cloudflare’s beacon is loaded only on mini34.github.io, never in local previews. Blocking a font, analytics, or identity request does not gate the portfolio.</p><p>Opening the account panel contacts Google to load its sign-in interface. Choosing an account is a further action. Google receives the requests needed for that interface; session personalization here does not provide authentication for private content.</p><p>A profile image may be requested from Google after sign-in. The image request uses a no-referrer policy. External links navigate in the same tab unless you choose otherwise.</p><p>Cloudflare analytics use their standard aggregate beacon configuration. No visitor identity, local name, goal, saved-item list, or audience is sent as custom analytics data.</p></div>')
     content+=section('Your controls','Choose how personal this visit feels.','<div class="button-row js-only" hidden><button class="button button-primary" type="button" data-open-personalize>Open Settings</button><button class="button button-quiet" type="button" data-open-account>Review sign-in</button></div><p>Clearing browser storage also resets local settings and saved items. If storage is blocked, the public content remains readable and preferences can be used temporarily on the current page.</p>'+link('Inspect the source','https://github.com/Mini34/signal-and-self',cls='button button-quiet'))
+    content+=section('Digital Citizen Reflection','Your reflection stays with you.','<p>Reflection answers remain in memory until you enable Save on this device. Then drafts save automatically under a separate browser-storage key. Resume opens a saved draft; disabling saving removes it while keeping the current answers on the page. Clear reflection removes both. Clearing browser data also removes saved drafts. Storage does not synchronize between browsers or devices, and people sharing the same browser profile may see saved drafts.</p><p>If browser storage is blocked, the activity continues temporarily and reports that saving failed. Text downloads and printouts contain the answers you choose to keep; store or share those files with care.</p><p>The reflection page loads no Cloudflare beacon or Google identity scripts. Answers are never added to URLs, analytics, network requests, or sign-in state. Source links leave the activity with no referrer. The page has no submission endpoint or cloud account.</p>'+link('Open the activity','pages/digital-citizen-reflection.html','../','button button-quiet'))
     page('pages/privacy.html','privacy','Privacy & Data — Signal & Self','How Signal & Self separates anonymous aggregate analytics, device-local preferences, and optional session-only Google identity. No persistent named visitor tracking.',content)
 
 def case_studies():
@@ -264,14 +276,20 @@ def case_studies():
         schema={'@type':'SoftwareSourceCode','name':p['title'],'description':p['built'],'codeRepository':p['repository'],'programmingLanguage':p.get('programmingLanguage','Python'),'author':{'@id':BASE+'#mina'},'url':BASE+p['caseStudyPath']}
         page(p['caseStudyPath'],'case-study',p['title']+' — Signal & Self',p['built'],content,schema=schema)
 
+def reflection():
+    page('pages/digital-citizen-reflection.html','reflection','Digital Citizen Reflection — Signal & Self','Observe one online habit, evaluate evidence, identify a risk, and choose a realistic change. A private guided activity for young people.',reflection_content(REFLECTION),'reflection')
+    OUTPUT['pages/digital-citizen-reflection.html']=OUTPUT['pages/digital-citizen-reflection.html'].replace('</head>','<link rel="stylesheet" href="../assets/styles/reflection.css?v=20261004"></head>')
+
+
 def generate():
-    home(); work(); about(); notes(); evidence(); journey(); privacy(); case_studies()
+    home(); work(); about(); notes(); evidence(); journey(); privacy(); case_studies(); reflection()
     page('404.html','not-found','Page not found — Signal & Self','Return to Mina Soliman’s engineering work, field notes, or homepage.',hero('404','This page is off the map.','The link may have moved. Your next useful path is still here.',f'<div class="button-row">{link("Home",BASE,cls="button button-primary")}{link("Engineering work",BASE+"pages/initiatives.html",cls="button button-quiet")}</div>'))
     # A project Pages 404 can be served at arbitrary path depth; asset URLs must be absolute.
     for path in ('assets/','index.html','pages/'):
         OUTPUT['404.html']=OUTPUT['404.html'].replace(f'="{path}',f'="/signal-and-self/{path}')
     OUTPUT['404.html']=OUTPUT['404.html'].replace('data-root="."','data-root="/signal-and-self/"')
     search=[]
+    search.append({'title':'Digital Citizen Reflection','type':'Guided activity','terms':'Observe evaluate identify act screen time attention social media privacy news information AI action plan','href':'pages/digital-citizen-reflection.html'})
     for n in NOTES:
         search.append({'title':n['title'],'type':'Field note','terms':' '.join([n['title'],n['category'],*n['tags'],*n['content']]),'href':'pages/field-notes.html#'+n['id']})
     for p in PROJECTS:

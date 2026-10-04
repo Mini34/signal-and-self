@@ -2,6 +2,8 @@
   "use strict";
 
   if (window.location.hostname !== "mini34.github.io") return;
+  // The worksheet never loads third-party scripts beside private answers.
+  if (window.location.pathname?.endsWith('/pages/digital-citizen-reflection.html')) return;
 
   const beacon = document.createElement("script");
   beacon.type = "module";

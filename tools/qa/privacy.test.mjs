@@ -61,3 +61,8 @@ for(const hostname of ['127.0.0.1','localhost','preview.example','mini34.github.
   if(appended.length) {assert.equal(appended[0].src,'https://static.cloudflareinsights.com/beacon.min.js');assert.deepEqual(Object.keys(JSON.parse(appended[0].dataset.cfBeacon)),['token']);}
  });
 }
+test('Private reflection page never loads a production analytics beacon',()=>{
+ const appended=[];
+ vm.runInNewContext(analytics,{window:{location:{hostname:'mini34.github.io',pathname:'/signal-and-self/pages/digital-citizen-reflection.html'}},document:{head:{append(node){appended.push(node);}},createElement(){return {dataset:{}};}}});
+ assert.equal(appended.length,0);
+});

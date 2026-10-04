@@ -12,6 +12,7 @@ const errors=[], checks=[], accessibility=[];
 page.on('pageerror',err=>errors.push(err.message));
 const routes=['/','/pages/initiatives.html','/pages/profile.html','/pages/field-notes.html','/pages/insights.html','/pages/journey.html','/pages/privacy.html','/pages/project-pico-2w-ee-lab-tool.html','/pages/project-power-quality-lab.html','/pages/project-microgrid-controller-sim.html','/pages/project-can-bus-anomaly-lab.html','/pages/project-trailhead-support-api.html','/404.html'];
 const check=(name,value)=>{checks.push({name,passed:Boolean(value)});assert.ok(value,name);};
+routes.push('/pages/digital-citizen-reflection.html');
 const shot=async(name,fullPage=false)=>page.screenshot({path:new URL(name,output).pathname.replace(/^\/(\w:)/,'$1'),fullPage});
 try {
  await page.goto(base,{waitUntil:'networkidle'});
