@@ -14,7 +14,12 @@
     if (!fields.every(id=>typeof s[id]==='string' && s[id].length<=1500)) return false;
     const t = data.topics.find(t=>t.id===s.topic);
     if (s.risk && ![...t.risks,'other'].includes(s.risk)) return false;
-    if (!['before','after'].every(id=>s[id]==='' || (/^\d+$/.test(s[id]) && Number(s[id])<=1440))) return false;
+    if (!['before','after'].every(id=>{
+      if(s[id]==='') return true;
+      const input=document.createElement('input');
+      Object.assign(input,{type:'number',min:'0',max:'1440',step:'1',value:s[id]});
+      return input.value!=='' && input.checkValidity();
+    })) return false;
     if (s.reviewDate && (!/^\d{4}-\d{2}-\d{2}$/.test(s.reviewDate) || new Date(s.reviewDate+'T12:00:00Z').toISOString().slice(0,10)!==s.reviewDate)) return false;
     return true;
   }

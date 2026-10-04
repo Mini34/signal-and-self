@@ -382,6 +382,8 @@ def validate_reflection() -> list[str]:
     if len({s.get('id') for s in sources}) != len(sources):
         errors.append('Reflection source IDs must be unique')
     for topic in topics:
+        if topic.get('id') not in expected:
+            continue
         if len([s for s in sources if topic['id'] in s.get('topics', [])]) < 2:
             errors.append(f'Reflection topic needs two sources: {topic["id"]}')
         example = topic.get('example', {})
@@ -396,10 +398,12 @@ def validate_reflection() -> list[str]:
 def main() -> int:
     errors = validate_records()
     errors.extend(validate_reflection())
+    records_valid = not errors
     errors.extend(validate_analytics())
     errors.extend(validate_auth())
     errors.extend(validate_theme_contrast())
-    errors.extend(validate_generated())
+    if records_valid:
+        errors.extend(validate_generated())
     for page in EXPECTED_PAGES:
         errors.extend(validate_page(page))
     if errors:

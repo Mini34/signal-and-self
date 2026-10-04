@@ -36,6 +36,8 @@
     "Malformed saved draft safely removed",
     "Malformed saved draft safely removed",
     "Blocked storage leaves temporary usable answers",
+    "Browser-valid exponential minutes keep the saved draft",
+    "Exponential minutes and reflection answers resume together",
     "Keyboard step navigation",
     "Text export contains answers and sources",
     "Print shows action plan and hides controls",
