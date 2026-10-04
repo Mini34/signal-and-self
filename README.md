@@ -9,6 +9,8 @@ Signal & Self is Mina Soliman's engineering portfolio and digital citizenship fi
 
 ## What is inside
 
+- **Digital Citizen Reflection:** a four-step activity for attention, social-media privacy, news, and AI. Start from a labelled fictional example or write your own observation; compare dated sources and their limits, then download or print an action plan. Drafts save only after opting in. The activity runs entirely in the browser, without analytics or Google identity scripts.
+- **Presentation package:** [editable slides, PDF, speaker notes and five-minute backup](docs/presentation/README.md), plus the [one-page participant worksheet](assets/downloads/digital-citizen-worksheet.pdf).
 - A personal story and six-part digital citizenship framework
 - An interactive signals dashboard with habit progress and global context
 - 20 field notes, with a curated starting point, search, filters, and saved items
@@ -39,7 +41,8 @@ signal-and-self/
 │   ├── field-notes.html        # Reflection archive
 │   ├── initiatives.html        # Project library
 │   ├── journey.html            # Changelog and milestones
-│   └── privacy.html            # Data boundaries and visitor controls
+│   ├── privacy.html            # Data boundaries and visitor controls
+│   └── digital-citizen-reflection.html # Guided private activity
 ├── assets/
 │   ├── data/                   # Structured portfolio records
 │   ├── images/                 # Maps, favicon, and social artwork
@@ -59,7 +62,7 @@ python tools/serve_site.py
 
 Then open `http://127.0.0.1:8000`.
 
-After editing `assets/data/citizenship-records.json` or page templates in `tools/build_site.py`, run:
+After editing `assets/data/citizenship-records.json`, `assets/data/reflection.json`, or page templates in `tools/build_site.py` and `tools/reflection_page.py`, run:
 
 ```powershell
 python tools/build_site.py
@@ -76,12 +79,15 @@ Development-only browser QA uses pinned Playwright, axe, and Lighthouse dependen
 pnpm --dir tools/qa install --frozen-lockfile
 node --test tools/qa/privacy.test.mjs
 node tools/qa/interactions.mjs
+node tools/qa/reflection.mjs
 node tools/qa/audit.mjs final
 ```
 
 Start the local server first. The audit scripts use installed Google Chrome by default; set `QA_BROWSER=chromium` after `pnpm --dir tools/qa exec playwright install chromium` for CI. Run performance audits separately from other browser tests to avoid CPU contention. Screenshots and measured results live in `docs/qa/`; methodology and limitations are in `docs/ux-audit-baseline.md` and `docs/ux-audit-results.md`.
 
 ## Analytics, data, and privacy
+
+The Digital Citizen Reflection page is excluded from analytics and sign-in. Its answers stay in page memory by default. Save on this device enables automatic local drafts; disabling saving removes the stored draft while retaining current answers. Clear reflection removes both. Saved reflections do not synchronize, and storage failure leaves a usable temporary session. The source records live in `assets/data/reflection.json`; the generator emits the worksheet and embeds its public examples and evidence. No participant answers belong in those records.
 
 The site uses Cloudflare Web Analytics to measure page views, visits, referral sources, countries, devices, and page-load performance. Cloudflare states that Web Analytics does not collect or use visitors' personal data, and the site does not add analytics cookies. Analytics collection began on August 21, 2026; earlier visits cannot be reconstructed. Cloudflare currently makes the previous six months available in its dashboard.
 

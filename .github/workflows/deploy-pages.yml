@@ -20,7 +20,9 @@ jobs:
         with:
           python-version: "3.12"
       - name: Validate website
-        run: python tools/validate_site.py
+        run: |
+          python tools/validate_site.py
+          python tools/qa/reflection_validation_test.py
       - name: Set up Node for development-only checks
         uses: actions/setup-node@v4
         with:
@@ -54,6 +56,7 @@ jobs:
           trap 'kill "$server_pid"' EXIT
           for attempt in 1 2 3 4 5; do curl --fail --silent http://127.0.0.1:8000/ > /dev/null && break || sleep 1; done
           node tools/qa/interactions.mjs
+          node tools/qa/reflection.mjs
 
   deploy:
     if: github.event_name != 'pull_request'

@@ -21,6 +21,7 @@ EXPECTED_PAGES = [
     PROJECT_ROOT / "pages" / "initiatives.html",
     PROJECT_ROOT / "pages" / "journey.html",
     PROJECT_ROOT / "pages" / "privacy.html",
+    PROJECT_ROOT / "pages" / "digital-citizen-reflection.html",
 ]
 EXPECTED_PAGES += [PROJECT_ROOT / '404.html'] + sorted((PROJECT_ROOT / 'pages').glob('project-*.html'))
 FEATURED_REPOSITORIES = {
@@ -130,9 +131,10 @@ def validate_page(page: Path) -> list[str]:
             for reference in parser.references
             if urlsplit(reference).path.endswith(f"assets/scripts/{auth_script}")
         ]
-        if len(auth_references) != 1:
+        expected_auth = 0 if page.name == 'digital-citizen-reflection.html' else 1
+        if len(auth_references) != expected_auth:
             errors.append(
-                f"Expected one {auth_script} loader in {page.relative_to(PROJECT_ROOT)}; "
+                f"Expected {expected_auth} {auth_script} loader in {page.relative_to(PROJECT_ROOT)}; "
                 f"found {len(auth_references)}"
             )
     for reference in parser.references:
@@ -363,12 +365,45 @@ def validate_theme_contrast() -> list[str]:
     return errors
 
 
+def validate_reflection() -> list[str]:
+    errors = []
+    data = build_site.REFLECTION
+    topics = data.get('topics', [])
+    sources = data.get('sources', [])
+    expected = {'attention', 'social', 'news', 'ai'}
+    if data.get('version') != 1 or {t.get('id') for t in topics} != expected or len(topics) != 4:
+        errors.append('Reflection must define four unique topics and version 1')
+    for source in sources:
+        for field in ('id', 'title', 'publisher', 'date', 'population', 'finding', 'limit', 'prompt', 'url'):
+            if not isinstance(source.get(field), str) or not source[field].strip():
+                errors.append(f'Reflection source missing {field}')
+        if not source.get('url', '').startswith('https://') or not set(source.get('topics', [])) <= expected:
+            errors.append('Reflection source has an invalid URL or topic')
+    if len({s.get('id') for s in sources}) != len(sources):
+        errors.append('Reflection source IDs must be unique')
+    for topic in topics:
+        if topic.get('id') not in expected:
+            continue
+        if len([s for s in sources if topic['id'] in s.get('topics', [])]) < 2:
+            errors.append(f'Reflection topic needs two sources: {topic["id"]}')
+        example = topic.get('example', {})
+        for field in ('observation', 'context', 'notice', 'evidenceResponse', 'risk', 'benefit', 'change', 'check'):
+            if not isinstance(example.get(field), str) or not example[field].strip():
+                errors.append(f'Reflection example missing {field}: {topic["id"]}')
+        if example.get('risk') not in topic.get('risks', []):
+            errors.append(f'Reflection example risk is not an available option: {topic["id"]}')
+    return errors
+
+
 def main() -> int:
     errors = validate_records()
+    errors.extend(validate_reflection())
+    records_valid = not errors
     errors.extend(validate_analytics())
     errors.extend(validate_auth())
     errors.extend(validate_theme_contrast())
-    errors.extend(validate_generated())
+    if records_valid:
+        errors.extend(validate_generated())
     for page in EXPECTED_PAGES:
         errors.extend(validate_page(page))
     if errors:
