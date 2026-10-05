@@ -17,6 +17,8 @@ BASE = 'https://mini34.github.io/signal-and-self/'
 VERSION = 'career-20260904'
 D = json.loads((ROOT / 'assets/data/citizenship-records.json').read_text(encoding='utf-8'))
 REFLECTION = json.loads((ROOT / 'assets/data/reflection.json').read_text(encoding='utf-8'))
+REFLECTION_SITE = json.loads((ROOT / 'reflection-site.json').read_text(encoding='utf-8'))
+REFLECTION_ACTIVE = REFLECTION_SITE['mode'] == 'portfolio'
 PROJECTS = sorted(D['projects'], key=lambda p: p.get('featuredOrder', 99))
 ENGINEERING = [p for p in PROJECTS if p.get('type') == 'engineering-build']
 FEATURED = [p for p in ENGINEERING if p.get('featured')]
@@ -181,7 +183,8 @@ def home():
     intro+=section('02 / Skills in practice','What I can bring to an engineering team.',skill_cards,'Skills demonstrated in the projects above, with code and case studies to inspect.','skills')
     intro+=section('03 / Let’s connect','Have a Summer 2027 opportunity?',f'<p class="contact-copy">I’m looking for an engineering internship where I can contribute to embedded systems, electrical testing, power and energy, or technical software. Reach me on LinkedIn to discuss a role and request a tailored résumé.</p><div class="button-row">{link("Connect on LinkedIn",D["profile"]["linkedin"],cls="button button-primary")}{link("Review my GitHub",D["profile"]["github"],cls="button button-quiet")}{link("More about me","pages/profile.html",cls="button button-quiet")}</div>','University of Toronto · Electrical Engineering · First year, 2026–27','contact')
     framework='''<div class="fieldbook-intro"><div><p class="eyebrow">04 / Why Signal &amp; Self exists</p><h2>Skill matters.<br><span class="serif-italic">So does judgment.</span></h2></div><div><p>Engineering work raises human questions: what can I verify, who should I protect, what can I build, and what should change after reflection?</p><p>This fieldbook keeps those questions beside the code.</p><a class="button button-quiet" href="pages/profile.html#framework">Explore the framework</a></div></div>'''
-    intro+=f'<section class="section site-shell" id="fieldbook">{framework}<p>Try the Digital Citizen Reflection activity: examine one habit, read the evidence, and choose a change.</p>{link("Start your reflection", "pages/digital-citizen-reflection.html", cls="button button-primary")}</section>'
+    activity_link = '<p>Try the Digital Citizen Reflection activity: examine one habit, read the evidence, and choose a change.</p>'+link('Start your reflection','pages/digital-citizen-reflection.html',cls='button button-primary') if REFLECTION_ACTIVE else ''
+    intro+=f'<section class="section site-shell" id="fieldbook">{framework}{activity_link}</section>'
     intro+=f'<nav class="proof-strip site-shell" aria-label="Evidence collections">{link(str(len(FEATURED))+" featured projects","pages/initiatives.html")}{link(str(len(PROJECTS))+" initiatives","pages/initiatives.html#all-work")}{link(str(len(NOTES))+" field notes","pages/field-notes.html")}<span>Updated {date.fromisoformat(D["site"]["lastUpdated"]).strftime("%B %Y")}</span></nav>'
     now='<div class="card-grid">'+''.join(f'<article class="card"><p class="mono-label">{label}</p><h3>{e(D["now"][key])}</h3></article>' for label,key in [('Learning','learning'),('Building','building'),('Open question','question')])+'</div>'
     intro+=section('05 / Current focus','A few questions worth following.',now,f'Last reported {dt(D["now"]["asOf"])}.','now')
@@ -230,7 +233,7 @@ def chart_table(period):
 
 def evidence():
     content=hero('Evidence & Progress','Evidence & Progress','A dated record of practice, with sources and limits attached. Personal self-assessments are prompts for reflection, not certifications.')
-    content+=section('Try the framework','Make an action plan for one habit.','<p>Explore attention, privacy, information, or AI with a guided activity. Your answers stay in your browser.</p>'+link('Start Digital Citizen Reflection','pages/digital-citizen-reflection.html','../','button button-primary'))
+    if REFLECTION_ACTIVE: content+=section('Try the framework','Make an action plan for one habit.','<p>Explore attention, privacy, information, or AI with a guided activity. Your answers stay in your browser.</p>'+link('Start Digital Citizen Reflection','pages/digital-citizen-reflection.html','../','button button-primary'))
     content+=section('Practice compass','Four habits, with evidence.',practice('../'),'Qualitative bands first. Earlier numeric scores remain inside each methodology disclosure.','practice')
     stats='<div class="card-grid">'+''.join(f'<article class="card"><p class="mono-label">{e(s["period"])}</p><h3>{s["value"]}{e(s["suffix"])} · {e(s["label"])}</h3><p>{e(s["description"])}</p><p>Historical goal: {s["goal"]}. {e(s["trend"])}</p></article>' for s in D['stats'])+'</div>'
     content+=section('Historical record','July 2026 snapshot.',stats,'Values are retained from the original self-reported record. These are not live counters, independently audited totals, or counts of the current project library.','snapshot')
@@ -260,7 +263,9 @@ def privacy():
     content+=section('Four distinct boundaries','What happens to each kind of data.','<div class="card-grid two-up">'+''.join(f'<article class="card"><p class="mono-label">{e(c)}</p><h3>{e(a)}</h3><p>{e(b)}</p></article>' for a,b,c in boundaries)+'</div>')
     content+=section('External requests','Know when another service is contacted.','<div class="panel"><p>GitHub Pages serves these public files. Typefaces are served with the site; opening a page does not contact Google Fonts. Cloudflare’s beacon is loaded only on mini34.github.io, never in local previews. Blocking a font, analytics, or identity request does not gate the portfolio.</p><p>Opening the account panel contacts Google to load its sign-in interface. Choosing an account is a further action. Google receives the requests needed for that interface; session personalization here does not provide authentication for private content.</p><p>A profile image may be requested from Google after sign-in. The image request uses a no-referrer policy. External links navigate in the same tab unless you choose otherwise.</p><p>Cloudflare analytics use their standard aggregate beacon configuration. No visitor identity, local name, goal, saved-item list, or audience is sent as custom analytics data.</p></div>')
     content+=section('Your controls','Choose how personal this visit feels.','<div class="button-row js-only" hidden><button class="button button-primary" type="button" data-open-personalize>Open Settings</button><button class="button button-quiet" type="button" data-open-account>Review sign-in</button></div><p>Clearing browser storage also resets local settings and saved items. If storage is blocked, the public content remains readable and preferences can be used temporarily on the current page.</p>'+link('Inspect the source','https://github.com/Mini34/signal-and-self',cls='button button-quiet'))
-    content+=section('Digital Citizen Reflection','Your reflection stays with you.','<p>Reflection answers remain in memory until you enable Save on this device. Then drafts save automatically under a separate browser-storage key. Resume opens a saved draft; disabling saving removes it while keeping the current answers on the page. Clear reflection removes both. Clearing browser data also removes saved drafts. Storage does not synchronize between browsers or devices, and people sharing the same browser profile may see saved drafts.</p><p>If browser storage is blocked, the activity continues temporarily and reports that saving failed. Text downloads and printouts contain the answers you choose to keep; store or share those files with care.</p><p>The reflection page loads no Cloudflare beacon or Google identity scripts. Answers are never added to URLs, analytics, network requests, or sign-in state. Source links leave the activity with no referrer. The page has no submission endpoint or cloud account.</p>'+link('Open the activity','pages/digital-citizen-reflection.html','../','button button-quiet'))
+    if REFLECTION_ACTIVE: content+=section('Digital Citizen Reflection','Your reflection stays with you.','<p>Reflection answers remain in memory until you enable Save on this device. Then drafts save automatically under a separate browser-storage key. Resume opens a saved draft; disabling saving removes it while keeping the current answers on the page. Clear reflection removes both. Clearing browser data also removes saved drafts. Storage does not synchronize between browsers or devices, and people sharing the same browser profile may see saved drafts.</p><p>If browser storage is blocked, the activity continues temporarily and reports that saving failed. Text downloads and printouts contain the answers you choose to keep; store or share those files with care.</p><p>The reflection page loads no Cloudflare beacon or Google identity scripts. Answers are never added to URLs, analytics, network requests, or sign-in state. Source links leave the activity with no referrer. The page has no submission endpoint or cloud account.</p>'+link('Open the activity','pages/digital-citizen-reflection.html','../','button button-quiet'))
+    if REFLECTION_ACTIVE and (ROOT/'assets/scripts/guidance.js').exists():
+        content+=section('Optional prepared help','You choose when to use a draft.','<p>Guided help uses prepared prompts in this browser. It has no external AI processing. An empty focused field or repeated missing-answer checks may offer help without opening it. No thanks stops further offers for this visit. Unfinished helper responses remain temporary; accepted text follows the reflection saving controls. The activity does not read portfolio identity or personalization.</p>')
     page('pages/privacy.html','privacy','Privacy & Data — Signal & Self','How Signal & Self separates anonymous aggregate analytics, device-local preferences, and optional session-only Google identity. No persistent named visitor tracking.',content)
 
 def case_studies():
@@ -277,11 +282,20 @@ def case_studies():
         page(p['caseStudyPath'],'case-study',p['title']+' — Signal & Self',p['built'],content,schema=schema)
 
 def reflection():
+    if not REFLECTION_ACTIVE:
+        target=REFLECTION_SITE['url']
+        OUTPUT['pages/digital-citizen-reflection.html']=f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Digital Citizen Reflection has moved</title><meta name="robots" content="noindex"><link rel="canonical" href="{e(target)}"><meta http-equiv="refresh" content="0;url={e(target)}"></head><body><h1>Digital Citizen Reflection</h1><p>Open the dedicated presentation activity.</p><a href="{e(target)}">Open Digital Citizen Reflection</a><script>window.location.replace({json.dumps(target)});</script></body></html>\n'
+        return
     page('pages/digital-citizen-reflection.html','reflection','Digital Citizen Reflection — Signal & Self','Observe one online habit, evaluate evidence, identify a risk, and choose a realistic change. A private guided activity for young people.',reflection_content(REFLECTION),'reflection')
     OUTPUT['pages/digital-citizen-reflection.html']=OUTPUT['pages/digital-citizen-reflection.html'].replace('</head>','<link rel="stylesheet" href="../assets/styles/reflection.css?v=20261004"></head>')
+    if (ROOT/'assets/scripts/guidance.js').exists():
+        OUTPUT['pages/digital-citizen-reflection.html']=OUTPUT['pages/digital-citizen-reflection.html'].replace('</head>','<link rel="stylesheet" href="../assets/styles/guidance.css"></head>').replace('</body>','<script src="../assets/scripts/guidance.js" defer></script></body>')
+        resources=section('Session resources','Take the framework with you.','<div class="button-row">'+''.join(link(label,'assets/downloads/'+name,'../','button button-quiet') for label,name in [('Editable slides','digital-citizen-presentation.pptx'),('Slide PDF','digital-citizen-presentation.pdf'),('Presenter guide','digital-citizen-presenter-guide.pdf')])+'</div>')
+        OUTPUT['pages/digital-citizen-reflection.html']=OUTPUT['pages/digital-citizen-reflection.html'].replace('</main>',resources+'</main>')
 
 
 def generate():
+    if REFLECTION_SITE['mode'] not in {'portfolio','dedicated'}:raise ValueError('Unknown reflection site mode')
     home(); work(); about(); notes(); evidence(); journey(); privacy(); case_studies(); reflection()
     page('404.html','not-found','Page not found — Signal & Self','Return to Mina Soliman’s engineering work, field notes, or homepage.',hero('404','This page is off the map.','The link may have moved. Your next useful path is still here.',f'<div class="button-row">{link("Home",BASE,cls="button button-primary")}{link("Engineering work",BASE+"pages/initiatives.html",cls="button button-quiet")}</div>'))
     # A project Pages 404 can be served at arbitrary path depth; asset URLs must be absolute.
@@ -289,7 +303,7 @@ def generate():
         OUTPUT['404.html']=OUTPUT['404.html'].replace(f'="{path}',f'="/signal-and-self/{path}')
     OUTPUT['404.html']=OUTPUT['404.html'].replace('data-root="."','data-root="/signal-and-self/"')
     search=[]
-    search.append({'title':'Digital Citizen Reflection','type':'Guided activity','terms':'Observe evaluate identify act screen time attention social media privacy news information AI action plan','href':'pages/digital-citizen-reflection.html'})
+    if REFLECTION_ACTIVE: search.append({'title':'Digital Citizen Reflection','type':'Guided activity','terms':'Observe evaluate identify act screen time attention social media privacy news information AI action plan','href':'pages/digital-citizen-reflection.html'})
     for n in NOTES:
         search.append({'title':n['title'],'type':'Field note','terms':' '.join([n['title'],n['category'],*n['tags'],*n['content']]),'href':'pages/field-notes.html#'+n['id']})
     for p in PROJECTS:
@@ -299,7 +313,7 @@ def generate():
     OUTPUT['assets/data/search.json']=json.dumps(search,ensure_ascii=False,separators=(',',':'))+'\n'
     OUTPUT['assets/data/site.json']=json.dumps({k:D[k] for k in ('site','personalization')},ensure_ascii=False,separators=(',',':'))+'\n'
     OUTPUT['assets/data/evidence.json']=json.dumps({'periods':D['dashboard']['periods'],'adoption':D['dashboard']['digitalAdoption'],'regions':REGIONS},ensure_ascii=False,separators=(',',':'))+'\n'
-    paths=[path for path in OUTPUT if path.endswith('.html') and path!='404.html']
+    paths=[path for path in OUTPUT if path.endswith('.html') and path!='404.html' and (REFLECTION_ACTIVE or path!='pages/digital-citizen-reflection.html')]
     OUTPUT['sitemap.xml']='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join(f'<url><loc>{BASE+(path if path!="index.html" else "")}</loc><lastmod>{D["site"]["lastUpdated"]}</lastmod></url>' for path in paths)+'</urlset>\n'
     OUTPUT['robots.txt']=f'User-agent: *\nAllow: /\nSitemap: {BASE}sitemap.xml\n'
     OUTPUT['assets/data/collection-counts.json']=json.dumps({'projects':len(PROJECTS),'featuredProjects':len(FEATURED),'engineeringProjects':len(ENGINEERING),'notes':len(NOTES),'updates':len(UPDATES)},indent=2)+'\n'
