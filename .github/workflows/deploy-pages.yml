@@ -56,7 +56,12 @@ jobs:
           trap 'kill "$server_pid"' EXIT
           for attempt in 1 2 3 4 5; do curl --fail --silent http://127.0.0.1:8000/ > /dev/null && break || sleep 1; done
           node tools/qa/interactions.mjs
-          node tools/qa/reflection.mjs
+          if python -c "import json,sys;sys.exit(json.load(open('reflection-site.json'))['mode']!='portfolio')"; then
+            node tools/qa/reflection.mjs
+            if test -f tools/qa/guidance.mjs; then SITE_URL=http://127.0.0.1:8000/pages/digital-citizen-reflection.html node tools/qa/guidance.mjs; fi
+          else
+            node tools/qa/reflection-transition.mjs
+          fi
 
   deploy:
     if: github.event_name != 'pull_request'
@@ -77,6 +82,8 @@ jobs:
         uses: actions/checkout@v7
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
+      - name: Verify dedicated site before hiding the portfolio activity
+        run: python tools/check_reflection_destination.py
       - name: Package public website only
         run: python tools/package_site.py
       - name: Upload static website

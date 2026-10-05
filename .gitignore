@@ -13,6 +13,7 @@ __pycache__/
 Thumbs.db
 
 # Local preview output
+.build/
 *.log
 .pnpm-store/
 **/node_modules/

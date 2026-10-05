@@ -98,6 +98,9 @@ def validate_page(page: Path) -> list[str]:
     errors: list[str] = []
     if not page.is_file():
         return [f"Missing page: {page.relative_to(PROJECT_ROOT)}"]
+    if page.name=='digital-citizen-reflection.html' and not build_site.REFLECTION_ACTIVE:
+        source=page.read_text(encoding='utf8'); target=build_site.REFLECTION_SITE['url']
+        return [] if target in source and 'noindex' in source and 'reflection-form' not in source and 'assets/scripts' not in source else ['Invalid private compatibility redirect']
     parser = PageParser()
     parser.feed(page.read_text(encoding="utf-8"))
     if not parser.has_title:
